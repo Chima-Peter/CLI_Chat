@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	client.Listen()
+	client.Connect()
 }

@@ -5,7 +5,7 @@ import (
 	"net"
 )
 
-func Listen() {
+func Connect() {
 	done := make(chan struct{})
 
 	conn, err := net.Dial("tcp", "localhost:8888")
