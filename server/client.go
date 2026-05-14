@@ -71,5 +71,5 @@ func (client *client) err(err error) {
 }
 
 func (client *client) msg(msg string) {
-	client.conn.Write([]byte("> " + msg + "\n"))
+	client.conn.Write([]byte(msg + "\n"))
 }

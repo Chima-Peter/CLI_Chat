@@ -2,11 +2,12 @@ package client
 
 import (
 	"bufio"
-	"fmt"
 	"net"
+
+	"github.com/chzyer/readline"
 )
 
-func read_from_server(conn net.Conn, done chan struct{}) {
+func read_from_server(conn net.Conn, done chan struct{}, rl *readline.Instance) {
 	reader := bufio.NewReader(conn)
 
 	for {
@@ -16,6 +17,7 @@ func read_from_server(conn net.Conn, done chan struct{}) {
 			return
 		}
 
-		fmt.Printf("%s", msg)
+		rl.Write([]byte(msg))
+		rl.Refresh()
 	}
 }

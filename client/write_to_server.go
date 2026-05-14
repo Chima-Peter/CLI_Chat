@@ -1,20 +1,20 @@
 package client
 
 import (
-	"bufio"
+	"fmt"
 	"net"
-	"os"
+
+	"github.com/chzyer/readline"
 )
 
-func write_to_server(conn net.Conn) {
-	input := bufio.NewReader(os.Stdin)
-
+func write_to_server(conn net.Conn, rl *readline.Instance) {
 	for {
-		msg, err := input.ReadString('\n')
+		msg, err := rl.Readline()
 		if err != nil {
 			return
 		}
 
-		conn.Write([]byte(msg))
+		fmt.Fprint(rl.Stdout(), "\033[A\033[2K")
+		conn.Write([]byte(msg + "\n"))
 	}
 }

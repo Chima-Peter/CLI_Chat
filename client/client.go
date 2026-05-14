@@ -3,6 +3,8 @@ package client
 import (
 	"fmt"
 	"net"
+
+	"github.com/chzyer/readline"
 )
 
 func Connect() {
@@ -15,10 +17,18 @@ func Connect() {
 	}
 	defer conn.Close()
 
-	go read_from_server(conn, done)
+	rl, err := readline.NewEx(&readline.Config{
+		Prompt: "> ",
+	})
+	if err != nil {
+		panic(err)
+	}
+	defer rl.Close()
 
-	go write_to_server(conn)
+	go read_from_server(conn, done, rl)
+
+	go write_to_server(conn, rl)
 
 	<-done
-	fmt.Println("> User disconnected.")
+	fmt.Println("User disconnected.")
 }

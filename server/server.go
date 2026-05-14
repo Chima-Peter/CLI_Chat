@@ -101,7 +101,7 @@ func (s *server) list_rooms(c *client) {
 		return
 	}
 
-	c.msg(fmt.Sprintf("Available rooms to join are %s: ", strings.Join(rooms, ", ")))
+	c.msg(fmt.Sprintf("Available rooms to join are: %s", strings.Join(rooms, ", ")))
 }
 
 func (s *server) msg(c *client, args []string) {
