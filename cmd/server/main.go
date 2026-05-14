@@ -3,14 +3,16 @@ package main
 import (
 	"log"
 	"net"
+
+	"github.com/chima/CLI_Chat/server"
 )
 
 func main() {
 	// initialize server
-	server := initServer()
+	server := server.InitServer()
 
 	// listen to channel in background and process commands
-	go server.run()
+	go server.Run()
 
 	// start listening on port 8888
 	listener, err := net.Listen("tcp", ":8888")
@@ -32,6 +34,6 @@ func main() {
 			continue
 		}
 
-		go server.newClient(conn)
+		go server.NewClient(conn)
 	}
 }

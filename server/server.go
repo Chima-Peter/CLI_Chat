@@ -1,4 +1,4 @@
-package main
+package server
 
 import (
 	"errors"
@@ -13,7 +13,7 @@ type server struct {
 	commands chan command
 }
 
-func initServer() *server {
+func InitServer() *server {
 	// create server
 	return &server{
 		rooms:    make(map[string]*room),
@@ -21,7 +21,7 @@ func initServer() *server {
 	}
 }
 
-func (s *server) run() {
+func (s *server) Run() {
 	// listen to channel and process commands - run as goroutine
 	for cmd := range s.commands {
 		switch cmd.id {
@@ -39,7 +39,7 @@ func (s *server) run() {
 	}
 }
 
-func (s *server) newClient(conn net.Conn) {
+func (s *server) NewClient(conn net.Conn) {
 	// create a new client
 	log.Println("New client is connected: ", conn.RemoteAddr().String())
 
@@ -116,11 +116,11 @@ func (s *server) msg(c *client, args []string) {
 
 func (s *server) quit(c *client, args []string) {
 	// close connection
-	log.Printf("client has disconnected: %s", c.conn.RemoteAddr())
+	log.Printf("Client has disconnected: %s", c.conn.RemoteAddr())
 
 	s.quit_current_room(c)
 
-	c.msg("sad to see you go")
+	c.msg("Sad to see you go")
 
 	c.conn.Close()
 }
