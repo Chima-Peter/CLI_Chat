@@ -43,10 +43,10 @@ git clone https://github.com/chima/CLI_Chat.git
 cd CLI_Chat
 
 # Build the server
-go build -o server ./cmd/server
+go build ./cmd/server
 
 # Build the client
-go build -o client ./cmd/client
+go build ./cmd/client
 ```
 
 ## Usage
@@ -112,13 +112,18 @@ Once connected to the server, you can use the following commands:
 
 ## Future Improvements
 
-- Persistent message history
 - Private direct messages between users
+- Room password protection
+- Message encryption for secure communication
+- Message history stored locally for true anonymity
+- Room teardown when empty
+- File sharing capabilities
 - User authentication
 - Configurable server port
-- Message timestamps
 - User list in rooms
 - Admin commands
+- Signal for typing indicators
+- Improved error handling and user feedback
 
 ## License
 
