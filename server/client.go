@@ -73,3 +73,11 @@ func (client *client) err(err error) {
 func (client *client) msg(msg string) {
 	client.conn.Write([]byte(msg + "\n"))
 }
+
+func (cl *client) validate_args(args []string, error_msg string) bool {
+	if len(args) < 2 || strings.TrimSpace(args[1]) == "" {
+		cl.err(fmt.Errorf("%s", error_msg))
+		return false
+	}
+	return true
+}

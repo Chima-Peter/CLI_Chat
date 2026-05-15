@@ -11,6 +11,9 @@ func write_to_server(conn net.Conn, rl *readline.Instance) {
 	for {
 		msg, err := rl.Readline()
 		if err != nil {
+			rl.Clean()
+			conn.Write([]byte("/quit\n"))
+			conn.Close()
 			return
 		}
 
