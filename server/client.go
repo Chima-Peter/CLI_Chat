@@ -2,24 +2,36 @@ package server
 
 import (
 	"bufio"
+	"encoding/json"
 	"fmt"
 	"net"
 	"strings"
 )
 
 type client struct {
+	id       string
 	conn     net.Conn
 	nick     string
 	room     *room
+	my_rooms []room
+	friends  []net.Conn
 	commands chan<- command
 }
 
 func (c *client) readInput() {
 	// read input from TCP connection using bufio.NewReader that accepts a readable stream as far as it implements io.Reader, then we add a delimiter, process the input. Doing so in an infinite loop
 	reader := bufio.NewReader(c.conn)
+	decoder := json.NewDecoder(c.conn)
 	for {
 		msg, err := reader.ReadString('\n')
 		if err != nil {
+			return
+		}
+
+		var request Message
+
+		error := decoder.Decode(&request)
+		if error != nil {
 			return
 		}
 
@@ -80,4 +92,19 @@ func (cl *client) validate_args(args []string, error_msg string) bool {
 		return false
 	}
 	return true
+}
+
+func (cl *client) send_message(response *Message) {
+	encoder := json.NewEncoder(cl.conn)
+	encoder.Encode(response)
+}
+
+func (cl *client) prepare_response(payload_data map[string]any, next_action ActionType, response_msg string) *Message {
+	payload, _ := json.Marshal(payload_data)
+
+	return &Message{
+		Action:      next_action,
+		ResponseMsg: response_msg,
+		Payload:     payload,
+	}
 }

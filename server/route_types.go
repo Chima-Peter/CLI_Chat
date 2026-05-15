@@ -1,0 +1,51 @@
+package server
+
+import "encoding/json"
+
+type ActionType int
+
+const (
+	SIGN_UP ActionType = iota
+	LOGIN
+	LOGOUT
+
+	CREATE_ROOM
+	SET_ROOM_PASSWORD
+	JOIN_ROOM
+	LEAVE_ROOM
+	DELETE_ROOM
+	EDIT_ROOM
+	GET_ROOM_PASSWORD
+	ACCEPT_MEMBER
+	SEE_PENDING_MEMBERS
+	DELETE_MEMBER
+	SEND_INVITE_REQUEST
+	SEE_GROUP_INVITE_REQUEST
+	ACCEPT_GROUP_INVITE_REQUEST
+	DELETE_GROUP_INVITE_REQUEST
+	GET_ROOM_MEMBERS
+
+	LIST_ROOMS
+	LIST_MY_ROOMS
+
+	SEND_MSG
+	SEND_FILE
+
+	SEND_FRIEND_REQUEST
+	ACCEPT_FRIEND_REQUEST
+	MESSAGE_FRIEND
+	GET_FRIENDS
+	SEE_FRIEND_REQUEST
+	DELETE_FRIEND
+	BLOCK_USER
+	UNBLOCK_USER
+	GET_USER_STATUS
+
+	DONE
+)
+
+type Message struct {
+	Action      ActionType      `json:"action"`
+	ResponseMsg string          `json:"response_msg"`
+	Payload     json.RawMessage `json:"payload"`
+}
