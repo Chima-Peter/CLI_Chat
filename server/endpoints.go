@@ -39,8 +39,6 @@ func (cl *client) HandleEndpoints() {
 			fmt.Println("(Owner only) Modify room settings and configuration")
 		case GET_ROOM_PASSWORD:
 			fmt.Println("Retrieve room password for authentication")
-		case ACCEPT_MEMBER:
-			fmt.Println("(Owner only) Approve pending member to join room")
 		case SEE_PENDING_MEMBERS:
 			fmt.Println("(Owner only) List members waiting for approval")
 		case DELETE_MEMBER:
@@ -50,13 +48,13 @@ func (cl *client) HandleEndpoints() {
 
 		// Room invitation endpoints
 		case SEND_INVITE_REQUEST:
-			fmt.Println("Send invitation request to join room")
+			fmt.Println("(Owner only) Send invitation request to join room")
 		case SEE_GROUP_INVITE_REQUEST:
 			fmt.Println("(Owner only) View pending group invitations")
 		case ACCEPT_GROUP_INVITE_REQUEST:
-			fmt.Println("(Owner only) Accept invitation to join group")
+			fmt.Println("Accept invitation to join group")
 		case DELETE_GROUP_INVITE_REQUEST:
-			fmt.Println("(Owner only) Decline or delete invitation")
+			fmt.Println("Decline or delete invitation")
 
 		// Room listing endpoints
 		case LIST_ROOMS:

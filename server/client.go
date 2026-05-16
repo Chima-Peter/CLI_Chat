@@ -13,8 +13,9 @@ type client struct {
 	conn     net.Conn
 	nick     string
 	room     *room
-	my_rooms []room
+	my_rooms map[string]*room
 	friends  []net.Conn
+	room_invites	map[string]*room
 	commands chan<- command
 }
 
