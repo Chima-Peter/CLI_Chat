@@ -16,7 +16,7 @@ type room struct {
 	members    map[net.Addr]*client
 }
 
-func (r *room) broadcast(sender *client, msg string) {
+func (r *room) Broadcast(sender *client, msg string) {
 	for addr, member := range r.members {
 		if addr != sender.conn.RemoteAddr() {
 			member.msg(msg)
@@ -24,7 +24,7 @@ func (r *room) broadcast(sender *client, msg string) {
 	}
 }
 
-func (r *room) set_room_password(cl *client, password string) {
+func (r *room) SetRoomPassword(cl *client, password string) {
 	trimmed_password := strings.TrimSpace(password)
 
 	if trimmed_password == "" {
@@ -43,7 +43,7 @@ func (r *room) set_room_password(cl *client, password string) {
 	cl.send_message(response)
 }
 
-func (r *room) join_room(cl *client) {
+func (r *room) JoinRoom(cl *client) {
 	if r.is_private {
 		response := cl.prepare_response(map[string]any{
 			"room": r.name,
@@ -59,10 +59,10 @@ func (r *room) join_room(cl *client) {
 	response := cl.prepare_response(map[string]any{}, DONE, "Welcome to room.")
 
 	cl.send_message(response)
-	cl.room.broadcast(cl, fmt.Sprintf("%s joined the room", cl.nick))
+	cl.room.Broadcast(cl, fmt.Sprintf("%s joined the room", cl.nick))
 }
 
-func (r *room) join_room_with_password(cl *client, password string) {
+func (r *room) JoinRoomWithPassword(cl *client, password string) {
 	if r.password != password {
 		cl.err(fmt.Errorf("Incorrect password."))
 		return
@@ -73,10 +73,10 @@ func (r *room) join_room_with_password(cl *client, password string) {
 	response := cl.prepare_response(map[string]any{}, DONE, "Welcome to room.")
 
 	cl.send_message(response)
-	cl.room.broadcast(cl, fmt.Sprintf("%s joined the room", cl.nick))
+	cl.room.Broadcast(cl, fmt.Sprintf("%s joined the room", cl.nick))
 }
 
-func (r *room) leave_room(cl *client) {
+func (r *room) LeaveRoom(cl *client) {
 	idx := slices.IndexFunc(cl.my_rooms, func(room room) bool {
 		return room.name == r.name
 	})
@@ -86,15 +86,15 @@ func (r *room) leave_room(cl *client) {
 		return
 	}
 
-	r.delete_member(r, cl, idx)
+	r.DeleteMember(r, cl, idx)
 
 	response := cl.prepare_response(map[string]any{}, DONE, "Left room.")
 
 	cl.send_message(response)
-	r.broadcast(cl, fmt.Sprintf("%s left the room", cl.nick))
+	r.Broadcast(cl, fmt.Sprintf("%s left the room", cl.nick))
 }
 
-func (r *room) delete_room(cl *client) {
+func (r *room) DeleteRoom(cl *client) {
 	idx := slices.IndexFunc(cl.my_rooms, func(room room) bool {
 		return room.name == r.name
 	})
@@ -118,7 +118,7 @@ func (r *room) delete_room(cl *client) {
 	cl.send_message(response)
 }
 
-func (r *room) delete_member(room_data *room, cl *client, idx int) {
+func (r *room) DeleteMember(room_data *room, cl *client, idx int) {
 	cl.my_rooms = append(cl.my_rooms[:idx], cl.my_rooms[idx+1:]...)
 	delete(room_data.members, cl.conn.RemoteAddr())
 	if cl.room == room_data {

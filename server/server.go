@@ -94,13 +94,13 @@ func (s *server) join(c *client, args []string) {
 	r.members[c.conn.RemoteAddr()] = c
 
 	// quit current room
-	s.quit_current_room(c)
+	s.QuitCurrentRoom(c)
 
 	// set user room to point to current
 	c.room = r
 
 	// broadcast that new member joined
-	r.broadcast(c, fmt.Sprintf("%s has joined the room", c.nick))
+	r.Broadcast(c, fmt.Sprintf("%s has joined the room", c.nick))
 
 	// confirm to user that they changed rooms
 	c.msg(fmt.Sprintf("Welcome to %s", r.name))
@@ -134,7 +134,7 @@ func (s *server) msg(c *client, args []string) {
 		return
 	}
 
-	c.room.broadcast(c, c.nick+": "+strings.Join(args[1:], " "))
+	c.room.Broadcast(c, c.nick+": "+strings.Join(args[1:], " "))
 	c.msg(fmt.Sprintf("You: %s", strings.Join(args[1:], " ")))
 }
 
@@ -142,22 +142,22 @@ func (s *server) quit(c *client) {
 	// close connection
 	log.Printf("Client has disconnected: %s", c.conn.RemoteAddr())
 
-	s.quit_current_room(c)
+	s.QuitCurrentRoom(c)
 
 	c.msg("Sad to see you go")
 
 	c.conn.Close()
 }
 
-func (s *server) quit_current_room(c *client) {
+func (s *server) QuitCurrentRoom(c *client) {
 	if c.room != nil {
 		delete(c.room.members, c.conn.RemoteAddr())
-		c.room.broadcast(c, fmt.Sprintf("%s has left the room", c.nick))
+		c.room.Broadcast(c, fmt.Sprintf("%s has left the room", c.nick))
 		c.msg(fmt.Sprintf("You left %s", c.room.name))
 	}
 }
 
-func (r *room) create_room(cl *client, room_name string, s *server) {
+func (s *server) CreateRoom(cl *client, room_name string) {
 	if strings.TrimSpace(room_name) == "" {
 		cl.err(fmt.Errorf("Provide a valid room name"))
 		return
@@ -174,7 +174,7 @@ func (r *room) create_room(cl *client, room_name string, s *server) {
 
 	new_room.members[cl.conn.RemoteAddr()] = cl
 
-	s.rooms[new_room.id] = r
+	s.rooms[new_room.id] = new_room
 
 	payload := map[string]any{
 		"room": room_name,
@@ -185,16 +185,11 @@ func (r *room) create_room(cl *client, room_name string, s *server) {
 	cl.send_message(response)
 }
 
-func (s *server) set_room_password(cl *client, room_name string, password string) {
-	if strings.TrimSpace(room_name) == "" {
-		cl.err(fmt.Errorf("Provide room name"))
-		return
-	}
+func (s *server) SetRoomPassword(cl *client, room_name string, password string) {
+	room_data, err := s.FetchRoom(cl, room_name)
 
-	room_data, ok := s.rooms[room_name]
-	if !ok {
-		cl.err(fmt.Errorf("No valid room found with room name: %s", room_name))
-		return
+	if err != nil {
+		cl.err(err)
 	}
 
 	if room_data.owner.id != cl.id {
@@ -202,25 +197,20 @@ func (s *server) set_room_password(cl *client, room_name string, password string
 		return
 	}
 
-	room_data.set_room_password(cl, password)
+	room_data.SetRoomPassword(cl, password)
 }
 
-func (s *server) join_room(cl *client, room_name string) {
-	if strings.TrimSpace(room_name) == "" {
-		cl.err(fmt.Errorf("Provide room name"))
-		return
+func (s *server) JoinRoom(cl *client, room_name string) {
+	room_data, err := s.FetchRoom(cl, room_name)
+
+	if err != nil {
+		cl.err(err)
 	}
 
-	room_data, ok := s.rooms[room_name]
-	if !ok {
-		cl.err(fmt.Errorf("No valid room found with room name: %s", room_name))
-		return
-	}
-
-	room_data.join_room(cl)
+	room_data.JoinRoom(cl)
 }
 
-func (s *server) join_room_with_password(cl *client, room_name string, password string) {
+func (s *server) JoinRoomWithPassword(cl *client, room_name string, password string) {
 	trimmed_password := strings.TrimSpace(password)
 
 	if strings.TrimSpace(room_name) == "" {
@@ -240,37 +230,40 @@ func (s *server) join_room_with_password(cl *client, room_name string, password 
 		return
 	}
 
-	room_data.join_room_with_password(cl, password)
+	room_data.JoinRoomWithPassword(cl, password)
 }
 
-func (s *server) leave_room(cl *client, room_name string) {
-	if strings.TrimSpace(room_name) == "" {
-		cl.err(fmt.Errorf("Provide room name"))
-		return
+func (s *server) LeaveRoom(cl *client, room_name string) {
+	room_data, err := s.FetchRoom(cl, room_name)
+
+	if err != nil {
+		cl.err(err)
 	}
 
-	room_data, ok := s.rooms[room_name]
-	if !ok {
-		cl.err(fmt.Errorf("No valid room found with room name: %s", room_name))
-		return
-	}
-
-	room_data.leave_room(cl)
+	room_data.LeaveRoom(cl)
 }
 
-func (s *server) delete_room(cl *client, room_name string) {
-	if strings.TrimSpace(room_name) == "" {
-		cl.err(fmt.Errorf("Provide room name"))
-		return
+func (s *server) DeleteRoom(cl *client, room_name string) {
+	room_data, err := s.FetchRoom(cl, room_name)
+
+	if err != nil {
+		cl.err(err)
 	}
 
-	room_data, ok := s.rooms[room_name]
-	if !ok {
-		cl.err(fmt.Errorf("No valid room found with room name: %s", room_name))
-		return
-	}
-
-	room_data.delete_room(cl)
+	room_data.DeleteRoom(cl)
 
 	delete(s.rooms, room_data.id)
+}
+
+func (s *server) FetchRoom(cl *client, room_name string) (*room, error) {
+	if strings.TrimSpace(room_name) == "" {
+		return nil, fmt.Errorf("Provide room name")
+	}
+
+	room_data, ok := s.rooms[room_name]
+	if !ok {
+		return nil, fmt.Errorf("No valid room found with room name: %s", room_name)
+	}
+
+	return room_data, nil
 }
