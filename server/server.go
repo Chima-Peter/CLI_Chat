@@ -2,52 +2,23 @@ package server
 
 import (
 	"fmt"
-	"log"
-	"net"
 	"strings"
+	"sync"
 
 	"github.com/google/uuid"
 )
 
 type server struct {
-	rooms    map[string]*room
-	commands chan command
-	clients  map[string]*client
+	rooms   map[string]*room
+	clients map[string]*client
+	mu      sync.RWMutex
 }
 
 func InitServer() *server {
-	// create server
 	return &server{
-		rooms:    make(map[string]*room),
-		commands: make(chan command),
-		clients:  make(map[string]*client),
+		rooms:   make(map[string]*room),
+		clients: make(map[string]*client),
 	}
-}
-
-func (s *server) Run() {
-	// listen to channel and process commands - run as goroutine
-	for cmd := range s.commands {
-		switch cmd.id {
-		}
-	}
-}
-
-func (s *server) NewClient(conn net.Conn) {
-	// create a new client
-	log.Println("New client is connected: ", conn.RemoteAddr().String())
-
-	new_client := client{
-		id:           uuid.New().String(),
-		conn:         conn,
-		nick:         "anonymous",
-		my_rooms:     make(map[string]*room),
-		room_invites: make(map[string]*room),
-		commands:     s.commands,
-	}
-
-	s.clients[new_client.id] = &new_client
-
-	new_client.readInput()
 }
 
 func (s *server) CreateRoom(cl *client, room_name string) {
@@ -57,9 +28,9 @@ func (s *server) CreateRoom(cl *client, room_name string) {
 		return
 	}
 
-	_, exists := s.rooms[trimmed_name]
-	if exists {
+	if s.isRoomNameTaken(trimmed_name, "") {
 		cl.err(fmt.Errorf("%s has already been used. Select another name.", room_name))
+		return
 	}
 
 	new_room := &room{
@@ -70,26 +41,30 @@ func (s *server) CreateRoom(cl *client, room_name string) {
 		password:   "",
 		members:    make(map[string]*client),
 		invites:    make(map[string]*client),
+		mu:         sync.RWMutex{},
 	}
 
 	new_room.members[cl.id] = cl
 
-	s.rooms[new_room.name] = new_room
+	s.mu.Lock()
+	s.rooms[new_room.id] = new_room
+	s.mu.Unlock()
+
+	cl.my_rooms[new_room.id] = new_room
 
 	payload := map[string]any{
-		"room": trimmed_name,
+		"room_id": new_room.id,
+		"room":    trimmed_name,
 	}
 
-	response := cl.prepare_response(payload, SET_ROOM_PASSWORD, "Set room password. Leave black for public room: ")
-
-	cl.send_message(response)
+	cl.send_user_message(payload, SET_ROOM_PASSWORD, "Set room password. Leave black for public room: ")
 }
 
-func (s *server) SetRoomPassword(cl *client, room_name string, password string) {
-	room_data, err := s.FetchRoom(cl, room_name)
-
+func (s *server) SetRoomPassword(cl *client, roomID, roomName, password string) {
+	room_data, err := s.resolveRoom(roomID, roomName)
 	if err != nil {
 		cl.err(err)
+		return
 	}
 
 	if room_data.owner.id != cl.id {
@@ -100,31 +75,34 @@ func (s *server) SetRoomPassword(cl *client, room_name string, password string) 
 	room_data.SetRoomPassword(cl, password)
 }
 
-func (s *server) JoinRoom(cl *client, room_name string) {
-	room_data, err := s.FetchRoom(cl, room_name)
-
+func (s *server) EditRoom(cl *client, roomID, roomName, new_name string, max_size *int) {
+	room_data, err := s.resolveRoom(roomID, roomName)
 	if err != nil {
 		cl.err(err)
+		return
+	}
+	room_data.EditRoom(cl, s, new_name, max_size)
+}
+
+func (s *server) JoinRoom(cl *client, roomID, roomName string) {
+	room_data, err := s.resolveRoom(roomID, roomName)
+	if err != nil {
+		cl.err(err)
+		return
 	}
 
 	room_data.JoinRoom(cl)
 }
 
-func (s *server) JoinRoomWithPassword(cl *client, room_name string, password string) {
+func (s *server) JoinRoomWithPassword(cl *client, roomID, roomName, password string) {
 	trimmed_password := strings.TrimSpace(password)
-
-	if strings.TrimSpace(room_name) == "" {
-		cl.err(fmt.Errorf("Provide room name"))
-		return
-	}
 
 	if trimmed_password == "" {
 		cl.err(fmt.Errorf("Enter password"))
-
 		return
 	}
 
-	room_data, err := s.GetRoomByName(room_name)
+	room_data, err := s.resolveRoom(roomID, roomName)
 	if err != nil {
 		cl.err(err)
 		return
@@ -133,128 +111,82 @@ func (s *server) JoinRoomWithPassword(cl *client, room_name string, password str
 	room_data.JoinRoomWithPassword(cl, password)
 }
 
-func (s *server) LeaveRoom(cl *client, room_name string) {
-	room_data, err := s.FetchRoom(cl, room_name)
-
+func (s *server) LeaveRoom(cl *client, roomID, roomName string) {
+	room_data, err := s.resolveRoom(roomID, roomName)
 	if err != nil {
 		cl.err(err)
+		return
 	}
 
 	room_data.LeaveRoom(cl)
 }
 
-func (s *server) DeleteRoom(cl *client, room_name string) {
-	room_data, err := s.FetchRoom(cl, room_name)
-
+func (s *server) DeleteRoom(cl *client, roomID, roomName string) {
+	room_data, err := s.resolveRoom(roomID, roomName)
 	if err != nil {
 		cl.err(err)
+		return
 	}
 
 	room_data.DeleteRoom(cl, s)
 }
 
-func (s *server) DeleteRoomMember(cl *client, room_name string, client_name string) {
-	room_data, err := s.FetchRoom(cl, room_name)
+func (s *server) DeleteRoomMember(cl *client, roomID, roomName, memberID, memberName string) {
+	room_data, err := s.resolveRoom(roomID, roomName)
 	if err != nil {
 		cl.err(err)
+		return
 	}
 
 	if room_data.owner.id != cl.id {
 		cl.err(fmt.Errorf("This action is reserved for only the admin!"))
+		return
 	}
 
-	member, err := s.GetClientByNick(client_name)
+	member, err := s.resolveUser(memberID, memberName)
 	if err != nil {
 		cl.err(err)
+		return
 	}
 
 	_, ok := room_data.members[member.id]
 	if !ok {
-		cl.err(fmt.Errorf("%s is not a member of room: %s", client_name, room_name))
+		cl.err(fmt.Errorf("%s is not a member of room: %s", member.nick, room_data.name))
+		return
 	}
 
 	room_data.DeleteMember(member)
 
-	delete(s.rooms, room_data.name)
+	member.send_user_message(map[string]any{}, DONE, fmt.Sprintf("Admin deleted you from room: %s", room_data.name))
 
-	response := cl.prepare_response(map[string]any{}, DONE, fmt.Sprintf("%s has been deleted from this room.", client_name))
+	room_data.Broadcast(cl, fmt.Sprintf("%s has been deleted from this room", member.nick))
 
-	member.send_message(
-		member.prepare_response(map[string]any{}, DONE, fmt.Sprintf("Admin deleted you from room: %s", room_name)),
-	)
-
-	room_data.Broadcast(cl, fmt.Sprintf("%s has been deleted from this room", client_name))
-
-	cl.send_message(response)
+	cl.send_user_message(map[string]any{}, DONE, fmt.Sprintf("%s has been deleted from this room.", member.nick))
 }
 
-func (s *server) GetRoomMembers(cl *client, room_name string) {
-	room_data, err := s.FetchRoom(cl, room_name)
-
+func (s *server) GetRoomMembers(cl *client, roomID, roomName string) {
+	room_data, err := s.resolveRoom(roomID, roomName)
 	if err != nil {
 		cl.err(err)
+		return
 	}
 
 	_, exists := room_data.members[cl.id]
 	if !exists {
 		cl.err(fmt.Errorf("Only members of a room can see it's members"))
+		return
 	}
 
 	members := room_data.FetchRoomMembers()
 
-	cl.send_message(
-		cl.prepare_response(map[string]any{}, DONE, fmt.Sprintf("Members of this room are: %s", strings.Join(members, ", "))),
-	)
+	cl.send_user_message(map[string]any{
+		"room_id": room_data.id,
+		"room":    room_data.name,
+	}, DONE, fmt.Sprintf("Members of this room are: %s", strings.Join(members, ", ")))
 }
 
-func (s *server) FetchRoom(cl *client, room_name string) (*room, error) {
-	return s.GetRoomByName(room_name)
-}
-
-// GetClientByNick returns a client by their nickname
-func (s *server) GetClientByNick(nick string) (*client, error) {
-	for _, client := range s.clients {
-		if client.nick == nick {
-			return client, nil
-		}
-	}
-	return nil, fmt.Errorf("Client not found with nick: %s", nick)
-}
-
-// GetClientIDByNick returns a client's ID by their nickname
-func (s *server) GetClientIDByNick(nick string) (string, error) {
-	client, err := s.GetClientByNick(nick)
-	if err != nil {
-		return "", err
-	}
-	return client.id, nil
-}
-
-// GetRoomByName returns a room by its name
-func (s *server) GetRoomByName(room_name string) (*room, error) {
-	if strings.TrimSpace(room_name) == "" {
-		return nil, fmt.Errorf("Provide room name")
-	}
-
-	room_data, ok := s.rooms[room_name]
-	if !ok {
-		return nil, fmt.Errorf("No valid room found with room name: %s", room_name)
-	}
-
-	return room_data, nil
-}
-
-// GetRoomIDByName returns a room's ID by its name
-func (s *server) GetRoomIDByName(room_name string) (string, error) {
-	room_data, err := s.GetRoomByName(room_name)
-	if err != nil {
-		return "", err
-	}
-	return room_data.id, nil
-}
-
-func (s *server) SendRoomInvite(cl *client, room_name string, client_name string) {
-	room_data, err := s.FetchRoom(cl, room_name)
+func (s *server) SendRoomInvite(cl *client, roomID, roomName, memberID, memberName string) {
+	room_data, err := s.resolveRoom(roomID, roomName)
 	if err != nil {
 		cl.err(err)
 		return
@@ -265,7 +197,7 @@ func (s *server) SendRoomInvite(cl *client, room_name string, client_name string
 		return
 	}
 
-	new_member, err := s.GetClientByNick(client_name)
+	new_member, err := s.resolveUser(memberID, memberName)
 	if err != nil {
 		cl.err(err)
 		return
@@ -280,8 +212,8 @@ func (s *server) SendRoomInvite(cl *client, room_name string, client_name string
 	room_data.SendRoomInvite(new_member, cl)
 }
 
-func (s *server) SeePendingRoomInvites(cl *client, room_name string) {
-	room_data, err := s.FetchRoom(cl, room_name)
+func (s *server) SeePendingRoomInvites(cl *client, roomID, roomName string) {
+	room_data, err := s.resolveRoom(roomID, roomName)
 	if err != nil {
 		cl.err(err)
 		return
@@ -295,8 +227,8 @@ func (s *server) SeePendingRoomInvites(cl *client, room_name string) {
 	room_data.SeePendingRoomInvites(cl)
 }
 
-func (s *server) AcceptRoomInvite(invitee *client, room_name string) {
-	room_data, err := s.FetchRoom(invitee, room_name)
+func (s *server) AcceptRoomInvite(invitee *client, roomID, roomName string) {
+	room_data, err := s.resolveRoom(roomID, roomName)
 	if err != nil {
 		invitee.err(err)
 		return
@@ -305,38 +237,165 @@ func (s *server) AcceptRoomInvite(invitee *client, room_name string) {
 	room_data.AcceptRoomInvite(invitee)
 }
 
-func (s *server) DeclineRoomInvite(invitee *client, room_name string) {
-	room_data, err := s.FetchRoom(invitee, room_name)
+func (s *server) DeclineRoomInvite(invitee *client, roomID, roomName string) {
+	room_data, err := s.resolveRoom(roomID, roomName)
 	if err != nil {
 		invitee.err(err)
 		return
 	}
 
-	room_data.AcceptRoomInvite(invitee)
+	room_data.DeclineRoomInvite(invitee)
 }
 
 func (s *server) ListPublicRooms(cl *client) {
-	var response []string
+	var rooms []map[string]string
 
-	for _, room := range s.rooms {
-		if !room.is_private {
-			response = append(response, room.name)
+	s.mu.RLock()
+	for _, room_data := range s.rooms {
+		if !room_data.is_private {
+			rooms = append(rooms, map[string]string{
+				"room_id": room_data.id,
+				"room":    room_data.name,
+			})
 		}
 	}
+	s.mu.RUnlock()
 
-	cl.send_message(
-		cl.prepare_response(map[string]any{}, DONE, fmt.Sprintf("Publicly available rooms are: %s", strings.Join(response, ", "))),
-	)
+	names := make([]string, 0, len(rooms))
+	for _, r := range rooms {
+		names = append(names, r["room"])
+	}
+
+	cl.send_user_message(map[string]any{"rooms": rooms}, DONE, fmt.Sprintf("Publicly available rooms are: %s", strings.Join(names, ", ")))
+}
+
+func (s *server) SendRoomMessage(cl *client, message string) {
+	message = strings.TrimSpace(message)
+	if message == "" {
+		cl.err(fmt.Errorf("message cannot be empty"))
+		return
+	}
+	if cl.room == nil {
+		cl.err(fmt.Errorf("join a room before sending a message"))
+		return
+	}
+	cl.room.Broadcast(cl, message)
+	cl.send_user_message(map[string]any{}, DONE, "Message sent.")
 }
 
 func (s *server) ListMyRooms(cl *client) {
-	var response []string
+	rooms := make([]map[string]string, 0, len(cl.my_rooms))
+	names := make([]string, 0, len(cl.my_rooms))
 
-	for _, room := range cl.my_rooms {
-		response = append(response, room.name)
+	for _, room_data := range cl.my_rooms {
+		rooms = append(rooms, map[string]string{
+			"room_id": room_data.id,
+			"room":    room_data.name,
+		})
+		names = append(names, room_data.name)
 	}
 
-	cl.send_message(
-		cl.prepare_response(map[string]any{}, DONE, fmt.Sprintf("You are a member of: %s", strings.Join(response, ", "))),
-	)
+	cl.send_user_message(map[string]any{"rooms": rooms}, DONE, fmt.Sprintf("You are a member of: %s", strings.Join(names, ", ")))
+}
+
+func (s *server) SendFriendRequest(cl *client, targetID, targetName string) {
+	target, err := s.resolveUser(targetID, targetName)
+	if err != nil {
+		cl.err(err)
+		return
+	}
+	cl.SendFriendRequest(target)
+}
+
+func (s *server) AcceptFriendRequest(cl *client, targetID, targetName string) {
+	target, err := s.resolveUser(targetID, targetName)
+	if err != nil {
+		cl.err(err)
+		return
+	}
+	cl.AcceptFriendRequest(target)
+}
+
+func (s *server) RejectFriendRequest(cl *client, targetID, targetName string) {
+	target, err := s.resolveUser(targetID, targetName)
+	if err != nil {
+		cl.err(err)
+		return
+	}
+	cl.RejectFriendRequest(target)
+}
+
+func (s *server) CancelFriendRequest(cl *client, targetID, targetName string) {
+	target, err := s.resolveUser(targetID, targetName)
+	if err != nil {
+		cl.err(err)
+		return
+	}
+	cl.DeleteFriendRequest(target)
+}
+
+func (s *server) SeePendingFriendRequests(cl *client) {
+	cl.mu.RLock()
+	ids := copyIDSet(cl.pending_friend_requests)
+	cl.mu.RUnlock()
+	cl.FetchPendingRequests(s.usersFromIDs(ids))
+}
+
+func (s *server) SeeSentFriendRequests(cl *client) {
+	cl.mu.RLock()
+	ids := copyIDSet(cl.sent_friend_request)
+	cl.mu.RUnlock()
+	cl.FetchSentRequests(s.usersFromIDs(ids))
+}
+
+func (s *server) GetFriends(cl *client) {
+	cl.mu.RLock()
+	ids := copyIDSet(cl.friends)
+	cl.mu.RUnlock()
+	cl.GetFriends(s.usersFromIDs(ids))
+}
+
+func (s *server) DeleteFriend(cl *client, targetID, targetName string) {
+	target, err := s.resolveUser(targetID, targetName)
+	if err != nil {
+		cl.err(err)
+		return
+	}
+	cl.DeleteFriend(target)
+}
+
+func (s *server) MessageFriend(cl *client, targetID, targetName, message string) {
+	target, err := s.resolveUser(targetID, targetName)
+	if err != nil {
+		cl.err(err)
+		return
+	}
+	cl.MessageFriend(target, message)
+}
+
+func (s *server) BlockUser(cl *client, targetID, targetName string) {
+	target, err := s.resolveUser(targetID, targetName)
+	if err != nil {
+		cl.err(err)
+		return
+	}
+	cl.BlockUser(target)
+}
+
+func (s *server) UnblockUser(cl *client, targetID, targetName string) {
+	target, err := s.resolveUser(targetID, targetName)
+	if err != nil {
+		cl.err(err)
+		return
+	}
+	cl.UnblockUser(target)
+}
+
+func (s *server) GetUserStatus(cl *client, targetID, targetName string) {
+	target, err := s.resolveUser(targetID, targetName)
+	if err != nil {
+		cl.err(err)
+		return
+	}
+	cl.GetUserStatus(target)
 }
