@@ -40,8 +40,7 @@ func Connect() {
 	}
 	defer rl.Close()
 
-	go write_to_server(conn, rl)
-	read_from_server(conn, rl)
+	runSession(conn, rl)
 
 	fmt.Println("\n> Disconnected.")
 }

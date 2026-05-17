@@ -8,6 +8,23 @@ import (
 	"github.com/chima/CLI_Chat/protocol"
 )
 
+func isTerminalAction(action protocol.ActionType) bool {
+	return action == protocol.DONE || action == protocol.ERR
+}
+
+func isDisplayOnlyAction(action protocol.ActionType) bool {
+	switch action {
+	case protocol.SEND_MSG, protocol.MESSAGE_FRIEND:
+		return true
+	default:
+		return false
+	}
+}
+
+func needsUserReply(action protocol.ActionType) bool {
+	return !isTerminalAction(action) && !isDisplayOnlyAction(action)
+}
+
 func buildMessage(line string) (*protocol.Message, error) {
 	line = strings.TrimSpace(line)
 	if line == "" {
@@ -72,4 +89,43 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 	default:
 		return nil, fmt.Errorf("unknown command: %s", cmd)
 	}
+}
+
+func buildPromptReply(action protocol.ActionType, serverPayload json.RawMessage, input string) (*protocol.Message, error) {
+	input = strings.TrimSpace(input)
+	if input == "" {
+		return nil, fmt.Errorf("empty input")
+	}
+
+	fields := map[string]string{}
+	if len(serverPayload) > 0 {
+		_ = json.Unmarshal(serverPayload, &fields)
+	}
+
+	switch action {
+	case protocol.LOGIN:
+		fields["username"] = input
+	case protocol.SET_ROOM_PASSWORD, protocol.GET_ROOM_PASSWORD:
+		fields["password"] = input
+	case protocol.SEND_MSG, protocol.MESSAGE_FRIEND:
+		fields["message"] = input
+	default:
+		if _, ok := fields["message"]; !ok {
+			fields["message"] = input
+		}
+	}
+
+	payload, err := json.Marshal(fields)
+	if err != nil {
+		return nil, err
+	}
+
+	return &protocol.Message{
+		Action:  action,
+		Payload: payload,
+	}, nil
+}
+
+func printTerminal(format string, args ...any) {
+	fmt.Printf(format, args...)
 }
