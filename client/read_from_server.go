@@ -1,25 +1,31 @@
 package client
 
 import (
-	"bufio"
+	"encoding/json"
 	"fmt"
 	"net"
+	"strings"
 
+	"github.com/chima/CLI_Chat/protocol"
 	"github.com/chzyer/readline"
 )
 
 func read_from_server(conn net.Conn, rl *readline.Instance) {
-	reader := bufio.NewReader(conn)
+	decoder := json.NewDecoder(conn)
 
 	for {
-		msg, err := reader.ReadString('\n')
-		if err != nil {
+		var response protocol.Message
+		if err := decoder.Decode(&response); err != nil {
 			conn.Close()
 			return
 		}
 
 		rl.Clean()
-		fmt.Fprintf(rl.Stdout(), "> %s", msg)
+		line := strings.TrimSpace(response.ResponseMsg)
+		if line == "" {
+			line = fmt.Sprintf("[action %d]", response.Action)
+		}
+		fmt.Fprintf(rl.Stdout(), "> %s\n", line)
 		rl.Refresh()
 	}
 }

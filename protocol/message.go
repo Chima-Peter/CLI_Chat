@@ -1,4 +1,4 @@
-package server
+package protocol
 
 import "encoding/json"
 
@@ -16,7 +16,6 @@ const (
 	DELETE_ROOM
 	EDIT_ROOM
 	GET_ROOM_PASSWORD
-	SEE_PENDING_MEMBERS
 	DELETE_MEMBER
 	SEND_INVITE_REQUEST
 	SEE_GROUP_INVITE_REQUEST
