@@ -1,129 +1,163 @@
 # CLI Chat
 
-A command-line chat application built with Go that enables real-time communication through a TCP-based server-client architecture.
+A command-line chat application in Go with a TCP server and an interactive JSON protocol client.
 
 ## Features
 
-- **Multi-client support**: Server handles multiple concurrent client connections
-- **Chat rooms**: Create and join chat rooms for organized conversations
-- **User nicknames**: Set custom nicknames for identification
-- **Room management**: List available rooms and view room members
-- **Real-time messaging**: Broadcast messages to all users in a room
-- **Command-based interface**: Simple commands for all chat operations
+- **Multi-client TCP server** — concurrent connections via goroutines
+- **JSON wire protocol** — newline-delimited `protocol.Message` objects
+- **Chat rooms** — create, join, leave, edit, passwords, invites, member management
+- **Friends & DMs** — friend requests, direct messages, block/unblock, online status
+- **Server-driven prompts** — password and other flows guided by server actions
+- **Rich client commands** — slash commands map to protocol actions (`/help` lists all)
 
 ## Project Structure
 
 ```
-cli_chat/
+CLI_Chat/
 ├── cmd/
 │   ├── client/          # Client entry point
 │   └── server/          # Server entry point
-├── client/              # Client implementation
-│   ├── client.go        # Main client connection logic
-│   ├── read_from_server.go  # Handle incoming messages
-│   └── write_to_server.go   # Handle outgoing messages
-├── server/              # Server implementation
-│   ├── server.go        # Main server logic
-│   ├── client.go        # Client connection handling
-│   ├── commands.go      # Command definitions
-│   └── rooms.go         # Room and broadcast logic
-└── go.mod               # Go module definition
+├── protocol/
+│   └── message.go       # Shared action types and Message struct
+├── client/
+│   ├── client.go        # Connect and bootstrap
+│   ├── session.go       # Readline session, server message handling
+│   ├── message.go       # Build commands and protocol messages
+│   └── help.go          # /help text and startup banner
+├── server/
+│   ├── server.go        # Room and friend handlers
+│   ├── handle_conn.go   # Connection loop and dispatch
+│   ├── client.go        # Per-client state and messaging
+│   ├── rooms.go         # Room logic
+│   └── utils.go         # Payload parsing and lookups
+└── go.mod
 ```
 
 ## Installation
 
 ### Prerequisites
+
 - Go 1.26.3 or higher
 
-### Build from Source
+### Build
 
 ```bash
-# Clone the repository
 git clone https://github.com/chima/CLI_Chat.git
 cd CLI_Chat
 
-# Build the server
-go build ./cmd/server
-
-# Build the client
-go build ./cmd/client
+go build -o server ./cmd/server
+go build -o client ./cmd/client
 ```
 
 ## Usage
 
-### Starting the Server
+### Start the server
 
 ```bash
 ./server
 ```
 
-The server will start listening on `localhost:8888`.
+Listens on `localhost:8888`.
 
-### Connecting a Client
-
-In a separate terminal:
+### Start the client
 
 ```bash
 ./client
 ```
 
-### Available Commands
-
-Once connected to the server, you can use the following commands:
-
-- **/nick `<nickname>`** - Set your nickname
-- **/join `<room>`** - Join or create a chat room
-- **/rooms** - List all available chat rooms
-- **/msg `<message>`** - Send a message to the current room
-- **/quit** - Disconnect from the server
-
-### Example Session
+Use `/help` in the client for the full command list. Quick start:
 
 ```
-./client
-> /nick alice
-> /join general
-> /msg Hello everyone!
-> /rooms
-> /quit
+/nick alice
+/create general
+/join general
+Hello everyone!
+/rooms
+/quit
 ```
+
+## Protocol
+
+Each message on the wire is one JSON object per line:
+
+```json
+{
+  "action": 12,
+  "response_msg": "Welcome to room.",
+  "payload": {"room": "general", "room_id": "..."}
+}
+```
+
+| Category | Actions |
+|----------|---------|
+| Auth | `SIGN_UP`, `LOGIN`, `LOGOUT` |
+| Rooms | `CREATE_ROOM`, `SET_ROOM_PASSWORD`, `JOIN_ROOM`, `LEAVE_ROOM`, `DELETE_ROOM`, `EDIT_ROOM`, `GET_ROOM_PASSWORD`, `DELETE_MEMBER`, invites, `GET_ROOM_MEMBERS`, `LIST_ROOMS`, `LIST_MY_ROOMS` |
+| Chat | `SEND_MSG`, `SEND_FILE` |
+| Friends | `SEND_FRIEND_REQUEST`, `ACCEPT_FRIEND_REQUEST`, `MESSAGE_FRIEND`, `GET_FRIENDS`, `SEE_FRIEND_REQUEST`, `DELETE_FRIEND`, `BLOCK_USER`, `UNBLOCK_USER`, `GET_USER_STATUS` |
+| Response | `ERR`, `DONE` |
+
+### Server-driven prompts
+
+When the server responds with an action other than `DONE`, `ERR`, `SEND_MSG`, or `MESSAGE_FRIEND`, the client treats that action as the next reply type (e.g. `GET_ROOM_PASSWORD` after joining a private room). Your next line is sent with the same action and merged payload.
+
+### Client commands
+
+All slash commands are handled locally in `buildCommandMessage` and sent as protocol messages. `/help` is **client-only** and does not hit the server.
+
+| Command | Protocol |
+|---------|----------|
+| `/help` | (client only) |
+| `/nick <name>` | `LOGIN` |
+| `/signup <name>` | `SIGN_UP` |
+| `/quit` | `LOGOUT` |
+| `/create <room>` | `CREATE_ROOM` |
+| `/join <room>` | `JOIN_ROOM` |
+| `/leave [room]` | `LEAVE_ROOM` |
+| `/deleteroom <room>` | `DELETE_ROOM` |
+| `/editroom <room> <new> [max]` | `EDIT_ROOM` |
+| `/members <room>` | `GET_ROOM_MEMBERS` |
+| `/kick <room> <user>` | `DELETE_MEMBER` |
+| `/invite <room> <user>` | `SEND_INVITE_REQUEST` |
+| `/invites [room]` | `SEE_GROUP_INVITE_REQUEST` |
+| `/acceptinvite <room>` | `ACCEPT_GROUP_INVITE_REQUEST` |
+| `/declineinvite <room>` | `DELETE_GROUP_INVITE_REQUEST` |
+| `/rooms` | `LIST_ROOMS` |
+| `/myrooms` | `LIST_MY_ROOMS` |
+| `/msg <text>` or plain text | `SEND_MSG` |
+| `/sendfile <path>` | `SEND_FILE` |
+| `/friendadd <user>` | `SEND_FRIEND_REQUEST` |
+| `/friendaccept <user>` | `ACCEPT_FRIEND_REQUEST` |
+| `/friendrequests` | `SEE_FRIEND_REQUEST` |
+| `/friends` | `GET_FRIENDS` |
+| `/friendremove <user>` | `DELETE_FRIEND` |
+| `/dm <user> <msg>` | `MESSAGE_FRIEND` |
+| `/block <user>` | `BLOCK_USER` |
+| `/unblock <user>` | `UNBLOCK_USER` |
+| `/status <user>` | `GET_USER_STATUS` |
+
+Payload fields commonly use `room`, `room_id`, `nick` / `username`, `user_id`, `message`, `password`, `new_room`, `max_size`.
 
 ## Architecture
 
 ### Server
-- Listens on port 8888 for TCP connections
-- Manages multiple client connections concurrently using goroutines
-- Maintains a map of chat rooms
-- Processes commands asynchronously through a channel-based command queue
-- Broadcasts messages to all members in a room (excluding the sender)
+
+- Accepts TCP connections; one goroutine per `HandleConn`
+- Dispatches incoming `action` values in `dispatchMessage`
+- Replies with `send_user_message` (JSON encode to client)
+- Rooms keyed by ID; users and friends keyed by user ID
 
 ### Client
-- Connects to the server on startup
-- Handles user input in a separate goroutine
-- Receives and displays server messages in a separate goroutine
-- Communicates with the server using TCP
 
-## Design Patterns
+- `readFromServer` decodes JSON in the background
+- `handleServerMessage` prints responses and tracks server prompts
+- `inputLoop` uses readline for input; clears partial input when a server prompt arrives
+- Plain text (no `/`) sends `SEND_MSG` to the current room
 
-- **Goroutines**: Concurrent connection handling for scalability
-- **Channels**: Command queue for asynchronous message processing
-- **Room Broadcasting**: Selective message distribution to room members
-- **Anonymous default**: Users start as "anonymous" until they set a nickname
+## Not yet implemented
 
-## Future Improvements
-
-- Private direct messages between users
-- Room password protection
-- Message encryption for secure communication
-- Message history stored locally for true anonymity
-- Room teardown when empty
-- File sharing capabilities
-- User authentication
-- Configurable server port
-- User list in rooms
-- Admin commands
-- Signal for typing indicators
-- Improved error handling and user feedback
+- `SIGN_UP`, `SEND_FILE` (server returns not implemented)
+- Persistence, nickname uniqueness enforcement, full block enforcement on all paths
 
 ## License
 
@@ -135,4 +169,4 @@ Chima
 
 ## Contributing
 
-Contributions are welcome! Feel free to open issues or submit pull requests.
+Issues and pull requests are welcome.

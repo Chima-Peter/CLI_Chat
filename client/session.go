@@ -2,6 +2,7 @@ package client
 
 import (
 	"encoding/json"
+	"errors"
 	"io"
 	"net"
 	"strings"
@@ -133,6 +134,9 @@ func (s *session) inputLoop() {
 		}
 
 		msg, err := buildMessage(line)
+		if errors.Is(err, errClientOnly) {
+			continue
+		}
 		if err != nil {
 			printTerminal("%v\n", err)
 			continue

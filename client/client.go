@@ -7,19 +7,6 @@ import (
 	"github.com/chzyer/readline"
 )
 
-func printBootstrap() {
-	fmt.Println("\n╔════════════════════════════════════════╗")
-	fmt.Println("║         CLI Chat Client                ║")
-	fmt.Println("╠════════════════════════════════════════╣")
-	fmt.Println("║  Commands:                             ║")
-	fmt.Println("║    /nick <name>  - Set your nickname   ║")
-	fmt.Println("║    /join <room>  - Join a chat room    ║")
-	fmt.Println("║    /rooms        - List all rooms      ║")
-	fmt.Println("║    /msg <text>   - Send a message      ║")
-	fmt.Println("║    /quit         - Disconnect          ║")
-	fmt.Println("╚════════════════════════════════════════╝")
-}
-
 func Connect() {
 	printBootstrap()
 
