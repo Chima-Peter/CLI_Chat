@@ -28,11 +28,7 @@ func printBootstrap() {
 func main() {
 	printBootstrap()
 
-	// initialize server
-	server := server.InitServer()
-
-	// listen to channel in background and process commands
-	go server.Run()
+	srv := server.InitServer()
 
 	// start listening on port 8888
 	listener, err := net.Listen("tcp", ":8888")
@@ -54,6 +50,6 @@ func main() {
 			continue
 		}
 
-		go server.NewClient(conn)
+		go srv.HandleConn(conn)
 	}
 }
