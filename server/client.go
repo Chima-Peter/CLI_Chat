@@ -24,7 +24,7 @@ type client struct {
 }
 
 func (cl *client) err(err error) {
-	cl.send_user_message(map[string]any{}, DONE, "ERR: "+err.Error())
+	cl.send_user_message(map[string]any{}, ERR, err.Error())
 }
 
 func (cl *client) send_user_message(payload_data map[string]any, next_action ActionType, response_msg string) {

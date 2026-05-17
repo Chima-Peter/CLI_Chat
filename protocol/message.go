@@ -39,6 +39,7 @@ const (
 	UNBLOCK_USER
 	GET_USER_STATUS
 
+	ERR
 	DONE
 )
 

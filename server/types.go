@@ -10,19 +10,19 @@ const (
 	LOGIN   = protocol.LOGIN
 	LOGOUT  = protocol.LOGOUT
 
-	CREATE_ROOM                   = protocol.CREATE_ROOM
-	SET_ROOM_PASSWORD             = protocol.SET_ROOM_PASSWORD
-	JOIN_ROOM                     = protocol.JOIN_ROOM
-	LEAVE_ROOM                    = protocol.LEAVE_ROOM
-	DELETE_ROOM                   = protocol.DELETE_ROOM
-	EDIT_ROOM                     = protocol.EDIT_ROOM
-	GET_ROOM_PASSWORD             = protocol.GET_ROOM_PASSWORD
-	DELETE_MEMBER                 = protocol.DELETE_MEMBER
-	SEND_INVITE_REQUEST           = protocol.SEND_INVITE_REQUEST
-	SEE_GROUP_INVITE_REQUEST      = protocol.SEE_GROUP_INVITE_REQUEST
-	ACCEPT_GROUP_INVITE_REQUEST   = protocol.ACCEPT_GROUP_INVITE_REQUEST
-	DELETE_GROUP_INVITE_REQUEST   = protocol.DELETE_GROUP_INVITE_REQUEST
-	GET_ROOM_MEMBERS              = protocol.GET_ROOM_MEMBERS
+	CREATE_ROOM                 = protocol.CREATE_ROOM
+	SET_ROOM_PASSWORD           = protocol.SET_ROOM_PASSWORD
+	JOIN_ROOM                   = protocol.JOIN_ROOM
+	LEAVE_ROOM                  = protocol.LEAVE_ROOM
+	DELETE_ROOM                 = protocol.DELETE_ROOM
+	EDIT_ROOM                   = protocol.EDIT_ROOM
+	GET_ROOM_PASSWORD           = protocol.GET_ROOM_PASSWORD
+	DELETE_MEMBER               = protocol.DELETE_MEMBER
+	SEND_INVITE_REQUEST         = protocol.SEND_INVITE_REQUEST
+	SEE_GROUP_INVITE_REQUEST    = protocol.SEE_GROUP_INVITE_REQUEST
+	ACCEPT_GROUP_INVITE_REQUEST = protocol.ACCEPT_GROUP_INVITE_REQUEST
+	DELETE_GROUP_INVITE_REQUEST = protocol.DELETE_GROUP_INVITE_REQUEST
+	GET_ROOM_MEMBERS            = protocol.GET_ROOM_MEMBERS
 
 	LIST_ROOMS    = protocol.LIST_ROOMS
 	LIST_MY_ROOMS = protocol.LIST_MY_ROOMS
@@ -40,9 +40,9 @@ const (
 	UNBLOCK_USER          = protocol.UNBLOCK_USER
 	GET_USER_STATUS       = protocol.GET_USER_STATUS
 
+	ERR  = protocol.ERR
 	DONE = protocol.DONE
 )
-
 
 // Wiring
 
@@ -51,8 +51,7 @@ const (
 // Client disconnect — remove client from s.clients, leave rooms, close conn on /quit
 // Protocol
 
-// Mixed responses — err / msg use plain ERR: / text lines; send_user_message sends JSON. The client only reads plain lines in read_from_server.go
-// readInput vs JSON — pick one protocol for the wire format
+// Wire format — newline-delimited JSON protocol.Message
 // route_types.go actions with no implementation
 
 // Area	Missing
