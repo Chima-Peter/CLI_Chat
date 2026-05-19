@@ -1,6 +1,9 @@
 package client
 
-import "errors"
+import (
+	"errors"
+	"fmt"
+)
 
 var errClientOnly = errors.New("client-only command")
 
@@ -43,23 +46,23 @@ var commandHelpList = []commandHelp{
 }
 
 func printClientHelp() {
-	printTerminal("\nCommands (client → protocol action):\n")
+	fmt.Printf("\nCommands (client → protocol action):\n")
 	for _, c := range commandHelpList {
-		printTerminal("  %-28s %-26s %s\n", c.usage, c.protocol, c.description)
+		fmt.Printf("  %-28s %-26s %s\n", c.usage, c.protocol, c.description)
 	}
-	printTerminal("\nServer prompts (no slash command):\n")
-	printTerminal("  %-28s %-26s %s\n", "(prompt)", "SET_ROOM_PASSWORD", "Set password when creating a room")
-	printTerminal("  %-28s %-26s %s\n", "(prompt)", "GET_ROOM_PASSWORD", "Enter password to join a private room")
-	printTerminal("\n")
+	fmt.Printf("\nServer prompts (no slash command):\n")
+	fmt.Printf("  %-28s %-26s %s\n", "(prompt)", "SET_ROOM_PASSWORD", "Set password when creating a room")
+	fmt.Printf("  %-28s %-26s %s\n", "(prompt)", "GET_ROOM_PASSWORD", "Enter password to join a private room")
+	fmt.Printf("\n")
 }
 
 func printBootstrap() {
-	printTerminal("\n╔════════════════════════════════════════╗\n")
-	printTerminal("║         CLI Chat Client                ║\n")
-	printTerminal("╠════════════════════════════════════════╣\n")
-	printTerminal("║  Type /help for all commands           ║\n")
-	printTerminal("║  /nick <name>  — login                 ║\n")
-	printTerminal("║  /join <room>  — join a room           ║\n")
-	printTerminal("║  plain text    — chat in current room  ║\n")
-	printTerminal("╚════════════════════════════════════════╝\n")
+	fmt.Printf("\n╔════════════════════════════════════════╗\n")
+	fmt.Printf("║         CLI Chat Client                ║\n")
+	fmt.Printf("╠════════════════════════════════════════╣\n")
+	fmt.Printf("║  Type /help for all commands           ║\n")
+	fmt.Printf("║  /nick <name>  — login                 ║\n")
+	fmt.Printf("║  /join <room>  — join a room           ║\n")
+	fmt.Printf("║  plain text    — chat in current room  ║\n")
+	fmt.Printf("╚════════════════════════════════════════╝\n")
 }

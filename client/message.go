@@ -360,7 +360,3 @@ func buildPromptReply(action protocol.ActionType, serverPayload json.RawMessage,
 		Payload: payload,
 	}, nil
 }
-
-func printTerminal(format string, args ...any) {
-	fmt.Printf(format, args...)
-}

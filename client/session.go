@@ -3,6 +3,7 @@ package client
 import (
 	"encoding/json"
 	"errors"
+	"fmt"
 	"io"
 	"net"
 	"strings"
@@ -12,13 +13,16 @@ import (
 	"github.com/chzyer/readline"
 )
 
+const defaultPrompt = "> "
+
 type session struct {
 	conn     net.Conn
 	rl       *readline.Instance
 	incoming chan protocol.Message
 
-	promptMu sync.Mutex
-	prompt   *protocol.Message
+	displayMu sync.Mutex
+	promptMu  sync.Mutex
+	prompt    *protocol.Message
 }
 
 func runSession(conn net.Conn, rl *readline.Instance) {
@@ -41,7 +45,7 @@ func (s *session) readFromServer() {
 		var msg protocol.Message
 		if err := decoder.Decode(&msg); err != nil {
 			if err != io.EOF {
-				printTerminal("\nConnection closed.\n")
+				s.writeDisplay("Connection closed")
 			}
 			return
 		}
@@ -56,40 +60,74 @@ func (s *session) processServerMessages() {
 }
 
 func (s *session) handleServerMessage(msg protocol.Message) {
-	if needsUserReply(msg.Action) {
-		s.clearCurrentInput()
-	}
-
-	if msg.ResponseMsg != "" && (isTerminalAction(msg.Action) || isDisplayOnlyAction(msg.Action) || needsUserReply(msg.Action)) {
-		printTerminal("%s\n", msg.ResponseMsg)
-	}
+	s.displayMu.Lock()
+	defer s.displayMu.Unlock()
 
 	switch {
-	case msg.Action == protocol.LOGOUT:
-		s.clearPrompt()
-	case isTerminalAction(msg.Action):
-		s.clearPrompt()
-	case isDisplayOnlyAction(msg.Action):
-		// response already printed
 	case needsUserReply(msg.Action):
-		s.setPrompt(&msg)
+		s.clearCurrentInputLocked()
+		s.setPromptLocked(&msg)
+	case isTerminalAction(msg.Action):
+		if msg.ResponseMsg != "" {
+			s.writeDisplayLocked(msg.ResponseMsg)
+		}
+		s.clearPromptLocked()
+	case isDisplayOnlyAction(msg.Action):
+		if msg.ResponseMsg != "" {
+			s.writeDisplayLocked(msg.ResponseMsg)
+		}
+		s.clearPromptLocked()
 	default:
 		if msg.ResponseMsg == "" {
-			printTerminal("[server action %d]\n", msg.Action)
+			s.writeDisplayLocked(fmt.Sprintf("[server action %d]", msg.Action))
 		}
+		s.clearPromptLocked()
 	}
+
+	s.rl.Refresh()
 }
 
-func (s *session) setPrompt(msg *protocol.Message) {
+func (s *session) writeDisplay(msg string) {
+	s.displayMu.Lock()
+	defer s.displayMu.Unlock()
+	s.writeDisplayLocked(msg)
+	s.rl.Refresh()
+}
+
+func (s *session) writeDisplayLocked(msg string) {
+	if msg == "" {
+		return
+	}
+	if !strings.HasSuffix(msg, "\n") {
+		msg += "\n"
+	}
+	_, _ = s.rl.Write([]byte(msg))
+}
+
+func (s *session) clearSubmittedInput() {
+	s.displayMu.Lock()
+	defer s.displayMu.Unlock()
+	fmt.Fprint(s.rl.Stdout(), "\033[A\033[2K")
+	s.rl.Refresh()
+}
+
+func (s *session) setPromptLocked(msg *protocol.Message) {
 	s.promptMu.Lock()
 	s.prompt = msg
 	s.promptMu.Unlock()
+
+	prompt := defaultPrompt
+	if msg != nil && msg.ResponseMsg != "" {
+		prompt += msg.ResponseMsg
+	}
+	s.rl.SetPrompt(prompt)
 }
 
-func (s *session) clearPrompt() {
+func (s *session) clearPromptLocked() {
 	s.promptMu.Lock()
 	s.prompt = nil
 	s.promptMu.Unlock()
+	s.rl.SetPrompt(defaultPrompt)
 }
 
 func (s *session) pendingPrompt() *protocol.Message {
@@ -98,17 +136,12 @@ func (s *session) pendingPrompt() *protocol.Message {
 	return s.prompt
 }
 
-// clearCurrentInput discards whatever the user is typing (readline buffer).
-func (s *session) clearCurrentInput() {
+func (s *session) clearCurrentInputLocked() {
 	_, _ = s.rl.WriteStdin([]byte{
 		byte(readline.CharLineEnd),
 		byte(readline.CharCtrlU),
 		byte(readline.CharKill),
 	})
-}
-
-func (s *session) clearSubmittedInput() {
-	printTerminal("\033[1A\033[2K")
 	s.rl.Refresh()
 }
 
@@ -116,19 +149,12 @@ func (s *session) inputLoop() {
 	for {
 		line, err := s.rl.Readline()
 		if err != nil {
-			return
-		}
-
-		line = strings.TrimSpace(line)
-		if line == "" {
 			continue
 		}
 
 		if prompt := s.pendingPrompt(); prompt != nil {
 			if err := s.sendPromptReply(prompt, line); err != nil {
-				printTerminal("%v\n", err)
-			} else {
-				s.clearSubmittedInput()
+				s.writeDisplay(err.Error())
 			}
 			continue
 		}
@@ -138,18 +164,23 @@ func (s *session) inputLoop() {
 			continue
 		}
 		if err != nil {
-			printTerminal("%v\n", err)
+			s.writeDisplay(err.Error())
 			continue
 		}
 
+		if msg.Action == protocol.LOGOUT {
+			if err := writeMessage(s.conn, msg); err != nil {
+				s.writeDisplay(err.Error())
+				return
+			}
+			return
+		}
+
 		if err := writeMessage(s.conn, msg); err != nil {
-			printTerminal("Failed to send: %v\n", err)
+			s.writeDisplay(err.Error())
 			return
 		}
 		s.clearSubmittedInput()
-		if msg.Action == protocol.LOGOUT {
-			return
-		}
 	}
 }
 
@@ -158,7 +189,12 @@ func (s *session) sendPromptReply(prompt *protocol.Message, input string) error 
 	if err != nil {
 		return err
 	}
-	s.clearPrompt()
+
+	s.displayMu.Lock()
+	s.clearPromptLocked()
+	s.rl.Refresh()
+	s.displayMu.Unlock()
+
 	return writeMessage(s.conn, msg)
 }
 
