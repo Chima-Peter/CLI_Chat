@@ -29,17 +29,31 @@ func (r *room) Broadcast(sender *client, msg string) {
 	defer r.mu.RUnlock()
 	for id, member := range r.members {
 		if id != sender.id {
-			member.send_user_message(
-				map[string]any{
-					"from_user_id": sender.id,
-					"from":         sender.nick,
-					"message":      msg,
-					"room_id":      r.id,
-					"room":         r.name,
-				},
-				SEND_MSG,
-				fmt.Sprintf("%s: %s", sender.nick, msg),
-			)
+			if sender.room.id == member.room.id {
+				member.send_user_message(
+					map[string]any{
+						"from_user_id": sender.id,
+						"from":         sender.nick,
+						"message":      msg,
+						"room_id":      r.id,
+						"room":         r.name,
+					},
+					SEND_MSG,
+					fmt.Sprintf("%s: %s", sender.nick, msg),
+				)
+			} else {
+				member.send_user_message(
+					map[string]any{
+						"from_user_id": sender.id,
+						"from":         sender.nick,
+						"message":      msg,
+						"room_id":      r.id,
+						"room":         r.name,
+					},
+					SEND_MSG,
+					fmt.Sprintf("[%s] %s: %s", sender.room.name, sender.nick, msg),
+				)
+			}
 		}
 	}
 }
@@ -48,7 +62,7 @@ func (r *room) SetRoomPassword(cl *client, password string) {
 	trimmed_password := strings.TrimSpace(password)
 
 	if trimmed_password == "" {
-		cl.send_user_message(map[string]any{}, DONE, "Public room created.")
+		cl.send_user_message(map[string]any{}, DONE, fmt.Sprintf("Public room created: %s", r.name))
 		return
 	}
 
@@ -63,9 +77,17 @@ func (r *room) JoinRoom(cl *client) {
 	_, exists := r.members[cl.id]
 	is_private := r.is_private
 	r.mu.RUnlock()
-	if exists {
-		cl.err(fmt.Errorf("User already part of this room"))
-		return
+
+	if cl.room != nil {
+		if cl.room.id == r.id {
+			cl.err(fmt.Errorf("You are currently in this room: %s", r.name))
+			return
+		}
+
+		if exists && cl.room.id != r.id {
+			cl.send_user_message(map[string]any{}, DONE, fmt.Sprintf("Welcome to %s", cl.room.name))
+			return
+		}
 	}
 
 	if r.isFull() {
@@ -88,7 +110,7 @@ func (r *room) JoinRoom(cl *client) {
 	r.members[cl.id] = cl
 	r.mu.Unlock()
 
-	cl.send_user_message(map[string]any{"room_id": r.id, "room": r.name}, DONE, "Welcome to room.")
+	cl.send_user_message(map[string]any{"room_id": r.id, "room": r.name}, DONE, fmt.Sprintf("Welcome to room: %s", r.name))
 	cl.room.Broadcast(cl, fmt.Sprintf("%s joined the room", cl.nick))
 }
 
@@ -97,9 +119,17 @@ func (r *room) JoinRoomWithPassword(cl *client, password string) {
 	_, exists := r.members[cl.id]
 	is_password_match := r.password == password
 	r.mu.RUnlock()
-	if exists {
-		cl.err(fmt.Errorf("User already part of this room"))
-		return
+
+	if cl.room != nil {
+		if cl.room.id == r.id {
+			cl.err(fmt.Errorf("You are currently in this room: %s", r.name))
+			return
+		}
+
+		if exists && cl.room.id != r.id {
+			cl.send_user_message(map[string]any{}, DONE, fmt.Sprintf("Welcome to %s", cl.room.name))
+			return
+		}
 	}
 
 	if !is_password_match {
@@ -119,7 +149,7 @@ func (r *room) JoinRoomWithPassword(cl *client, password string) {
 	r.members[cl.id] = cl
 	r.mu.Unlock()
 
-	cl.send_user_message(map[string]any{"room_id": r.id, "room": r.name}, DONE, "Welcome to room.")
+	cl.send_user_message(map[string]any{"room_id": r.id, "room": r.name}, DONE, fmt.Sprintf("Welcome to %s", r.name))
 	cl.room.Broadcast(cl, fmt.Sprintf("%s joined the room", cl.nick))
 }
 

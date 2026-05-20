@@ -52,6 +52,7 @@ func (s *server) CreateRoom(cl *client, room_name string) {
 	s.mu.Unlock()
 
 	cl.my_rooms[new_room.id] = new_room
+	cl.room = new_room
 
 	payload := map[string]any{
 		"room_id": new_room.id,
@@ -286,7 +287,7 @@ func (s *server) SendRoomMessage(cl *client, message string) {
 		return
 	}
 	cl.room.Broadcast(cl, message)
-	cl.send_user_message(map[string]any{}, DONE, "Message sent.")
+	cl.send_user_message(map[string]any{}, DONE, fmt.Sprintf("You: %s", message))
 }
 
 func (s *server) ListMyRooms(cl *client) {
