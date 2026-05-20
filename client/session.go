@@ -36,7 +36,11 @@ func runSession(conn net.Conn, rl *readline.Instance) {
 
 	go s.readFromServer(done)
 	go s.processServerMessages()
-	s.inputLoop(done)
+	go func() {
+		<-done
+		s.rl.Close()
+	}()
+	s.inputLoop()
 }
 
 func (s *session) readFromServer(done chan struct{}) {
@@ -75,7 +79,6 @@ func (s *session) handleServerMessage(msg protocol.Message) {
 		if msg.ResponseMsg != "" {
 			s.writeDisplayLocked(msg.ResponseMsg)
 		}
-		s.clearPromptLocked()
 	case isDisplayOnlyAction(msg.Action):
 		if msg.ResponseMsg != "" {
 			s.writeDisplayLocked(msg.ResponseMsg)
@@ -103,6 +106,8 @@ func (s *session) writeDisplayLocked(msg string) {
 	if !strings.HasSuffix(msg, "\n") {
 		msg += "\n"
 	}
+
+	s.rl.SetPrompt("")
 	_, _ = s.rl.Write([]byte("> " + msg))
 }
 
@@ -110,6 +115,7 @@ func (s *session) clearSubmittedInput() {
 	s.displayMu.Lock()
 	defer s.displayMu.Unlock()
 	fmt.Fprint(s.rl.Stdout(), "\033[A\033[2K")
+	s.rl.SetPrompt(defaultPrompt)
 	s.rl.Refresh()
 }
 
@@ -147,51 +153,46 @@ func (s *session) clearCurrentInputLocked() {
 	s.rl.Refresh()
 }
 
-func (s *session) inputLoop(done chan struct{}) {
+func (s *session) inputLoop() {
 	for {
-		select {
-		case <-done:
+		line, err := s.rl.Readline()
+		if err != nil {
+			msg, _ := buildCommandMessage("/quit")
+			if err := writeMessage(s.conn, msg); err != nil {
+				return
+			}
 			return
-		default:
-			line, err := s.rl.Readline()
-			if err != nil {
-				msg, _ := buildCommandMessage("/quit")
-				if err := writeMessage(s.conn, msg); err != nil {
-					s.writeDisplay(err.Error())
-				}
-				return
-			}
+		}
 
-			if prompt := s.pendingPrompt(); prompt != nil {
-				if err := s.sendPromptReply(prompt, line); err != nil {
-					s.writeDisplay(err.Error())
-				}
-				continue
-			}
-
-			msg, err := buildMessage(line)
-			if errors.Is(err, errClientOnly) {
-				continue
-			}
-			if err != nil {
+		if prompt := s.pendingPrompt(); prompt != nil {
+			if err := s.sendPromptReply(prompt, line); err != nil {
 				s.writeDisplay(err.Error())
-				continue
 			}
+			continue
+		}
 
-			if msg.Action == protocol.LOGOUT {
-				if err := writeMessage(s.conn, msg); err != nil {
-					s.writeDisplay(err.Error())
-					return
-				}
-				return
-			}
+		msg, err := buildMessage(line)
+		if errors.Is(err, errClientOnly) {
+			continue
+		}
+		if err != nil {
+			s.writeDisplay(err.Error())
+			continue
+		}
 
+		if msg.Action == protocol.LOGOUT {
 			if err := writeMessage(s.conn, msg); err != nil {
 				s.writeDisplay(err.Error())
 				return
 			}
-			s.clearSubmittedInput()
+			return
 		}
+
+		if err := writeMessage(s.conn, msg); err != nil {
+			s.writeDisplay(err.Error())
+			return
+		}
+		s.clearSubmittedInput()
 	}
 }
 
