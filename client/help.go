@@ -38,8 +38,8 @@ var commandHelpList = []commandHelp{
 	{group: "Invite", usage: "/invite/decline <room>", protocol: "DELETE_GROUP_INVITE_REQUEST", description: "Decline a room invite"},
 
 	{group: "Chat", usage: "/switch <room|friend> <name>", protocol: "SWITCH_CONTEXT", description: "Set active chat context"},
-	{group: "Chat", usage: "<text>", protocol: "SEND_CONTEXT_MSG", description: "Send to active context (after /switch)"},
-	{group: "Chat", usage: "/chat/room <room> <message>", protocol: "SEND_MSG", description: "Send to a room by name"},
+	{group: "Chat", usage: "<text>", protocol: "SEND_MSG", description: "Send to active context (after /switch)"},
+	{group: "Chat", usage: "/chat/room <room> <message>", protocol: "MESSAGE_ROOM", description: "Send to a room by name"},
 	{group: "Chat", usage: "/chat/dm <friend> <message>", protocol: "MESSAGE_FRIEND", description: "Direct message a friend"},
 	{group: "Chat", usage: "/chat/file <path>", protocol: "SEND_FILE", description: "Send a file (server stub)"},
 

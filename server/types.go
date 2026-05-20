@@ -24,14 +24,14 @@ const (
 	DELETE_GROUP_INVITE_REQUEST = protocol.DELETE_GROUP_INVITE_REQUEST
 	GET_ROOM_MEMBERS            = protocol.GET_ROOM_MEMBERS
 
-	LIST_ROOMS          = protocol.LIST_ROOMS
-	LIST_MY_ROOMS       = protocol.LIST_MY_ROOMS
+	LIST_ROOMS           = protocol.LIST_ROOMS
+	LIST_MY_ROOMS        = protocol.LIST_MY_ROOMS
 	LIST_MY_ROOM_INVITES = protocol.LIST_MY_ROOM_INVITES
 
-	SWITCH_CONTEXT   = protocol.SWITCH_CONTEXT
-	SEND_MSG         = protocol.SEND_MSG
-	SEND_CONTEXT_MSG = protocol.SEND_CONTEXT_MSG
-	SEND_FILE = protocol.SEND_FILE
+	SWITCH_CONTEXT = protocol.SWITCH_CONTEXT
+	MESSAGE_ROOM   = protocol.MESSAGE_ROOM
+	SEND_MSG       = protocol.SEND_MSG
+	SEND_FILE      = protocol.SEND_FILE
 
 	SEND_FRIEND_REQUEST   = protocol.SEND_FRIEND_REQUEST
 	ACCEPT_FRIEND_REQUEST = protocol.ACCEPT_FRIEND_REQUEST
@@ -47,28 +47,3 @@ const (
 	DONE = protocol.DONE
 )
 
-// Wiring
-
-// Run() command dispatch — implement CMD_NICK, CMD_JOIN, CMD_ROOMS, CMD_MSG, CMD_QUIT
-// JSON action router — replace or complement readInput with a HandleEndpoints-style loop for ActionType values in route_types.go
-// Client disconnect — remove client from s.clients, leave rooms, close conn on /quit
-// Protocol
-
-// Wire format — newline-delimited JSON protocol.Message
-// route_types.go actions with no implementation
-
-// Area	Missing
-// Auth	SIGN_UP, LOGIN, LOGOUT
-// Rooms	EDIT_ROOM, SEE_PENDING_MEMBERS
-// Friends	MESSAGE_FRIEND, GET_FRIENDS, DELETE_FRIEND (no methods yet)
-// Messaging	SEND_MSG, SEND_FILE (no server handlers)
-// All friend/block actions	Methods exist on client / server but nothing calls them
-// Logic / behavior
-
-// /join vs CreateRoom — README says join-or-create; JoinRoom only works if the room already exists
-// Block list unused — BlockUser does not affect messaging or friend requests yet
-// my_rooms not updated — JoinRoom sets cl.room but does not add to my_rooms (used by ListMyRooms / DeleteRoom)
-// Missing return after errors — several server methods call cl.err but continue (e.g. SetRoomPassword, JoinRoom, DeleteRoomMember)
-// Nickname uniqueness — CMD_NICK handler not implemented; duplicate nicks possible
-// No persistence — users, friends, rooms are in-memory only
-// Kept on purpose

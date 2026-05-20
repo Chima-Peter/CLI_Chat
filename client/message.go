@@ -16,7 +16,7 @@ func isTerminalAction(action protocol.ActionType) bool {
 
 func isDisplayOnlyAction(action protocol.ActionType) bool {
 	switch action {
-	case protocol.SEND_MSG, protocol.SEND_CONTEXT_MSG, protocol.MESSAGE_FRIEND:
+	case protocol.MESSAGE_ROOM, protocol.SEND_MSG, protocol.MESSAGE_FRIEND:
 		return true
 	default:
 		return false
@@ -43,7 +43,7 @@ func buildMessage(line string) (*protocol.Message, error) {
 
 	payload, _ := json.Marshal(map[string]string{"message": line})
 	return &protocol.Message{
-		Action:  protocol.SEND_CONTEXT_MSG,
+		Action:  protocol.SEND_MSG,
 		Payload: payload,
 	}, nil
 }
@@ -261,7 +261,7 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 			return nil, fmt.Errorf("usage: /chat/room <room> <message>")
 		}
 		return &protocol.Message{
-			Action: protocol.SEND_MSG,
+			Action: protocol.MESSAGE_ROOM,
 			Payload: marshalStringPayload(map[string]string{
 				"room":    fields[0],
 				"message": strings.Join(fields[1:], " "),
@@ -373,7 +373,7 @@ func buildPromptReply(action protocol.ActionType, serverPayload json.RawMessage,
 		fields["username"] = input
 	case protocol.SET_ROOM_PASSWORD, protocol.GET_ROOM_PASSWORD:
 		fields["password"] = input
-	case protocol.SEND_MSG, protocol.MESSAGE_FRIEND:
+	case protocol.MESSAGE_ROOM, protocol.SEND_MSG, protocol.MESSAGE_FRIEND:
 		fields["message"] = input
 	default:
 		if _, ok := fields["message"]; !ok {

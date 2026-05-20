@@ -39,7 +39,7 @@ func (r *room) Broadcast(sender *client, msg string) {
 						"room_id":      r.id,
 						"room":         r.name,
 					},
-					SEND_MSG,
+					MESSAGE_ROOM,
 					fmt.Sprintf("%s: %s", sender.nick, msg),
 				)
 			} else {
@@ -51,7 +51,7 @@ func (r *room) Broadcast(sender *client, msg string) {
 						"room_id":      r.id,
 						"room":         r.name,
 					},
-					SEND_MSG,
+					MESSAGE_ROOM,
 					fmt.Sprintf("[%s] %s: %s", sender.room.name, sender.nick, msg),
 				)
 			}

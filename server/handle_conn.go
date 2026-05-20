@@ -108,9 +108,9 @@ func (s *server) dispatchMessage(cl *client, req *Message) (closeConn bool) {
 			s.SwitchContext(cl, p.contextType(), p.roomName())
 		}
 
-	case SEND_MSG:
+	case MESSAGE_ROOM:
 		s.SendRoomMessage(cl, p.roomName(), p.Message)
-	case SEND_CONTEXT_MSG:
+	case SEND_MSG:
 		s.SendContextMessage(cl, p.Message)
 	case SEND_FILE:
 		cl.err(fmt.Errorf("send file is not implemented yet"))
