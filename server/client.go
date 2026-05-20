@@ -18,6 +18,7 @@ type client struct {
 	id                      string
 	conn                    net.Conn
 	nick                    string
+	authenticated           bool
 	room                    *room
 	current_context         string
 	current_friend          *client

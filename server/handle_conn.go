@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net"
+	"strings"
 
 	"github.com/google/uuid"
 )
@@ -31,6 +32,7 @@ func (s *server) HandleConn(conn net.Conn) {
 	defer s.LogUserOut(cl)
 
 	cl.setOnline(true)
+	cl.promptLogin("Enter your nickname: ")
 
 	decoder := json.NewDecoder(conn)
 	for {
@@ -46,20 +48,24 @@ func (s *server) HandleConn(conn net.Conn) {
 
 func (s *server) dispatchMessage(cl *client, req *Message) (closeConn bool) {
 	p := decodePayload(req.Payload)
+	if !cl.authenticated {
+		switch req.Action {
+		case LOGIN:
+			s.handleLogin(cl, p.userName())
+			return false
+		case LOGOUT:
+			return true
+		default:
+			cl.promptLogin("Log in with a nickname first: ")
+			return false
+		}
+	}
 
 	switch req.Action {
 	case SIGN_UP:
 		cl.err(fmt.Errorf("sign up is not implemented yet"))
 	case LOGIN:
-		nick := p.userName()
-		if nick == "" {
-			cl.err(fmt.Errorf("provide a username in the payload"))
-			return false
-		}
-		cl.mu.Lock()
-		cl.nick = nick
-		cl.mu.Unlock()
-		cl.send_user_message(map[string]any{"user_id": cl.id, "nick": nick}, DONE, fmt.Sprintf("Logged in as %s.", nick))
+		s.handleLogin(cl, p.userName())
 	case LOGOUT:
 		cl.send_user_message(map[string]any{}, DONE, "Logged out.")
 		return true
@@ -139,4 +145,35 @@ func (s *server) dispatchMessage(cl *client, req *Message) (closeConn bool) {
 	}
 
 	return false
+}
+
+func (cl *client) promptLogin(msg string) {
+	cl.send_user_message(map[string]any{}, LOGIN, msg)
+}
+
+func (s *server) handleLogin(cl *client, nick string) {
+	nick = strings.TrimSpace(nick)
+	if nick == "" {
+		cl.promptLogin("Nickname cannot be empty. Enter a valid nickname: ")
+		return
+	}
+	if strings.EqualFold(nick, "anonymous") {
+		cl.promptLogin("Nickname cannot be anonymous. Enter a valid nickname: ")
+		return
+	}
+	if s.isNickTaken(nick, cl.id) {
+		cl.promptLogin("Nickname is already taken. Enter a valid nickname: ")
+		return
+	}
+
+	cl.mu.Lock()
+	cl.nick = nick
+	cl.authenticated = true
+	cl.mu.Unlock()
+
+	cl.send_user_message(
+		map[string]any{"user_id": cl.id, "nick": nick},
+		DONE,
+		fmt.Sprintf("Logged in as %s.", nick),
+	)
 }

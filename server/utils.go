@@ -7,14 +7,14 @@ import (
 )
 
 type requestPayload struct {
-	UserID   string `json:"user_id"`
-	Username string `json:"username"`
-	Nick     string `json:"nick"`
-	RoomID   string `json:"room_id"`
-	Room     string `json:"room"`
-	RoomName string `json:"room_name"`
-	NewRoom  string `json:"new_room"`
-	Password string `json:"password"`
+	UserID     string `json:"user_id"`
+	Username   string `json:"username"`
+	Nick       string `json:"nick"`
+	RoomID     string `json:"room_id"`
+	Room       string `json:"room"`
+	RoomName   string `json:"room_name"`
+	NewRoom    string `json:"new_room"`
+	Password   string `json:"password"`
 	Message    string `json:"message"`
 	MaxSize    *int   `json:"max_size"`
 	Context    string `json:"context"`
@@ -108,6 +108,23 @@ func (s *server) GetClientByID(user_id string) (*client, error) {
 	return client_data, nil
 }
 
+func (s *server) isNickTaken(nick, exceptID string) bool {
+	s.mu.RLock()
+	defer s.mu.RUnlock()
+	for id, c := range s.clients {
+		if id == exceptID {
+			continue
+		}
+		c.mu.RLock()
+		taken := strings.EqualFold(c.nick, nick)
+		c.mu.RUnlock()
+		if taken {
+			return true
+		}
+	}
+	return false
+}
+
 func (s *server) GetClientByNick(nick string) (*client, error) {
 	nick = strings.TrimSpace(nick)
 	if nick == "" {
@@ -117,7 +134,10 @@ func (s *server) GetClientByNick(nick string) (*client, error) {
 	s.mu.RLock()
 	defer s.mu.RUnlock()
 	for _, client_data := range s.clients {
-		if client_data.nick == nick {
+		client_data.mu.RLock()
+		match := strings.EqualFold(client_data.nick, nick)
+		client_data.mu.RUnlock()
+		if match {
 			return client_data, nil
 		}
 	}
