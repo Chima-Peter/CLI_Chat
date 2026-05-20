@@ -6,6 +6,7 @@ import (
 	"log"
 	"net"
 	"strings"
+	"sync"
 
 	"github.com/google/uuid"
 )
@@ -16,13 +17,19 @@ func (s *server) HandleConn(conn net.Conn) {
 	cl := &client{
 		id:                      uuid.New().String(),
 		conn:                    conn,
-		nick:                    "anonymous",
+		nick:                    "",
+		authenticated:           false,
+		room:                    nil,
+		current_context:         contextNone,
+		current_friend:          nil,
+		online:                  false,
 		my_rooms:                make(map[string]*room),
 		friends:                 make(map[string]struct{}),
 		pending_friend_requests: make(map[string]struct{}),
 		sent_friend_request:     make(map[string]struct{}),
 		blocked_users:           make(map[string]struct{}),
 		room_invites:            make(map[string]*room),
+		mu:                      sync.RWMutex{},
 	}
 
 	s.mu.Lock()
@@ -152,6 +159,10 @@ func (cl *client) promptLogin(msg string) {
 }
 
 func (s *server) handleLogin(cl *client, nick string) {
+	if cl.authenticated {
+		cl.promptLogin("You are already logged in. Log out first: ")
+		return
+	}
 	nick = strings.TrimSpace(nick)
 	if nick == "" {
 		cl.promptLogin("Nickname cannot be empty. Enter a valid nickname: ")

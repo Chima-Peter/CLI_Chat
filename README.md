@@ -10,7 +10,8 @@ A terminal chat application in Go: a TCP server and an interactive client that s
 - **Friends** — requests, list, remove, direct messages
 - **Context switching** — `/switch` sets whether plain text goes to a room or a friend
 - **Explicit chat commands** — `/chat/room` and `/chat/dm` target a room or friend by name without changing context
-- **Server-driven prompts** — e.g. room password after create/join
+- **Mandatory login on connect** — nickname prompt before any other action; uniqueness and reserved names enforced
+- **Server-driven prompts** — login, room password after create/join, etc.
 - **Numbered list responses** — rooms, members, invites, friends shown as `1. …`, `2. …`
 
 ## Project structure
@@ -66,8 +67,10 @@ Type `/help` in the client for the full command list.
 
 ### Quick start
 
+On connect the server prompts for a nickname. Enter a name (or use `/auth/login <name>` while prompted); retry until login succeeds.
+
 ```
-/auth/login alice
+alice
 /room/create general
 /room/join general
 /switch room general
@@ -96,11 +99,14 @@ Slash commands are parsed in `client/message.go` and sent as protocol messages. 
 
 ### Auth
 
-| Command | Protocol action |
-|---------|-----------------|
-| `/auth/login <name>` | `LOGIN` |
-| `/auth/signup <name>` | `SIGN_UP` (stub) |
-| `/auth/logout` | `LOGOUT` |
+| Command | Protocol action | Notes |
+|---------|-----------------|-------|
+| *(on connect)* | `LOGIN` | Server prompts for nickname; blocks all other actions until login succeeds |
+| `/auth/login <name>` | `LOGIN` | Same as typing a nickname at the connect prompt |
+| `/auth/signup <name>` | `SIGN_UP` (stub) | Not implemented on server |
+| `/auth/logout` | `LOGOUT` | Disconnects |
+
+**Login rules:** nickname must be non-empty, cannot be `anonymous` (case-insensitive), and must be unique among logged-in clients. On failure the server replies with action `LOGIN` and an error message so the client stays in prompt mode until both conditions pass.
 
 ### Room
 
@@ -154,6 +160,32 @@ Slash commands are parsed in `client/message.go` and sent as protocol messages. 
 | `/user/block <user>` | `BLOCK_USER` |
 | `/user/unblock <user>` | `UNBLOCK_USER` |
 | `/user/status <user>` | `GET_USER_STATUS` |
+
+---
+
+## Login on connect
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  Client connects                                                 │
+│  → Server: LOGIN "Enter your nickname: "                         │
+│  → Client: prompt mode (only plain input / LOGIN replies)        │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│  User sends nickname (or /auth/login <name> → LOGIN payload)     │
+│  → Server: handleLogin                                           │
+│     • empty / anonymous / taken → LOGIN + error (stay in prompt) │
+│     • valid → DONE "Logged in as …" (full commands unlocked)     │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│  Any other action before login                                   │
+│  → Server: LOGIN "Log in with a nickname first: "                │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+While unauthenticated, the client treats any server reply with action `LOGIN` as a prompt: slash commands are not parsed until login completes (`DONE`).
 
 ---
 
@@ -242,10 +274,11 @@ One JSON object per line on the wire:
 
 ### Server-driven prompts
 
-If the server replies with an action other than `DONE`, `ERR`, `MESSAGE_ROOM`, `SEND_MSG`, or `MESSAGE_FRIEND`, the client treats it as a **prompt** and sends your next line with the same action and merged payload (e.g. `GET_ROOM_PASSWORD` after joining a private room).
+If the server replies with an action other than `DONE`, `ERR`, `MESSAGE_ROOM`, `SEND_MSG`, or `MESSAGE_FRIEND`, the client treats it as a **prompt** and sends your next line with the same action and merged payload. While a prompt is active, input is routed to that action only (not slash commands).
 
 | Prompt action | When |
 |---------------|------|
+| `LOGIN` | On connect; failed nickname; or any action before login |
 | `SET_ROOM_PASSWORD` | After `/room/create` — set password (empty = public) |
 | `GET_ROOM_PASSWORD` | After `/room/join` on a private room |
 
@@ -255,7 +288,8 @@ If the server replies with an action other than `DONE`, `ERR`, `MESSAGE_ROOM`, `
 
 ### Server
 
-- `HandleConn` accepts a connection, registers a `client`, and loops on decoded `Message` values.
+- `HandleConn` accepts a connection, registers a `client`, sends an initial `LOGIN` prompt, then loops on decoded `Message` values.
+- Until `authenticated` is true, `dispatchMessage` only handles `LOGIN` and `LOGOUT`; other actions get a `LOGIN` prompt back.
 - `dispatchMessage` switches on `action` and calls handlers in `server.go` / `rooms.go` / `client.go`.
 - Replies use `send_user_message` (JSON-encoded `Message` on the TCP connection).
 - Rooms are keyed by ID; clients by ID; friends and blocks by user ID sets.
@@ -264,8 +298,8 @@ If the server replies with an action other than `DONE`, `ERR`, `MESSAGE_ROOM`, `
 ### Client
 
 - Background goroutine decodes server messages into a channel.
-- `handleServerMessage` prints responses and handles prompts (clears partial input when needed).
-- `inputLoop` uses readline; slash lines go through `buildCommandMessage`, everything else becomes `SEND_MSG`.
+- `handleServerMessage` prints responses and handles prompts (clears partial input when needed; clears prompt on `DONE`/`ERR`).
+- `inputLoop` uses readline: if a prompt is pending, input goes to `buildPromptReply`; otherwise slash lines use `buildCommandMessage` and plain text becomes `SEND_MSG`.
 - Terminal actions (`DONE`, `ERR`) and display-only actions (`MESSAGE_ROOM`, `SEND_MSG`, `MESSAGE_FRIEND`) do not block for a follow-up reply.
 
 ---
@@ -277,7 +311,7 @@ If the server replies with an action other than `DONE`, `ERR`, `MESSAGE_ROOM`, `
 | `SIGN_UP` | Not implemented |
 | `SEND_FILE` | Not implemented |
 | Persistence | In-memory only; restart clears all state |
-| Nickname uniqueness | Not enforced |
+| Nickname uniqueness | Enforced at login (among authenticated clients) |
 | Block list | Stored but not enforced on all code paths |
 
 ---
