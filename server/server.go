@@ -159,11 +159,11 @@ func (s *server) DeleteRoomMember(cl *client, roomID, roomName, memberID, member
 
 	room_data.DeleteMember(member)
 
-	member.send_user_message(map[string]any{}, DONE, fmt.Sprintf("Admin deleted you from room: %s", room_data.name))
+	member.send_user_message(map[string]any{}, DONE, fmt.Sprintf("[%s] Admin removed you from room: %s", room_data.name, room_data.name))
 
-	room_data.Broadcast(cl, fmt.Sprintf("%s has been deleted from this room", member.nick))
+	room_data.Broadcast(cl, fmt.Sprintf("%s has been removed from this room", member.nick))
 
-	cl.send_user_message(map[string]any{}, DONE, fmt.Sprintf("%s has been deleted from this room.", member.nick))
+	cl.send_user_message(map[string]any{}, DONE, fmt.Sprintf("You have removed %s from this room.", member.nick))
 }
 
 func (s *server) GetRoomMembers(cl *client, roomID, roomName string) {
@@ -207,7 +207,7 @@ func (s *server) SendRoomInvite(cl *client, roomID, roomName, memberID, memberNa
 
 	_, exists := room_data.members[new_member.id]
 	if exists {
-		cl.err(fmt.Errorf("User already part of this room"))
+		cl.err(fmt.Errorf("%s is already part of this room", new_member.nick))
 		return
 	}
 

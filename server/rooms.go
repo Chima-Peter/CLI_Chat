@@ -2,6 +2,7 @@ package server
 
 import (
 	"fmt"
+	"maps"
 	"strings"
 	"sync"
 )
@@ -201,6 +202,11 @@ func (r *room) EditRoom(cl *client, s *server, newName string, maxSize *int) {
 }
 
 func (r *room) LeaveRoom(cl *client) {
+	_, ok := cl.my_rooms[r.id]
+	if !ok {
+		cl.err(fmt.Errorf("You are not a part of this room."))
+	}
+
 	r.DeleteMember(cl)
 
 	cl.send_user_message(map[string]any{}, DONE, "Left room.")
@@ -210,7 +216,7 @@ func (r *room) LeaveRoom(cl *client) {
 func (r *room) DeleteRoom(cl *client, s *server) {
 	_, ok := cl.my_rooms[r.id]
 	if !ok {
-		cl.err(fmt.Errorf("You are not a part of this room and this error is forbidden."))
+		cl.err(fmt.Errorf("You are not a part of this room."))
 	}
 
 	if r.owner.id != cl.id {
@@ -219,14 +225,18 @@ func (r *room) DeleteRoom(cl *client, s *server) {
 
 	r.mu.RLock()
 	members_copy := make(map[string]*client)
-	for id, member := range r.members {
-		members_copy[id] = member
-	}
+	maps.Copy(members_copy, r.members)
 	r.mu.RUnlock()
 
-	for _, client := range members_copy {
-		client.room = nil
-		client.send_user_message(map[string]any{}, DONE, "The admin has deleted this room and all members have being removed.")
+	for _, member := range members_copy {
+		delete(member.my_rooms, r.id)
+		delete(member.room_invites, r.id)
+		if member.room != nil && member.room.id == r.id {
+			member.room = nil
+		}
+		member.send_user_message(map[string]any{}, DONE, fmt.Sprintf(
+			"The admin of %s has deleted the room: %s and all members have being removed.", r.name, r.name,
+		))
 	}
 
 	delete(cl.my_rooms, r.id)
@@ -234,23 +244,19 @@ func (r *room) DeleteRoom(cl *client, s *server) {
 	delete(s.rooms, r.id)
 	s.mu.Unlock()
 
-	cl.send_user_message(map[string]any{}, DONE, "Deleted room.")
+	cl.send_user_message(map[string]any{}, DONE, fmt.Sprintf("Deleted room: %s.", r.id))
 }
 
 func (r *room) DeleteMember(cl *client) {
-	_, ok := cl.my_rooms[r.id]
-	if !ok {
-		cl.err(fmt.Errorf("You are not a part of this room and this error is forbidden."))
-		return
-	}
-
 	delete(cl.my_rooms, r.id)
+	delete(cl.room_invites, r.id)
+
 	r.mu.Lock()
 	delete(r.members, cl.id)
 	r.mu.Unlock()
-	if cl.room == r {
+
+	if cl.room != nil && cl.room.id == r.id {
 		cl.room = nil
-		return
 	}
 }
 
@@ -319,12 +325,12 @@ func (r *room) AcceptRoomInvite(invitee *client) {
 	delete(r.invites, invitee.id)
 	r.members[invitee.id] = invitee
 	r.mu.Unlock()
-	delete(invitee.room_invites, r.id)
 
+	delete(invitee.room_invites, r.id)
 	invitee.my_rooms[r.id] = r
 	invitee.room = r
 
-	invitee.send_user_message(map[string]any{"room_id": r.id, "room": r.name}, DONE, "Joined room")
+	invitee.send_user_message(map[string]any{"room_id": r.id, "room": r.name}, DONE, fmt.Sprintf("You have joined the room: %s", r.name))
 
 	r.Broadcast(invitee, fmt.Sprintf("%s just joined the room.", invitee.nick))
 }
@@ -350,7 +356,7 @@ func (r *room) DeclineRoomInvite(invitee *client) {
 	delete(r.invites, invitee.id)
 	r.mu.Unlock()
 	delete(invitee.room_invites, r.id)
-	invitee.send_user_message(map[string]any{}, DONE, "You have declined this room invite")
+	invitee.send_user_message(map[string]any{}, DONE, fmt.Sprintf("You have declined the invite to join the room: %s", r.name))
 
 	room_owner := r.owner
 	room_owner.send_user_message(map[string]any{}, DONE, fmt.Sprintf("%s has declined invitation to join room: %s", invitee.nick, r.name))
