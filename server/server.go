@@ -61,7 +61,7 @@ func (s *server) CreateRoom(cl *client, room_name string) {
 		"room":    trimmed_name,
 	}
 
-	cl.send_user_message(payload, SET_ROOM_PASSWORD, "Set room password. Leave black for public room: ")
+	cl.send_user_message(payload, SET_ROOM_PASSWORD, "Set room password. Leave blank for public room: ")
 }
 
 func (s *server) SetRoomPassword(cl *client, roomID, roomName, password string) {
@@ -305,6 +305,22 @@ func (s *server) ListMyRooms(cl *client) {
 	}
 
 	cl.send_user_message(map[string]any{"rooms": rooms}, DONE, formatNumberedList("these are your rooms:", names))
+}
+
+func (s *server) ListMyRoomInvites(cl *client) {
+	cl.mu.RLock()
+	names := make([]string, 0, len(cl.room_invites))
+	for _, room_data := range cl.room_invites {
+		names = append(names, room_data.name)
+	}
+	cl.mu.RUnlock()
+
+	if len(names) == 0 {
+		cl.send_user_message(map[string]any{}, DONE, "You have no room invites")
+		return
+	}
+
+	cl.send_user_message(map[string]any{}, DONE, formatNumberedList("these are your room invites:", names))
 }
 
 func (s *server) SendFriendRequest(cl *client, targetID, targetName string) {
