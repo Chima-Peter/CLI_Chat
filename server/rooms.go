@@ -296,7 +296,7 @@ func (r *room) SeePendingRoomInvites(owner *client) {
 		invitees = append(invitees, client.nick)
 	}
 
-	owner.send_user_message(map[string]any{}, DONE, fmt.Sprintf("These are the pending invites: %s", strings.Join(invitees, ", ")))
+	owner.send_user_message(map[string]any{}, DONE, formatNumberedList("these are the pending invites:", invitees))
 }
 
 func (r *room) AcceptRoomInvite(invitee *client) {

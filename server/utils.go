@@ -70,6 +70,15 @@ func userNicks(users []map[string]string) []string {
 	return nicks
 }
 
+func formatNumberedList(header string, items []string) string {
+	var b strings.Builder
+	b.WriteString(header)
+	for i, item := range items {
+		fmt.Fprintf(&b, "\n%d. %s", i+1, item)
+	}
+	return b.String()
+}
+
 func (s *server) GetClientByID(user_id string) (*client, error) {
 	user_id = strings.TrimSpace(user_id)
 	if user_id == "" {

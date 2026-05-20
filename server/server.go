@@ -22,6 +22,8 @@ func InitServer() *server {
 	}
 }
 
+// ROOM METHODS
+
 func (s *server) CreateRoom(cl *client, room_name string) {
 	trimmed_name := strings.TrimSpace(room_name)
 	if trimmed_name == "" {
@@ -100,7 +102,7 @@ func (s *server) JoinRoomWithPassword(cl *client, roomID, roomName, password str
 	trimmed_password := strings.TrimSpace(password)
 
 	if trimmed_password == "" {
-		cl.err(fmt.Errorf("Enter password"))
+		cl.err(fmt.Errorf("Provide a valid password"))
 		return
 	}
 
@@ -184,7 +186,7 @@ func (s *server) GetRoomMembers(cl *client, roomID, roomName string) {
 	cl.send_user_message(map[string]any{
 		"room_id": room_data.id,
 		"room":    room_data.name,
-	}, DONE, fmt.Sprintf("Members of this room are: %s", strings.Join(members, ", ")))
+	}, DONE, formatNumberedList("these are the room members:", members))
 }
 
 func (s *server) SendRoomInvite(cl *client, roomID, roomName, memberID, memberName string) {
@@ -273,7 +275,7 @@ func (s *server) ListPublicRooms(cl *client) {
 		names = append(names, r["room"])
 	}
 
-	cl.send_user_message(map[string]any{"rooms": rooms}, DONE, fmt.Sprintf("Publicly available rooms are: %s", strings.Join(names, ", ")))
+	cl.send_user_message(map[string]any{"rooms": rooms}, DONE, formatNumberedList("these are the publicly available rooms:", names))
 }
 
 func (s *server) SendRoomMessage(cl *client, message string) {
@@ -302,7 +304,7 @@ func (s *server) ListMyRooms(cl *client) {
 		names = append(names, room_data.name)
 	}
 
-	cl.send_user_message(map[string]any{"rooms": rooms}, DONE, fmt.Sprintf("You are a member of: %s", strings.Join(names, ", ")))
+	cl.send_user_message(map[string]any{"rooms": rooms}, DONE, formatNumberedList("these are your rooms:", names))
 }
 
 func (s *server) SendFriendRequest(cl *client, targetID, targetName string) {

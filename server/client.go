@@ -192,7 +192,7 @@ func (cl *client) FetchSentRequests(users []map[string]string) {
 	cl.send_user_message(
 		map[string]any{"requests": users},
 		DONE,
-		fmt.Sprintf("You have sent request to: %s", strings.Join(nicks, ", ")),
+		formatNumberedList("these are your sent friend requests:", nicks),
 	)
 }
 
@@ -206,7 +206,7 @@ func (cl *client) FetchPendingRequests(users []map[string]string) {
 	cl.send_user_message(
 		map[string]any{"requests": users},
 		DONE,
-		fmt.Sprintf("You have pending requests from: %s", strings.Join(nicks, ", ")),
+		formatNumberedList("these are your pending friend requests:", nicks),
 	)
 }
 
@@ -220,7 +220,7 @@ func (cl *client) GetFriends(users []map[string]string) {
 	cl.send_user_message(
 		map[string]any{"friends": users},
 		DONE,
-		fmt.Sprintf("Your friends: %s", strings.Join(nicks, ", ")),
+		formatNumberedList("these are your friends:", nicks),
 	)
 }
 
