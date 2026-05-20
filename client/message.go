@@ -82,8 +82,9 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 		printClientHelp()
 		return nil, errClientOnly
 
-	case "/signup":
-		if err := requireArg(arg, "/signup <username>"); err != nil {
+	// auth
+	case "/auth/signup":
+		if err := requireArg(arg, "/auth/signup <username>"); err != nil {
 			return nil, err
 		}
 		return &protocol.Message{
@@ -91,8 +92,8 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 			Payload: marshalStringPayload(map[string]string{"username": arg}),
 		}, nil
 
-	case "/nick":
-		if err := requireArg(arg, "/nick <name>"); err != nil {
+	case "/auth/login":
+		if err := requireArg(arg, "/auth/login <name>"); err != nil {
 			return nil, err
 		}
 		return &protocol.Message{
@@ -100,11 +101,12 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 			Payload: marshalStringPayload(map[string]string{"username": arg}),
 		}, nil
 
-	case "/quit":
+	case "/auth/logout":
 		return &protocol.Message{Action: protocol.LOGOUT}, nil
 
-	case "/create":
-		if err := requireArg(arg, "/create <room>"); err != nil {
+	// room
+	case "/room/create":
+		if err := requireArg(arg, "/room/create <name>"); err != nil {
 			return nil, err
 		}
 		return &protocol.Message{
@@ -112,8 +114,8 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 			Payload: marshalStringPayload(map[string]string{"room": arg}),
 		}, nil
 
-	case "/join":
-		if err := requireArg(arg, "/join <room>"); err != nil {
+	case "/room/join":
+		if err := requireArg(arg, "/room/join <name>"); err != nil {
 			return nil, err
 		}
 		return &protocol.Message{
@@ -121,7 +123,7 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 			Payload: marshalStringPayload(map[string]string{"room": arg}),
 		}, nil
 
-	case "/leave":
+	case "/room/leave":
 		payload := map[string]string{}
 		if arg != "" {
 			payload["room"] = arg
@@ -131,8 +133,8 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 			Payload: marshalStringPayload(payload),
 		}, nil
 
-	case "/deleteroom":
-		if err := requireArg(arg, "/deleteroom <room>"); err != nil {
+	case "/room/delete":
+		if err := requireArg(arg, "/room/delete <name>"); err != nil {
 			return nil, err
 		}
 		return &protocol.Message{
@@ -140,10 +142,10 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 			Payload: marshalStringPayload(map[string]string{"room": arg}),
 		}, nil
 
-	case "/editroom":
+	case "/room/edit":
 		fields := splitFields(arg)
 		if len(fields) < 2 {
-			return nil, fmt.Errorf("usage: /editroom <room> <new_name> [max_size]")
+			return nil, fmt.Errorf("usage: /room/edit <room> <new_name> [max_size]")
 		}
 		payload := map[string]any{
 			"room":     fields[0],
@@ -161,8 +163,8 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 			Payload: marshalAnyPayload(payload),
 		}, nil
 
-	case "/members":
-		if err := requireArg(arg, "/members <room>"); err != nil {
+	case "/room/members":
+		if err := requireArg(arg, "/room/members <room>"); err != nil {
 			return nil, err
 		}
 		return &protocol.Message{
@@ -170,10 +172,10 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 			Payload: marshalStringPayload(map[string]string{"room": arg}),
 		}, nil
 
-	case "/kick":
+	case "/room/kick":
 		fields := splitFields(arg)
 		if len(fields) < 2 {
-			return nil, fmt.Errorf("usage: /kick <room> <user>")
+			return nil, fmt.Errorf("usage: /room/kick <room> <user>")
 		}
 		return &protocol.Message{
 			Action: protocol.DELETE_MEMBER,
@@ -183,10 +185,10 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 			}),
 		}, nil
 
-	case "/invite":
+	case "/room/invite":
 		fields := splitFields(arg)
 		if len(fields) < 2 {
-			return nil, fmt.Errorf("usage: /invite <room> <user>")
+			return nil, fmt.Errorf("usage: /room/invite <room> <user>")
 		}
 		return &protocol.Message{
 			Action: protocol.SEND_INVITE_REQUEST,
@@ -196,7 +198,7 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 			}),
 		}, nil
 
-	case "/invites":
+	case "/room/invites":
 		payload := map[string]string{}
 		if arg != "" {
 			payload["room"] = arg
@@ -206,8 +208,17 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 			Payload: marshalStringPayload(payload),
 		}, nil
 
-	case "/acceptinvite":
-		if err := requireArg(arg, "/acceptinvite <room>"); err != nil {
+	case "/room/list":
+		return &protocol.Message{Action: protocol.LIST_ROOMS}, nil
+
+	case "/room/mine":
+		return &protocol.Message{Action: protocol.LIST_MY_ROOMS}, nil
+
+	case "/invite/mine":
+		return &protocol.Message{Action: protocol.LIST_MY_ROOM_INVITES}, nil
+
+	case "/invite/accept":
+		if err := requireArg(arg, "/invite/accept <room>"); err != nil {
 			return nil, err
 		}
 		return &protocol.Message{
@@ -215,8 +226,8 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 			Payload: marshalStringPayload(map[string]string{"room": arg}),
 		}, nil
 
-	case "/declineinvite":
-		if err := requireArg(arg, "/declineinvite <room>"); err != nil {
+	case "/invite/decline":
+		if err := requireArg(arg, "/invite/decline <room>"); err != nil {
 			return nil, err
 		}
 		return &protocol.Message{
@@ -224,14 +235,9 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 			Payload: marshalStringPayload(map[string]string{"room": arg}),
 		}, nil
 
-	case "/rooms":
-		return &protocol.Message{Action: protocol.LIST_ROOMS}, nil
-
-	case "/myrooms":
-		return &protocol.Message{Action: protocol.LIST_MY_ROOMS}, nil
-
-	case "/msg":
-		if err := requireArg(arg, "/msg <message>"); err != nil {
+	// chat
+	case "/chat/send":
+		if err := requireArg(arg, "/chat/send <message>"); err != nil {
 			return nil, err
 		}
 		return &protocol.Message{
@@ -239,8 +245,8 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 			Payload: marshalStringPayload(map[string]string{"message": arg}),
 		}, nil
 
-	case "/sendfile":
-		if err := requireArg(arg, "/sendfile <path>"); err != nil {
+	case "/chat/file":
+		if err := requireArg(arg, "/chat/file <path>"); err != nil {
 			return nil, err
 		}
 		return &protocol.Message{
@@ -248,43 +254,10 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 			Payload: marshalStringPayload(map[string]string{"path": arg}),
 		}, nil
 
-	case "/friendadd":
-		if err := requireArg(arg, "/friendadd <user>"); err != nil {
-			return nil, err
-		}
-		return &protocol.Message{
-			Action:  protocol.SEND_FRIEND_REQUEST,
-			Payload: marshalStringPayload(map[string]string{"nick": arg}),
-		}, nil
-
-	case "/friendaccept":
-		if err := requireArg(arg, "/friendaccept <user>"); err != nil {
-			return nil, err
-		}
-		return &protocol.Message{
-			Action:  protocol.ACCEPT_FRIEND_REQUEST,
-			Payload: marshalStringPayload(map[string]string{"nick": arg}),
-		}, nil
-
-	case "/friendrequests":
-		return &protocol.Message{Action: protocol.SEE_FRIEND_REQUEST}, nil
-
-	case "/friends":
-		return &protocol.Message{Action: protocol.GET_FRIENDS}, nil
-
-	case "/friendremove":
-		if err := requireArg(arg, "/friendremove <user>"); err != nil {
-			return nil, err
-		}
-		return &protocol.Message{
-			Action:  protocol.DELETE_FRIEND,
-			Payload: marshalStringPayload(map[string]string{"nick": arg}),
-		}, nil
-
-	case "/dm":
+	case "/chat/dm":
 		fields := splitFields(arg)
 		if len(fields) < 2 {
-			return nil, fmt.Errorf("usage: /dm <user> <message>")
+			return nil, fmt.Errorf("usage: /message/dm <user> <message>")
 		}
 		return &protocol.Message{
 			Action: protocol.MESSAGE_FRIEND,
@@ -294,8 +267,43 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 			}),
 		}, nil
 
-	case "/block":
-		if err := requireArg(arg, "/block <user>"); err != nil {
+	// friend
+	case "/friend/add":
+		if err := requireArg(arg, "/friend/add <user>"); err != nil {
+			return nil, err
+		}
+		return &protocol.Message{
+			Action:  protocol.SEND_FRIEND_REQUEST,
+			Payload: marshalStringPayload(map[string]string{"nick": arg}),
+		}, nil
+
+	case "/friend/accept":
+		if err := requireArg(arg, "/friend/accept <user>"); err != nil {
+			return nil, err
+		}
+		return &protocol.Message{
+			Action:  protocol.ACCEPT_FRIEND_REQUEST,
+			Payload: marshalStringPayload(map[string]string{"nick": arg}),
+		}, nil
+
+	case "/friend/remove":
+		if err := requireArg(arg, "/friend/remove <user>"); err != nil {
+			return nil, err
+		}
+		return &protocol.Message{
+			Action:  protocol.DELETE_FRIEND,
+			Payload: marshalStringPayload(map[string]string{"nick": arg}),
+		}, nil
+
+	case "/friend/requests":
+		return &protocol.Message{Action: protocol.SEE_FRIEND_REQUEST}, nil
+
+	case "/friend/list":
+		return &protocol.Message{Action: protocol.GET_FRIENDS}, nil
+
+	// user
+	case "/user/block":
+		if err := requireArg(arg, "/user/block <user>"); err != nil {
 			return nil, err
 		}
 		return &protocol.Message{
@@ -303,8 +311,8 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 			Payload: marshalStringPayload(map[string]string{"nick": arg}),
 		}, nil
 
-	case "/unblock":
-		if err := requireArg(arg, "/unblock <user>"); err != nil {
+	case "/user/unblock":
+		if err := requireArg(arg, "/user/unblock <user>"); err != nil {
 			return nil, err
 		}
 		return &protocol.Message{
@@ -312,8 +320,8 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 			Payload: marshalStringPayload(map[string]string{"nick": arg}),
 		}, nil
 
-	case "/status":
-		if err := requireArg(arg, "/status <user>"); err != nil {
+	case "/user/status":
+		if err := requireArg(arg, "/user/status <user>"); err != nil {
 			return nil, err
 		}
 		return &protocol.Message{
@@ -328,7 +336,7 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 
 func buildPromptReply(action protocol.ActionType, serverPayload json.RawMessage, input string) (*protocol.Message, error) {
 	input = strings.TrimSpace(input)
-	if input == "" && action == protocol.SET_ROOM_PASSWORD {
+	if input == "" && action != protocol.SET_ROOM_PASSWORD {
 		return nil, fmt.Errorf("empty input")
 	}
 

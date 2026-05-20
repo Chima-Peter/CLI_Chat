@@ -95,6 +95,8 @@ func (s *server) dispatchMessage(cl *client, req *Message) (closeConn bool) {
 		s.ListPublicRooms(cl)
 	case LIST_MY_ROOMS:
 		s.ListMyRooms(cl)
+	case LIST_MY_ROOM_INVITES:
+		s.ListMyRoomInvites(cl)
 
 	case SEND_MSG:
 		s.SendRoomMessage(cl, p.Message)

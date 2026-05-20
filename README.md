@@ -69,12 +69,13 @@ Listens on `localhost:8888`.
 Use `/help` in the client for the full command list. Quick start:
 
 ```
-/nick alice
-/create general
-/join general
+/auth/login alice
+/room/create general
+/room/join general
 Hello everyone!
-/rooms
-/quit
+/room/list
+/invite/mine
+/auth/logout
 ```
 
 ## Protocol
@@ -92,7 +93,7 @@ Each message on the wire is one JSON object per line:
 | Category | Actions |
 |----------|---------|
 | Auth | `SIGN_UP`, `LOGIN`, `LOGOUT` |
-| Rooms | `CREATE_ROOM`, `SET_ROOM_PASSWORD`, `JOIN_ROOM`, `LEAVE_ROOM`, `DELETE_ROOM`, `EDIT_ROOM`, `GET_ROOM_PASSWORD`, `DELETE_MEMBER`, invites, `GET_ROOM_MEMBERS`, `LIST_ROOMS`, `LIST_MY_ROOMS` |
+| Rooms | `CREATE_ROOM`, `SET_ROOM_PASSWORD`, `JOIN_ROOM`, `LEAVE_ROOM`, `DELETE_ROOM`, `EDIT_ROOM`, `GET_ROOM_PASSWORD`, `DELETE_MEMBER`, invites, `GET_ROOM_MEMBERS`, `LIST_ROOMS`, `LIST_MY_ROOMS`, `LIST_MY_ROOM_INVITES` |
 | Chat | `SEND_MSG`, `SEND_FILE` |
 | Friends | `SEND_FRIEND_REQUEST`, `ACCEPT_FRIEND_REQUEST`, `MESSAGE_FRIEND`, `GET_FRIENDS`, `SEE_FRIEND_REQUEST`, `DELETE_FRIEND`, `BLOCK_USER`, `UNBLOCK_USER`, `GET_USER_STATUS` |
 | Response | `ERR`, `DONE` |
@@ -107,34 +108,40 @@ All slash commands are handled locally in `buildCommandMessage` and sent as prot
 
 | Command | Protocol |
 |---------|----------|
-| `/help` | (client only) |
-| `/nick <name>` | `LOGIN` |
-| `/signup <name>` | `SIGN_UP` |
-| `/quit` | `LOGOUT` |
-| `/create <room>` | `CREATE_ROOM` |
-| `/join <room>` | `JOIN_ROOM` |
-| `/leave [room]` | `LEAVE_ROOM` |
-| `/deleteroom <room>` | `DELETE_ROOM` |
-| `/editroom <room> <new> [max]` | `EDIT_ROOM` |
-| `/members <room>` | `GET_ROOM_MEMBERS` |
-| `/kick <room> <user>` | `DELETE_MEMBER` |
-| `/invite <room> <user>` | `SEND_INVITE_REQUEST` |
-| `/invites [room]` | `SEE_GROUP_INVITE_REQUEST` |
-| `/acceptinvite <room>` | `ACCEPT_GROUP_INVITE_REQUEST` |
-| `/declineinvite <room>` | `DELETE_GROUP_INVITE_REQUEST` |
-| `/rooms` | `LIST_ROOMS` |
-| `/myrooms` | `LIST_MY_ROOMS` |
-| `/msg <text>` or plain text | `SEND_MSG` |
-| `/sendfile <path>` | `SEND_FILE` |
-| `/friendadd <user>` | `SEND_FRIEND_REQUEST` |
-| `/friendaccept <user>` | `ACCEPT_FRIEND_REQUEST` |
-| `/friendrequests` | `SEE_FRIEND_REQUEST` |
-| `/friends` | `GET_FRIENDS` |
-| `/friendremove <user>` | `DELETE_FRIEND` |
-| `/dm <user> <msg>` | `MESSAGE_FRIEND` |
-| `/block <user>` | `BLOCK_USER` |
-| `/unblock <user>` | `UNBLOCK_USER` |
-| `/status <user>` | `GET_USER_STATUS` |
+| **Auth** | |
+| `/auth/login <name>` | `LOGIN` |
+| `/auth/signup <name>` | `SIGN_UP` |
+| `/auth/logout` | `LOGOUT` |
+| **Room** | |
+| `/room/create <name>` | `CREATE_ROOM` |
+| `/room/join <name>` | `JOIN_ROOM` |
+| `/room/leave [name]` | `LEAVE_ROOM` |
+| `/room/delete <name>` | `DELETE_ROOM` |
+| `/room/edit <room> <new> [max]` | `EDIT_ROOM` |
+| `/room/members <room>` | `GET_ROOM_MEMBERS` |
+| `/room/kick <room> <user>` | `DELETE_MEMBER` |
+| `/room/invite <room> <user>` | `SEND_INVITE_REQUEST` |
+| `/room/invites [room]` | `SEE_GROUP_INVITE_REQUEST` (owner: users you invited) |
+| `/room/list` | `LIST_ROOMS` |
+| `/room/mine` | `LIST_MY_ROOMS` |
+| **Invite** | |
+| `/invite/mine` | `LIST_MY_ROOM_INVITES` |
+| `/invite/accept <room>` | `ACCEPT_GROUP_INVITE_REQUEST` |
+| `/invite/decline <room>` | `DELETE_GROUP_INVITE_REQUEST` |
+| **Chat** | |
+| `/chat/send <text>` or plain text | `SEND_MSG` |
+| `/chat/file <path>` | `SEND_FILE` |
+| `/chat/dm <user> <msg>` | `MESSAGE_FRIEND` |
+| **Friend** | |
+| `/friend/add <user>` | `SEND_FRIEND_REQUEST` |
+| `/friend/accept <user>` | `ACCEPT_FRIEND_REQUEST` |
+| `/friend/remove <user>` | `DELETE_FRIEND` |
+| `/friend/requests` | `SEE_FRIEND_REQUEST` |
+| `/friend/list` | `GET_FRIENDS` |
+| **User** | |
+| `/user/block <user>` | `BLOCK_USER` |
+| `/user/unblock <user>` | `UNBLOCK_USER` |
+| `/user/status <user>` | `GET_USER_STATUS` |
 
 Payload fields commonly use `room`, `room_id`, `nick` / `username`, `user_id`, `message`, `password`, `new_room`, `max_size`.
 
