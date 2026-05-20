@@ -37,10 +37,11 @@ var commandHelpList = []commandHelp{
 	{group: "Invite", usage: "/invite/accept <room>", protocol: "ACCEPT_GROUP_INVITE_REQUEST", description: "Accept a room invite"},
 	{group: "Invite", usage: "/invite/decline <room>", protocol: "DELETE_GROUP_INVITE_REQUEST", description: "Decline a room invite"},
 
-	{group: "Chat", usage: "/chat/send <message>", protocol: "SEND_MSG", description: "Send message to current room"},
-	{group: "Chat", usage: "<text>", protocol: "SEND_MSG", description: "Same as /chat/send when in a room"},
+	{group: "Chat", usage: "/switch <room|friend> <name>", protocol: "SWITCH_CONTEXT", description: "Set active chat context"},
+	{group: "Chat", usage: "<text>", protocol: "SEND_CONTEXT_MSG", description: "Send to active context (after /switch)"},
+	{group: "Chat", usage: "/chat/room <room> <message>", protocol: "SEND_MSG", description: "Send to a room by name"},
+	{group: "Chat", usage: "/chat/dm <friend> <message>", protocol: "MESSAGE_FRIEND", description: "Direct message a friend"},
 	{group: "Chat", usage: "/chat/file <path>", protocol: "SEND_FILE", description: "Send a file (server stub)"},
-	{group: "Chat", usage: "/chat/dm <user> <msg>", protocol: "MESSAGE_FRIEND", description: "Direct message a friend"},
 
 	{group: "Friend", usage: "/friend/add <user>", protocol: "SEND_FRIEND_REQUEST", description: "Send friend request"},
 	{group: "Friend", usage: "/friend/accept <user>", protocol: "ACCEPT_FRIEND_REQUEST", description: "Accept friend request"},
@@ -76,6 +77,7 @@ func printBootstrap() {
 	fmt.Printf("║  Type /help for all commands           ║\n")
 	fmt.Printf("║  /auth/login <name>                    ║\n")
 	fmt.Printf("║  /room/join <room>                     ║\n")
-	fmt.Printf("║  plain text — chat in current room     ║\n")
+	fmt.Printf("║  /switch room <room>                   ║\n")
+	fmt.Printf("║  plain text — send to active context   ║\n")
 	fmt.Printf("╚════════════════════════════════════════╝\n")
 }

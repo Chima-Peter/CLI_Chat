@@ -15,8 +15,21 @@ type requestPayload struct {
 	RoomName string `json:"room_name"`
 	NewRoom  string `json:"new_room"`
 	Password string `json:"password"`
-	Message  string `json:"message"`
-	MaxSize  *int   `json:"max_size"`
+	Message    string `json:"message"`
+	MaxSize    *int   `json:"max_size"`
+	Context    string `json:"context"`
+	FriendName string `json:"friend_name"`
+}
+
+func (p requestPayload) contextType() string {
+	return strings.TrimSpace(strings.ToLower(p.Context))
+}
+
+func (p requestPayload) friendName() string {
+	if name := strings.TrimSpace(p.FriendName); name != "" {
+		return name
+	}
+	return p.userName()
 }
 
 func decodePayload(raw json.RawMessage) requestPayload {

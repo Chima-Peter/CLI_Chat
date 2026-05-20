@@ -72,9 +72,8 @@ Use `/help` in the client for the full command list. Quick start:
 /auth/login alice
 /room/create general
 /room/join general
+/switch room general
 Hello everyone!
-/room/list
-/invite/mine
 /auth/logout
 ```
 
@@ -94,7 +93,7 @@ Each message on the wire is one JSON object per line:
 |----------|---------|
 | Auth | `SIGN_UP`, `LOGIN`, `LOGOUT` |
 | Rooms | `CREATE_ROOM`, `SET_ROOM_PASSWORD`, `JOIN_ROOM`, `LEAVE_ROOM`, `DELETE_ROOM`, `EDIT_ROOM`, `GET_ROOM_PASSWORD`, `DELETE_MEMBER`, invites, `GET_ROOM_MEMBERS`, `LIST_ROOMS`, `LIST_MY_ROOMS`, `LIST_MY_ROOM_INVITES` |
-| Chat | `SEND_MSG`, `SEND_FILE` |
+| Chat | `SWITCH_CONTEXT`, `SEND_MSG`, `SEND_CONTEXT_MSG`, `SEND_FILE` |
 | Friends | `SEND_FRIEND_REQUEST`, `ACCEPT_FRIEND_REQUEST`, `MESSAGE_FRIEND`, `GET_FRIENDS`, `SEE_FRIEND_REQUEST`, `DELETE_FRIEND`, `BLOCK_USER`, `UNBLOCK_USER`, `GET_USER_STATUS` |
 | Response | `ERR`, `DONE` |
 
@@ -129,9 +128,11 @@ All slash commands are handled locally in `buildCommandMessage` and sent as prot
 | `/invite/accept <room>` | `ACCEPT_GROUP_INVITE_REQUEST` |
 | `/invite/decline <room>` | `DELETE_GROUP_INVITE_REQUEST` |
 | **Chat** | |
-| `/chat/send <text>` or plain text | `SEND_MSG` |
+| `/switch <room\|friend> <name>` | `SWITCH_CONTEXT` |
+| plain text | `SEND_CONTEXT_MSG` (routes via server context) |
+| `/chat/room <room> <message>` | `SEND_MSG` |
+| `/chat/dm <friend> <message>` | `MESSAGE_FRIEND` |
 | `/chat/file <path>` | `SEND_FILE` |
-| `/chat/dm <user> <msg>` | `MESSAGE_FRIEND` |
 | **Friend** | |
 | `/friend/add <user>` | `SEND_FRIEND_REQUEST` |
 | `/friend/accept <user>` | `ACCEPT_FRIEND_REQUEST` |
@@ -159,7 +160,7 @@ Payload fields commonly use `room`, `room_id`, `nick` / `username`, `user_id`, `
 - `readFromServer` decodes JSON in the background
 - `handleServerMessage` prints responses and tracks server prompts
 - `inputLoop` uses readline for input; clears partial input when a server prompt arrives
-- Plain text (no `/`) sends `SEND_MSG` to the current room
+- Plain text (no `/`) sends `SEND_CONTEXT_MSG` to the active context (`/switch`)
 
 ## Not yet implemented
 

@@ -16,7 +16,7 @@ func isTerminalAction(action protocol.ActionType) bool {
 
 func isDisplayOnlyAction(action protocol.ActionType) bool {
 	switch action {
-	case protocol.SEND_MSG, protocol.MESSAGE_FRIEND:
+	case protocol.SEND_MSG, protocol.SEND_CONTEXT_MSG, protocol.MESSAGE_FRIEND:
 		return true
 	default:
 		return false
@@ -43,7 +43,7 @@ func buildMessage(line string) (*protocol.Message, error) {
 
 	payload, _ := json.Marshal(map[string]string{"message": line})
 	return &protocol.Message{
-		Action:  protocol.SEND_MSG,
+		Action:  protocol.SEND_CONTEXT_MSG,
 		Payload: payload,
 	}, nil
 }
@@ -236,13 +236,36 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 		}, nil
 
 	// chat
-	case "/chat/send":
-		if err := requireArg(arg, "/chat/send <message>"); err != nil {
-			return nil, err
+	case "/switch":
+		fields := splitFields(arg)
+		if len(fields) < 2 {
+			return nil, fmt.Errorf("usage: /switch <room|friend> <name>")
+		}
+		payload := map[string]string{"context": strings.ToLower(fields[0])}
+		switch strings.ToLower(fields[0]) {
+		case "room":
+			payload["room"] = fields[1]
+		case "friend":
+			payload["friend_name"] = fields[1]
+		default:
+			return nil, fmt.Errorf("context must be room or friend")
 		}
 		return &protocol.Message{
-			Action:  protocol.SEND_MSG,
-			Payload: marshalStringPayload(map[string]string{"message": arg}),
+			Action:  protocol.SWITCH_CONTEXT,
+			Payload: marshalStringPayload(payload),
+		}, nil
+
+	case "/chat/room":
+		fields := splitFields(arg)
+		if len(fields) < 2 {
+			return nil, fmt.Errorf("usage: /chat/room <room> <message>")
+		}
+		return &protocol.Message{
+			Action: protocol.SEND_MSG,
+			Payload: marshalStringPayload(map[string]string{
+				"room":    fields[0],
+				"message": strings.Join(fields[1:], " "),
+			}),
 		}, nil
 
 	case "/chat/file":
@@ -257,7 +280,7 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 	case "/chat/dm":
 		fields := splitFields(arg)
 		if len(fields) < 2 {
-			return nil, fmt.Errorf("usage: /message/dm <user> <message>")
+			return nil, fmt.Errorf("usage: /chat/dm <friend> <message>")
 		}
 		return &protocol.Message{
 			Action: protocol.MESSAGE_FRIEND,

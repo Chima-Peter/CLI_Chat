@@ -8,11 +8,19 @@ import (
 	"sync"
 )
 
+const (
+	contextNone   = ""
+	contextRoom   = "room"
+	contextFriend = "friend"
+)
+
 type client struct {
 	id                      string
 	conn                    net.Conn
 	nick                    string
 	room                    *room
+	current_context         string
+	current_friend          *client
 	my_rooms                map[string]*room
 	friends                 map[string]struct{}
 	pending_friend_requests map[string]struct{}

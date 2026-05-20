@@ -98,8 +98,20 @@ func (s *server) dispatchMessage(cl *client, req *Message) (closeConn bool) {
 	case LIST_MY_ROOM_INVITES:
 		s.ListMyRoomInvites(cl)
 
+	case SWITCH_CONTEXT:
+		switch p.contextType() {
+		case contextFriend:
+			s.SwitchContext(cl, contextFriend, p.friendName())
+		case contextRoom:
+			s.SwitchContext(cl, contextRoom, p.roomName())
+		default:
+			s.SwitchContext(cl, p.contextType(), p.roomName())
+		}
+
 	case SEND_MSG:
-		s.SendRoomMessage(cl, p.Message)
+		s.SendRoomMessage(cl, p.roomName(), p.Message)
+	case SEND_CONTEXT_MSG:
+		s.SendContextMessage(cl, p.Message)
 	case SEND_FILE:
 		cl.err(fmt.Errorf("send file is not implemented yet"))
 

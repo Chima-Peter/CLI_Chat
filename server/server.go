@@ -278,17 +278,146 @@ func (s *server) ListPublicRooms(cl *client) {
 	cl.send_user_message(map[string]any{"rooms": rooms}, DONE, formatNumberedList("these are the publicly available rooms:", names))
 }
 
-func (s *server) SendRoomMessage(cl *client, message string) {
+func (cl *client) roomByName(name string) (*room, bool) {
+	cl.mu.RLock()
+	defer cl.mu.RUnlock()
+	for _, room_data := range cl.my_rooms {
+		if room_data.name == name {
+			return room_data, true
+		}
+	}
+	return nil, false
+}
+
+func (s *server) SwitchContext(cl *client, contextType, name string) {
+	contextType = strings.TrimSpace(strings.ToLower(contextType))
+	name = strings.TrimSpace(name)
+	if name == "" {
+		cl.err(fmt.Errorf("usage: /switch <room|friend> <name>"))
+		return
+	}
+
+	switch contextType {
+	case contextRoom:
+		room_data, ok := cl.roomByName(name)
+		if !ok {
+			room_data, err := s.resolveRoom("", name)
+			if err != nil {
+				cl.err(fmt.Errorf("you are not in room: %s", name))
+				return
+			}
+			cl.mu.RLock()
+			_, ok = cl.my_rooms[room_data.id]
+			cl.mu.RUnlock()
+			if !ok {
+				cl.err(fmt.Errorf("you are not in room: %s", name))
+				return
+			}
+		}
+
+		cl.mu.Lock()
+		cl.current_context = contextRoom
+		cl.room = room_data
+		cl.mu.Unlock()
+
+		cl.send_user_message(map[string]any{
+			"context": contextRoom,
+			"room":    room_data.name,
+		}, DONE, fmt.Sprintf("Switched to room: %s", room_data.name))
+
+	case contextFriend:
+		friend, err := s.resolveUser("", name)
+		if err != nil {
+			cl.err(err)
+			return
+		}
+
+		cl.mu.RLock()
+		isFriend := hasID(cl.friends, friend.id)
+		cl.mu.RUnlock()
+		if !isFriend {
+			cl.err(fmt.Errorf("you are not friends with %s", friend.nick))
+			return
+		}
+
+		cl.mu.Lock()
+		cl.current_context = contextFriend
+		cl.current_friend = friend
+		cl.mu.Unlock()
+
+		cl.send_user_message(map[string]any{
+			"context": contextFriend,
+			"nick":    friend.nick,
+		}, DONE, fmt.Sprintf("Switched to friend: %s", friend.nick))
+
+	default:
+		cl.err(fmt.Errorf("context must be room or friend"))
+	}
+}
+
+func (s *server) SendContextMessage(cl *client, message string) {
 	message = strings.TrimSpace(message)
 	if message == "" {
 		cl.err(fmt.Errorf("message cannot be empty"))
 		return
 	}
-	if cl.room == nil {
-		cl.err(fmt.Errorf("join a room before sending a message"))
+
+	cl.mu.RLock()
+	ctx := cl.current_context
+	room_data := cl.room
+	friend := cl.current_friend
+	cl.mu.RUnlock()
+
+	switch ctx {
+	case contextRoom:
+		if room_data == nil {
+			cl.err(fmt.Errorf("use /switch room <name> before sending a message"))
+			return
+		}
+		room_data.Broadcast(cl, message)
+		cl.send_user_message(map[string]any{}, DONE, fmt.Sprintf("You: %s", message))
+
+	case contextFriend:
+		if friend == nil {
+			cl.err(fmt.Errorf("use /switch friend <name> before sending a message"))
+			return
+		}
+		cl.MessageFriend(friend, message)
+
+	default:
+		cl.err(fmt.Errorf("use /switch room|friend <name> before sending a message"))
+	}
+}
+
+func (s *server) SendRoomMessage(cl *client, roomName, message string) {
+	message = strings.TrimSpace(message)
+	if message == "" {
+		cl.err(fmt.Errorf("message cannot be empty"))
 		return
 	}
-	cl.room.Broadcast(cl, message)
+	if strings.TrimSpace(roomName) == "" {
+		cl.err(fmt.Errorf("room name is required"))
+		return
+	}
+
+	room_data, ok := cl.roomByName(roomName)
+	if !ok {
+		var err error
+		room_data, err = s.resolveRoom("", roomName)
+		if err != nil {
+			cl.err(fmt.Errorf("you are not in room: %s", roomName))
+			return
+		}
+		cl.mu.RLock()
+		_, ok = cl.my_rooms[room_data.id]
+		cl.mu.RUnlock()
+		if !ok {
+			cl.err(fmt.Errorf("you are not in room: %s", roomName))
+			return
+		}
+	}
+
+	room_data.Broadcast(cl, message)
 	cl.send_user_message(map[string]any{}, DONE, fmt.Sprintf("You: %s", message))
 }
 
