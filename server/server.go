@@ -2,6 +2,7 @@ package server
 
 import (
 	"fmt"
+	"log"
 	"strings"
 	"sync"
 
@@ -261,6 +262,11 @@ func (s *server) ListPublicRooms(cl *client) {
 	}
 	s.mu.RUnlock()
 
+	if len(rooms) == 0 {
+		cl.send_user_message(map[string]any{}, DONE, "No publicly available rooms")
+		return
+	}
+
 	names := make([]string, 0, len(rooms))
 	for _, r := range rooms {
 		names = append(names, r["room"])
@@ -398,4 +404,20 @@ func (s *server) GetUserStatus(cl *client, targetID, targetName string) {
 		return
 	}
 	cl.GetUserStatus(target)
+}
+
+func (s *server) LogUserOut(cl *client) {
+	cl.setOnline(false)
+	for _, room := range cl.my_rooms {
+		room.Broadcast(cl, fmt.Sprintf("%s has left the chat.", cl.nick))
+		room.mu.Lock()
+		delete(room.members, cl.id)
+		room.mu.Unlock()
+	}
+	s.mu.Lock()
+	delete(s.clients, cl.id)
+	s.mu.Unlock()
+	cl.conn.Close()
+
+	log.Println("Client has disconnected:", cl.conn.RemoteAddr().String())
 }

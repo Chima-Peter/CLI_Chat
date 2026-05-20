@@ -28,13 +28,7 @@ func (s *server) HandleConn(conn net.Conn) {
 	s.clients[cl.id] = cl
 	s.mu.Unlock()
 
-	defer func() {
-		cl.setOnline(false)
-		s.mu.Lock()
-		delete(s.clients, cl.id)
-		s.mu.Unlock()
-		conn.Close()
-	}()
+	defer s.LogUserOut(cl)
 
 	cl.setOnline(true)
 

@@ -32,12 +32,14 @@ func runSession(conn net.Conn, rl *readline.Instance) {
 		incoming: make(chan protocol.Message, 16),
 	}
 
-	go s.readFromServer()
+	done := make(chan struct{})
+
+	go s.readFromServer(done)
 	go s.processServerMessages()
-	s.inputLoop()
+	s.inputLoop(done)
 }
 
-func (s *session) readFromServer() {
+func (s *session) readFromServer(done chan struct{}) {
 	defer close(s.incoming)
 
 	decoder := json.NewDecoder(s.conn)
@@ -46,6 +48,8 @@ func (s *session) readFromServer() {
 		if err := decoder.Decode(&msg); err != nil {
 			if err != io.EOF {
 				s.writeDisplay("Connection closed")
+				close(done)
+				return
 			}
 			return
 		}
@@ -76,12 +80,10 @@ func (s *session) handleServerMessage(msg protocol.Message) {
 		if msg.ResponseMsg != "" {
 			s.writeDisplayLocked(msg.ResponseMsg)
 		}
-		s.clearPromptLocked()
 	default:
 		if msg.ResponseMsg == "" {
 			s.writeDisplayLocked(fmt.Sprintf("[server action %d]", msg.Action))
 		}
-		s.clearPromptLocked()
 	}
 
 	s.rl.Refresh()
@@ -101,7 +103,7 @@ func (s *session) writeDisplayLocked(msg string) {
 	if !strings.HasSuffix(msg, "\n") {
 		msg += "\n"
 	}
-	_, _ = s.rl.Write([]byte(msg))
+	_, _ = s.rl.Write([]byte("> " + msg))
 }
 
 func (s *session) clearSubmittedInput() {
@@ -145,47 +147,51 @@ func (s *session) clearCurrentInputLocked() {
 	s.rl.Refresh()
 }
 
-func (s *session) inputLoop() {
+func (s *session) inputLoop(done chan struct{}) {
 	for {
-		line, err := s.rl.Readline()
-		if err != nil {
-			msg, _ := buildCommandMessage("/quit")
+		select {
+		case <-done:
+			return
+		default:
+			line, err := s.rl.Readline()
+			if err != nil {
+				msg, _ := buildCommandMessage("/quit")
+				if err := writeMessage(s.conn, msg); err != nil {
+					s.writeDisplay(err.Error())
+				}
+				return
+			}
+
+			if prompt := s.pendingPrompt(); prompt != nil {
+				if err := s.sendPromptReply(prompt, line); err != nil {
+					s.writeDisplay(err.Error())
+				}
+				continue
+			}
+
+			msg, err := buildMessage(line)
+			if errors.Is(err, errClientOnly) {
+				continue
+			}
+			if err != nil {
+				s.writeDisplay(err.Error())
+				continue
+			}
+
+			if msg.Action == protocol.LOGOUT {
+				if err := writeMessage(s.conn, msg); err != nil {
+					s.writeDisplay(err.Error())
+					return
+				}
+				return
+			}
+
 			if err := writeMessage(s.conn, msg); err != nil {
 				s.writeDisplay(err.Error())
 				return
 			}
-			return
+			s.clearSubmittedInput()
 		}
-
-		if prompt := s.pendingPrompt(); prompt != nil {
-			if err := s.sendPromptReply(prompt, line); err != nil {
-				s.writeDisplay(err.Error())
-			}
-			continue
-		}
-
-		msg, err := buildMessage(line)
-		if errors.Is(err, errClientOnly) {
-			continue
-		}
-		if err != nil {
-			s.writeDisplay(err.Error())
-			continue
-		}
-
-		if msg.Action == protocol.LOGOUT {
-			if err := writeMessage(s.conn, msg); err != nil {
-				s.writeDisplay(err.Error())
-				return
-			}
-			return
-		}
-
-		if err := writeMessage(s.conn, msg); err != nil {
-			s.writeDisplay(err.Error())
-			return
-		}
-		s.clearSubmittedInput()
 	}
 }
 

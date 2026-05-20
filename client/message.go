@@ -328,7 +328,9 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 
 func buildPromptReply(action protocol.ActionType, serverPayload json.RawMessage, input string) (*protocol.Message, error) {
 	input = strings.TrimSpace(input)
-	if input == "" {
+	if input == "" &&
+		!(action == protocol.SET_ROOM_PASSWORD ||
+			action == protocol.GET_ROOM_PASSWORD) {
 		return nil, fmt.Errorf("empty input")
 	}
 
