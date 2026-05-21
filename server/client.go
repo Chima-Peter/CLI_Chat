@@ -293,6 +293,19 @@ func (cl *client) MessageFriend(friend *client, message string) {
 		return
 	}
 
+	var message_sent, message_received string
+	if friend.current_friend != nil && friend.current_friend.id == cl.id {
+		message_sent = fmt.Sprintf("%s: %s", cl.nick, message)
+	} else {
+		message_sent = fmt.Sprintf("Message from %s: %s", cl.nick, message)
+	}
+
+	if cl.current_friend != nil && cl.current_friend.id == friend.id {
+		message_received = fmt.Sprintf("You: %s", message)
+	} else {
+		message_received = fmt.Sprintf("Message sent to %s: %s", friend.nick, message)
+	}
+
 	friend.send_user_message(
 		map[string]any{
 			"from_user_id": cl.id,
@@ -300,9 +313,9 @@ func (cl *client) MessageFriend(friend *client, message string) {
 			"message":      message,
 		},
 		MESSAGE_FRIEND,
-		fmt.Sprintf("Message from %s: %s", cl.nick, message),
+		message_sent,
 	)
-	cl.send_user_message(map[string]any{}, DONE, fmt.Sprintf("Message sent to %s.", friend.nick))
+	cl.send_user_message(map[string]any{}, DONE, message_received)
 }
 
 func (cl *client) BlockUser(target *client) {

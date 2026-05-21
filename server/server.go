@@ -318,6 +318,7 @@ func (s *server) SwitchContext(cl *client, contextType, name string) {
 		cl.mu.Lock()
 		cl.current_context = contextRoom
 		cl.room = room_data
+		cl.current_friend = nil
 		cl.mu.Unlock()
 
 		cl.send_user_message(map[string]any{
@@ -343,6 +344,7 @@ func (s *server) SwitchContext(cl *client, contextType, name string) {
 		cl.mu.Lock()
 		cl.current_context = contextFriend
 		cl.current_friend = friend
+		cl.room = nil
 		cl.mu.Unlock()
 
 		cl.send_user_message(map[string]any{
@@ -418,7 +420,7 @@ func (s *server) SendRoomMessage(cl *client, roomName, message string) {
 	}
 
 	room_data.Broadcast(cl, message)
-	cl.send_user_message(map[string]any{}, DONE, fmt.Sprintf("You: %s", message))
+	cl.send_user_message(map[string]any{}, DONE, fmt.Sprintf("Message sent to %s: %s", room_data.name, message))
 }
 
 func (s *server) ListMyRooms(cl *client) {

@@ -30,7 +30,7 @@ func (r *room) Broadcast(sender *client, msg string) {
 	defer r.mu.RUnlock()
 	for id, member := range r.members {
 		if id != sender.id {
-			if sender.room.id == member.room.id {
+			if member.room != nil && member.room.id == r.id {
 				member.send_user_message(
 					map[string]any{
 						"from_user_id": sender.id,
@@ -52,7 +52,7 @@ func (r *room) Broadcast(sender *client, msg string) {
 						"room":         r.name,
 					},
 					MESSAGE_ROOM,
-					fmt.Sprintf("[%s] %s: %s", sender.room.name, sender.nick, msg),
+					fmt.Sprintf("Message from %s in room %s: %s", sender.nick, sender.room.name, msg),
 				)
 			}
 		}
