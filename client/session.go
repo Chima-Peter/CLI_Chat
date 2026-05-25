@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"io"
 	"net"
+	"os"
+	"strconv"
 	"strings"
 	"sync"
 
@@ -172,7 +174,19 @@ func (s *session) inputLoop() {
 		}
 
 		msg, err := buildMessage(line)
+		if fsc, ok := errors.AsType[*fileSendCommand](err); ok {
+			if sendErr := s.sendFile(fsc.filename); sendErr != nil {
+				s.writeDisplay(sendErr.Error())
+			} else {
+				s.writeDisplay("File sent.")
+			}
+			s.clearSubmittedInput()
+			continue
+		}
 		if errors.Is(err, errClientOnly) {
+			continue
+		}
+		if msg == nil {
 			continue
 		}
 		if err != nil {
@@ -212,4 +226,45 @@ func (s *session) sendPromptReply(prompt *protocol.Message, input string) error 
 
 func writeMessage(conn net.Conn, msg *protocol.Message) error {
 	return json.NewEncoder(conn).Encode(msg)
+}
+
+func (s *session) sendFile(filename string) error {
+	zipPath, err := ZipFile(filename)
+	if err != nil {
+		return err
+	}
+	return s.streamZipToServer(zipPath)
+}
+
+func (s *session) streamZipToServer(zipPath string) error {
+	info, err := os.Stat(zipPath)
+	if err != nil {
+		return fmt.Errorf("stat zip %q: %w", zipPath, err)
+	}
+
+	msg := &protocol.Message{
+		Action: protocol.SEND_FILE,
+		Payload: marshalStringPayload(map[string]string{
+			"name": info.Name(),
+			"size": strconv.FormatInt(info.Size(), 10),
+		}),
+	}
+	if err := writeMessage(s.conn, msg); err != nil {
+		return fmt.Errorf("send file metadata: %w", err)
+	}
+
+	f, err := os.Open(zipPath)
+	if err != nil {
+		return fmt.Errorf("open zip %q: %w", zipPath, err)
+	}
+	defer f.Close()
+
+	n, err := io.CopyN(s.conn, f, info.Size())
+	if err != nil {
+		return fmt.Errorf("stream zip %q: %w", zipPath, err)
+	}
+	if n != info.Size() {
+		return fmt.Errorf("stream zip %q: sent %d of %d bytes", zipPath, n, info.Size())
+	}
+	return nil
 }

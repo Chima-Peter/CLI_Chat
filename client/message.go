@@ -27,10 +27,36 @@ func needsUserReply(action protocol.ActionType) bool {
 	return !isTerminalAction(action) && !isDisplayOnlyAction(action)
 }
 
+type fileSendCommand struct {
+	filename string
+}
+
+func (e *fileSendCommand) Error() string {
+	return "file send"
+}
+
+func parseFileSendCommand(line string) (*fileSendCommand, error) {
+	parts := strings.SplitN(strings.TrimSpace(line), " ", 2)
+	if len(parts) == 0 || parts[0] != "/file" {
+		return nil, nil
+	}
+	if len(parts) < 2 || strings.TrimSpace(parts[1]) == "" {
+		return nil, fmt.Errorf("usage: /file <name>.<extension>")
+	}
+	return &fileSendCommand{filename: strings.TrimSpace(parts[1])}, nil
+}
+
 func buildMessage(line string) (*protocol.Message, error) {
 	line = strings.TrimSpace(line)
 	if line == "" {
 		return nil, fmt.Errorf("empty input")
+	}
+
+	if fsc, err := parseFileSendCommand(line); fsc != nil || err != nil {
+		if err != nil {
+			return nil, err
+		}
+		return nil, fsc
 	}
 
 	if strings.HasPrefix(line, "/") {
