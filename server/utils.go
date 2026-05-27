@@ -19,10 +19,15 @@ type requestPayload struct {
 	MaxSize    *int   `json:"max_size"`
 	Context    string `json:"context"`
 	FriendName string `json:"friend_name"`
+	Filepath   string `json:"filepath"`
 }
 
 func (p requestPayload) contextType() string {
 	return strings.TrimSpace(strings.ToLower(p.Context))
+}
+
+func (p requestPayload) filePath() string {
+	return strings.TrimSpace(p.Filepath)
 }
 
 func (p requestPayload) friendName() string {
