@@ -14,8 +14,6 @@ import (
 func (s *server) HandleConn(conn net.Conn) {
 	defer conn.Close()
 
-	log.Println("New client is connected:", conn.RemoteAddr().String())
-
 	cl := &client{
 		id:                      uuid.New().String(),
 		conn:                    conn,
@@ -33,6 +31,8 @@ func (s *server) HandleConn(conn net.Conn) {
 		room_invites:            make(map[string]*room),
 		mu:                      sync.RWMutex{},
 	}
+
+	log.Printf("New client %s connected", cl.nick)
 
 	s.mu.Lock()
 	s.clients[cl.id] = cl
