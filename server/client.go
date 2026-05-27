@@ -29,6 +29,8 @@ type client struct {
 	blocked_users           map[string]struct{}
 	room_invites            map[string]*room
 	online                  bool
+	fileListenHost          string
+	fileListenPort          int
 	mu                      sync.RWMutex
 }
 
@@ -389,4 +391,13 @@ func (cl *client) GetUserStatus(target *client) {
 		"room_id": roomID,
 		"room":    roomName,
 	}, DONE, fmt.Sprintf("%s is %s.", target.nick, status))
+}
+
+func (cl *client) GetFriendFilePort() (string, int) {
+	cl.mu.RLock()
+	fileListenHost := cl.fileListenHost
+	fileListenPort := cl.fileListenPort
+	cl.mu.RUnlock()
+
+	return fileListenHost, fileListenPort
 }

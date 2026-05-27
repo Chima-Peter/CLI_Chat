@@ -1,24 +1,33 @@
 package server
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
+	"strconv"
 	"strings"
 	"sync"
 
 	"github.com/google/uuid"
 )
 
+type pendingFileSend struct {
+	senderID string
+	filePath string
+}
+
 type server struct {
-	rooms   map[string]*room
-	clients map[string]*client
-	mu      sync.RWMutex
+	rooms               map[string]*room
+	clients             map[string]*client
+	pendingFileRequests map[string][]pendingFileSend // receiver id -> pending senders
+	mu                  sync.RWMutex
 }
 
 func InitServer() *server {
 	return &server{
-		rooms:   make(map[string]*room),
-		clients: make(map[string]*client),
+		rooms:               make(map[string]*room),
+		clients:             make(map[string]*client),
+		pendingFileRequests: make(map[string][]pendingFileSend),
 	}
 }
 
@@ -389,6 +398,115 @@ func (s *server) SendContextMessage(cl *client, message string) {
 	default:
 		cl.err(fmt.Errorf("use /switch room|friend <name> before sending a message"))
 	}
+}
+
+func (s *server) requestFriendFilePort(cl *client, friendName, filePath string) {
+	friendName = strings.TrimSpace(friendName)
+	if friendName == "" {
+		cl.err(fmt.Errorf("friend name is required"))
+		return
+	}
+	if strings.TrimSpace(filePath) == "" {
+		cl.err(fmt.Errorf("file path is required"))
+		return
+	}
+
+	friend, err := s.resolveUser("", friendName)
+	if err != nil {
+		cl.err(err)
+		return
+	}
+
+	friend.mu.RLock()
+	requesterIsFriend := hasID(friend.friends, cl.id)
+	friend.mu.RUnlock()
+	if !requesterIsFriend {
+		cl.err(fmt.Errorf("you are not in %s's friend list", friend.nick))
+		return
+	}
+
+	host, port := friend.GetFriendFilePort()
+	if host == "" || port == 0 {
+		s.mu.Lock()
+		s.pendingFileRequests[friend.id] = append(s.pendingFileRequests[friend.id], pendingFileSend{
+			senderID: cl.id,
+			filePath: filePath,
+		})
+		s.mu.Unlock()
+		cl.send_user_message(map[string]any{}, DONE, fmt.Sprintf("Waiting for %s to get ready to receive your file...", friend.nick))
+		return
+	}
+
+	s.sendFilePortToSender(cl, friend, host, port, filePath)
+}
+
+func (s *server) handleFilePortListening(receiver *client, payload json.RawMessage) {
+	var meta struct {
+		Host string `json:"host"`
+		Port string `json:"port"`
+	}
+	_ = json.Unmarshal(payload, &meta)
+	port, parseErr := strconv.Atoi(strings.TrimSpace(meta.Port))
+	if parseErr != nil || port <= 0 || port > 65535 {
+		receiver.err(fmt.Errorf("invalid file port: %q", meta.Port))
+		return
+	}
+	host := strings.TrimSpace(meta.Host)
+	if host == "" {
+		receiver.err(fmt.Errorf("file port host is required"))
+		return
+	}
+
+	receiver.mu.Lock()
+	receiver.fileListenHost = host
+	receiver.fileListenPort = port
+	receiver.mu.Unlock()
+	log.Printf("file port registered for %q: %s:%d", receiver.nick, host, port)
+
+	s.dispatchPendingFileRequests(receiver)
+}
+
+func (s *server) dispatchPendingFileRequests(receiver *client) {
+	s.mu.Lock()
+	pending := s.pendingFileRequests[receiver.id]
+	delete(s.pendingFileRequests, receiver.id)
+	s.mu.Unlock()
+	if len(pending) == 0 {
+		return
+	}
+
+	host, port := receiver.GetFriendFilePort()
+	if host == "" || port == 0 {
+		return
+	}
+
+	for _, req := range pending {
+		s.mu.RLock()
+		sender, ok := s.clients[req.senderID]
+		s.mu.RUnlock()
+		if !ok {
+			continue
+		}
+
+		receiver.mu.RLock()
+		requesterIsFriend := hasID(receiver.friends, sender.id)
+		receiver.mu.RUnlock()
+		if !requesterIsFriend {
+			continue
+		}
+
+		s.sendFilePortToSender(sender, receiver, host, port, req.filePath)
+	}
+}
+
+func (s *server) sendFilePortToSender(sender, receiver *client, host string, port int, filePath string) {
+	sender.send_user_message(map[string]any{
+		"host":     host,
+		"port":     strconv.Itoa(port),
+		"nick":     sender.nick,
+		"friend":   receiver.nick,
+		"filepath": filePath,
+	}, FILE_PORT_LISTENING, "File port ready.")
 }
 
 func (s *server) SendRoomMessage(cl *client, roomName, message string) {

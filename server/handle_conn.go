@@ -12,6 +12,8 @@ import (
 )
 
 func (s *server) HandleConn(conn net.Conn) {
+	defer conn.Close()
+
 	log.Println("New client is connected:", conn.RemoteAddr().String())
 
 	cl := &client{
@@ -126,8 +128,9 @@ func (s *server) dispatchMessage(cl *client, req *Message) (closeConn bool) {
 	case SEND_MSG:
 		s.SendContextMessage(cl, p.Message)
 	case SEND_FILE:
-		cl.err(fmt.Errorf("send file is not implemented yet"))
-
+		s.requestFriendFilePort(cl, p.friendName(), p.filePath())
+	case FILE_PORT_LISTENING:
+		s.handleFilePortListening(cl, req.Payload)
 	case SEND_FRIEND_REQUEST:
 		s.SendFriendRequest(cl, p.userID(), p.userName())
 	case ACCEPT_FRIEND_REQUEST:
@@ -187,4 +190,5 @@ func (s *server) handleLogin(cl *client, nick string) {
 		DONE,
 		fmt.Sprintf("Logged in as %s.", nick),
 	)
+	cl.send_user_message(map[string]any{}, CREATE_FILE_PORT, "")
 }

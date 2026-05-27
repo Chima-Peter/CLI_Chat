@@ -1,9 +1,9 @@
 package main
 
 import (
+	"crypto/tls"
 	"fmt"
 	"log"
-	"net"
 
 	"github.com/chima/CLI_Chat/server"
 )
@@ -31,7 +31,9 @@ func main() {
 	srv := server.InitServer()
 
 	// start listening on port 8888
-	listener, err := net.Listen("tcp", ":8888")
+	listener, err := tls.Listen("tcp", ":8888", &tls.Config{
+		Certificates: []tls.Certificate{},
+	})
 
 	if err != nil {
 		log.Fatal("Unable to start server:", err.Error())
@@ -42,9 +44,7 @@ func main() {
 	log.Println("Server is running on :8888")
 
 	for {
-		// accept connections infinitely on port 8888
 		conn, err := listener.Accept()
-
 		if err != nil {
 			log.Println("Unable to accept connection:", err.Error())
 			continue
