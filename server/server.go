@@ -425,7 +425,7 @@ func (s *server) requestFriendFilePort(cl *client, friendName, filePath string) 
 		return
 	}
 
-	host, port := friend.GetFriendFilePort()
+	host, port := friend.GetUserFilePort()
 	if host == "" || port == 0 {
 		s.mu.Lock()
 		s.pendingFileRequests[friend.id] = append(s.pendingFileRequests[friend.id], pendingFileSend{
@@ -462,6 +462,8 @@ func (s *server) handleFilePortListening(receiver *client, payload json.RawMessa
 	receiver.fileListenPort = port
 	receiver.mu.Unlock()
 
+	log.Printf("File server created for user %s at %s:%d", receiver.nick, host, port)
+
 	s.dispatchPendingFileRequests(receiver)
 }
 
@@ -474,7 +476,7 @@ func (s *server) dispatchPendingFileRequests(receiver *client) {
 		return
 	}
 
-	host, port := receiver.GetFriendFilePort()
+	host, port := receiver.GetUserFilePort()
 	if host == "" || port == 0 {
 		return
 	}
@@ -686,5 +688,6 @@ func (s *server) LogUserOut(cl *client) {
 	s.mu.Unlock()
 	cl.conn.Close()
 
+	log.Printf("File server closed successfully for user: %s", cl.nick)
 	log.Println("Client has disconnected:", cl.conn.RemoteAddr().String())
 }

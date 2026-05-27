@@ -393,7 +393,7 @@ func (cl *client) GetUserStatus(target *client) {
 	}, DONE, fmt.Sprintf("%s is %s.", target.nick, status))
 }
 
-func (cl *client) GetFriendFilePort() (string, int) {
+func (cl *client) GetUserFilePort() (string, int) {
 	cl.mu.RLock()
 	fileListenHost := cl.fileListenHost
 	fileListenPort := cl.fileListenPort

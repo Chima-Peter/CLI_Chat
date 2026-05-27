@@ -6,6 +6,7 @@ import (
 	"log"
 
 	"github.com/chima/CLI_Chat/server"
+	"github.com/chima/CLI_Chat/tls_config"
 )
 
 func printBootstrap() {
@@ -30,10 +31,12 @@ func main() {
 
 	srv := server.InitServer()
 
-	// start listening on port 8888
-	listener, err := tls.Listen("tcp", ":8888", &tls.Config{
-		InsecureSkipVerify: true,
-	})
+	tlsConfig, tls_error := tls_config.TLSDevConfig()
+	if tls_error != nil {
+		log.Fatal("Unable to create TLS config:", tls_error.Error())
+	}
+
+	listener, err := tls.Listen("tcp", ":8888", tlsConfig)
 
 	if err != nil {
 		log.Fatal("Unable to start server:", err.Error())

@@ -190,5 +190,6 @@ func (s *server) handleLogin(cl *client, nick string) {
 		DONE,
 		fmt.Sprintf("Logged in as %s.", nick),
 	)
+	log.Printf("Requesting file server for user %s", nick)
 	cl.send_user_message(map[string]any{}, CREATE_FILE_PORT, "")
 }

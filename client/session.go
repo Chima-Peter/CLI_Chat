@@ -55,7 +55,6 @@ func (s *session) readFromServer(done chan struct{}) {
 		var msg protocol.Message
 		if err := decoder.Decode(&msg); err != nil {
 			if err != io.EOF {
-				s.writeDisplay("Connection closed")
 				close(done)
 				return
 			}
@@ -153,7 +152,6 @@ func (s *session) clearTerminal() {
 func (s *session) clearSubmittedInput() {
 	s.displayMu.Lock()
 	defer s.displayMu.Unlock()
-	fmt.Fprint(s.rl.Stdout(), "\033[A\033[2K")
 	s.rl.SetPrompt(defaultPrompt)
 	s.rl.Refresh()
 }
@@ -214,6 +212,8 @@ func (s *session) inputLoop() {
 			s.clearTerminal()
 			continue
 		}
+
+		fmt.Fprint(s.rl.Stdout(), "\033[A\033[2K")
 
 		msg, err := buildMessage(line)
 		if fsc, ok := errors.AsType[*fileSendCommand](err); ok {

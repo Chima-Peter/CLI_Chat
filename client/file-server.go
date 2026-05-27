@@ -2,16 +2,10 @@ package client
 
 import (
 	"context"
-	"crypto/rand"
-	"crypto/rsa"
 	"crypto/tls"
-	"crypto/x509"
-	"crypto/x509/pkix"
 	"encoding/json"
-	"encoding/pem"
 	"fmt"
 	"io"
-	"math/big"
 	"net"
 	"os"
 	"path/filepath"
@@ -21,45 +15,13 @@ import (
 	"time"
 
 	"github.com/chima/CLI_Chat/protocol"
+	"github.com/chima/CLI_Chat/tls_config"
 )
 
-const fileServerIdleTimeout = 20 * time.Minute
-
-func devTLSConfig() (*tls.Config, error) {
-	key, err := rsa.GenerateKey(rand.Reader, 2048)
-	if err != nil {
-		return nil, fmt.Errorf("could not create TLS certificate: %w", err)
-	}
-
-	template := x509.Certificate{
-		SerialNumber: big.NewInt(1),
-		Subject:      pkix.Name{Organization: []string{"CLI Chat"}},
-		NotBefore:    time.Now(),
-		NotAfter:     time.Now().Add(365 * 24 * time.Hour),
-		KeyUsage:     x509.KeyUsageDigitalSignature | x509.KeyUsageKeyEncipherment,
-		ExtKeyUsage:  []x509.ExtKeyUsage{x509.ExtKeyUsageServerAuth},
-		IPAddresses:  []net.IP{net.IPv4(127, 0, 0, 1), net.IPv6loopback},
-		DNSNames:     []string{"localhost"},
-	}
-
-	der, err := x509.CreateCertificate(rand.Reader, &template, &template, &key.PublicKey, key)
-	if err != nil {
-		return nil, fmt.Errorf("could not create TLS certificate: %w", err)
-	}
-
-	certPEM := pem.EncodeToMemory(&pem.Block{Type: "CERTIFICATE", Bytes: der})
-	keyPEM := pem.EncodeToMemory(&pem.Block{Type: "RSA PRIVATE KEY", Bytes: x509.MarshalPKCS1PrivateKey(key)})
-
-	cert, err := tls.X509KeyPair(certPEM, keyPEM)
-	if err != nil {
-		return nil, fmt.Errorf("could not load TLS certificate: %w", err)
-	}
-
-	return &tls.Config{Certificates: []tls.Certificate{cert}}, nil
-}
+const fileServerIdleTimeout = 60 * time.Minute
 
 func StartFileServer(notify func(host string, port int) error) error {
-	tlsConfig, err := devTLSConfig()
+	tlsConfig, err := tls_config.TLSDevConfig()
 	if err != nil {
 		return err
 	}
@@ -108,7 +70,7 @@ func StartFileServer(notify func(host string, port int) error) error {
 			continue
 		}
 		extendTimeout()
-		go handleFile(conn)
+		go handleFile(conn, cancel)
 	}
 }
 
@@ -137,13 +99,18 @@ func writeFileConnOK(conn net.Conn, userMsg string) {
 	})
 }
 
-func handleFile(conn net.Conn) {
+func handleFile(conn net.Conn, cancel context.CancelFunc) {
 	defer conn.Close()
 
 	decoder := json.NewDecoder(conn)
 	for {
 		var request protocol.Message
 		if err := decoder.Decode(&request); err != nil {
+			return
+		}
+
+		if request.Action == protocol.LOGOUT {
+			cancel()
 			return
 		}
 
