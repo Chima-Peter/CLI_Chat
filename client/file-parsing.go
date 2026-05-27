@@ -72,7 +72,7 @@ var unsuitableExtensions = map[string]string{
 func ZipFile(filename string) (string, error) {
 	home, err := os.UserHomeDir()
 	if err != nil {
-		return "", fmt.Errorf("resolve home directory: %w", err)
+		return "", fmt.Errorf("could not find your Downloads folder: %w", err)
 	}
 	downloadsPath := filepath.Join(home, "Downloads")
 	safeFileName := filepath.Base(filename)
@@ -80,7 +80,10 @@ func ZipFile(filename string) (string, error) {
 
 	info, err := os.Stat(filePath)
 	if err != nil {
-		return "", fmt.Errorf("stat %q in Downloads: %w", safeFileName, err)
+		if os.IsNotExist(err) {
+			return "", fmt.Errorf("could not find %q in your Downloads folder", safeFileName)
+		}
+		return "", fmt.Errorf("could not access %q in Downloads: %w", safeFileName, err)
 	}
 
 	if info.IsDir() {

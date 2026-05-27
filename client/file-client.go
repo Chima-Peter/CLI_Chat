@@ -2,6 +2,7 @@ package client
 
 import (
 	"crypto/tls"
+	"encoding/json"
 	"fmt"
 	"io"
 	"net"
@@ -16,22 +17,20 @@ func CreateFileClient(host string, port int, nick string, friend string, filepat
 		InsecureSkipVerify: true,
 	})
 	if err != nil {
-		return fmt.Errorf("connect to file server: %w", err)
+		return fmt.Errorf("could not connect to %s to send the file: %w", friend, err)
 	}
 	defer conn.Close()
 
-	zipPath, err := streamZipToServer(conn, filepath, nick)
-	if err != nil {
-		return fmt.Errorf("send file: %w", err)
+	if err := streamZipToServer(conn, filepath, nick, friend); err != nil {
+		return err
 	}
-	fmt.Printf("File sent to %s (%s)\n", friend, zipPath)
 	return nil
 }
 
-func streamZipToServer(conn net.Conn, zipPath string, nick string) (string, error) {
+func streamZipToServer(conn net.Conn, zipPath string, nick string, friend string) error {
 	info, err := os.Stat(zipPath)
 	if err != nil {
-		return "", fmt.Errorf("stat zip %q: %w", zipPath, err)
+		return fmt.Errorf("could not read the prepared file: %w", err)
 	}
 
 	msg := &protocol.Message{
@@ -43,21 +42,37 @@ func streamZipToServer(conn net.Conn, zipPath string, nick string) (string, erro
 		}),
 	}
 	if err := writeMessage(conn, msg); err != nil {
-		return "", fmt.Errorf("send file metadata: %w", err)
+		return fmt.Errorf("could not start sending the file to %s: %w", friend, err)
 	}
 
 	f, err := os.Open(zipPath)
 	if err != nil {
-		return "", fmt.Errorf("open zip %q: %w", zipPath, err)
+		return fmt.Errorf("could not open the prepared file: %w", err)
 	}
 	defer f.Close()
 
 	n, err := io.CopyN(conn, f, info.Size())
 	if err != nil {
-		return "", fmt.Errorf("stream zip %q: %w", zipPath, err)
+		return fmt.Errorf("connection lost while sending the file to %s: %w", friend, err)
 	}
 	if n != info.Size() {
-		return "", fmt.Errorf("stream zip %q: sent %d of %d bytes", zipPath, n, info.Size())
+		return fmt.Errorf("only sent %d of %d bytes to %s", n, info.Size(), friend)
 	}
-	return zipPath, nil
+
+	return readFileTransferReply(conn, friend)
+}
+
+func readFileTransferReply(conn net.Conn, friend string) error {
+	var reply protocol.Message
+	if err := json.NewDecoder(conn).Decode(&reply); err != nil {
+		return fmt.Errorf("no confirmation received from %s", friend)
+	}
+	if reply.Action == protocol.ERR {
+		msg := reply.ResponseMsg
+		if msg == "" {
+			msg = fmt.Sprintf("%s could not accept the file", friend)
+		}
+		return fmt.Errorf("%s", msg)
+	}
+	return nil
 }
