@@ -139,6 +139,17 @@ func handleFile(conn net.Conn) {
 
 			log.Printf("file upload: saved to %s", destPath)
 			return
+		} else {
+			msg := &protocol.Message{
+				Action:      protocol.ERR,
+				ResponseMsg: "Unsupported request",
+				Payload: marshalStringPayload(map[string]string{
+					"message": "Unsupported request",
+				}),
+			}
+			if err := writeMessage(conn, msg); err != nil {
+				continue
+			}
 		}
 	}
 }
