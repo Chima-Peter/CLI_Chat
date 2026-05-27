@@ -14,7 +14,10 @@ import (
 	"github.com/chzyer/readline"
 )
 
-const defaultPrompt = "> "
+const (
+	defaultPrompt = "> "
+	clearTerminalSeq = "\033[H\033[2J"
+)
 
 type session struct {
 	conn     net.Conn
@@ -77,10 +80,10 @@ func (s *session) handleServerMessage(msg protocol.Message) {
 		go s.runFileServer()
 	case msg.Action == protocol.FILE_PORT_LISTENING:
 		var meta struct {
-			Host   string `json:"host"`
-			Port   string `json:"port"`
-			Nick   string `json:"nick"`
-			Friend string `json:"friend"`
+			Host     string `json:"host"`
+			Port     string `json:"port"`
+			Nick     string `json:"nick"`
+			Friend   string `json:"friend"`
 			Filepath string `json:"filepath"`
 		}
 		_ = json.Unmarshal(msg.Payload, &meta)
@@ -91,10 +94,10 @@ func (s *session) handleServerMessage(msg protocol.Message) {
 		}
 		go func() {
 			if err := CreateFileClient(meta.Host, port, meta.Nick, meta.Friend, meta.Filepath); err != nil {
-				s.writeDisplay(err.Error())
-			} else {
-				s.writeDisplay("File sent to " + meta.Friend + ".")
+				s.writeDisplay(fmt.Sprintf("Could not send file to %s: %s", meta.Friend, err.Error()))
+				return
 			}
+			s.writeDisplay("File sent to " + meta.Friend + ".")
 		}()
 	case needsUserReply(msg.Action):
 		s.clearCurrentInputLocked()
@@ -131,8 +134,20 @@ func (s *session) writeDisplayLocked(msg string) {
 		msg += "\n"
 	}
 
+	pending := s.pendingPrompt()
 	s.rl.SetPrompt("")
 	_, _ = s.rl.Write([]byte("> " + msg))
+	if pending != nil {
+		s.setPromptLocked(pending)
+	}
+}
+
+func (s *session) clearTerminal() {
+	s.displayMu.Lock()
+	defer s.displayMu.Unlock()
+	fmt.Print(clearTerminalSeq)
+	s.rl.SetPrompt(defaultPrompt)
+	s.rl.Refresh()
 }
 
 func (s *session) clearSubmittedInput() {
@@ -195,24 +210,29 @@ func (s *session) inputLoop() {
 			continue
 		}
 
+		if line == "clear" {
+			s.clearTerminal()
+			continue
+		}
+
 		msg, err := buildMessage(line)
 		if fsc, ok := errors.AsType[*fileSendCommand](err); ok {
 			if sendErr := s.sendFileMetadata(fsc.filename, fsc.friend); sendErr != nil {
-				s.writeDisplay(sendErr.Error())
+				s.writeDisplay(fmt.Sprintf("Could not send %q to %s: %s", fsc.filename, fsc.friend, sendErr.Error()))
 			} else {
-				s.writeDisplay("Sending file to " + fsc.friend + "...")
+				s.writeDisplay("Sending " + fsc.filename + " to " + fsc.friend + "...")
 			}
 			s.clearSubmittedInput()
 			continue
 		}
-		if errors.Is(err, errClientOnly) {
+		if err != nil {
+			if errors.Is(err, errClientOnly) {
+				continue
+			}
+			s.writeDisplay(err.Error())
 			continue
 		}
 		if msg == nil {
-			continue
-		}
-		if err != nil {
-			s.writeDisplay(err.Error())
 			continue
 		}
 
@@ -261,7 +281,7 @@ func (s *session) runFileServer() {
 		})
 	})
 	if err != nil {
-		s.writeDisplay(err.Error())
+		s.writeDisplay("Could not receive files: " + err.Error())
 	}
 }
 
@@ -279,7 +299,7 @@ func (s *session) sendFileMetadata(filename string, friend string) error {
 		}),
 	}
 	if err := writeMessage(s.conn, msg); err != nil {
-		return fmt.Errorf("send file metadata: %w", err)
+		return fmt.Errorf("could not reach the server: %w", err)
 	}
 	return nil
 }

@@ -32,7 +32,7 @@ func main() {
 
 	// start listening on port 8888
 	listener, err := tls.Listen("tcp", ":8888", &tls.Config{
-		Certificates: []tls.Certificate{},
+		InsecureSkipVerify: true,
 	})
 
 	if err != nil {

@@ -461,7 +461,6 @@ func (s *server) handleFilePortListening(receiver *client, payload json.RawMessa
 	receiver.fileListenHost = host
 	receiver.fileListenPort = port
 	receiver.mu.Unlock()
-	log.Printf("file port registered for %q: %s:%d", receiver.nick, host, port)
 
 	s.dispatchPendingFileRequests(receiver)
 }
