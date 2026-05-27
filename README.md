@@ -67,7 +67,7 @@ Type `/help` in the client for the full command list.
 
 ### Quick start
 
-On connect the server prompts for a nickname. Enter a name (or use `/auth/login <name>` while prompted); retry until login succeeds.
+On connect the server prompts for a nickname. Enter a name (or use `/login <name>` while prompted); retry until login succeeds.
 
 ```
 alice
@@ -75,7 +75,7 @@ alice
 /room/join general
 /switch room general
 Hello everyone!
-/auth/logout
+/quit
 ```
 
 Joining a room does **not** set your chat context. Use `/switch room <name>` before sending plain text, or use `/chat/room <name> <message>` for a one-off room message.
@@ -102,9 +102,9 @@ Slash commands are parsed in `client/message.go` and sent as protocol messages. 
 | Command | Protocol action | Notes |
 |---------|-----------------|-------|
 | *(on connect)* | `LOGIN` | Server prompts for nickname; blocks all other actions until login succeeds |
-| `/auth/login <name>` | `LOGIN` | Same as typing a nickname at the connect prompt |
-| `/auth/signup <name>` | `SIGN_UP` (stub) | Not implemented on server |
-| `/auth/logout` | `LOGOUT` | Disconnects |
+| `/login <name>` | `LOGIN` | Same as typing a nickname at the connect prompt |
+| `/signup <name>` | `SIGN_UP` (stub) | Not implemented on server |
+| `/quit` | `LOGOUT` | Disconnects |
 
 **Login rules:** nickname must be non-empty, cannot be `anonymous` (case-insensitive), and must be unique among logged-in clients. On failure the server replies with action `LOGIN` and an error message so the client stays in prompt mode until both conditions pass.
 
@@ -173,7 +173,7 @@ Slash commands are parsed in `client/message.go` and sent as protocol messages. 
 └─────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────┐
-│  User sends nickname (or /auth/login <name> → LOGIN payload)     │
+│  User sends nickname (or /login <name> → LOGIN payload)     │
 │  → Server: handleLogin                                           │
 │     • empty / anonymous / taken → LOGIN + error (stay in prompt) │
 │     • valid → DONE "Logged in as …" (full commands unlocked)     │

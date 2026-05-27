@@ -194,7 +194,11 @@ func (s *session) inputLoop() {
 	for {
 		line, err := s.rl.Readline()
 		if err != nil {
-			msg, _ := buildCommandMessage("/quit")
+			msg, commandErr := buildCommandMessage("/quit")
+			if commandErr != nil {
+				s.writeDisplay(commandErr.Error())
+				continue
+			}
 			if err := writeMessage(s.conn, msg); err != nil {
 				return
 			}

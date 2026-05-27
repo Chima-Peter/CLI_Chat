@@ -17,9 +17,9 @@ type commandHelp struct {
 var commandHelpList = []commandHelp{
 	{group: "General", usage: "/help", protocol: "(client)", description: "Show this help"},
 
-	{group: "Auth", usage: "/auth/login <name>", protocol: "LOGIN", description: "Set your nickname"},
-	{group: "Auth", usage: "/auth/signup <name>", protocol: "SIGN_UP", description: "Sign up (server stub)"},
-	{group: "Auth", usage: "/auth/logout", protocol: "LOGOUT", description: "Disconnect"},
+	{group: "Auth", usage: "/login <name>", protocol: "LOGIN", description: "Set your nickname"},
+	{group: "Auth", usage: "/signup <name>", protocol: "SIGN_UP", description: "Sign up (server stub)"},
+	{group: "Auth", usage: "/quit", protocol: "LOGOUT", description: "Disconnect"},
 
 	{group: "Room", usage: "/room/create <name>", protocol: "CREATE_ROOM", description: "Create a room"},
 	{group: "Room", usage: "/room/join <name>", protocol: "JOIN_ROOM", description: "Join a room"},
@@ -75,7 +75,7 @@ func printBootstrap() {
 	fmt.Printf("║         CLI Chat Client                ║\n")
 	fmt.Printf("╠════════════════════════════════════════╣\n")
 	fmt.Printf("║  Type /help for all commands           ║\n")
-	fmt.Printf("║  /auth/login <name>                    ║\n")
+	fmt.Printf("║  /login <name>                    ║\n")
 	fmt.Printf("║  /room/join <room>                     ║\n")
 	fmt.Printf("║  /switch room <room>                   ║\n")
 	fmt.Printf("║  plain text — send to active context   ║\n")

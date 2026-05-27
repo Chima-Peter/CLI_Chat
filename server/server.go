@@ -689,5 +689,5 @@ func (s *server) LogUserOut(cl *client) {
 	cl.conn.Close()
 
 	log.Printf("File server closed successfully for user: %s", cl.nick)
-	log.Println("Client has disconnected:", cl.conn.RemoteAddr().String())
+	log.Printf("%s has disconnected.", cl.nick)
 }

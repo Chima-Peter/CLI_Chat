@@ -131,8 +131,8 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 		return nil, errClientOnly
 
 	// auth
-	case "/auth/signup":
-		if err := requireNameArg(arg, "/auth/signup <username>"); err != nil {
+	case "/signup":
+		if err := requireNameArg(arg, "/signup <username>"); err != nil {
 			return nil, err
 		}
 		return &protocol.Message{
@@ -140,8 +140,8 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 			Payload: marshalStringPayload(map[string]string{"username": arg}),
 		}, nil
 
-	case "/auth/login":
-		if err := requireNameArg(arg, "/auth/login <name>"); err != nil {
+	case "/login":
+		if err := requireNameArg(arg, "/login <name>"); err != nil {
 			return nil, err
 		}
 		return &protocol.Message{
@@ -149,7 +149,7 @@ func buildCommandMessage(line string) (*protocol.Message, error) {
 			Payload: marshalStringPayload(map[string]string{"username": arg}),
 		}, nil
 
-	case "/auth/logout":
+	case "/quit":
 		return &protocol.Message{Action: protocol.LOGOUT}, nil
 
 	// room
