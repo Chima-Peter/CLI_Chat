@@ -29,6 +29,7 @@ func needsUserReply(action protocol.ActionType) bool {
 
 type fileSendCommand struct {
 	filename string
+	friend string
 }
 
 func (e *fileSendCommand) Error() string {
@@ -36,14 +37,14 @@ func (e *fileSendCommand) Error() string {
 }
 
 func parseFileSendCommand(line string) (*fileSendCommand, error) {
-	parts := strings.SplitN(strings.TrimSpace(line), " ", 2)
+	parts := strings.SplitN(strings.TrimSpace(line), " ", 3)
 	if len(parts) == 0 || parts[0] != "/file" {
 		return nil, nil
 	}
-	if len(parts) < 2 || strings.TrimSpace(parts[1]) == "" {
-		return nil, fmt.Errorf("usage: /file <name>.<extension>")
+	if len(parts) < 3 || strings.TrimSpace(parts[1]) == "" || strings.TrimSpace(parts[2]) == "" {
+		return nil, fmt.Errorf("usage: /file <friend> <name>.<extension>")
 	}
-	return &fileSendCommand{filename: strings.TrimSpace(parts[1])}, nil
+	return &fileSendCommand{friend: strings.TrimSpace(parts[1]), filename: strings.TrimSpace(parts[2])}, nil
 }
 
 func buildMessage(line string) (*protocol.Message, error) {

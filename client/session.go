@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"io"
 	"net"
-	"os"
 	"strconv"
 	"strings"
 	"sync"
@@ -74,6 +73,29 @@ func (s *session) handleServerMessage(msg protocol.Message) {
 	defer s.displayMu.Unlock()
 
 	switch {
+	case msg.Action == protocol.CREATE_FILE_PORT:
+		go s.runFileServer()
+	case msg.Action == protocol.FILE_PORT_LISTENING:
+		var meta struct {
+			Host   string `json:"host"`
+			Port   string `json:"port"`
+			Nick   string `json:"nick"`
+			Friend string `json:"friend"`
+			Filepath string `json:"filepath"`
+		}
+		_ = json.Unmarshal(msg.Payload, &meta)
+		port, parseErr := strconv.Atoi(meta.Port)
+		if parseErr != nil {
+			s.writeDisplay("Invalid port received from server: " + meta.Port)
+			return
+		}
+		go func() {
+			if err := CreateFileClient(meta.Host, port, meta.Nick, meta.Friend, meta.Filepath); err != nil {
+				s.writeDisplay(err.Error())
+			} else {
+				s.writeDisplay("File sent to " + meta.Friend + ".")
+			}
+		}()
 	case needsUserReply(msg.Action):
 		s.clearCurrentInputLocked()
 		s.setPromptLocked(&msg)
@@ -175,10 +197,10 @@ func (s *session) inputLoop() {
 
 		msg, err := buildMessage(line)
 		if fsc, ok := errors.AsType[*fileSendCommand](err); ok {
-			if sendErr := s.sendFile(fsc.filename); sendErr != nil {
+			if sendErr := s.sendFileMetadata(fsc.filename, fsc.friend); sendErr != nil {
 				s.writeDisplay(sendErr.Error())
 			} else {
-				s.writeDisplay("File sent.")
+				s.writeDisplay("Sending file to " + fsc.friend + "...")
 			}
 			s.clearSubmittedInput()
 			continue
@@ -228,43 +250,36 @@ func writeMessage(conn net.Conn, msg *protocol.Message) error {
 	return json.NewEncoder(conn).Encode(msg)
 }
 
-func (s *session) sendFile(filename string) error {
+func (s *session) runFileServer() {
+	err := StartFileServer(func(host string, port int) error {
+		return writeMessage(s.conn, &protocol.Message{
+			Action: protocol.FILE_PORT_LISTENING,
+			Payload: marshalStringPayload(map[string]string{
+				"host": host,
+				"port": strconv.Itoa(port),
+			}),
+		})
+	})
+	if err != nil {
+		s.writeDisplay(err.Error())
+	}
+}
+
+func (s *session) sendFileMetadata(filename string, friend string) error {
 	zipPath, err := ZipFile(filename)
 	if err != nil {
 		return err
-	}
-	return s.streamZipToServer(zipPath)
-}
-
-func (s *session) streamZipToServer(zipPath string) error {
-	info, err := os.Stat(zipPath)
-	if err != nil {
-		return fmt.Errorf("stat zip %q: %w", zipPath, err)
 	}
 
 	msg := &protocol.Message{
 		Action: protocol.SEND_FILE,
 		Payload: marshalStringPayload(map[string]string{
-			"name": info.Name(),
-			"size": strconv.FormatInt(info.Size(), 10),
+			"filepath": zipPath,
+			"username": friend,
 		}),
 	}
 	if err := writeMessage(s.conn, msg); err != nil {
 		return fmt.Errorf("send file metadata: %w", err)
-	}
-
-	f, err := os.Open(zipPath)
-	if err != nil {
-		return fmt.Errorf("open zip %q: %w", zipPath, err)
-	}
-	defer f.Close()
-
-	n, err := io.CopyN(s.conn, f, info.Size())
-	if err != nil {
-		return fmt.Errorf("stream zip %q: %w", zipPath, err)
-	}
-	if n != info.Size() {
-		return fmt.Errorf("stream zip %q: sent %d of %d bytes", zipPath, n, info.Size())
 	}
 	return nil
 }
