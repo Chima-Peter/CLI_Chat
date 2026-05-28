@@ -15,7 +15,7 @@ func printBootstrap() {
 	fmt.Println("║         CLI Chat Server                ║")
 	fmt.Println("╠════════════════════════════════════════╣")
 	fmt.Println("║  Server Info:                          ║")
-	fmt.Println("║    Port: 8888                          ║")
+	fmt.Println("║    Port: 8000                          ║")
 	fmt.Println("║    Protocol: TCP                       ║")
 	fmt.Println("╠════════════════════════════════════════╣")
 	fmt.Println("║  Client Commands:                      ║")

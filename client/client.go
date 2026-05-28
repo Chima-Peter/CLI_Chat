@@ -3,6 +3,7 @@ package client
 import (
 	"crypto/tls"
 	"fmt"
+	"os"
 
 	"github.com/chzyer/readline"
 )
@@ -10,7 +11,12 @@ import (
 func Connect() {
 	printBootstrap()
 
-	conn, err := tls.Dial("tcp", "localhost:8888", &tls.Config{
+	serverUrl := os.Getenv("SERVER_URL")
+	if serverUrl == "" {
+		serverUrl = "localhost:8080"
+	}
+
+	conn, err := tls.Dial("tcp", serverUrl, &tls.Config{
 		InsecureSkipVerify: true,
 	})
 	if err != nil {
