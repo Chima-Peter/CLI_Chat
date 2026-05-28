@@ -13,7 +13,11 @@ func Connect() {
 
 	serverUrl := os.Getenv("SERVER_URL")
 	if serverUrl == "" {
-		serverUrl = "localhost:8080"
+		port := os.Getenv("PORT")
+		if port == "" {
+			port = "8080"
+		}
+		serverUrl = "localhost:" + port
 	}
 
 	conn, err := tls.Dial("tcp", serverUrl, &tls.Config{
