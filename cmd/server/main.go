@@ -4,6 +4,7 @@ import (
 	"crypto/tls"
 	"fmt"
 	"log"
+	"os"
 
 	"github.com/chima/CLI_Chat/server"
 	"github.com/chima/CLI_Chat/tls_config"
@@ -36,7 +37,12 @@ func main() {
 		log.Fatal("Unable to create TLS config:", tls_error.Error())
 	}
 
-	listener, err := tls.Listen("tcp", ":8888", tlsConfig)
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
+	listener, err := tls.Listen("tcp", ":"+port, tlsConfig)
 
 	if err != nil {
 		log.Fatal("Unable to start server:", err.Error())
@@ -44,7 +50,7 @@ func main() {
 
 	defer listener.Close()
 
-	log.Println("Server is running on :8888")
+	log.Println("Server is running on :"+port)
 
 	for {
 		conn, err := listener.Accept()
