@@ -1,0 +1,79 @@
+{
+  "kind": "easyspecs.data-model-list",
+  "version": 1,
+  "entities": [
+    {
+      "code": "DM-01",
+      "name": "Room",
+      "slug": "room",
+      "description": "Represents a chat room for users to exchange messages.",
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 10,
+          "endLine": 15,
+          "note": "room struct definition"
+        }
+      ],
+      "fields": [],
+      "relationships": []
+    },
+    {
+      "code": "DM-02",
+      "name": "Client",
+      "slug": "client",
+      "description": "Represents a connected user and their state.",
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 17,
+          "endLine": 25,
+          "note": "client struct definition"
+        }
+      ],
+      "fields": [],
+      "relationships": []
+    },
+    {
+      "code": "DM-03",
+      "name": "Message",
+      "slug": "message",
+      "description": "Represents a protocol message sent over the wire.",
+      "sourceReferences": [
+        {
+          "path": "protocol/message.go",
+          "startLine": 54,
+          "endLine": 60,
+          "note": "Message struct definition"
+        }
+      ],
+      "fields": [],
+      "relationships": []
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial entity registry: added minimal entities representing in-memory domain concepts."
+    },
+    {
+      "at": "2026-06-01T14:43:14.155Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "DM-01",
+          "DM-02",
+          "DM-03"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "at": "2026-06-01T15:45:00.000Z",
+      "summary": "Semantic review: added kind and version fields."
+    }
+  ]
+}

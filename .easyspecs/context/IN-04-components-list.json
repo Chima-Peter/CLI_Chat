@@ -1,0 +1,40 @@
+{
+  "infrastructureCode": "IN-04",
+  "components": [
+    {
+      "code": "IC-01",
+      "name": "CLI input dependency",
+      "slug": "cli-input-dependency",
+      "description": "Dependency management for CLI input handling via github.com/chzyer/readline.",
+      "order": 1,
+      "sourceReferences": [
+        { "path": "go.mod", "startLine": 5, "endLine": 5, "note": "readline dependency" },
+        { "path": "client/client.go", "startLine": 8, "endLine": 8, "note": "readline usage" }
+      ]
+    },
+    {
+      "code": "IC-02",
+      "name": "UUID generation dependency",
+      "slug": "uuid-generation-dependency",
+      "description": "Dependency management for unique identifier generation via github.com/google/uuid.",
+      "order": 2,
+      "sourceReferences": [
+        { "path": "go.mod", "startLine": 8, "endLine": 8, "note": "uuid dependency" },
+        { "path": "server/server.go", "startLine": 11, "endLine": 11, "note": "uuid usage" }
+      ]
+    },
+    {
+      "code": "IC-03",
+      "name": "Go module configuration",
+      "slug": "go-module-configuration",
+      "description": "Primary Go module definition and dependency management.",
+      "order": 3,
+      "sourceReferences": [
+        { "path": "go.mod", "startLine": 1, "endLine": 10, "note": "go.mod file" }
+      ]
+    }
+  ],
+  "revisionLog": [
+    { "summary": "Initial infrastructure components list for IN-04 dependency management." }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "kind": "easyspecs.qa-test-cases-list",
+  "qaCode": "QA-01",
+  "testCases": [
+    {
+      "code": "TC-01",
+      "name": "Successful login with a valid nickname",
+      "slug": "successful-login",
+      "order": 1,
+      "kind": "happy_path",
+      "coversCodes": [
+        "FE-01"
+      ],
+      "sourceReferences": [
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 183,
+          "endLine": 192,
+          "note": "Authentication success"
+        }
+      ]
+    },
+    {
+      "code": "TC-02",
+      "name": "Failed login with empty nickname",
+      "slug": "failed-login-empty-nickname",
+      "order": 2,
+      "kind": "error_path",
+      "coversCodes": [
+        "FE-01"
+      ],
+      "sourceReferences": [
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 170,
+          "endLine": 173,
+          "note": "Empty nickname check"
+        }
+      ]
+    },
+    {
+      "code": "TC-03",
+      "name": "Failed login with 'anonymous' nickname",
+      "slug": "failed-login-anonymous",
+      "order": 3,
+      "kind": "error_path",
+      "coversCodes": [
+        "FE-01"
+      ],
+      "sourceReferences": [
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 174,
+          "endLine": 177,
+          "note": "Anonymous nickname check"
+        }
+      ]
+    },
+    {
+      "code": "TC-04",
+      "name": "Failed login with already taken nickname",
+      "slug": "failed-login-taken-nickname",
+      "order": 4,
+      "kind": "error_path",
+      "coversCodes": [
+        "FE-01"
+      ],
+      "sourceReferences": [
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 178,
+          "endLine": 181,
+          "note": "Taken nickname check"
+        }
+      ]
+    },
+    {
+      "code": "TC-05",
+      "name": "Logout after successful login",
+      "slug": "logout-successful",
+      "order": 5,
+      "kind": "happy_path",
+      "coversCodes": [
+        "FE-01"
+      ],
+      "sourceReferences": [
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 78,
+          "endLine": 80,
+          "note": "Logout handler"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial test cases list for User authentication verification (QA-01)."
+    },
+    {
+      "at": "2026-06-01T15:35:26.979Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "TC-01",
+          "TC-02",
+          "TC-03",
+          "TC-04",
+          "TC-05"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "at": "2026-06-01T15:40:00.000Z",
+      "summary": "Normalized test cases: added 'kind' property to each test case and root object to conform to schema."
+    }
+  ]
+}

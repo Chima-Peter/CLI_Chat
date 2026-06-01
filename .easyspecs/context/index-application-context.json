@@ -1,0 +1,2837 @@
+{
+  "kind": "easyspecs.application-context",
+  "version": 3,
+  "title": "Application context",
+  "generatedAt": "2026-06-01T16:03:01.370Z",
+  "driftCount": 0,
+  "scopes": {
+    "Feature": {
+      "nodes": [
+        {
+          "type": "Feature",
+          "code": "FE-02",
+          "name": "Room management",
+          "children": [
+            {
+              "type": "UseCase",
+              "code": "UC-01",
+              "name": "Join room",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "Join public room successfully",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-01_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-01_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "Try to join a full room",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-01_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-01_SC-02.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-03",
+                  "name": "Try to join the room already joined",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-01_SC-03.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-01_SC-03.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-04",
+                  "name": "Try to join another room while already a member",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-01_SC-04.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-01_SC-04.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-05",
+                  "name": "Try to join a private room",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-01_SC-05.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-01_SC-05.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-02_UC-01.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-02_UC-01.md"
+              }
+            },
+            {
+              "type": "UseCase",
+              "code": "UC-02",
+              "name": "Join private room",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "Join private room successfully with correct password",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-02_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-02_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "Fail to join private room with incorrect password",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-02_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-02_SC-02.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-03",
+                  "name": "Join private room without password fails",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-02_SC-03.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-02_SC-03.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-02_UC-02.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-02_UC-02.md"
+              }
+            },
+            {
+              "type": "UseCase",
+              "code": "UC-03",
+              "name": "Edit room",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "Successfully update room settings",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-03_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-03_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "Deny update if not owner",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-03_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-03_SC-02.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-03",
+                  "name": "Deny update if maxSize is negative",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-03_SC-03.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-03_SC-03.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-04",
+                  "name": "Deny update if maxSize is less than current members",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-03_SC-04.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-03_SC-04.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-05",
+                  "name": "Deny update if room name is taken",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-03_SC-05.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-03_SC-05.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-02_UC-03.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-02_UC-03.md"
+              }
+            },
+            {
+              "type": "UseCase",
+              "code": "UC-04",
+              "name": "Leave room",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "User leaves room successfully",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-04_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-04_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "User fails to leave a room not joined",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-04_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-04_SC-02.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-02_UC-04.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-02_UC-04.md"
+              }
+            },
+            {
+              "type": "UseCase",
+              "code": "UC-05",
+              "name": "Delete room",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "Owner successfully deletes the room",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-05_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-05_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "Member fails to delete room because not admin",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-05_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-05_SC-02.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-03",
+                  "name": "User fails to delete room because not a member",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-05_SC-03.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-05_SC-03.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-02_UC-05.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-02_UC-05.md"
+              }
+            },
+            {
+              "type": "UseCase",
+              "code": "UC-06",
+              "name": "Invite user to room",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "Successful room invitation",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-06_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-06_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "Invitation fails if room not found",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-06_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-06_SC-02.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-03",
+                  "name": "Invitation fails if user is not room owner",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-06_SC-03.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-06_SC-03.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-04",
+                  "name": "Invitation fails if invitee not found",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-06_SC-04.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-06_SC-04.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-05",
+                  "name": "Invitation fails if user is already a member",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-06_SC-05.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-06_SC-05.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-02_UC-06.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-02_UC-06.md"
+              }
+            },
+            {
+              "type": "UseCase",
+              "code": "UC-07",
+              "name": "View pending room invites",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "View pending room invites with invited users",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-07_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-07_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "View pending room invites with no invited users",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-07_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-07_SC-02.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-02_UC-07.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-02_UC-07.md"
+              }
+            },
+            {
+              "type": "UseCase",
+              "code": "UC-08",
+              "name": "Accept room invite",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "Accept valid room invite",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-08_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-08_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "Fail to accept - no invite found",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-08_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-08_SC-02.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-03",
+                  "name": "Fail to accept - already a member",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-08_SC-03.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-08_SC-03.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-04",
+                  "name": "Fail to accept - room full",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-08_SC-04.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-08_SC-04.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-02_UC-08.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-02_UC-08.md"
+              }
+            },
+            {
+              "type": "UseCase",
+              "code": "UC-09",
+              "name": "Decline room invite",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "Decline room invite successfully",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-09_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-09_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "Decline non-existent room invite",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-09_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-09_SC-02.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-03",
+                  "name": "Decline invite when already in room",
+                  "detailMarkdownPaths": [
+                    "FE-02_UC-09_SC-03.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-02_UC-09_SC-03.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-02_UC-09.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-02_UC-09.md"
+              }
+            }
+          ],
+          "detailMarkdownPaths": [
+            "FE-02-room-management.md"
+          ],
+          "detailMarkdownFile": {
+            "path": "FE-02-room-management.md"
+          }
+        },
+        {
+          "type": "Feature",
+          "code": "FE-03",
+          "name": "Friend management",
+          "children": [
+            {
+              "type": "UseCase",
+              "code": "UC-01",
+              "name": "Send friend request",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "Successfully send a friend request",
+                  "detailMarkdownPaths": [
+                    "FE-03_UC-01_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-03_UC-01_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "Fail when target user does not exist",
+                  "detailMarkdownPaths": [
+                    "FE-03_UC-01_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-03_UC-01_SC-02.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-03",
+                  "name": "Fail when already friends",
+                  "detailMarkdownPaths": [
+                    "FE-03_UC-01_SC-03.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-03_UC-01_SC-03.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-04",
+                  "name": "Fail when request already pending",
+                  "detailMarkdownPaths": [
+                    "FE-03_UC-01_SC-04.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-03_UC-01_SC-04.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-05",
+                  "name": "Fail when target user is blocked",
+                  "detailMarkdownPaths": [
+                    "FE-03_UC-01_SC-05.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-03_UC-01_SC-05.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-03_UC-01.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-03_UC-01.md"
+              }
+            },
+            {
+              "type": "UseCase",
+              "code": "UC-02",
+              "name": "Accept friend request",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "Successfully accept friend request",
+                  "detailMarkdownPaths": [
+                    "FE-03_UC-02_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-03_UC-02_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "Fail: user not found",
+                  "detailMarkdownPaths": [
+                    "FE-03_UC-02_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-03_UC-02_SC-02.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-03",
+                  "name": "Fail: no pending request from user",
+                  "detailMarkdownPaths": [
+                    "FE-03_UC-02_SC-03.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-03_UC-02_SC-03.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-03_UC-02.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-03_UC-02.md"
+              }
+            },
+            {
+              "type": "UseCase",
+              "code": "UC-03",
+              "name": "Reject friend request",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "Successfully reject a pending friend request",
+                  "detailMarkdownPaths": [
+                    "FE-03_UC-03_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-03_UC-03_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "Fail to reject friend request due to invalid user",
+                  "detailMarkdownPaths": [
+                    "FE-03_UC-03_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-03_UC-03_SC-02.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-03_UC-03.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-03_UC-03.md"
+              }
+            },
+            {
+              "type": "UseCase",
+              "code": "UC-04",
+              "name": "Cancel sent friend request",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "Successfully cancel sent friend request",
+                  "detailMarkdownPaths": [
+                    "FE-03_UC-04_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-03_UC-04_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "Fails when friend request does not exist",
+                  "detailMarkdownPaths": [
+                    "FE-03_UC-04_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-03_UC-04_SC-02.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-03",
+                  "name": "Fails when request exists but target not in pending",
+                  "detailMarkdownPaths": [
+                    "FE-03_UC-04_SC-03.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-03_UC-04_SC-03.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-03_UC-04.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-03_UC-04.md"
+              }
+            },
+            {
+              "type": "UseCase",
+              "code": "UC-05",
+              "name": "List pending friend requests",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "No pending friend requests",
+                  "detailMarkdownPaths": [
+                    "FE-03_UC-05_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-03_UC-05_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "List existing pending friend requests",
+                  "detailMarkdownPaths": [
+                    "FE-03_UC-05_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-03_UC-05_SC-02.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-03_UC-05.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-03_UC-05.md"
+              }
+            },
+            {
+              "type": "UseCase",
+              "code": "UC-06",
+              "name": "List sent friend requests",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "List sent friend requests when requests exist",
+                  "detailMarkdownPaths": [
+                    "FE-03_UC-06_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-03_UC-06_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "List sent friend requests when no requests exist",
+                  "detailMarkdownPaths": [
+                    "FE-03_UC-06_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-03_UC-06_SC-02.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-03_UC-06.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-03_UC-06.md"
+              }
+            },
+            {
+              "type": "UseCase",
+              "code": "UC-07",
+              "name": "List friends",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "Get list of friends",
+                  "detailMarkdownPaths": [
+                    "FE-03_UC-07_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-03_UC-07_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "Get empty list of friends",
+                  "detailMarkdownPaths": [
+                    "FE-03_UC-07_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-03_UC-07_SC-02.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-03_UC-07.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-03_UC-07.md"
+              }
+            },
+            {
+              "type": "UseCase",
+              "code": "UC-08",
+              "name": "Remove friend",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "Successfully remove an existing friend",
+                  "detailMarkdownPaths": [
+                    "FE-03_UC-08_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-03_UC-08_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "Fail to remove a user who is not a friend",
+                  "detailMarkdownPaths": [
+                    "FE-03_UC-08_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-03_UC-08_SC-02.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-03_UC-08.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-03_UC-08.md"
+              }
+            }
+          ],
+          "detailMarkdownPaths": [
+            "FE-03-friend-management.md"
+          ],
+          "detailMarkdownFile": {
+            "path": "FE-03-friend-management.md"
+          }
+        },
+        {
+          "type": "Feature",
+          "code": "FE-04",
+          "name": "Chat and context management",
+          "children": [
+            {
+              "type": "UseCase",
+              "code": "UC-01",
+              "name": "Switch context",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "Switch to existing room context",
+                  "detailMarkdownPaths": [
+                    "FE-04_UC-01_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-04_UC-01_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "Switch to existing friend context",
+                  "detailMarkdownPaths": [
+                    "FE-04_UC-01_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-04_UC-01_SC-02.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-03",
+                  "name": "Attempt switch to non-existent or inaccessible room",
+                  "detailMarkdownPaths": [
+                    "FE-04_UC-01_SC-03.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-04_UC-01_SC-03.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-04",
+                  "name": "Attempt switch to user who is not a friend",
+                  "detailMarkdownPaths": [
+                    "FE-04_UC-01_SC-04.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-04_UC-01_SC-04.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-05",
+                  "name": "Attempt switch with missing context name",
+                  "detailMarkdownPaths": [
+                    "FE-04_UC-01_SC-05.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-04_UC-01_SC-05.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-06",
+                  "name": "Attempt switch with invalid context type",
+                  "detailMarkdownPaths": [
+                    "FE-04_UC-01_SC-06.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-04_UC-01_SC-06.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-04_UC-01.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-04_UC-01.md"
+              }
+            },
+            {
+              "type": "UseCase",
+              "code": "UC-02",
+              "name": "Send message to room",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "Send valid message to room",
+                  "detailMarkdownPaths": [
+                    "FE-04_UC-02_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-04_UC-02_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "Fail when message is empty",
+                  "detailMarkdownPaths": [
+                    "FE-04_UC-02_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-04_UC-02_SC-02.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-03",
+                  "name": "Fail when room name is empty",
+                  "detailMarkdownPaths": [
+                    "FE-04_UC-02_SC-03.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-04_UC-02_SC-03.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-04",
+                  "name": "Fail when user not in room",
+                  "detailMarkdownPaths": [
+                    "FE-04_UC-02_SC-04.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-04_UC-02_SC-04.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-04_UC-02.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-04_UC-02.md"
+              }
+            },
+            {
+              "type": "UseCase",
+              "code": "UC-03",
+              "name": "Send message to current context",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "Send message to room context",
+                  "detailMarkdownPaths": [
+                    "FE-04_UC-03_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-04_UC-03_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "Send message to friend context",
+                  "detailMarkdownPaths": [
+                    "FE-04_UC-03_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-04_UC-03_SC-02.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-03",
+                  "name": "Error on empty message",
+                  "detailMarkdownPaths": [
+                    "FE-04_UC-03_SC-03.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-04_UC-03_SC-03.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-04",
+                  "name": "Error when no context set",
+                  "detailMarkdownPaths": [
+                    "FE-04_UC-03_SC-04.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-04_UC-03_SC-04.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-05",
+                  "name": "Error when room context is null",
+                  "detailMarkdownPaths": [
+                    "FE-04_UC-03_SC-05.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-04_UC-03_SC-05.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-06",
+                  "name": "Error when friend context is null",
+                  "detailMarkdownPaths": [
+                    "FE-04_UC-03_SC-06.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-04_UC-03_SC-06.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-04_UC-03.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-04_UC-03.md"
+              }
+            }
+          ],
+          "detailMarkdownPaths": [
+            "FE-04-chat-and-context-management.md"
+          ],
+          "detailMarkdownFile": {
+            "path": "FE-04-chat-and-context-management.md"
+          }
+        },
+        {
+          "type": "Feature",
+          "code": "FE-05",
+          "name": "User management",
+          "children": [
+            {
+              "type": "UseCase",
+              "code": "UC-01",
+              "name": "Block a user",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "Successfully block another user",
+                  "detailMarkdownPaths": [
+                    "FE-05_UC-01_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-05_UC-01_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "Attempt to block an already blocked user",
+                  "detailMarkdownPaths": [
+                    "FE-05_UC-01_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-05_UC-01_SC-02.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-03",
+                  "name": "Attempt to block self",
+                  "detailMarkdownPaths": [
+                    "FE-05_UC-01_SC-03.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-05_UC-01_SC-03.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-04",
+                  "name": "Attempt to block with invalid nickname format",
+                  "detailMarkdownPaths": [
+                    "FE-05_UC-01_SC-04.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-05_UC-01_SC-04.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-05",
+                  "name": "Attempt to block a non-existent user",
+                  "detailMarkdownPaths": [
+                    "FE-05_UC-01_SC-05.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-05_UC-01_SC-05.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-05_UC-01.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-05_UC-01.md"
+              }
+            },
+            {
+              "type": "UseCase",
+              "code": "UC-02",
+              "name": "Unblock a user",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "Successfully unblock a blocked user",
+                  "detailMarkdownPaths": [
+                    "FE-05_UC-02_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-05_UC-02_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "Attempt to unblock a user not currently blocked",
+                  "detailMarkdownPaths": [
+                    "FE-05_UC-02_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-05_UC-02_SC-02.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-03",
+                  "name": "Attempt to unblock without providing a nickname",
+                  "detailMarkdownPaths": [
+                    "FE-05_UC-02_SC-03.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-05_UC-02_SC-03.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-05_UC-02.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-05_UC-02.md"
+              }
+            },
+            {
+              "type": "UseCase",
+              "code": "UC-03",
+              "name": "Check block status",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "Check status of unblocked offline user",
+                  "detailMarkdownPaths": [
+                    "FE-05_UC-03_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-05_UC-03_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "Check status of unblocked online user",
+                  "detailMarkdownPaths": [
+                    "FE-05_UC-03_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-05_UC-03_SC-02.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-03",
+                  "name": "Check status of blocked offline user",
+                  "detailMarkdownPaths": [
+                    "FE-05_UC-03_SC-03.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-05_UC-03_SC-03.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-04",
+                  "name": "Check status of blocked online user",
+                  "detailMarkdownPaths": [
+                    "FE-05_UC-03_SC-04.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-05_UC-03_SC-04.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-05_UC-03.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-05_UC-03.md"
+              }
+            }
+          ],
+          "detailMarkdownPaths": [
+            "FE-05-user-management.md"
+          ],
+          "detailMarkdownFile": {
+            "path": "FE-05-user-management.md"
+          }
+        },
+        {
+          "type": "Feature",
+          "code": "FE-01",
+          "name": "User authentication",
+          "children": [
+            {
+              "type": "UseCase",
+              "code": "UC-01",
+              "name": "Log in with a valid nickname",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "Successful login with valid nickname",
+                  "detailMarkdownPaths": [
+                    "FE-01_UC-01_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-01_UC-01_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "Attempt to log in while already logged in",
+                  "detailMarkdownPaths": [
+                    "FE-01_UC-01_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-01_UC-01_SC-02.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-03",
+                  "name": "Attempt to log in with an empty nickname",
+                  "detailMarkdownPaths": [
+                    "FE-01_UC-01_SC-03.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-01_UC-01_SC-03.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-04",
+                  "name": "Attempt to log in with 'anonymous' nickname",
+                  "detailMarkdownPaths": [
+                    "FE-01_UC-01_SC-04.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-01_UC-01_SC-04.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-05",
+                  "name": "Attempt to log in with a nickname already taken",
+                  "detailMarkdownPaths": [
+                    "FE-01_UC-01_SC-05.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-01_UC-01_SC-05.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-01_UC-01.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-01_UC-01.md"
+              }
+            },
+            {
+              "type": "UseCase",
+              "code": "UC-02",
+              "name": "Attempt to log in with an invalid or taken nickname",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "Login with an empty nickname",
+                  "detailMarkdownPaths": [
+                    "FE-01_UC-02_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-01_UC-02_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "Login with 'anonymous' nickname",
+                  "detailMarkdownPaths": [
+                    "FE-01_UC-02_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-01_UC-02_SC-02.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-03",
+                  "name": "Login with a taken nickname",
+                  "detailMarkdownPaths": [
+                    "FE-01_UC-02_SC-03.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-01_UC-02_SC-03.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-01_UC-02.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-01_UC-02.md"
+              }
+            },
+            {
+              "type": "UseCase",
+              "code": "UC-03",
+              "name": "Log out",
+              "children": [
+                {
+                  "type": "Scenario",
+                  "code": "SC-01",
+                  "name": "Log out while unauthenticated",
+                  "detailMarkdownPaths": [
+                    "FE-01_UC-03_SC-01.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-01_UC-03_SC-01.md"
+                  }
+                },
+                {
+                  "type": "Scenario",
+                  "code": "SC-02",
+                  "name": "Log out while authenticated",
+                  "detailMarkdownPaths": [
+                    "FE-01_UC-03_SC-02.md"
+                  ],
+                  "detailMarkdownFile": {
+                    "path": "FE-01_UC-03_SC-02.md"
+                  }
+                }
+              ],
+              "detailMarkdownPaths": [
+                "FE-01_UC-03.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "FE-01_UC-03.md"
+              }
+            }
+          ],
+          "detailMarkdownPaths": [
+            "FE-01-user-authentication.md"
+          ],
+          "detailMarkdownFile": {
+            "path": "FE-01-user-authentication.md"
+          }
+        }
+      ]
+    },
+    "Service": {
+      "nodes": [
+        {
+          "type": "Service",
+          "code": "SV-01",
+          "name": "Server",
+          "children": [
+            {
+              "type": "Method",
+              "code": "ME-01",
+              "name": "CreateRoom",
+              "detailMarkdownPaths": [
+                "SV-01_ME-01-create-room.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-01-create-room.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-02",
+              "name": "SetRoomPassword",
+              "detailMarkdownPaths": [
+                "SV-01_ME-02-set-room-password.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-02-set-room-password.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-03",
+              "name": "EditRoom",
+              "detailMarkdownPaths": [
+                "SV-01_ME-03-edit-room.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-03-edit-room.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-04",
+              "name": "JoinRoom",
+              "detailMarkdownPaths": [
+                "SV-01_ME-04-join-room.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-04-join-room.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-06",
+              "name": "JoinRoomWithPassword",
+              "detailMarkdownPaths": [
+                "SV-01_ME-06-join-room-with-password.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-06-join-room-with-password.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-07",
+              "name": "LeaveRoom",
+              "detailMarkdownPaths": [
+                "SV-01_ME-07-leave-room.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-07-leave-room.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-08",
+              "name": "DeleteRoom",
+              "detailMarkdownPaths": [
+                "SV-01_ME-08-delete-room.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-08-delete-room.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-09",
+              "name": "DeleteRoomMember",
+              "detailMarkdownPaths": [
+                "SV-01_ME-09-delete-room-member.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-09-delete-room-member.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-10",
+              "name": "GetRoomMembers",
+              "detailMarkdownPaths": [
+                "SV-01_ME-10-get-room-members.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-10-get-room-members.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-11",
+              "name": "SendRoomInvite",
+              "detailMarkdownPaths": [
+                "SV-01_ME-11-send-room-invite.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-11-send-room-invite.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-12",
+              "name": "SeePendingRoomInvites",
+              "detailMarkdownPaths": [
+                "SV-01_ME-12-see-pending-room-invites.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-12-see-pending-room-invites.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-13",
+              "name": "AcceptRoomInvite",
+              "detailMarkdownPaths": [
+                "SV-01_ME-13-accept-room-invite.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-13-accept-room-invite.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-14",
+              "name": "DeclineRoomInvite",
+              "detailMarkdownPaths": [
+                "SV-01_ME-14-decline-room-invite.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-14-decline-room-invite.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-15",
+              "name": "ListPublicRooms",
+              "detailMarkdownPaths": [
+                "SV-01_ME-15-list-public-rooms.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-15-list-public-rooms.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-16",
+              "name": "SwitchContext",
+              "detailMarkdownPaths": [
+                "SV-01_ME-16-switch-context.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-16-switch-context.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-17",
+              "name": "SendContextMessage",
+              "detailMarkdownPaths": [
+                "SV-01_ME-17-send-context-message.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-17-send-context-message.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-18",
+              "name": "requestFriendFilePort",
+              "detailMarkdownPaths": [
+                "SV-01_ME-18-request-friend-file-port.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-18-request-friend-file-port.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-19",
+              "name": "handleFilePortListening",
+              "detailMarkdownPaths": [
+                "SV-01_ME-19-handle-file-port-listening.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-19-handle-file-port-listening.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-20",
+              "name": "dispatchPendingFileRequests",
+              "detailMarkdownPaths": [
+                "SV-01_ME-20-dispatch-pending-file-requests.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-20-dispatch-pending-file-requests.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-21",
+              "name": "sendFilePortToSender",
+              "detailMarkdownPaths": [
+                "SV-01_ME-21-send-file-port-to-sender.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-21-send-file-port-to-sender.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-22",
+              "name": "SendRoomMessage",
+              "detailMarkdownPaths": [
+                "SV-01_ME-22-send-room-message.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-22-send-room-message.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-23",
+              "name": "ListMyRooms",
+              "detailMarkdownPaths": [
+                "SV-01_ME-23-list-my-rooms.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-23-list-my-rooms.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-24",
+              "name": "ListMyRoomInvites",
+              "detailMarkdownPaths": [
+                "SV-01_ME-24-list-my-room-invites.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-24-list-my-room-invites.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-25",
+              "name": "SendFriendRequest",
+              "detailMarkdownPaths": [
+                "SV-01_ME-25-send-friend-request.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-25-send-friend-request.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-26",
+              "name": "AcceptFriendRequest",
+              "detailMarkdownPaths": [
+                "SV-01_ME-26-accept-friend-request.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-26-accept-friend-request.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-27",
+              "name": "RejectFriendRequest",
+              "detailMarkdownPaths": [
+                "SV-01_ME-27-reject-friend-request.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-27-reject-friend-request.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-28",
+              "name": "CancelFriendRequest",
+              "detailMarkdownPaths": [
+                "SV-01_ME-28-cancel-friend-request.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-28-cancel-friend-request.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-29",
+              "name": "SeePendingFriendRequests",
+              "detailMarkdownPaths": [
+                "SV-01_ME-29-see-pending-friend-requests.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-29-see-pending-friend-requests.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-30",
+              "name": "SeeSentFriendRequests",
+              "detailMarkdownPaths": [
+                "SV-01_ME-30-see-sent-friend-requests.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-30-see-sent-friend-requests.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-31",
+              "name": "GetFriends",
+              "detailMarkdownPaths": [
+                "SV-01_ME-31-get-friends.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-31-get-friends.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-32",
+              "name": "DeleteFriend",
+              "detailMarkdownPaths": [
+                "SV-01_ME-32-delete-friend.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-32-delete-friend.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-33",
+              "name": "MessageFriend",
+              "detailMarkdownPaths": [
+                "SV-01_ME-33-message-friend.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-33-message-friend.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-34",
+              "name": "BlockUser",
+              "detailMarkdownPaths": [
+                "SV-01_ME-34-block-user.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-34-block-user.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-35",
+              "name": "UnblockUser",
+              "detailMarkdownPaths": [
+                "SV-01_ME-35-unblock-user.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-35-unblock-user.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-36",
+              "name": "GetUserStatus",
+              "detailMarkdownPaths": [
+                "SV-01_ME-36-get-user-status.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-36-get-user-status.md"
+              }
+            },
+            {
+              "type": "Method",
+              "code": "ME-37",
+              "name": "LogUserOut",
+              "detailMarkdownPaths": [
+                "SV-01_ME-37-log-user-out.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-01_ME-37-log-user-out.md"
+              }
+            }
+          ],
+          "detailMarkdownPaths": [
+            "SV-01-server.md"
+          ],
+          "detailMarkdownFile": {
+            "path": "SV-01-server.md"
+          }
+        },
+        {
+          "type": "Service",
+          "code": "SV-02",
+          "name": "Client",
+          "children": [
+            {
+              "type": "Method",
+              "code": "ME-05",
+              "name": "Connect",
+              "detailMarkdownPaths": [
+                "SV-02_ME-05-connect.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "SV-02_ME-05-connect.md"
+              }
+            }
+          ],
+          "detailMarkdownPaths": [
+            "SV-02-client.md"
+          ],
+          "detailMarkdownFile": {
+            "path": "SV-02-client.md"
+          }
+        }
+      ]
+    },
+    "DataModel": {
+      "nodes": [
+        {
+          "type": "Entity",
+          "code": "DM-01",
+          "name": "Room",
+          "children": [
+            {
+              "type": "Field",
+              "code": "FD-01",
+              "name": "id",
+              "detailMarkdownPaths": [
+                "DM-01_FD-01-id.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-01_FD-01-id.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-02",
+              "name": "name",
+              "detailMarkdownPaths": [
+                "DM-01_FD-02-name.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-01_FD-02-name.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-03",
+              "name": "max_size",
+              "detailMarkdownPaths": [
+                "DM-01_FD-03-max-size.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-01_FD-03-max-size.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-04",
+              "name": "is_private",
+              "detailMarkdownPaths": [
+                "DM-01_FD-04-is-private.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-01_FD-04-is-private.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-05",
+              "name": "owner",
+              "detailMarkdownPaths": [
+                "DM-01_FD-05-owner.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-01_FD-05-owner.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-06",
+              "name": "password",
+              "detailMarkdownPaths": [
+                "DM-01_FD-06-password.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-01_FD-06-password.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-07",
+              "name": "members",
+              "detailMarkdownPaths": [
+                "DM-01_FD-07-members.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-01_FD-07-members.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-08",
+              "name": "invites",
+              "detailMarkdownPaths": [
+                "DM-01_FD-08-invites.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-01_FD-08-invites.md"
+              }
+            }
+          ],
+          "detailMarkdownPaths": [
+            "DM-01-room.md"
+          ],
+          "detailMarkdownFile": {
+            "path": "DM-01-room.md"
+          }
+        },
+        {
+          "type": "Entity",
+          "code": "DM-02",
+          "name": "Client",
+          "children": [
+            {
+              "type": "Field",
+              "code": "FD-01",
+              "name": "id",
+              "detailMarkdownPaths": [
+                "DM-02_FD-01-id.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-02_FD-01-id.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-02",
+              "name": "conn",
+              "detailMarkdownPaths": [
+                "DM-02_FD-02-conn.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-02_FD-02-conn.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-03",
+              "name": "nick",
+              "detailMarkdownPaths": [
+                "DM-02_FD-03-nick.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-02_FD-03-nick.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-04",
+              "name": "authenticated",
+              "detailMarkdownPaths": [
+                "DM-02_FD-04-authenticated.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-02_FD-04-authenticated.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-05",
+              "name": "room",
+              "detailMarkdownPaths": [
+                "DM-02_FD-05-room.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-02_FD-05-room.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-06",
+              "name": "current_context",
+              "detailMarkdownPaths": [
+                "DM-02_FD-06-current-context.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-02_FD-06-current-context.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-07",
+              "name": "current_friend",
+              "detailMarkdownPaths": [
+                "DM-02_FD-07-current-friend.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-02_FD-07-current-friend.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-08",
+              "name": "my_rooms",
+              "detailMarkdownPaths": [
+                "DM-02_FD-08-my-rooms.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-02_FD-08-my-rooms.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-09",
+              "name": "friends",
+              "detailMarkdownPaths": [
+                "DM-02_FD-09-friends.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-02_FD-09-friends.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-10",
+              "name": "pending_friend_requests",
+              "detailMarkdownPaths": [
+                "DM-02_FD-10-pending-friend-requests.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-02_FD-10-pending-friend-requests.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-11",
+              "name": "sent_friend_request",
+              "detailMarkdownPaths": [
+                "DM-02_FD-11-sent-friend-request.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-02_FD-11-sent-friend-request.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-12",
+              "name": "blocked_users",
+              "detailMarkdownPaths": [
+                "DM-02_FD-12-blocked-users.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-02_FD-12-blocked-users.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-13",
+              "name": "room_invites",
+              "detailMarkdownPaths": [
+                "DM-02_FD-13-room-invites.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-02_FD-13-room-invites.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-14",
+              "name": "online",
+              "detailMarkdownPaths": [
+                "DM-02_FD-14-online.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-02_FD-14-online.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-15",
+              "name": "fileListenHost",
+              "detailMarkdownPaths": [
+                "DM-02_FD-15-file-listen-host.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-02_FD-15-file-listen-host.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-16",
+              "name": "fileListenPort",
+              "detailMarkdownPaths": [
+                "DM-02_FD-16-file-listen-port.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-02_FD-16-file-listen-port.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-17",
+              "name": "mu",
+              "detailMarkdownPaths": [
+                "DM-02_FD-17-mu.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-02_FD-17-mu.md"
+              }
+            }
+          ],
+          "detailMarkdownPaths": [
+            "DM-02-client.md"
+          ],
+          "detailMarkdownFile": {
+            "path": "DM-02-client.md"
+          }
+        },
+        {
+          "type": "Entity",
+          "code": "DM-03",
+          "name": "Message",
+          "children": [
+            {
+              "type": "Field",
+              "code": "FD-01",
+              "name": "Action",
+              "detailMarkdownPaths": [
+                "DM-03_FD-01-action.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-03_FD-01-action.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-02",
+              "name": "ResponseMsg",
+              "detailMarkdownPaths": [
+                "DM-03_FD-02-response-msg.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-03_FD-02-response-msg.md"
+              }
+            },
+            {
+              "type": "Field",
+              "code": "FD-03",
+              "name": "Payload",
+              "detailMarkdownPaths": [
+                "DM-03_FD-03-payload.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "DM-03_FD-03-payload.md"
+              }
+            }
+          ],
+          "detailMarkdownPaths": [
+            "DM-03-message.md"
+          ],
+          "detailMarkdownFile": {
+            "path": "DM-03-message.md"
+          }
+        }
+      ]
+    },
+    "TechStack": {
+      "nodes": [
+        {
+          "type": "Tool",
+          "code": "TS-01",
+          "name": "Go",
+          "detailMarkdownPaths": [
+            "TS-01-go.md"
+          ],
+          "detailMarkdownFile": {
+            "path": "TS-01-go.md"
+          }
+        },
+        {
+          "type": "Tool",
+          "code": "TS-02",
+          "name": "github.com/chzyer/readline",
+          "detailMarkdownPaths": [
+            "TS-02-readline.md"
+          ],
+          "detailMarkdownFile": {
+            "path": "TS-02-readline.md"
+          }
+        },
+        {
+          "type": "Tool",
+          "code": "TS-03",
+          "name": "github.com/google/uuid",
+          "detailMarkdownPaths": [
+            "TS-03-uuid.md"
+          ],
+          "detailMarkdownFile": {
+            "path": "TS-03-uuid.md"
+          }
+        },
+        {
+          "type": "Tool",
+          "code": "TS-04",
+          "name": "golang.org/x/sys",
+          "detailMarkdownPaths": [
+            "TS-04-x-sys.md"
+          ],
+          "detailMarkdownFile": {
+            "path": "TS-04-x-sys.md"
+          }
+        }
+      ]
+    },
+    "Infrastructure": {
+      "nodes": [
+        {
+          "type": "Infrastructure",
+          "code": "IN-01",
+          "name": "CLI Client",
+          "children": [
+            {
+              "type": "Component",
+              "code": "IC-01",
+              "name": "CLI client main entry",
+              "detailMarkdownPaths": [
+                "IN-01_IC-01-ic01.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "IN-01_IC-01-ic01.md"
+              }
+            },
+            {
+              "type": "Component",
+              "code": "IC-02",
+              "name": "Client session management",
+              "detailMarkdownPaths": [
+                "IN-01_IC-02-ic02.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "IN-01_IC-02-ic02.md"
+              }
+            },
+            {
+              "type": "Component",
+              "code": "IC-03",
+              "name": "Client message and command handling",
+              "detailMarkdownPaths": [
+                "IN-01_IC-03-ic03.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "IN-01_IC-03-ic03.md"
+              }
+            },
+            {
+              "type": "Component",
+              "code": "IC-04",
+              "name": "Client file transfer",
+              "detailMarkdownPaths": [
+                "IN-01_IC-04-ic04.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "IN-01_IC-04-ic04.md"
+              }
+            }
+          ],
+          "detailMarkdownPaths": [
+            "IN-01-cli-client.md"
+          ],
+          "detailMarkdownFile": {
+            "path": "IN-01-cli-client.md"
+          }
+        },
+        {
+          "type": "Infrastructure",
+          "code": "IN-02",
+          "name": "CLI Server",
+          "children": [
+            {
+              "type": "Component",
+              "code": "IC-01",
+              "name": "CLI Server Main Entry",
+              "detailMarkdownPaths": [
+                "IN-02_IC-01-cli-server-main-entry.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "IN-02_IC-01-cli-server-main-entry.md"
+              }
+            },
+            {
+              "type": "Component",
+              "code": "IC-02",
+              "name": "Server State Initialization",
+              "detailMarkdownPaths": [
+                "IN-02_IC-02-server-state-initialization.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "IN-02_IC-02-server-state-initialization.md"
+              }
+            },
+            {
+              "type": "Component",
+              "code": "IC-03",
+              "name": "Connection Handling",
+              "detailMarkdownPaths": [
+                "IN-02_IC-03-connection-handling.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "IN-02_IC-03-connection-handling.md"
+              }
+            }
+          ],
+          "detailMarkdownPaths": [
+            "IN-02-cli-server.md"
+          ],
+          "detailMarkdownFile": {
+            "path": "IN-02-cli-server.md"
+          }
+        },
+        {
+          "type": "Infrastructure",
+          "code": "IN-03",
+          "name": "TLS Configuration",
+          "children": [
+            {
+              "type": "Component",
+              "code": "IC-01",
+              "name": "Generate TLS dev private key",
+              "detailMarkdownPaths": [
+                "IN-03_IC-01-ic01.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "IN-03_IC-01-ic01.md"
+              }
+            },
+            {
+              "type": "Component",
+              "code": "IC-02",
+              "name": "Create TLS dev certificate",
+              "detailMarkdownPaths": [
+                "IN-03_IC-02-ic02.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "IN-03_IC-02-ic02.md"
+              }
+            },
+            {
+              "type": "Component",
+              "code": "IC-03",
+              "name": "Construct TLS configuration",
+              "detailMarkdownPaths": [
+                "IN-03_IC-03-ic03.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "IN-03_IC-03-ic03.md"
+              }
+            }
+          ],
+          "detailMarkdownPaths": [
+            "IN-03-tls-configuration.md"
+          ],
+          "detailMarkdownFile": {
+            "path": "IN-03-tls-configuration.md"
+          }
+        },
+        {
+          "type": "Infrastructure",
+          "code": "IN-04",
+          "name": "Dependency Management",
+          "children": [
+            {
+              "type": "Component",
+              "code": "IC-01",
+              "name": "CLI input dependency",
+              "detailMarkdownPaths": [
+                "IN-04_IC-01-cli-input-dependency.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "IN-04_IC-01-cli-input-dependency.md"
+              }
+            },
+            {
+              "type": "Component",
+              "code": "IC-02",
+              "name": "UUID generation dependency",
+              "detailMarkdownPaths": [
+                "IN-04_IC-02-uuid-generation-dependency.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "IN-04_IC-02-uuid-generation-dependency.md"
+              }
+            },
+            {
+              "type": "Component",
+              "code": "IC-03",
+              "name": "Go module configuration",
+              "detailMarkdownPaths": [
+                "IN-04_IC-03-go-module-configuration.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "IN-04_IC-03-go-module-configuration.md"
+              }
+            }
+          ],
+          "detailMarkdownPaths": [
+            "IN-04-dependency-management.md"
+          ],
+          "detailMarkdownFile": {
+            "path": "IN-04-dependency-management.md"
+          }
+        }
+      ]
+    },
+    "QA": {
+      "nodes": [
+        {
+          "type": "QA",
+          "code": "QA-01",
+          "name": "User authentication verification",
+          "children": [
+            {
+              "type": "TestCase",
+              "code": "TC-01",
+              "name": "Successful login with a valid nickname",
+              "detailMarkdownPaths": [
+                "QA-01_TC-01-successful-login.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-01_TC-01-successful-login.md"
+              }
+            },
+            {
+              "type": "TestCase",
+              "code": "TC-02",
+              "name": "Failed login with empty nickname",
+              "detailMarkdownPaths": [
+                "QA-01_TC-02-failed-login-empty-nickname.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-01_TC-02-failed-login-empty-nickname.md"
+              }
+            },
+            {
+              "type": "TestCase",
+              "code": "TC-03",
+              "name": "Failed login with 'anonymous' nickname",
+              "detailMarkdownPaths": [
+                "QA-01_TC-03-failed-login-anonymous.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-01_TC-03-failed-login-anonymous.md"
+              }
+            },
+            {
+              "type": "TestCase",
+              "code": "TC-04",
+              "name": "Failed login with already taken nickname",
+              "detailMarkdownPaths": [
+                "QA-01_TC-04-failed-login-taken-nickname.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-01_TC-04-failed-login-taken-nickname.md"
+              }
+            },
+            {
+              "type": "TestCase",
+              "code": "TC-05",
+              "name": "Logout after successful login",
+              "detailMarkdownPaths": [
+                "QA-01_TC-05-logout-successful.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-01_TC-05-logout-successful.md"
+              }
+            }
+          ],
+          "detailMarkdownPaths": [
+            "QA-01-user-authentication-verification.md"
+          ],
+          "detailMarkdownFile": {
+            "path": "QA-01-user-authentication-verification.md"
+          }
+        },
+        {
+          "type": "QA",
+          "code": "QA-02",
+          "name": "Room management verification",
+          "children": [
+            {
+              "type": "TestCase",
+              "code": "TC-01",
+              "name": "Join room",
+              "detailMarkdownPaths": [
+                "QA-02_TC-01-join-room.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-02_TC-01-join-room.md"
+              }
+            },
+            {
+              "type": "TestCase",
+              "code": "TC-02",
+              "name": "Join private room",
+              "detailMarkdownPaths": [
+                "QA-02_TC-02-join-private-room.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-02_TC-02-join-private-room.md"
+              }
+            },
+            {
+              "type": "TestCase",
+              "code": "TC-03",
+              "name": "Edit room",
+              "detailMarkdownPaths": [
+                "QA-02_TC-03-edit-room.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-02_TC-03-edit-room.md"
+              }
+            },
+            {
+              "type": "TestCase",
+              "code": "TC-04",
+              "name": "Leave room",
+              "detailMarkdownPaths": [
+                "QA-02_TC-04-leave-room.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-02_TC-04-leave-room.md"
+              }
+            },
+            {
+              "type": "TestCase",
+              "code": "TC-05",
+              "name": "Delete room",
+              "detailMarkdownPaths": [
+                "QA-02_TC-05-delete-room.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-02_TC-05-delete-room.md"
+              }
+            },
+            {
+              "type": "TestCase",
+              "code": "TC-06",
+              "name": "Invite user to room",
+              "detailMarkdownPaths": [
+                "QA-02_TC-06-invite-user-to-room.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-02_TC-06-invite-user-to-room.md"
+              }
+            },
+            {
+              "type": "TestCase",
+              "code": "TC-07",
+              "name": "View pending room invites",
+              "detailMarkdownPaths": [
+                "QA-02_TC-07-view-pending-room-invites.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-02_TC-07-view-pending-room-invites.md"
+              }
+            },
+            {
+              "type": "TestCase",
+              "code": "TC-08",
+              "name": "Accept room invite",
+              "detailMarkdownPaths": [
+                "QA-02_TC-08-accept-room-invite.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-02_TC-08-accept-room-invite.md"
+              }
+            },
+            {
+              "type": "TestCase",
+              "code": "TC-09",
+              "name": "Decline room invite",
+              "detailMarkdownPaths": [
+                "QA-02_TC-09-decline-room-invite.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-02_TC-09-decline-room-invite.md"
+              }
+            },
+            {
+              "type": "TestCase",
+              "code": "TC-10",
+              "name": "Set room password",
+              "detailMarkdownPaths": [
+                "QA-02_TC-10-set-room-password.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-02_TC-10-set-room-password.md"
+              }
+            },
+            {
+              "type": "TestCase",
+              "code": "TC-11",
+              "name": "Fetch room members",
+              "detailMarkdownPaths": [
+                "QA-02_TC-11-fetch-room-members.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-02_TC-11-fetch-room-members.md"
+              }
+            },
+            {
+              "type": "TestCase",
+              "code": "TC-12",
+              "name": "Broadcast message",
+              "detailMarkdownPaths": [
+                "QA-02_TC-12-broadcast-message.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-02_TC-12-broadcast-message.md"
+              }
+            }
+          ],
+          "detailMarkdownPaths": [
+            "QA-02-room-management-verification.md"
+          ],
+          "detailMarkdownFile": {
+            "path": "QA-02-room-management-verification.md"
+          }
+        },
+        {
+          "type": "QA",
+          "code": "QA-03",
+          "name": "Friend management verification",
+          "children": [
+            {
+              "type": "TestCase",
+              "code": "TC-01",
+              "name": "Send friend request",
+              "detailMarkdownPaths": [
+                "QA-03_TC-01-send-friend-request.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-03_TC-01-send-friend-request.md"
+              }
+            },
+            {
+              "type": "TestCase",
+              "code": "TC-02",
+              "name": "Accept friend request",
+              "detailMarkdownPaths": [
+                "QA-03_TC-02-accept-friend-request.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-03_TC-02-accept-friend-request.md"
+              }
+            },
+            {
+              "type": "TestCase",
+              "code": "TC-03",
+              "name": "Reject friend request",
+              "detailMarkdownPaths": [
+                "QA-03_TC-03-reject-friend-request.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-03_TC-03-reject-friend-request.md"
+              }
+            },
+            {
+              "type": "TestCase",
+              "code": "TC-04",
+              "name": "List friends",
+              "detailMarkdownPaths": [
+                "QA-03_TC-04-list-friends.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-03_TC-04-list-friends.md"
+              }
+            },
+            {
+              "type": "TestCase",
+              "code": "TC-05",
+              "name": "Delete friend",
+              "detailMarkdownPaths": [
+                "QA-03_TC-05-delete-friend.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-03_TC-05-delete-friend.md"
+              }
+            }
+          ],
+          "detailMarkdownPaths": [
+            "QA-03-friend-management-verification.md"
+          ],
+          "detailMarkdownFile": {
+            "path": "QA-03-friend-management-verification.md"
+          }
+        },
+        {
+          "type": "QA",
+          "code": "QA-04",
+          "name": "Chat and context management verification",
+          "children": [
+            {
+              "type": "TestCase",
+              "code": "TC-01",
+              "name": "Switch context successfully",
+              "detailMarkdownPaths": [
+                "QA-04_TC-01-tc01.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-04_TC-01-tc01.md"
+              }
+            },
+            {
+              "type": "TestCase",
+              "code": "TC-02",
+              "name": "Send message to room successfully",
+              "detailMarkdownPaths": [
+                "QA-04_TC-02-tc02.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-04_TC-02-tc02.md"
+              }
+            },
+            {
+              "type": "TestCase",
+              "code": "TC-03",
+              "name": "Send message to current context successfully",
+              "detailMarkdownPaths": [
+                "QA-04_TC-03-tc03.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-04_TC-03-tc03.md"
+              }
+            }
+          ],
+          "detailMarkdownPaths": [
+            "QA-04-chat-and-context-management-verification.md"
+          ],
+          "detailMarkdownFile": {
+            "path": "QA-04-chat-and-context-management-verification.md"
+          }
+        },
+        {
+          "type": "QA",
+          "code": "QA-05",
+          "name": "User management verification",
+          "children": [
+            {
+              "type": "TestCase",
+              "code": "TC-01",
+              "name": "Block user",
+              "detailMarkdownPaths": [
+                "QA-05_TC-01-tc01.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-05_TC-01-tc01.md"
+              }
+            },
+            {
+              "type": "TestCase",
+              "code": "TC-02",
+              "name": "Unblock user",
+              "detailMarkdownPaths": [
+                "QA-05_TC-02-tc02.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-05_TC-02-tc02.md"
+              }
+            },
+            {
+              "type": "TestCase",
+              "code": "TC-03",
+              "name": "Get user status",
+              "detailMarkdownPaths": [
+                "QA-05_TC-03-tc03.md"
+              ],
+              "detailMarkdownFile": {
+                "path": "QA-05_TC-03-tc03.md"
+              }
+            }
+          ],
+          "detailMarkdownPaths": [
+            "QA-05-user-management-verification.md"
+          ],
+          "detailMarkdownFile": {
+            "path": "QA-05-user-management-verification.md"
+          }
+        }
+      ]
+    }
+  },
+  "repository": {
+    "localName": "easyspecs-010",
+    "remoteProvider": "github",
+    "remoteRepository": "Chima-Peter/CLI_Chat",
+    "commit": "0efc40f0c1bf7a587de254c1d53f4164869f2942",
+    "branch": "feat/resume-analysis",
+    "originUrl": "git@github.com:Chima-Peter/CLI_Chat.git"
+  }
+}

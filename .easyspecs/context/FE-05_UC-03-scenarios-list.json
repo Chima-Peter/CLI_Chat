@@ -1,0 +1,80 @@
+{
+  "featureCode": "FE-05",
+  "useCaseCode": "UC-03",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "Check status of unblocked offline user",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 366,
+          "endLine": 394,
+          "note": "GetUserStatus implementation"
+        }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "Check status of unblocked online user",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 366,
+          "endLine": 394,
+          "note": "GetUserStatus implementation"
+        }
+      ]
+    },
+    {
+      "code": "SC-03",
+      "name": "Check status of blocked offline user",
+      "order": 3,
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 366,
+          "endLine": 394,
+          "note": "GetUserStatus implementation"
+        }
+      ]
+    },
+    {
+      "code": "SC-04",
+      "name": "Check status of blocked online user",
+      "order": 4,
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 366,
+          "endLine": 394,
+          "note": "GetUserStatus implementation"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial scenario list for Check block status (UC-03), covering unblocked/blocked and online/offline variants."
+    },
+    {
+      "at": "2026-06-01T15:35:55.748Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "SC-01",
+          "SC-02",
+          "SC-03",
+          "SC-04"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    }
+  ]
+}

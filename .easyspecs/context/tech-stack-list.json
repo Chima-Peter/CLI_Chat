@@ -1,0 +1,117 @@
+{
+  "tools": [
+    {
+      "code": "TS-01",
+      "name": "Go",
+      "slug": "go",
+      "category": "language",
+      "version": "1.26.3",
+      "description": "Programming language used for the backend and CLI application.",
+      "sourceReferences": [
+        {
+          "path": "go.mod",
+          "startLine": 3,
+          "endLine": 3,
+          "note": "Go version"
+        }
+      ]
+    },
+    {
+      "code": "TS-02",
+      "name": "github.com/chzyer/readline",
+      "slug": "readline",
+      "category": "library",
+      "version": "v1.5.1",
+      "description": "Library for interactive CLI input handling.",
+      "sourceReferences": [
+        {
+          "path": "go.mod",
+          "startLine": 5,
+          "endLine": 5,
+          "note": "Dependency declaration"
+        }
+      ]
+    },
+    {
+      "code": "TS-03",
+      "name": "github.com/google/uuid",
+      "slug": "uuid",
+      "category": "library",
+      "version": "v1.6.0",
+      "description": "Library for generating UUIDs.",
+      "sourceReferences": [
+        {
+          "path": "go.mod",
+          "startLine": 8,
+          "endLine": 8,
+          "note": "Dependency declaration"
+        }
+      ]
+    },
+    {
+      "code": "TS-04",
+      "name": "golang.org/x/sys",
+      "slug": "x-sys",
+      "category": "library",
+      "version": "v0.0.0-20220310020820-b874c991c1a5",
+      "description": "Library for system interaction.",
+      "sourceReferences": [
+        {
+          "path": "go.mod",
+          "startLine": 9,
+          "endLine": 9,
+          "note": "Dependency declaration"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial tech-stack discovery: Identified Go, readline, and uuid."
+    },
+    {
+      "at": "2026-06-01T14:43:03.071Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "TS-01",
+          "TS-02",
+          "TS-03"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "at": "2026-06-01T15:45:00.000Z",
+      "summary": "Added golang.org/x/sys dependency.",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "TS-04"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "at": "2026-06-01T14:44:06.634Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "TS-04"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    }
+  ]
+}

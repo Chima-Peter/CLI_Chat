@@ -1,0 +1,68 @@
+{
+  "entityCode": "DM-03",
+  "fields": [
+    {
+      "code": "FD-01",
+      "name": "Action",
+      "slug": "action",
+      "description": "Type of action for the message",
+      "sourceReferences": [
+        {
+          "path": "protocol/message.go",
+          "startLine": 55,
+          "endLine": 55,
+          "note": "Message struct Action field"
+        }
+      ]
+    },
+    {
+      "code": "FD-02",
+      "name": "ResponseMsg",
+      "slug": "response-msg",
+      "description": "Message content or response",
+      "sourceReferences": [
+        {
+          "path": "protocol/message.go",
+          "startLine": 56,
+          "endLine": 56,
+          "note": "Message struct ResponseMsg field"
+        }
+      ]
+    },
+    {
+      "code": "FD-03",
+      "name": "Payload",
+      "slug": "payload",
+      "description": "JSON raw message payload",
+      "sourceReferences": [
+        {
+          "path": "protocol/message.go",
+          "startLine": 57,
+          "endLine": 57,
+          "note": "Message struct Payload field"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial field list for entity DM-03 (Message)."
+    },
+    {
+      "at": "2026-06-01T14:55:24.374Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "FD-01",
+          "FD-02",
+          "FD-03"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    }
+  ]
+}

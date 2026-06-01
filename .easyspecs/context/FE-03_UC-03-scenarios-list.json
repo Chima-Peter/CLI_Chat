@@ -1,0 +1,37 @@
+{
+  "featureCode": "FE-03",
+  "useCaseCode": "UC-03",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "Successfully reject a pending friend request",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 594,
+          "endLine": 601,
+          "note": "Successful rejection path"
+        }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "Fail to reject friend request due to invalid user",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 594,
+          "endLine": 601,
+          "note": "Error handling when user resolution fails"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial scenario list for Reject friend request (UC-03), covering success and invalid user cases."
+    }
+  ]
+}

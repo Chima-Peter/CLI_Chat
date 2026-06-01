@@ -1,0 +1,6995 @@
+{
+  "excludedFiles": [
+    {
+      "path": "app",
+      "reason": "exceeds max size (3145728 bytes)"
+    }
+  ],
+  "generatedAt": "2026-06-01T16:03:00.229Z",
+  "granularity": "file",
+  "ignoreDirs": [
+    ".git",
+    ".cursor",
+    ".opencode",
+    "node_modules",
+    ".hg",
+    ".svn",
+    "out",
+    "dist",
+    "build",
+    ".next",
+    "coverage"
+  ],
+  "metrics": {
+    "nonReferencedLoc": 36,
+    "percentNonReferenced": 1,
+    "referencedLoc": 3797,
+    "totalLoc": 3833
+  },
+  "nonReferencedFiles": [
+    "opencode.json"
+  ],
+  "referencedFiles": [
+    "client/client.go",
+    "client/file-client.go",
+    "client/file-parsing.go",
+    "client/file-server.go",
+    "client/help.go",
+    "client/message.go",
+    "client/session.go",
+    "cmd/client/main.go",
+    "cmd/server/main.go",
+    "go.mod",
+    "go.sum",
+    "protocol/message.go",
+    "README.md",
+    "server/client.go",
+    "server/handle_conn.go",
+    "server/rooms.go",
+    "server/server.go",
+    "server/types.go",
+    "server/utils.go",
+    "tls_config/config.go"
+  ],
+  "references": [
+    {
+      "endLine": 32,
+      "path": "client/client.go",
+      "sourceArtefact": "IN-01_IC-01-ic01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 11
+    },
+    {
+      "endLine": 41,
+      "path": "client/client.go",
+      "sourceArtefact": "IN-01-cli-client.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 11
+    },
+    {
+      "endLine": 32,
+      "path": "client/client.go",
+      "sourceArtefact": "IN-01-components-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 1
+    },
+    {
+      "endLine": 32,
+      "path": "client/client.go",
+      "sourceArtefact": "IN-04_IC-01-cli-input-dependency.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 30
+    },
+    {
+      "endLine": 8,
+      "path": "client/client.go",
+      "sourceArtefact": "IN-04-components-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 8
+    },
+    {
+      "endLine": 41,
+      "path": "client/client.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 11
+    },
+    {
+      "endLine": 41,
+      "path": "client/client.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 11
+    },
+    {
+      "endLine": 41,
+      "path": "client/client.go",
+      "sourceArtefact": "SV-02_ME-05-connect.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 11
+    },
+    {
+      "endLine": 41,
+      "path": "client/client.go",
+      "sourceArtefact": "SV-02-client.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 11
+    },
+    {
+      "endLine": 50,
+      "path": "client/client.go",
+      "sourceArtefact": "TS-01-go.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 1
+    },
+    {
+      "endLine": 8,
+      "path": "client/client.go",
+      "sourceArtefact": "TS-02-readline.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 8
+    },
+    {
+      "endLine": 32,
+      "path": "client/client.go",
+      "sourceArtefact": "TS-02-readline.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 30
+    },
+    {
+      "endLine": 28,
+      "path": "client/file-client.go",
+      "sourceArtefact": "IN-01_IC-04-ic04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 15
+    },
+    {
+      "endLine": 63,
+      "path": "client/file-client.go",
+      "sourceArtefact": "IN-01_IC-04-ic04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 30
+    },
+    {
+      "endLine": 77,
+      "path": "client/file-client.go",
+      "sourceArtefact": "IN-01_IC-04-ic04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 65
+    },
+    {
+      "endLine": 78,
+      "path": "client/file-client.go",
+      "sourceArtefact": "IN-01-components-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 1
+    },
+    {
+      "endLine": 156,
+      "path": "client/file-parsing.go",
+      "sourceArtefact": "IN-01_IC-04-ic04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 72
+    },
+    {
+      "endLine": 157,
+      "path": "client/file-parsing.go",
+      "sourceArtefact": "IN-01-components-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 1
+    },
+    {
+      "endLine": 100,
+      "path": "client/file-server.go",
+      "sourceArtefact": "IN-01_IC-04-ic04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 87
+    },
+    {
+      "endLine": 181,
+      "path": "client/file-server.go",
+      "sourceArtefact": "IN-01_IC-04-ic04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 102
+    },
+    {
+      "endLine": 183,
+      "path": "client/file-server.go",
+      "sourceArtefact": "IN-01-components-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 1
+    },
+    {
+      "endLine": 24,
+      "path": "client/file-server.go",
+      "sourceArtefact": "IN-03-tls-configuration.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 24
+    },
+    {
+      "endLine": 83,
+      "path": "client/help.go",
+      "sourceArtefact": "IN-01_IC-01-ic01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 72
+    },
+    {
+      "endLine": 83,
+      "path": "client/help.go",
+      "sourceArtefact": "IN-01-components-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 1
+    },
+    {
+      "endLine": 426,
+      "path": "client/message.go",
+      "sourceArtefact": "architecture.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 128
+    },
+    {
+      "endLine": 104,
+      "path": "client/message.go",
+      "sourceArtefact": "FE-05_UC-01_SC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 96
+    },
+    {
+      "endLine": 404,
+      "path": "client/message.go",
+      "sourceArtefact": "FE-05_UC-01_SC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 397
+    },
+    {
+      "endLine": 114,
+      "path": "client/message.go",
+      "sourceArtefact": "FE-05_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 106
+    },
+    {
+      "endLine": 114,
+      "path": "client/message.go",
+      "sourceArtefact": "FE-05_UC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 106
+    },
+    {
+      "endLine": 404,
+      "path": "client/message.go",
+      "sourceArtefact": "FE-05_UC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 397
+    },
+    {
+      "endLine": 414,
+      "path": "client/message.go",
+      "sourceArtefact": "FE-05_UC-02_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 406
+    },
+    {
+      "endLine": 413,
+      "path": "client/message.go",
+      "sourceArtefact": "FE-05_UC-02_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 406
+    },
+    {
+      "endLine": 93,
+      "path": "client/message.go",
+      "sourceArtefact": "FE-05_UC-02_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 89
+    },
+    {
+      "endLine": 109,
+      "path": "client/message.go",
+      "sourceArtefact": "FE-05_UC-02_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 106
+    },
+    {
+      "endLine": 409,
+      "path": "client/message.go",
+      "sourceArtefact": "FE-05_UC-02_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 406
+    },
+    {
+      "endLine": 414,
+      "path": "client/message.go",
+      "sourceArtefact": "FE-05_UC-02-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 406
+    },
+    {
+      "endLine": 414,
+      "path": "client/message.go",
+      "sourceArtefact": "FE-05_UC-02-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 406
+    },
+    {
+      "endLine": 409,
+      "path": "client/message.go",
+      "sourceArtefact": "FE-05_UC-02-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 406
+    },
+    {
+      "endLine": 414,
+      "path": "client/message.go",
+      "sourceArtefact": "FE-05_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 406
+    },
+    {
+      "endLine": 409,
+      "path": "client/message.go",
+      "sourceArtefact": "FE-05_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 407
+    },
+    {
+      "endLine": 405,
+      "path": "client/message.go",
+      "sourceArtefact": "FE-05-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 397
+    },
+    {
+      "endLine": 414,
+      "path": "client/message.go",
+      "sourceArtefact": "FE-05-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 406
+    },
+    {
+      "endLine": 405,
+      "path": "client/message.go",
+      "sourceArtefact": "FE-05-user-management.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 397
+    },
+    {
+      "endLine": 414,
+      "path": "client/message.go",
+      "sourceArtefact": "FE-05-user-management.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 406
+    },
+    {
+      "endLine": 77,
+      "path": "client/message.go",
+      "sourceArtefact": "IN-01_IC-03-ic03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 51
+    },
+    {
+      "endLine": 114,
+      "path": "client/message.go",
+      "sourceArtefact": "IN-01_IC-03-ic03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 106
+    },
+    {
+      "endLine": 427,
+      "path": "client/message.go",
+      "sourceArtefact": "IN-01_IC-03-ic03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 120
+    },
+    {
+      "endLine": 465,
+      "path": "client/message.go",
+      "sourceArtefact": "IN-01_IC-03-ic03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 429
+    },
+    {
+      "endLine": 410,
+      "path": "client/message.go",
+      "sourceArtefact": "IN-01-components-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 1
+    },
+    {
+      "endLine": 213,
+      "path": "client/session.go",
+      "sourceArtefact": "architecture.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 193
+    },
+    {
+      "endLine": 110,
+      "path": "client/session.go",
+      "sourceArtefact": "DM-03_FD-02-response-msg.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 105
+    },
+    {
+      "endLine": 25,
+      "path": "client/session.go",
+      "sourceArtefact": "DM-03-message.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 25
+    },
+    {
+      "endLine": 48,
+      "path": "client/session.go",
+      "sourceArtefact": "IN-01_IC-02-ic02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 32
+    },
+    {
+      "endLine": 65,
+      "path": "client/session.go",
+      "sourceArtefact": "IN-01_IC-02-ic02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 50
+    },
+    {
+      "endLine": 119,
+      "path": "client/session.go",
+      "sourceArtefact": "IN-01_IC-02-ic02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 67
+    },
+    {
+      "endLine": 257,
+      "path": "client/session.go",
+      "sourceArtefact": "IN-01_IC-02-ic02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 193
+    },
+    {
+      "endLine": 275,
+      "path": "client/session.go",
+      "sourceArtefact": "IN-01_IC-02-ic02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 273
+    },
+    {
+      "endLine": 271,
+      "path": "client/session.go",
+      "sourceArtefact": "IN-01-components-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 1
+    },
+    {
+      "endLine": 118,
+      "path": "client/session.go",
+      "sourceArtefact": "IN-04_IC-01-cli-input-dependency.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 118
+    },
+    {
+      "endLine": 168,
+      "path": "client/session.go",
+      "sourceArtefact": "IN-04_IC-01-cli-input-dependency.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 168
+    },
+    {
+      "endLine": 185,
+      "path": "client/session.go",
+      "sourceArtefact": "IN-04_IC-01-cli-input-dependency.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 185
+    },
+    {
+      "endLine": 195,
+      "path": "client/session.go",
+      "sourceArtefact": "IN-04_IC-01-cli-input-dependency.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 195
+    },
+    {
+      "endLine": 222,
+      "path": "client/session.go",
+      "sourceArtefact": "IN-04_IC-01-cli-input-dependency.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 222
+    },
+    {
+      "endLine": 30,
+      "path": "client/session.go",
+      "sourceArtefact": "SV-02-client.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 22
+    },
+    {
+      "endLine": 119,
+      "path": "client/session.go",
+      "sourceArtefact": "SV-02-client.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 67
+    },
+    {
+      "endLine": 256,
+      "path": "client/session.go",
+      "sourceArtefact": "SV-02-client.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 193
+    },
+    {
+      "endLine": 290,
+      "path": "client/session.go",
+      "sourceArtefact": "SV-02-client.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 277
+    },
+    {
+      "endLine": 14,
+      "path": "client/session.go",
+      "sourceArtefact": "TS-02-readline.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 14
+    },
+    {
+      "endLine": 24,
+      "path": "client/session.go",
+      "sourceArtefact": "TS-02-readline.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 24
+    },
+    {
+      "endLine": 190,
+      "path": "client/session.go",
+      "sourceArtefact": "TS-02-readline.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 185
+    },
+    {
+      "endLine": 195,
+      "path": "client/session.go",
+      "sourceArtefact": "TS-02-readline.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 195
+    },
+    {
+      "endLine": 7,
+      "path": "cmd/client/main.go",
+      "sourceArtefact": "IN-01_IC-01-ic01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 1
+    },
+    {
+      "endLine": 9,
+      "path": "cmd/client/main.go",
+      "sourceArtefact": "IN-01-cli-client.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 1
+    },
+    {
+      "endLine": 7,
+      "path": "cmd/client/main.go",
+      "sourceArtefact": "IN-01-components-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 1
+    },
+    {
+      "endLine": 9,
+      "path": "cmd/client/main.go",
+      "sourceArtefact": "infrastructure-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 1
+    },
+    {
+      "endLine": 20,
+      "path": "cmd/client/main.go",
+      "sourceArtefact": "TS-01-go.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 1
+    },
+    {
+      "endLine": 63,
+      "path": "cmd/server/main.go",
+      "sourceArtefact": "IN-02_IC-01-cli-server-main-entry.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 30
+    },
+    {
+      "endLine": 31,
+      "path": "cmd/server/main.go",
+      "sourceArtefact": "IN-02_IC-01-cli-server-main-entry.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 31
+    },
+    {
+      "endLine": 33,
+      "path": "cmd/server/main.go",
+      "sourceArtefact": "IN-02_IC-01-cli-server-main-entry.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 33
+    },
+    {
+      "endLine": 38,
+      "path": "cmd/server/main.go",
+      "sourceArtefact": "IN-02_IC-01-cli-server-main-entry.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 35
+    },
+    {
+      "endLine": 45,
+      "path": "cmd/server/main.go",
+      "sourceArtefact": "IN-02_IC-01-cli-server-main-entry.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 40
+    },
+    {
+      "endLine": 63,
+      "path": "cmd/server/main.go",
+      "sourceArtefact": "IN-02_IC-01-cli-server-main-entry.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 55
+    },
+    {
+      "endLine": 64,
+      "path": "cmd/server/main.go",
+      "sourceArtefact": "IN-02-cli-server.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 1
+    },
+    {
+      "endLine": 28,
+      "path": "cmd/server/main.go",
+      "sourceArtefact": "IN-02-cli-server.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 13
+    },
+    {
+      "endLine": 62,
+      "path": "cmd/server/main.go",
+      "sourceArtefact": "IN-02-cli-server.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 33
+    },
+    {
+      "endLine": 43,
+      "path": "cmd/server/main.go",
+      "sourceArtefact": "IN-02-cli-server.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 40
+    },
+    {
+      "endLine": 64,
+      "path": "cmd/server/main.go",
+      "sourceArtefact": "IN-02-components-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 1
+    },
+    {
+      "endLine": 35,
+      "path": "cmd/server/main.go",
+      "sourceArtefact": "IN-03-tls-configuration.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 35
+    },
+    {
+      "endLine": 60,
+      "path": "cmd/server/main.go",
+      "sourceArtefact": "infrastructure-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 1
+    },
+    {
+      "endLine": 20,
+      "path": "cmd/server/main.go",
+      "sourceArtefact": "TS-01-go.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 1
+    },
+    {
+      "endLine": 5,
+      "path": "go.mod",
+      "sourceArtefact": "IN-04_IC-01-cli-input-dependency.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 5
+    },
+    {
+      "endLine": 8,
+      "path": "go.mod",
+      "sourceArtefact": "IN-04_IC-02-uuid-generation-dependency.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 8
+    },
+    {
+      "endLine": 1,
+      "path": "go.mod",
+      "sourceArtefact": "IN-04_IC-03-go-module-configuration.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 1
+    },
+    {
+      "endLine": 3,
+      "path": "go.mod",
+      "sourceArtefact": "IN-04_IC-03-go-module-configuration.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 3
+    },
+    {
+      "endLine": 5,
+      "path": "go.mod",
+      "sourceArtefact": "IN-04_IC-03-go-module-configuration.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 5
+    },
+    {
+      "endLine": 9,
+      "path": "go.mod",
+      "sourceArtefact": "IN-04_IC-03-go-module-configuration.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 7
+    },
+    {
+      "endLine": 10,
+      "path": "go.mod",
+      "sourceArtefact": "IN-04-components-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 1
+    },
+    {
+      "endLine": 5,
+      "path": "go.mod",
+      "sourceArtefact": "IN-04-components-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 5
+    },
+    {
+      "endLine": 8,
+      "path": "go.mod",
+      "sourceArtefact": "IN-04-components-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 8
+    },
+    {
+      "endLine": 10,
+      "path": "go.mod",
+      "sourceArtefact": "IN-04-dependency-management.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 1
+    },
+    {
+      "endLine": 10,
+      "path": "go.mod",
+      "sourceArtefact": "infrastructure-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 1
+    },
+    {
+      "endLine": 3,
+      "path": "go.mod",
+      "sourceArtefact": "project.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 3
+    },
+    {
+      "endLine": 3,
+      "path": "go.mod",
+      "sourceArtefact": "tech-stack-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 3
+    },
+    {
+      "endLine": 5,
+      "path": "go.mod",
+      "sourceArtefact": "tech-stack-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 5
+    },
+    {
+      "endLine": 8,
+      "path": "go.mod",
+      "sourceArtefact": "tech-stack-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 8
+    },
+    {
+      "endLine": 9,
+      "path": "go.mod",
+      "sourceArtefact": "tech-stack-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 9
+    },
+    {
+      "endLine": 3,
+      "path": "go.mod",
+      "sourceArtefact": "TS-01-go.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 3
+    },
+    {
+      "endLine": 5,
+      "path": "go.mod",
+      "sourceArtefact": "TS-02-readline.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 5
+    },
+    {
+      "endLine": 8,
+      "path": "go.mod",
+      "sourceArtefact": "TS-03-uuid.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 8
+    },
+    {
+      "endLine": 9,
+      "path": "go.mod",
+      "sourceArtefact": "TS-04-x-sys.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 9
+    },
+    {
+      "endLine": 10,
+      "path": "go.sum",
+      "sourceArtefact": "TS-04-x-sys.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 9
+    },
+    {
+      "endLine": 52,
+      "path": "protocol/message.go",
+      "sourceArtefact": "architecture.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 7
+    },
+    {
+      "endLine": 33,
+      "path": "protocol/message.go",
+      "sourceArtefact": "architecture.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 33
+    },
+    {
+      "endLine": 58,
+      "path": "protocol/message.go",
+      "sourceArtefact": "architecture.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 54
+    },
+    {
+      "endLine": 60,
+      "path": "protocol/message.go",
+      "sourceArtefact": "data-model-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 54
+    },
+    {
+      "endLine": 5,
+      "path": "protocol/message.go",
+      "sourceArtefact": "DM-03_FD-01-action.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 5
+    },
+    {
+      "endLine": 52,
+      "path": "protocol/message.go",
+      "sourceArtefact": "DM-03_FD-01-action.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 7
+    },
+    {
+      "endLine": 55,
+      "path": "protocol/message.go",
+      "sourceArtefact": "DM-03_FD-01-action.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 55
+    },
+    {
+      "endLine": 56,
+      "path": "protocol/message.go",
+      "sourceArtefact": "DM-03_FD-02-response-msg.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 56
+    },
+    {
+      "endLine": 57,
+      "path": "protocol/message.go",
+      "sourceArtefact": "DM-03_FD-03-payload.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 57
+    },
+    {
+      "endLine": 55,
+      "path": "protocol/message.go",
+      "sourceArtefact": "DM-03-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 55
+    },
+    {
+      "endLine": 56,
+      "path": "protocol/message.go",
+      "sourceArtefact": "DM-03-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 56
+    },
+    {
+      "endLine": 57,
+      "path": "protocol/message.go",
+      "sourceArtefact": "DM-03-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 57
+    },
+    {
+      "endLine": 58,
+      "path": "protocol/message.go",
+      "sourceArtefact": "DM-03-message.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 54
+    },
+    {
+      "endLine": 58,
+      "path": "protocol/message.go",
+      "sourceArtefact": "project.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 5
+    },
+    {
+      "endLine": 245,
+      "path": "README.md",
+      "sourceArtefact": "project.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 1
+    },
+    {
+      "endLine": 25,
+      "path": "server/client.go",
+      "sourceArtefact": "data-model-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 17
+    },
+    {
+      "endLine": 18,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-01-id.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 18
+    },
+    {
+      "endLine": 70,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-01-id.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 70
+    },
+    {
+      "endLine": 313,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-01-id.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 313
+    },
+    {
+      "endLine": 19,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-02-conn.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 19
+    },
+    {
+      "endLine": 20,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-03-nick.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 20
+    },
+    {
+      "endLine": 21,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-04-authenticated.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 21
+    },
+    {
+      "endLine": 22,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-05-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 22
+    },
+    {
+      "endLine": 23,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-06-current-context.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 23
+    },
+    {
+      "endLine": 24,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-07-current-friend.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 24
+    },
+    {
+      "endLine": 305,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-07-current-friend.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 299
+    },
+    {
+      "endLine": 25,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-08-my-rooms.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 25
+    },
+    {
+      "endLine": 34,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-08-my-rooms.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 34
+    },
+    {
+      "endLine": 26,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-09-friends.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 26
+    },
+    {
+      "endLine": 86,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-09-friends.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 86
+    },
+    {
+      "endLine": 125,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-09-friends.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 125
+    },
+    {
+      "endLine": 248,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-09-friends.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 248
+    },
+    {
+      "endLine": 27,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-10-pending-friend-requests.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 27
+    },
+    {
+      "endLine": 108,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-10-pending-friend-requests.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 108
+    },
+    {
+      "endLine": 126,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-10-pending-friend-requests.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 126
+    },
+    {
+      "endLine": 160,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-10-pending-friend-requests.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 160
+    },
+    {
+      "endLine": 185,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-10-pending-friend-requests.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 185
+    },
+    {
+      "endLine": 28,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-11-sent-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 28
+    },
+    {
+      "endLine": 34,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-11-sent-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 34
+    },
+    {
+      "endLine": 104,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-11-sent-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 104
+    },
+    {
+      "endLine": 140,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-11-sent-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 140
+    },
+    {
+      "endLine": 208,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-11-sent-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 196
+    },
+    {
+      "endLine": 29,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-12-blocked-users.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 29
+    },
+    {
+      "endLine": 59,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-12-blocked-users.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 59
+    },
+    {
+      "endLine": 63,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-12-blocked-users.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 63
+    },
+    {
+      "endLine": 330,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-12-blocked-users.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 330
+    },
+    {
+      "endLine": 338,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-12-blocked-users.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 338
+    },
+    {
+      "endLine": 354,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-12-blocked-users.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 354
+    },
+    {
+      "endLine": 30,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-13-room-invites.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 30
+    },
+    {
+      "endLine": 31,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-14-online.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 31
+    },
+    {
+      "endLine": 292,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-14-online.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 291
+    },
+    {
+      "endLine": 364,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-14-online.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 360
+    },
+    {
+      "endLine": 372,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-14-online.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 372
+    },
+    {
+      "endLine": 389,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-14-online.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 389
+    },
+    {
+      "endLine": 32,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-15-file-listen-host.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 32
+    },
+    {
+      "endLine": 398,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-15-file-listen-host.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 398
+    },
+    {
+      "endLine": 33,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-16-file-listen-port.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 33
+    },
+    {
+      "endLine": 403,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-16-file-listen-port.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 396
+    },
+    {
+      "endLine": 34,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-17-mu.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 34
+    },
+    {
+      "endLine": 64,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-17-mu.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 58
+    },
+    {
+      "endLine": 105,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02_FD-17-mu.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 103
+    },
+    {
+      "endLine": 35,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02-client.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 17
+    },
+    {
+      "endLine": 60,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02-client.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 58
+    },
+    {
+      "endLine": 109,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02-client.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 103
+    },
+    {
+      "endLine": 18,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 18
+    },
+    {
+      "endLine": 19,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 19
+    },
+    {
+      "endLine": 20,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 20
+    },
+    {
+      "endLine": 21,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 21
+    },
+    {
+      "endLine": 22,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 22
+    },
+    {
+      "endLine": 23,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 23
+    },
+    {
+      "endLine": 24,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 24
+    },
+    {
+      "endLine": 25,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 25
+    },
+    {
+      "endLine": 26,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 26
+    },
+    {
+      "endLine": 27,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 27
+    },
+    {
+      "endLine": 28,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 28
+    },
+    {
+      "endLine": 29,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 29
+    },
+    {
+      "endLine": 30,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 30
+    },
+    {
+      "endLine": 31,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 31
+    },
+    {
+      "endLine": 32,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 32
+    },
+    {
+      "endLine": 33,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 33
+    },
+    {
+      "endLine": 34,
+      "path": "server/client.go",
+      "sourceArtefact": "DM-02-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 34
+    },
+    {
+      "endLine": 101,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-01_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 70
+    },
+    {
+      "endLine": 109,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-01_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 103
+    },
+    {
+      "endLine": 112,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-01_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 111
+    },
+    {
+      "endLine": 86,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-01_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 86
+    },
+    {
+      "endLine": 88,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-01_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 88
+    },
+    {
+      "endLine": 95,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-01_SC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 91
+    },
+    {
+      "endLine": 94,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-01_SC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 93
+    },
+    {
+      "endLine": 82,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-01_SC-05.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 75
+    },
+    {
+      "endLine": 113,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 69
+    },
+    {
+      "endLine": 81,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 74
+    },
+    {
+      "endLine": 87,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 83
+    },
+    {
+      "endLine": 92,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 88
+    },
+    {
+      "endLine": 83,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 69
+    },
+    {
+      "endLine": 101,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 85
+    },
+    {
+      "endLine": 113,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 103
+    },
+    {
+      "endLine": 117,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-02_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 117
+    },
+    {
+      "endLine": 125,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-02_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 125
+    },
+    {
+      "endLine": 126,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-02_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 126
+    },
+    {
+      "endLine": 117,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-02_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 117
+    },
+    {
+      "endLine": 122,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-02_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 119
+    },
+    {
+      "endLine": 125,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-02-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 115
+    },
+    {
+      "endLine": 122,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-02-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 119
+    },
+    {
+      "endLine": 136,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 115
+    },
+    {
+      "endLine": 117,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 117
+    },
+    {
+      "endLine": 132,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 124
+    },
+    {
+      "endLine": 135,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 134
+    },
+    {
+      "endLine": 174,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 167
+    },
+    {
+      "endLine": 190,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 184
+    },
+    {
+      "endLine": 193,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 192
+    },
+    {
+      "endLine": 164,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-04_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 138
+    },
+    {
+      "endLine": 145,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-04_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 138
+    },
+    {
+      "endLine": 140,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-04_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 140
+    },
+    {
+      "endLine": 148,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-04_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 148
+    },
+    {
+      "endLine": 153,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-04_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 150
+    },
+    {
+      "endLine": 164,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-04-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 138
+    },
+    {
+      "endLine": 145,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-04-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 142
+    },
+    {
+      "endLine": 153,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-04-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 150
+    },
+    {
+      "endLine": 165,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 138
+    },
+    {
+      "endLine": 143,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 143
+    },
+    {
+      "endLine": 164,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 163
+    },
+    {
+      "endLine": 27,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-05.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 27
+    },
+    {
+      "endLine": 222,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-05.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 210
+    },
+    {
+      "endLine": 199,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-06_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 196
+    },
+    {
+      "endLine": 236,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-07_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 224
+    },
+    {
+      "endLine": 228,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-07_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 224
+    },
+    {
+      "endLine": 236,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-07-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 224
+    },
+    {
+      "endLine": 228,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-07-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 224
+    },
+    {
+      "endLine": 236,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-07.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 224
+    },
+    {
+      "endLine": 255,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-08_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 240
+    },
+    {
+      "endLine": 245,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-08_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 238
+    },
+    {
+      "endLine": 263,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-08-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 238
+    },
+    {
+      "endLine": 245,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-08-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 239
+    },
+    {
+      "endLine": 245,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-08.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 238
+    },
+    {
+      "endLine": 253,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-08.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 247
+    },
+    {
+      "endLine": 262,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03_UC-08.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 255
+    },
+    {
+      "endLine": 35,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03-friend-management.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 17
+    },
+    {
+      "endLine": 113,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03-friend-management.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 69
+    },
+    {
+      "endLine": 136,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03-friend-management.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 115
+    },
+    {
+      "endLine": 263,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-03-friend-management.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 238
+    },
+    {
+      "endLine": 324,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-01_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 324
+    },
+    {
+      "endLine": 330,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-01_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 330
+    },
+    {
+      "endLine": 338,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-01_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 338
+    },
+    {
+      "endLine": 341,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-01_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 341
+    },
+    {
+      "endLine": 335,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-01_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 329
+    },
+    {
+      "endLine": 327,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-01_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 324
+    },
+    {
+      "endLine": 342,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 323
+    },
+    {
+      "endLine": 327,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 324
+    },
+    {
+      "endLine": 335,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 329
+    },
+    {
+      "endLine": 342,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 323
+    },
+    {
+      "endLine": 358,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-02_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 344
+    },
+    {
+      "endLine": 350,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-02_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 346
+    },
+    {
+      "endLine": 358,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-02-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 344
+    },
+    {
+      "endLine": 358,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-02-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 344
+    },
+    {
+      "endLine": 358,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 344
+    },
+    {
+      "endLine": 346,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 346
+    },
+    {
+      "endLine": 394,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-03_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 366
+    },
+    {
+      "endLine": 394,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-03_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 366
+    },
+    {
+      "endLine": 394,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-03_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 366
+    },
+    {
+      "endLine": 394,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-03_SC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 366
+    },
+    {
+      "endLine": 368,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-03_SC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 368
+    },
+    {
+      "endLine": 372,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-03_SC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 372
+    },
+    {
+      "endLine": 393,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-03_SC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 386
+    },
+    {
+      "endLine": 394,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-03-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 366
+    },
+    {
+      "endLine": 394,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-03-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 366
+    },
+    {
+      "endLine": 394,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-03-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 366
+    },
+    {
+      "endLine": 394,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-03-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 366
+    },
+    {
+      "endLine": 29,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 29
+    },
+    {
+      "endLine": 369,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 366
+    },
+    {
+      "endLine": 368,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 368
+    },
+    {
+      "endLine": 379,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 371
+    },
+    {
+      "endLine": 393,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 386
+    },
+    {
+      "endLine": 343,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 323
+    },
+    {
+      "endLine": 358,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 344
+    },
+    {
+      "endLine": 391,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 367
+    },
+    {
+      "endLine": 342,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05-user-management.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 325
+    },
+    {
+      "endLine": 358,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05-user-management.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 344
+    },
+    {
+      "endLine": 391,
+      "path": "server/client.go",
+      "sourceArtefact": "FE-05-user-management.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 367
+    },
+    {
+      "endLine": 45,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-02_TC-07-view-pending-room-invites.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 17
+    },
+    {
+      "endLine": 113,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-03_TC-01-send-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 69
+    },
+    {
+      "endLine": 101,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-03_TC-01-send-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 70
+    },
+    {
+      "endLine": 109,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-03_TC-01-send-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 103
+    },
+    {
+      "endLine": 112,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-03_TC-01-send-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 111
+    },
+    {
+      "endLine": 136,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-03_TC-02-accept-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 115
+    },
+    {
+      "endLine": 122,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-03_TC-02-accept-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 119
+    },
+    {
+      "endLine": 132,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-03_TC-02-accept-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 124
+    },
+    {
+      "endLine": 135,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-03_TC-02-accept-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 134
+    },
+    {
+      "endLine": 194,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-03_TC-03-reject-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 167
+    },
+    {
+      "endLine": 185,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-03_TC-03-reject-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 185
+    },
+    {
+      "endLine": 192,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-03_TC-03-reject-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 192
+    },
+    {
+      "endLine": 236,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-03_TC-04-list-friends.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 224
+    },
+    {
+      "endLine": 245,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-03_TC-05-delete-friend.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 238
+    },
+    {
+      "endLine": 253,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-03_TC-05-delete-friend.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 247
+    },
+    {
+      "endLine": 262,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-03_TC-05-delete-friend.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 255
+    },
+    {
+      "endLine": 113,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-03-friend-management-verification.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 69
+    },
+    {
+      "endLine": 136,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-03-friend-management-verification.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 115
+    },
+    {
+      "endLine": 165,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-03-friend-management-verification.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 138
+    },
+    {
+      "endLine": 194,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-03-friend-management-verification.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 167
+    },
+    {
+      "endLine": 236,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-03-friend-management-verification.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 224
+    },
+    {
+      "endLine": 263,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-03-friend-management-verification.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 238
+    },
+    {
+      "endLine": 321,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-03-friend-management-verification.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 265
+    },
+    {
+      "endLine": 23,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-04-chat-and-context-management-verification.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 23
+    },
+    {
+      "endLine": 342,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-05_TC-01-tc01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 323
+    },
+    {
+      "endLine": 327,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-05_TC-01-tc01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 324
+    },
+    {
+      "endLine": 334,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-05_TC-01-tc01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 330
+    },
+    {
+      "endLine": 339,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-05_TC-01-tc01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 337
+    },
+    {
+      "endLine": 358,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-05_TC-02-tc02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 344
+    },
+    {
+      "endLine": 346,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-05_TC-02-tc02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 346
+    },
+    {
+      "endLine": 354,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-05_TC-02-tc02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 354
+    },
+    {
+      "endLine": 357,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-05_TC-02-tc02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 357
+    },
+    {
+      "endLine": 394,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-05_TC-03-tc03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 366
+    },
+    {
+      "endLine": 342,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-05-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 323
+    },
+    {
+      "endLine": 358,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-05-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 344
+    },
+    {
+      "endLine": 394,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-05-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 366
+    },
+    {
+      "endLine": 394,
+      "path": "server/client.go",
+      "sourceArtefact": "QA-05-user-management-verification.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 323
+    },
+    {
+      "endLine": 113,
+      "path": "server/client.go",
+      "sourceArtefact": "SV-01_ME-25-send-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 69
+    },
+    {
+      "endLine": 136,
+      "path": "server/client.go",
+      "sourceArtefact": "SV-01_ME-26-accept-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 115
+    },
+    {
+      "endLine": 194,
+      "path": "server/client.go",
+      "sourceArtefact": "SV-01_ME-27-reject-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 167
+    },
+    {
+      "endLine": 165,
+      "path": "server/client.go",
+      "sourceArtefact": "SV-01_ME-28-cancel-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 138
+    },
+    {
+      "endLine": 236,
+      "path": "server/client.go",
+      "sourceArtefact": "SV-01_ME-31-get-friends.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 224
+    },
+    {
+      "endLine": 321,
+      "path": "server/client.go",
+      "sourceArtefact": "SV-01_ME-33-message-friend.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 265
+    },
+    {
+      "endLine": 342,
+      "path": "server/client.go",
+      "sourceArtefact": "SV-01_ME-34-block-user.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 323
+    },
+    {
+      "endLine": 351,
+      "path": "server/client.go",
+      "sourceArtefact": "SV-01_ME-35-unblock-user.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 344
+    },
+    {
+      "endLine": 394,
+      "path": "server/client.go",
+      "sourceArtefact": "SV-01_ME-36-get-user-status.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 366
+    },
+    {
+      "endLine": 184,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "DM-02_FD-03-nick.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 164
+    },
+    {
+      "endLine": 21,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "DM-02_FD-04-authenticated.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 21
+    },
+    {
+      "endLine": 165,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "DM-02_FD-04-authenticated.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 165
+    },
+    {
+      "endLine": 185,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "DM-02_FD-04-authenticated.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 185
+    },
+    {
+      "endLine": 24,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "DM-02_FD-07-current-friend.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 24
+    },
+    {
+      "endLine": 27,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "DM-02_FD-09-friends.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 27
+    },
+    {
+      "endLine": 30,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "DM-02_FD-12-blocked-users.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 30
+    },
+    {
+      "endLine": 48,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "DM-03-message.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 48
+    },
+    {
+      "endLine": 195,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-01_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 183
+    },
+    {
+      "endLine": 167,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-01_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 165
+    },
+    {
+      "endLine": 173,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-01_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 169
+    },
+    {
+      "endLine": 177,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-01_SC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 174
+    },
+    {
+      "endLine": 181,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-01_SC-05.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 178
+    },
+    {
+      "endLine": 168,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 165
+    },
+    {
+      "endLine": 173,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 169
+    },
+    {
+      "endLine": 177,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 174
+    },
+    {
+      "endLine": 181,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 178
+    },
+    {
+      "endLine": 195,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 183
+    },
+    {
+      "endLine": 64,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 62
+    },
+    {
+      "endLine": 192,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 164
+    },
+    {
+      "endLine": 192,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 188
+    },
+    {
+      "endLine": 194,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 194
+    },
+    {
+      "endLine": 173,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-02_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 169
+    },
+    {
+      "endLine": 177,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-02_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 174
+    },
+    {
+      "endLine": 181,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-02_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 178
+    },
+    {
+      "endLine": 173,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-02-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 170
+    },
+    {
+      "endLine": 177,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-02-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 174
+    },
+    {
+      "endLine": 181,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-02-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 178
+    },
+    {
+      "endLine": 56,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 14
+    },
+    {
+      "endLine": 64,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 60
+    },
+    {
+      "endLine": 181,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 164
+    },
+    {
+      "endLine": 171,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 171
+    },
+    {
+      "endLine": 15,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-03_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 15
+    },
+    {
+      "endLine": 53,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-03_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 52
+    },
+    {
+      "endLine": 66,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-03_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 65
+    },
+    {
+      "endLine": 80,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-03_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 78
+    },
+    {
+      "endLine": 66,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-03-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 65
+    },
+    {
+      "endLine": 80,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-03-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 78
+    },
+    {
+      "endLine": 80,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 58
+    },
+    {
+      "endLine": 66,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 65
+    },
+    {
+      "endLine": 80,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 78
+    },
+    {
+      "endLine": 66,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 65
+    },
+    {
+      "endLine": 80,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 78
+    },
+    {
+      "endLine": 192,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 164
+    },
+    {
+      "endLine": 181,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 164
+    },
+    {
+      "endLine": 56,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01-user-authentication.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 14
+    },
+    {
+      "endLine": 71,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01-user-authentication.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 60
+    },
+    {
+      "endLine": 192,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-01-user-authentication.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 164
+    },
+    {
+      "endLine": 103,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-02_UC-08_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 103
+    },
+    {
+      "endLine": 105,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-02_UC-09.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 105
+    },
+    {
+      "endLine": 143,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-03_UC-05_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 142
+    },
+    {
+      "endLine": 143,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-03_UC-05_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 143
+    },
+    {
+      "endLine": 124,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-04_UC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 116
+    },
+    {
+      "endLine": 127,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-04_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 126
+    },
+    {
+      "endLine": 129,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-04_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 128
+    },
+    {
+      "endLine": 158,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-04-chat-and-context-management.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 58
+    },
+    {
+      "endLine": 124,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-04-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 116
+    },
+    {
+      "endLine": 127,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-04-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 126
+    },
+    {
+      "endLine": 129,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-04-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 128
+    },
+    {
+      "endLine": 147,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "FE-05_UC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 146
+    },
+    {
+      "endLine": 100,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "features-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 1
+    },
+    {
+      "endLine": 71,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "features-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 60
+    },
+    {
+      "endLine": 192,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "features-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 164
+    },
+    {
+      "endLine": 56,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "IN-02_IC-03-connection-handling.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 14
+    },
+    {
+      "endLine": 15,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "IN-02_IC-03-connection-handling.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 15
+    },
+    {
+      "endLine": 158,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "IN-02_IC-03-connection-handling.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 58
+    },
+    {
+      "endLine": 195,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "IN-02_IC-03-connection-handling.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 164
+    },
+    {
+      "endLine": 100,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "IN-02-components-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 1
+    },
+    {
+      "endLine": 195,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01_TC-01-successful-login.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 164
+    },
+    {
+      "endLine": 181,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01_TC-01-successful-login.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 169
+    },
+    {
+      "endLine": 186,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01_TC-01-successful-login.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 183
+    },
+    {
+      "endLine": 192,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01_TC-01-successful-login.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 188
+    },
+    {
+      "endLine": 162,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01_TC-02-failed-login-empty-nickname.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 160
+    },
+    {
+      "endLine": 164,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01_TC-02-failed-login-empty-nickname.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 164
+    },
+    {
+      "endLine": 168,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01_TC-02-failed-login-empty-nickname.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 165
+    },
+    {
+      "endLine": 169,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01_TC-02-failed-login-empty-nickname.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 169
+    },
+    {
+      "endLine": 173,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01_TC-02-failed-login-empty-nickname.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 170
+    },
+    {
+      "endLine": 56,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01_TC-03-failed-login-anonymous.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 14
+    },
+    {
+      "endLine": 64,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01_TC-03-failed-login-anonymous.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 61
+    },
+    {
+      "endLine": 162,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01_TC-03-failed-login-anonymous.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 160
+    },
+    {
+      "endLine": 177,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01_TC-03-failed-login-anonymous.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 174
+    },
+    {
+      "endLine": 181,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01_TC-04-failed-login-taken-nickname.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 164
+    },
+    {
+      "endLine": 167,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01_TC-04-failed-login-taken-nickname.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 165
+    },
+    {
+      "endLine": 181,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01_TC-04-failed-login-taken-nickname.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 178
+    },
+    {
+      "endLine": 15,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01_TC-05-logout-successful.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 14
+    },
+    {
+      "endLine": 41,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01_TC-05-logout-successful.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 41
+    },
+    {
+      "endLine": 52,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01_TC-05-logout-successful.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 52
+    },
+    {
+      "endLine": 80,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01_TC-05-logout-successful.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 78
+    },
+    {
+      "endLine": 80,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 78
+    },
+    {
+      "endLine": 173,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 170
+    },
+    {
+      "endLine": 177,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 174
+    },
+    {
+      "endLine": 181,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 178
+    },
+    {
+      "endLine": 192,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 183
+    },
+    {
+      "endLine": 192,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-01-user-authentication-verification.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 164
+    },
+    {
+      "endLine": 124,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-04_TC-01-tc01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 116
+    },
+    {
+      "endLine": 127,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-04_TC-02-tc02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 126
+    },
+    {
+      "endLine": 129,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-04_TC-03-tc03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 128
+    },
+    {
+      "endLine": 23,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-04-chat-and-context-management-verification.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 23
+    },
+    {
+      "endLine": 124,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-04-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 116
+    },
+    {
+      "endLine": 127,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-04-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 126
+    },
+    {
+      "endLine": 129,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "QA-04-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 128
+    },
+    {
+      "endLine": 100,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "qa-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 1
+    },
+    {
+      "endLine": 192,
+      "path": "server/handle_conn.go",
+      "sourceArtefact": "qa-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 164
+    },
+    {
+      "endLine": 15,
+      "path": "server/rooms.go",
+      "sourceArtefact": "data-model-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 10
+    },
+    {
+      "endLine": 11,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-01-id.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 11
+    },
+    {
+      "endLine": 12,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-02-name.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 12
+    },
+    {
+      "endLine": 163,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-02-name.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 163
+    },
+    {
+      "endLine": 189,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-02-name.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 183
+    },
+    {
+      "endLine": 13,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-03-max-size.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 13
+    },
+    {
+      "endLine": 25,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-03-max-size.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 25
+    },
+    {
+      "endLine": 176,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-03-max-size.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 167
+    },
+    {
+      "endLine": 14,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-04-is-private.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 14
+    },
+    {
+      "endLine": 70,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-04-is-private.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 70
+    },
+    {
+      "endLine": 99,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-04-is-private.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 99
+    },
+    {
+      "endLine": 15,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-05-owner.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 15
+    },
+    {
+      "endLine": 158,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-05-owner.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 158
+    },
+    {
+      "endLine": 222,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-05-owner.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 222
+    },
+    {
+      "endLine": 16,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-06-password.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 16
+    },
+    {
+      "endLine": 74,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-06-password.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 62
+    },
+    {
+      "endLine": 155,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-06-password.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 118
+    },
+    {
+      "endLine": 17,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-07-members.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 17
+    },
+    {
+      "endLine": 19,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-07-members.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 19
+    },
+    {
+      "endLine": 25,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-07-members.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 25
+    },
+    {
+      "endLine": 111,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-07-members.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 111
+    },
+    {
+      "endLine": 255,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-07-members.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 255
+    },
+    {
+      "endLine": 273,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-07-members.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 272
+    },
+    {
+      "endLine": 18,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-08-invites.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 18
+    },
+    {
+      "endLine": 283,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-08-invites.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 281
+    },
+    {
+      "endLine": 327,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-08-invites.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 324
+    },
+    {
+      "endLine": 357,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01_FD-08-invites.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 355
+    },
+    {
+      "endLine": 11,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 11
+    },
+    {
+      "endLine": 12,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 12
+    },
+    {
+      "endLine": 13,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 13
+    },
+    {
+      "endLine": 14,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 14
+    },
+    {
+      "endLine": 15,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 15
+    },
+    {
+      "endLine": 16,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 16
+    },
+    {
+      "endLine": 17,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 17
+    },
+    {
+      "endLine": 18,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01-fields-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 18
+    },
+    {
+      "endLine": 20,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 10
+    },
+    {
+      "endLine": 26,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 22
+    },
+    {
+      "endLine": 116,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 76
+    },
+    {
+      "endLine": 202,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 157
+    },
+    {
+      "endLine": 248,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-01-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 216
+    },
+    {
+      "endLine": 10,
+      "path": "server/rooms.go",
+      "sourceArtefact": "DM-02_FD-05-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 10
+    },
+    {
+      "endLine": 116,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-01_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 107
+    },
+    {
+      "endLine": 97,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-01_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 94
+    },
+    {
+      "endLine": 86,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-01_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 82
+    },
+    {
+      "endLine": 91,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-01_SC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 88
+    },
+    {
+      "endLine": 105,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-01_SC-05.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 99
+    },
+    {
+      "endLine": 86,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 82
+    },
+    {
+      "endLine": 91,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 88
+    },
+    {
+      "endLine": 97,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 94
+    },
+    {
+      "endLine": 105,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 99
+    },
+    {
+      "endLine": 116,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 107
+    },
+    {
+      "endLine": 26,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 22
+    },
+    {
+      "endLine": 76,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 76
+    },
+    {
+      "endLine": 92,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 82
+    },
+    {
+      "endLine": 112,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 107
+    },
+    {
+      "endLine": 115,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 114
+    },
+    {
+      "endLine": 155,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-02_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 118
+    },
+    {
+      "endLine": 139,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-02_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 136
+    },
+    {
+      "endLine": 76,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-02_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 76
+    },
+    {
+      "endLine": 104,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-02_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 99
+    },
+    {
+      "endLine": 105,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-02-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 99
+    },
+    {
+      "endLine": 155,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-02-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 118
+    },
+    {
+      "endLine": 139,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-02-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 136
+    },
+    {
+      "endLine": 22,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 22
+    },
+    {
+      "endLine": 155,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 118
+    },
+    {
+      "endLine": 122,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 120
+    },
+    {
+      "endLine": 151,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 149
+    },
+    {
+      "endLine": 154,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 153
+    },
+    {
+      "endLine": 202,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-03_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 157
+    },
+    {
+      "endLine": 161,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-03_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 158
+    },
+    {
+      "endLine": 171,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-03_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 166
+    },
+    {
+      "endLine": 176,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-03_SC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 172
+    },
+    {
+      "endLine": 186,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-03_SC-05.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 183
+    },
+    {
+      "endLine": 202,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-03-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 157
+    },
+    {
+      "endLine": 161,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-03-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 158
+    },
+    {
+      "endLine": 171,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-03-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 166
+    },
+    {
+      "endLine": 176,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-03-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 172
+    },
+    {
+      "endLine": 186,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-03-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 183
+    },
+    {
+      "endLine": 157,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 157
+    },
+    {
+      "endLine": 161,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 158
+    },
+    {
+      "endLine": 178,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 166
+    },
+    {
+      "endLine": 191,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 182
+    },
+    {
+      "endLine": 201,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 201
+    },
+    {
+      "endLine": 206,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-04_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 205
+    },
+    {
+      "endLine": 210,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-04_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 210
+    },
+    {
+      "endLine": 212,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-04_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 212
+    },
+    {
+      "endLine": 213,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-04_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 213
+    },
+    {
+      "endLine": 214,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-04_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 204
+    },
+    {
+      "endLine": 214,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-04-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 204
+    },
+    {
+      "endLine": 214,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-04-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 204
+    },
+    {
+      "endLine": 208,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 204
+    },
+    {
+      "endLine": 212,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 212
+    },
+    {
+      "endLine": 213,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 213
+    },
+    {
+      "endLine": 259,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 250
+    },
+    {
+      "endLine": 248,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-05_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 216
+    },
+    {
+      "endLine": 224,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-05_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 222
+    },
+    {
+      "endLine": 217,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-05_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 217
+    },
+    {
+      "endLine": 219,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-05_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 219
+    },
+    {
+      "endLine": 250,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-05-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 216
+    },
+    {
+      "endLine": 220,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-05-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 217
+    },
+    {
+      "endLine": 224,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-05-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 222
+    },
+    {
+      "endLine": 220,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-05.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 216
+    },
+    {
+      "endLine": 224,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-05.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 222
+    },
+    {
+      "endLine": 240,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-05.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 226
+    },
+    {
+      "endLine": 245,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-05.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 242
+    },
+    {
+      "endLine": 247,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-05.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 247
+    },
+    {
+      "endLine": 289,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-06_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 279
+    },
+    {
+      "endLine": 289,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-06-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 279
+    },
+    {
+      "endLine": 289,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-06.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 279
+    },
+    {
+      "endLine": 282,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-07_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 282
+    },
+    {
+      "endLine": 291,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-07_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 291
+    },
+    {
+      "endLine": 292,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-07_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 292
+    },
+    {
+      "endLine": 297,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-07_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 295
+    },
+    {
+      "endLine": 299,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-07_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 299
+    },
+    {
+      "endLine": 300,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-07_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 291
+    },
+    {
+      "endLine": 300,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-07-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 291
+    },
+    {
+      "endLine": 300,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-07-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 291
+    },
+    {
+      "endLine": 291,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-07.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 291
+    },
+    {
+      "endLine": 293,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-07.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 292
+    },
+    {
+      "endLine": 297,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-07.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 295
+    },
+    {
+      "endLine": 299,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-07.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 299
+    },
+    {
+      "endLine": 303,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-08_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 303
+    },
+    {
+      "endLine": 309,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-08_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 309
+    },
+    {
+      "endLine": 319,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-08_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 319
+    },
+    {
+      "endLine": 326,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-08_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 326
+    },
+    {
+      "endLine": 330,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-08_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 330
+    },
+    {
+      "endLine": 331,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-08_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 331
+    },
+    {
+      "endLine": 333,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-08_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 333
+    },
+    {
+      "endLine": 335,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-08_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 335
+    },
+    {
+      "endLine": 306,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-08_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 303
+    },
+    {
+      "endLine": 317,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-08_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 309
+    },
+    {
+      "endLine": 302,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-08_SC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 302
+    },
+    {
+      "endLine": 319,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-08_SC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 319
+    },
+    {
+      "endLine": 320,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-08_SC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 320
+    },
+    {
+      "endLine": 336,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-08-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 302
+    },
+    {
+      "endLine": 306,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-08-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 303
+    },
+    {
+      "endLine": 317,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-08-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 309
+    },
+    {
+      "endLine": 322,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-08-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 319
+    },
+    {
+      "endLine": 336,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-08.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 302
+    },
+    {
+      "endLine": 307,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-08.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 303
+    },
+    {
+      "endLine": 317,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-08.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 309
+    },
+    {
+      "endLine": 322,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-08.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 319
+    },
+    {
+      "endLine": 327,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-08.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 324
+    },
+    {
+      "endLine": 335,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-08.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 333
+    },
+    {
+      "endLine": 340,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-09_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 340
+    },
+    {
+      "endLine": 345,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-09_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 345
+    },
+    {
+      "endLine": 357,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-09_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 355
+    },
+    {
+      "endLine": 358,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-09_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 358
+    },
+    {
+      "endLine": 359,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-09_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 359
+    },
+    {
+      "endLine": 343,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-09_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 338
+    },
+    {
+      "endLine": 353,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-09_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 345
+    },
+    {
+      "endLine": 343,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-09-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 339
+    },
+    {
+      "endLine": 353,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-09-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 345
+    },
+    {
+      "endLine": 363,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-09-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 355
+    },
+    {
+      "endLine": 363,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02_UC-09.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 338
+    },
+    {
+      "endLine": 20,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02-room-management.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 10
+    },
+    {
+      "endLine": 60,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02-room-management.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 28
+    },
+    {
+      "endLine": 116,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02-room-management.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 76
+    },
+    {
+      "endLine": 202,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02-room-management.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 157
+    },
+    {
+      "endLine": 248,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02-room-management.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 216
+    },
+    {
+      "endLine": 300,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02-room-management.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 279
+    },
+    {
+      "endLine": 336,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02-room-management.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 302
+    },
+    {
+      "endLine": 116,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 76
+    },
+    {
+      "endLine": 155,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 118
+    },
+    {
+      "endLine": 202,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 157
+    },
+    {
+      "endLine": 214,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 204
+    },
+    {
+      "endLine": 248,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 216
+    },
+    {
+      "endLine": 289,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 279
+    },
+    {
+      "endLine": 300,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 291
+    },
+    {
+      "endLine": 336,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 302
+    },
+    {
+      "endLine": 363,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-02-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 338
+    },
+    {
+      "endLine": 28,
+      "path": "server/rooms.go",
+      "sourceArtefact": "FE-04_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 28
+    },
+    {
+      "endLine": 200,
+      "path": "server/rooms.go",
+      "sourceArtefact": "features-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 1
+    },
+    {
+      "endLine": 76,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-01-join-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 76
+    },
+    {
+      "endLine": 97,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-01-join-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 94
+    },
+    {
+      "endLine": 112,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-01-join-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 107
+    },
+    {
+      "endLine": 115,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-01-join-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 114
+    },
+    {
+      "endLine": 118,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-02-join-private-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 118
+    },
+    {
+      "endLine": 121,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-02-join-private-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 121
+    },
+    {
+      "endLine": 139,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-02-join-private-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 136
+    },
+    {
+      "endLine": 144,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-02-join-private-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 141
+    },
+    {
+      "endLine": 151,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-02-join-private-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 146
+    },
+    {
+      "endLine": 154,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-02-join-private-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 153
+    },
+    {
+      "endLine": 157,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-03-edit-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 157
+    },
+    {
+      "endLine": 161,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-03-edit-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 158
+    },
+    {
+      "endLine": 176,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-03-edit-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 166
+    },
+    {
+      "endLine": 186,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-03-edit-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 183
+    },
+    {
+      "endLine": 190,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-03-edit-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 188
+    },
+    {
+      "endLine": 201,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-03-edit-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 201
+    },
+    {
+      "endLine": 214,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-04-leave-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 204
+    },
+    {
+      "endLine": 208,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-04-leave-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 206
+    },
+    {
+      "endLine": 213,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-04-leave-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 212
+    },
+    {
+      "endLine": 261,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-04-leave-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 250
+    },
+    {
+      "endLine": 216,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-05-delete-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 216
+    },
+    {
+      "endLine": 220,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-05-delete-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 217
+    },
+    {
+      "endLine": 224,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-05-delete-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 222
+    },
+    {
+      "endLine": 240,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-05-delete-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 226
+    },
+    {
+      "endLine": 245,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-05-delete-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 243
+    },
+    {
+      "endLine": 289,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-06-invite-user-to-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 279
+    },
+    {
+      "endLine": 25,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-07-view-pending-room-invites.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 10
+    },
+    {
+      "endLine": 300,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-07-view-pending-room-invites.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 291
+    },
+    {
+      "endLine": 302,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-08-accept-room-invite.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 302
+    },
+    {
+      "endLine": 307,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-08-accept-room-invite.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 303
+    },
+    {
+      "endLine": 317,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-08-accept-room-invite.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 309
+    },
+    {
+      "endLine": 322,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-08-accept-room-invite.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 319
+    },
+    {
+      "endLine": 327,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-08-accept-room-invite.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 324
+    },
+    {
+      "endLine": 331,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-08-accept-room-invite.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 329
+    },
+    {
+      "endLine": 335,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-08-accept-room-invite.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 333
+    },
+    {
+      "endLine": 343,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-09-decline-room-invite.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 338
+    },
+    {
+      "endLine": 353,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-09-decline-room-invite.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 345
+    },
+    {
+      "endLine": 358,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-09-decline-room-invite.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 355
+    },
+    {
+      "endLine": 362,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-09-decline-room-invite.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 359
+    },
+    {
+      "endLine": 74,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-10-set-room-password.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 62
+    },
+    {
+      "endLine": 277,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-11-fetch-room-members.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 263
+    },
+    {
+      "endLine": 265,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-11-fetch-room-members.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 264
+    },
+    {
+      "endLine": 60,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-12-broadcast-message.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 28
+    },
+    {
+      "endLine": 30,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-12-broadcast-message.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 29
+    },
+    {
+      "endLine": 44,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-12-broadcast-message.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 34
+    },
+    {
+      "endLine": 56,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02_TC-12-broadcast-message.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 46
+    },
+    {
+      "endLine": 20,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02-room-management-verification.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 10
+    },
+    {
+      "endLine": 116,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02-room-management-verification.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 76
+    },
+    {
+      "endLine": 202,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02-room-management-verification.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 157
+    },
+    {
+      "endLine": 248,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02-room-management-verification.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 216
+    },
+    {
+      "endLine": 363,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02-room-management-verification.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 279
+    },
+    {
+      "endLine": 60,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 28
+    },
+    {
+      "endLine": 74,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 62
+    },
+    {
+      "endLine": 116,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 76
+    },
+    {
+      "endLine": 155,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 118
+    },
+    {
+      "endLine": 202,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 157
+    },
+    {
+      "endLine": 214,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 204
+    },
+    {
+      "endLine": 248,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 216
+    },
+    {
+      "endLine": 277,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 263
+    },
+    {
+      "endLine": 289,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 279
+    },
+    {
+      "endLine": 300,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 291
+    },
+    {
+      "endLine": 336,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 302
+    },
+    {
+      "endLine": 363,
+      "path": "server/rooms.go",
+      "sourceArtefact": "QA-02-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 338
+    },
+    {
+      "endLine": 200,
+      "path": "server/rooms.go",
+      "sourceArtefact": "qa-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 1
+    },
+    {
+      "endLine": 202,
+      "path": "server/rooms.go",
+      "sourceArtefact": "SV-01_ME-03-edit-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 157
+    },
+    {
+      "endLine": 115,
+      "path": "server/rooms.go",
+      "sourceArtefact": "SV-01_ME-04-join-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 76
+    },
+    {
+      "endLine": 214,
+      "path": "server/rooms.go",
+      "sourceArtefact": "SV-01_ME-07-leave-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 204
+    },
+    {
+      "endLine": 216,
+      "path": "server/rooms.go",
+      "sourceArtefact": "SV-01_ME-08-delete-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 216
+    },
+    {
+      "endLine": 300,
+      "path": "server/rooms.go",
+      "sourceArtefact": "SV-01_ME-12-see-pending-room-invites.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 291
+    },
+    {
+      "endLine": 336,
+      "path": "server/rooms.go",
+      "sourceArtefact": "SV-01_ME-13-accept-room-invite.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 302
+    },
+    {
+      "endLine": 363,
+      "path": "server/rooms.go",
+      "sourceArtefact": "SV-01_ME-14-decline-room-invite.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 338
+    },
+    {
+      "endLine": 20,
+      "path": "server/rooms.go",
+      "sourceArtefact": "SV-01_ME-15-list-public-rooms.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 10
+    },
+    {
+      "endLine": 22,
+      "path": "server/server.go",
+      "sourceArtefact": "architecture.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 20
+    },
+    {
+      "endLine": 330,
+      "path": "server/server.go",
+      "sourceArtefact": "DM-02_FD-07-current-friend.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 330
+    },
+    {
+      "endLine": 355,
+      "path": "server/server.go",
+      "sourceArtefact": "DM-02_FD-07-current-friend.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 355
+    },
+    {
+      "endLine": 379,
+      "path": "server/server.go",
+      "sourceArtefact": "DM-02_FD-07-current-friend.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 379
+    },
+    {
+      "endLine": 693,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-01_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 678
+    },
+    {
+      "endLine": 226,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-02_UC-06_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 201
+    },
+    {
+      "endLine": 206,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-02_UC-06_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 201
+    },
+    {
+      "endLine": 211,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-02_UC-06_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 208
+    },
+    {
+      "endLine": 217,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-02_UC-06_SC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 213
+    },
+    {
+      "endLine": 223,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-02_UC-06_SC-05.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 219
+    },
+    {
+      "endLine": 226,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-02_UC-06-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 201
+    },
+    {
+      "endLine": 206,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-02_UC-06-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 202
+    },
+    {
+      "endLine": 211,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-02_UC-06-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 208
+    },
+    {
+      "endLine": 217,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-02_UC-06-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 213
+    },
+    {
+      "endLine": 223,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-02_UC-06-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 219
+    },
+    {
+      "endLine": 226,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-02_UC-06.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 201
+    },
+    {
+      "endLine": 206,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-02_UC-06.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 202
+    },
+    {
+      "endLine": 211,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-02_UC-06.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 208
+    },
+    {
+      "endLine": 217,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-02_UC-06.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 213
+    },
+    {
+      "endLine": 223,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-02_UC-06.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 219
+    },
+    {
+      "endLine": 243,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-02_UC-08_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 243
+    },
+    {
+      "endLine": 260,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-02_UC-09.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 253
+    },
+    {
+      "endLine": 583,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-01_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 576
+    },
+    {
+      "endLine": 576,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-01_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 576
+    },
+    {
+      "endLine": 577,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-01_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 577
+    },
+    {
+      "endLine": 580,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-01_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 578
+    },
+    {
+      "endLine": 583,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 576
+    },
+    {
+      "endLine": 581,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 577
+    },
+    {
+      "endLine": 583,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 576
+    },
+    {
+      "endLine": 577,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 577
+    },
+    {
+      "endLine": 586,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-02_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 586
+    },
+    {
+      "endLine": 590,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-02_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 586
+    },
+    {
+      "endLine": 590,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-02-SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 586
+    },
+    {
+      "endLine": 592,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-02-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 585
+    },
+    {
+      "endLine": 590,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-02-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 586
+    },
+    {
+      "endLine": 592,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 585
+    },
+    {
+      "endLine": 586,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 586
+    },
+    {
+      "endLine": 601,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-03_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 594
+    },
+    {
+      "endLine": 601,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-03_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 594
+    },
+    {
+      "endLine": 601,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-03-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 594
+    },
+    {
+      "endLine": 601,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-03-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 594
+    },
+    {
+      "endLine": 601,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 594
+    },
+    {
+      "endLine": 603,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-04_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 603
+    },
+    {
+      "endLine": 610,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-04-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 603
+    },
+    {
+      "endLine": 610,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 603
+    },
+    {
+      "endLine": 604,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 604
+    },
+    {
+      "endLine": 617,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-05_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 612
+    },
+    {
+      "endLine": 617,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-05_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 612
+    },
+    {
+      "endLine": 617,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-05-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 612
+    },
+    {
+      "endLine": 617,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-05-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 612
+    },
+    {
+      "endLine": 617,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-05.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 612
+    },
+    {
+      "endLine": 624,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-06_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 619
+    },
+    {
+      "endLine": 624,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-06_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 619
+    },
+    {
+      "endLine": 624,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-06-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 619
+    },
+    {
+      "endLine": 624,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-06-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 619
+    },
+    {
+      "endLine": 624,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-06.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 619
+    },
+    {
+      "endLine": 631,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-07_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 626
+    },
+    {
+      "endLine": 631,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-07_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 626
+    },
+    {
+      "endLine": 631,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-07-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 626
+    },
+    {
+      "endLine": 631,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-07-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 626
+    },
+    {
+      "endLine": 631,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-07.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 626
+    },
+    {
+      "endLine": 629,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-07.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 627
+    },
+    {
+      "endLine": 639,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-08_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 633
+    },
+    {
+      "endLine": 640,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-08-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 633
+    },
+    {
+      "endLine": 640,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-08.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 633
+    },
+    {
+      "endLine": 634,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03_UC-08.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 634
+    },
+    {
+      "endLine": 667,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03-friend-management.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 576
+    },
+    {
+      "endLine": 583,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 576
+    },
+    {
+      "endLine": 592,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 585
+    },
+    {
+      "endLine": 601,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 594
+    },
+    {
+      "endLine": 610,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 603
+    },
+    {
+      "endLine": 617,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 612
+    },
+    {
+      "endLine": 624,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 619
+    },
+    {
+      "endLine": 631,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 626
+    },
+    {
+      "endLine": 640,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-03-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 633
+    },
+    {
+      "endLine": 310,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-01_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 310
+    },
+    {
+      "endLine": 311,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-01_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 311
+    },
+    {
+      "endLine": 313,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-01_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 313
+    },
+    {
+      "endLine": 323,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-01_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 321
+    },
+    {
+      "endLine": 331,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-01_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 327
+    },
+    {
+      "endLine": 336,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-01_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 333
+    },
+    {
+      "endLine": 362,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-01_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 338
+    },
+    {
+      "endLine": 323,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-01_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 311
+    },
+    {
+      "endLine": 346,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-01_SC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 346
+    },
+    {
+      "endLine": 350,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-01_SC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 348
+    },
+    {
+      "endLine": 306,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-01_SC-05.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 304
+    },
+    {
+      "endLine": 366,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-01_SC-06.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 364
+    },
+    {
+      "endLine": 306,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 304
+    },
+    {
+      "endLine": 336,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 310
+    },
+    {
+      "endLine": 323,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 313
+    },
+    {
+      "endLine": 365,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 338
+    },
+    {
+      "endLine": 350,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 348
+    },
+    {
+      "endLine": 366,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 364
+    },
+    {
+      "endLine": 367,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 301
+    },
+    {
+      "endLine": 543,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-02_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 513
+    },
+    {
+      "endLine": 518,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-02_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 514
+    },
+    {
+      "endLine": 522,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-02_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 519
+    },
+    {
+      "endLine": 538,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-02_SC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 524
+    },
+    {
+      "endLine": 543,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-02-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 513
+    },
+    {
+      "endLine": 518,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-02-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 514
+    },
+    {
+      "endLine": 522,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-02-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 519
+    },
+    {
+      "endLine": 538,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-02-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 524
+    },
+    {
+      "endLine": 522,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 513
+    },
+    {
+      "endLine": 539,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 524
+    },
+    {
+      "endLine": 541,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 541
+    },
+    {
+      "endLine": 542,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 542
+    },
+    {
+      "endLine": 389,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-03_SC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 383
+    },
+    {
+      "endLine": 370,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-03_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 370
+    },
+    {
+      "endLine": 396,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-03_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 391
+    },
+    {
+      "endLine": 373,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-03_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 369
+    },
+    {
+      "endLine": 400,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-03_SC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 398
+    },
+    {
+      "endLine": 387,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-03_SC-05.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 384
+    },
+    {
+      "endLine": 395,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-03_SC-06.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 392
+    },
+    {
+      "endLine": 373,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-03-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 370
+    },
+    {
+      "endLine": 389,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-03-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 383
+    },
+    {
+      "endLine": 387,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-03-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 384
+    },
+    {
+      "endLine": 396,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-03-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 391
+    },
+    {
+      "endLine": 395,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-03-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 392
+    },
+    {
+      "endLine": 400,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-03-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 398
+    },
+    {
+      "endLine": 374,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 369
+    },
+    {
+      "endLine": 372,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 372
+    },
+    {
+      "endLine": 401,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 382
+    },
+    {
+      "endLine": 388,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 388
+    },
+    {
+      "endLine": 396,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 396
+    },
+    {
+      "endLine": 301,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04-chat-and-context-management.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 301
+    },
+    {
+      "endLine": 369,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-04-chat-and-context-management.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 369
+    },
+    {
+      "endLine": 656,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-05_UC-01_SC-05.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 652
+    },
+    {
+      "endLine": 656,
+      "path": "server/server.go",
+      "sourceArtefact": "FE-05_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 652
+    },
+    {
+      "endLine": 200,
+      "path": "server/server.go",
+      "sourceArtefact": "features-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 101
+    },
+    {
+      "endLine": 300,
+      "path": "server/server.go",
+      "sourceArtefact": "features-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 201
+    },
+    {
+      "endLine": 32,
+      "path": "server/server.go",
+      "sourceArtefact": "IN-02_IC-02-server-state-initialization.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 26
+    },
+    {
+      "endLine": 32,
+      "path": "server/server.go",
+      "sourceArtefact": "IN-02-components-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 26
+    },
+    {
+      "endLine": 11,
+      "path": "server/server.go",
+      "sourceArtefact": "IN-04_IC-02-uuid-generation-dependency.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 11
+    },
+    {
+      "endLine": 49,
+      "path": "server/server.go",
+      "sourceArtefact": "IN-04_IC-02-uuid-generation-dependency.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 49
+    },
+    {
+      "endLine": 11,
+      "path": "server/server.go",
+      "sourceArtefact": "IN-04-components-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 11
+    },
+    {
+      "endLine": 226,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-02_TC-06-invite-user-to-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 201
+    },
+    {
+      "endLine": 180,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-02_TC-11-fetch-room-members.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 180
+    },
+    {
+      "endLine": 181,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-02_TC-11-fetch-room-members.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 181
+    },
+    {
+      "endLine": 190,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-02_TC-11-fetch-room-members.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 187
+    },
+    {
+      "endLine": 198,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-02_TC-11-fetch-room-members.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 193
+    },
+    {
+      "endLine": 583,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-03_TC-01-send-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 576
+    },
+    {
+      "endLine": 592,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-03_TC-02-accept-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 585
+    },
+    {
+      "endLine": 601,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-03_TC-03-reject-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 594
+    },
+    {
+      "endLine": 595,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-03_TC-03-reject-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 595
+    },
+    {
+      "endLine": 631,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-03_TC-04-list-friends.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 626
+    },
+    {
+      "endLine": 640,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-03_TC-05-delete-friend.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 633
+    },
+    {
+      "endLine": 583,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-03-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 576
+    },
+    {
+      "endLine": 592,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-03-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 585
+    },
+    {
+      "endLine": 601,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-03-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 594
+    },
+    {
+      "endLine": 631,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-03-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 626
+    },
+    {
+      "endLine": 640,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-03-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 633
+    },
+    {
+      "endLine": 307,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-04_TC-01-tc01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 301
+    },
+    {
+      "endLine": 325,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-04_TC-01-tc01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 310
+    },
+    {
+      "endLine": 330,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-04_TC-01-tc01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 327
+    },
+    {
+      "endLine": 543,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-04_TC-02-tc02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 513
+    },
+    {
+      "endLine": 374,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-04_TC-03-tc03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 369
+    },
+    {
+      "endLine": 380,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-04_TC-03-tc03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 376
+    },
+    {
+      "endLine": 400,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-04_TC-03-tc03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 382
+    },
+    {
+      "endLine": 389,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-04_TC-03-tc03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 389
+    },
+    {
+      "endLine": 328,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-04-chat-and-context-management-verification.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 328
+    },
+    {
+      "endLine": 354,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-04-chat-and-context-management-verification.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 354
+    },
+    {
+      "endLine": 658,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-05_TC-01-tc01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 651
+    },
+    {
+      "endLine": 667,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-05_TC-02-tc02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 660
+    },
+    {
+      "endLine": 676,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-05_TC-03-tc03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 669
+    },
+    {
+      "endLine": 670,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-05_TC-03-tc03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 670
+    },
+    {
+      "endLine": 658,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-05-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 651
+    },
+    {
+      "endLine": 667,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-05-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 660
+    },
+    {
+      "endLine": 676,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-05-test-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 669
+    },
+    {
+      "endLine": 676,
+      "path": "server/server.go",
+      "sourceArtefact": "QA-05-user-management-verification.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 651
+    },
+    {
+      "endLine": 200,
+      "path": "server/server.go",
+      "sourceArtefact": "qa-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 101
+    },
+    {
+      "endLine": 300,
+      "path": "server/server.go",
+      "sourceArtefact": "qa-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 201
+    },
+    {
+      "endLine": 32,
+      "path": "server/server.go",
+      "sourceArtefact": "repo-surface-scan.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 19
+    },
+    {
+      "endLine": 693,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 19
+    },
+    {
+      "endLine": 74,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 36
+    },
+    {
+      "endLine": 89,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 76
+    },
+    {
+      "endLine": 98,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 91
+    },
+    {
+      "endLine": 108,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 100
+    },
+    {
+      "endLine": 125,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 110
+    },
+    {
+      "endLine": 135,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 127
+    },
+    {
+      "endLine": 145,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 137
+    },
+    {
+      "endLine": 178,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 147
+    },
+    {
+      "endLine": 199,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 180
+    },
+    {
+      "endLine": 226,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 201
+    },
+    {
+      "endLine": 241,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 228
+    },
+    {
+      "endLine": 251,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 243
+    },
+    {
+      "endLine": 261,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 253
+    },
+    {
+      "endLine": 288,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 263
+    },
+    {
+      "endLine": 367,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 301
+    },
+    {
+      "endLine": 401,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 369
+    },
+    {
+      "endLine": 441,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 403
+    },
+    {
+      "endLine": 468,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 443
+    },
+    {
+      "endLine": 501,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 470
+    },
+    {
+      "endLine": 511,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 503
+    },
+    {
+      "endLine": 543,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 513
+    },
+    {
+      "endLine": 558,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 545
+    },
+    {
+      "endLine": 574,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 560
+    },
+    {
+      "endLine": 583,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 576
+    },
+    {
+      "endLine": 592,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 585
+    },
+    {
+      "endLine": 601,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 594
+    },
+    {
+      "endLine": 610,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 603
+    },
+    {
+      "endLine": 617,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 612
+    },
+    {
+      "endLine": 624,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 619
+    },
+    {
+      "endLine": 631,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 626
+    },
+    {
+      "endLine": 640,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 633
+    },
+    {
+      "endLine": 649,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 642
+    },
+    {
+      "endLine": 658,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 651
+    },
+    {
+      "endLine": 667,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 660
+    },
+    {
+      "endLine": 676,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 669
+    },
+    {
+      "endLine": 693,
+      "path": "server/server.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 678
+    },
+    {
+      "endLine": 74,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-01-create-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 36
+    },
+    {
+      "endLine": 89,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-02-set-room-password.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 76
+    },
+    {
+      "endLine": 98,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-03-edit-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 91
+    },
+    {
+      "endLine": 108,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-04-join-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 100
+    },
+    {
+      "endLine": 125,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-06-join-room-with-password.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 110
+    },
+    {
+      "endLine": 135,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-07-leave-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 127
+    },
+    {
+      "endLine": 145,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-08-delete-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 137
+    },
+    {
+      "endLine": 178,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-09-delete-room-member.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 147
+    },
+    {
+      "endLine": 199,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-10-get-room-members.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 180
+    },
+    {
+      "endLine": 181,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-10-get-room-members.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 181
+    },
+    {
+      "endLine": 191,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-10-get-room-members.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 187
+    },
+    {
+      "endLine": 193,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-10-get-room-members.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 193
+    },
+    {
+      "endLine": 198,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-10-get-room-members.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 195
+    },
+    {
+      "endLine": 226,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-11-send-room-invite.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 201
+    },
+    {
+      "endLine": 241,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-12-see-pending-room-invites.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 228
+    },
+    {
+      "endLine": 251,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-13-accept-room-invite.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 243
+    },
+    {
+      "endLine": 261,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-14-decline-room-invite.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 253
+    },
+    {
+      "endLine": 24,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-15-list-public-rooms.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 19
+    },
+    {
+      "endLine": 288,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-15-list-public-rooms.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 263
+    },
+    {
+      "endLine": 367,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-16-switch-context.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 301
+    },
+    {
+      "endLine": 401,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-17-send-context-message.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 369
+    },
+    {
+      "endLine": 380,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-17-send-context-message.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 376
+    },
+    {
+      "endLine": 400,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-17-send-context-message.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 382
+    },
+    {
+      "endLine": 441,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-18-request-friend-file-port.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 403
+    },
+    {
+      "endLine": 414,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-18-request-friend-file-port.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 414
+    },
+    {
+      "endLine": 426,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-18-request-friend-file-port.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 420
+    },
+    {
+      "endLine": 435,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-18-request-friend-file-port.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 430
+    },
+    {
+      "endLine": 440,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-18-request-friend-file-port.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 440
+    },
+    {
+      "endLine": 468,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-19-handle-file-port-listening.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 443
+    },
+    {
+      "endLine": 501,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-20-dispatch-pending-file-requests.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 470
+    },
+    {
+      "endLine": 511,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-20-dispatch-pending-file-requests.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 503
+    },
+    {
+      "endLine": 440,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-21-send-file-port-to-sender.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 440
+    },
+    {
+      "endLine": 499,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-21-send-file-port-to-sender.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 499
+    },
+    {
+      "endLine": 511,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-21-send-file-port-to-sender.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 503
+    },
+    {
+      "endLine": 543,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-22-send-room-message.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 513
+    },
+    {
+      "endLine": 558,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-23-list-my-rooms.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 545
+    },
+    {
+      "endLine": 574,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-24-list-my-room-invites.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 560
+    },
+    {
+      "endLine": 583,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-25-send-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 576
+    },
+    {
+      "endLine": 592,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-26-accept-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 585
+    },
+    {
+      "endLine": 601,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-27-reject-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 594
+    },
+    {
+      "endLine": 610,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-28-cancel-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 603
+    },
+    {
+      "endLine": 617,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-29-see-pending-friend-requests.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 612
+    },
+    {
+      "endLine": 624,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-30-see-sent-friend-requests.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 619
+    },
+    {
+      "endLine": 631,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-31-get-friends.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 626
+    },
+    {
+      "endLine": 640,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-32-delete-friend.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 633
+    },
+    {
+      "endLine": 649,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-33-message-friend.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 642
+    },
+    {
+      "endLine": 658,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-34-block-user.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 651
+    },
+    {
+      "endLine": 667,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-35-unblock-user.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 660
+    },
+    {
+      "endLine": 676,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-36-get-user-status.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 669
+    },
+    {
+      "endLine": 693,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01_ME-37-log-user-out.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 678
+    },
+    {
+      "endLine": 693,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01-server.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 19
+    },
+    {
+      "endLine": 24,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01-server.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 19
+    },
+    {
+      "endLine": 74,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01-server.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 36
+    },
+    {
+      "endLine": 468,
+      "path": "server/server.go",
+      "sourceArtefact": "SV-01-server.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 403
+    },
+    {
+      "endLine": 11,
+      "path": "server/server.go",
+      "sourceArtefact": "TS-03-uuid.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 11
+    },
+    {
+      "endLine": 49,
+      "path": "server/server.go",
+      "sourceArtefact": "TS-03-uuid.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 49
+    },
+    {
+      "endLine": 54,
+      "path": "server/types.go",
+      "sourceArtefact": "services-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 1
+    },
+    {
+      "endLine": 124,
+      "path": "server/utils.go",
+      "sourceArtefact": "DM-02_FD-03-nick.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 116
+    },
+    {
+      "endLine": 126,
+      "path": "server/utils.go",
+      "sourceArtefact": "FE-01_UC-01_SC-05.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 116
+    },
+    {
+      "endLine": 126,
+      "path": "server/utils.go",
+      "sourceArtefact": "FE-01_UC-01-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 116
+    },
+    {
+      "endLine": 126,
+      "path": "server/utils.go",
+      "sourceArtefact": "FE-01_UC-01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 116
+    },
+    {
+      "endLine": 131,
+      "path": "server/utils.go",
+      "sourceArtefact": "FE-01_UC-02_SC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 116
+    },
+    {
+      "endLine": 126,
+      "path": "server/utils.go",
+      "sourceArtefact": "FE-01_UC-02-scenarios-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 116
+    },
+    {
+      "endLine": 131,
+      "path": "server/utils.go",
+      "sourceArtefact": "FE-01_UC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 116
+    },
+    {
+      "endLine": 126,
+      "path": "server/utils.go",
+      "sourceArtefact": "FE-01-use-cases-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 116
+    },
+    {
+      "endLine": 123,
+      "path": "server/utils.go",
+      "sourceArtefact": "FE-01-user-authentication.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 116
+    },
+    {
+      "endLine": 216,
+      "path": "server/utils.go",
+      "sourceArtefact": "FE-02_UC-06_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 211
+    },
+    {
+      "endLine": 98,
+      "path": "server/utils.go",
+      "sourceArtefact": "FE-02_UC-07_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 91
+    },
+    {
+      "endLine": 111,
+      "path": "server/utils.go",
+      "sourceArtefact": "FE-03_UC-02-SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 108
+    },
+    {
+      "endLine": 157,
+      "path": "server/utils.go",
+      "sourceArtefact": "FE-03_UC-02-SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 152
+    },
+    {
+      "endLine": 157,
+      "path": "server/utils.go",
+      "sourceArtefact": "FE-03_UC-03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 152
+    },
+    {
+      "endLine": 176,
+      "path": "server/utils.go",
+      "sourceArtefact": "FE-03_UC-05.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 167
+    },
+    {
+      "endLine": 167,
+      "path": "server/utils.go",
+      "sourceArtefact": "FE-03_UC-06_SC-02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 167
+    },
+    {
+      "endLine": 81,
+      "path": "server/utils.go",
+      "sourceArtefact": "FE-03_UC-06.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 75
+    },
+    {
+      "endLine": 176,
+      "path": "server/utils.go",
+      "sourceArtefact": "FE-03_UC-06.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 167
+    },
+    {
+      "endLine": 176,
+      "path": "server/utils.go",
+      "sourceArtefact": "FE-03_UC-07.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 167
+    },
+    {
+      "endLine": 70,
+      "path": "server/utils.go",
+      "sourceArtefact": "FE-05_UC-03_SC-04.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 70
+    },
+    {
+      "endLine": 131,
+      "path": "server/utils.go",
+      "sourceArtefact": "QA-01_TC-04-failed-login-taken-nickname.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 116
+    },
+    {
+      "endLine": 116,
+      "path": "server/utils.go",
+      "sourceArtefact": "QA-01-user-authentication-verification.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 116
+    },
+    {
+      "endLine": 211,
+      "path": "server/utils.go",
+      "sourceArtefact": "SV-01_ME-02-set-room-password.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 211
+    },
+    {
+      "endLine": 216,
+      "path": "server/utils.go",
+      "sourceArtefact": "SV-01_ME-04-join-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 211
+    },
+    {
+      "endLine": 230,
+      "path": "server/utils.go",
+      "sourceArtefact": "SV-01_ME-06-join-room-with-password.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 211
+    },
+    {
+      "endLine": 211,
+      "path": "server/utils.go",
+      "sourceArtefact": "SV-01_ME-08-delete-room.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 211
+    },
+    {
+      "endLine": 211,
+      "path": "server/utils.go",
+      "sourceArtefact": "SV-01_ME-14-decline-room-invite.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 211
+    },
+    {
+      "endLine": 152,
+      "path": "server/utils.go",
+      "sourceArtefact": "SV-01_ME-25-send-friend-request.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 152
+    },
+    {
+      "endLine": 20,
+      "path": "tls_config/config.go",
+      "sourceArtefact": "IN-03_IC-01-ic01.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 17
+    },
+    {
+      "endLine": 17,
+      "path": "tls_config/config.go",
+      "sourceArtefact": "IN-03_IC-02-ic02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 16
+    },
+    {
+      "endLine": 31,
+      "path": "tls_config/config.go",
+      "sourceArtefact": "IN-03_IC-02-ic02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 22
+    },
+    {
+      "endLine": 33,
+      "path": "tls_config/config.go",
+      "sourceArtefact": "IN-03_IC-02-ic02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 33
+    },
+    {
+      "endLine": 35,
+      "path": "tls_config/config.go",
+      "sourceArtefact": "IN-03_IC-02-ic02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 34
+    },
+    {
+      "endLine": 39,
+      "path": "tls_config/config.go",
+      "sourceArtefact": "IN-03_IC-02-ic02.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 38
+    },
+    {
+      "endLine": 41,
+      "path": "tls_config/config.go",
+      "sourceArtefact": "IN-03_IC-03-ic03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 41
+    },
+    {
+      "endLine": 44,
+      "path": "tls_config/config.go",
+      "sourceArtefact": "IN-03_IC-03-ic03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 42
+    },
+    {
+      "endLine": 46,
+      "path": "tls_config/config.go",
+      "sourceArtefact": "IN-03_IC-03-ic03.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 46
+    },
+    {
+      "endLine": 20,
+      "path": "tls_config/config.go",
+      "sourceArtefact": "IN-03-components-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 17
+    },
+    {
+      "endLine": 39,
+      "path": "tls_config/config.go",
+      "sourceArtefact": "IN-03-components-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 22
+    },
+    {
+      "endLine": 46,
+      "path": "tls_config/config.go",
+      "sourceArtefact": "IN-03-components-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 41
+    },
+    {
+      "endLine": 46,
+      "path": "tls_config/config.go",
+      "sourceArtefact": "IN-03-tls-configuration.md",
+      "sourceKind": "markdown_evidence_index",
+      "startLine": 17
+    },
+    {
+      "endLine": 50,
+      "path": "tls_config/config.go",
+      "sourceArtefact": "infrastructure-list.json",
+      "sourceKind": "json_source_reference",
+      "startLine": 1
+    }
+  ],
+  "repositoryRoot": "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-010",
+  "version": 1
+}

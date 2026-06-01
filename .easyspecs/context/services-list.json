@@ -1,0 +1,544 @@
+{
+  "services": [
+    {
+      "code": "SV-01",
+      "name": "Server",
+      "slug": "server",
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 19,
+          "endLine": 693,
+          "note": "server struct and methods"
+        },
+        {
+          "path": "server/types.go",
+          "startLine": 1,
+          "endLine": 54
+        }
+      ],
+      "methods": [
+        {
+          "code": "ME-01",
+          "name": "CreateRoom",
+          "slug": "create-room",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 36,
+              "endLine": 74,
+              "note": "CreateRoom method"
+            }
+          ]
+        },
+        {
+          "code": "ME-02",
+          "name": "SetRoomPassword",
+          "slug": "set-room-password",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 76,
+              "endLine": 89,
+              "note": "SetRoomPassword method"
+            }
+          ]
+        },
+        {
+          "code": "ME-03",
+          "name": "EditRoom",
+          "slug": "edit-room",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 91,
+              "endLine": 98,
+              "note": "EditRoom method"
+            }
+          ]
+        },
+        {
+          "code": "ME-04",
+          "name": "JoinRoom",
+          "slug": "join-room",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 100,
+              "endLine": 108,
+              "note": "JoinRoom method"
+            }
+          ]
+        },
+        {
+          "code": "ME-06",
+          "name": "JoinRoomWithPassword",
+          "slug": "join-room-with-password",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 110,
+              "endLine": 125,
+              "note": "JoinRoomWithPassword method"
+            }
+          ]
+        },
+        {
+          "code": "ME-07",
+          "name": "LeaveRoom",
+          "slug": "leave-room",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 127,
+              "endLine": 135,
+              "note": "LeaveRoom method"
+            }
+          ]
+        },
+        {
+          "code": "ME-08",
+          "name": "DeleteRoom",
+          "slug": "delete-room",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 137,
+              "endLine": 145,
+              "note": "DeleteRoom method"
+            }
+          ]
+        },
+        {
+          "code": "ME-09",
+          "name": "DeleteRoomMember",
+          "slug": "delete-room-member",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 147,
+              "endLine": 178,
+              "note": "DeleteRoomMember method"
+            }
+          ]
+        },
+        {
+          "code": "ME-10",
+          "name": "GetRoomMembers",
+          "slug": "get-room-members",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 180,
+              "endLine": 199,
+              "note": "GetRoomMembers method"
+            }
+          ]
+        },
+        {
+          "code": "ME-11",
+          "name": "SendRoomInvite",
+          "slug": "send-room-invite",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 201,
+              "endLine": 226,
+              "note": "SendRoomInvite method"
+            }
+          ]
+        },
+        {
+          "code": "ME-12",
+          "name": "SeePendingRoomInvites",
+          "slug": "see-pending-room-invites",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 228,
+              "endLine": 241,
+              "note": "SeePendingRoomInvites method"
+            }
+          ]
+        },
+        {
+          "code": "ME-13",
+          "name": "AcceptRoomInvite",
+          "slug": "accept-room-invite",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 243,
+              "endLine": 251,
+              "note": "AcceptRoomInvite method"
+            }
+          ]
+        },
+        {
+          "code": "ME-14",
+          "name": "DeclineRoomInvite",
+          "slug": "decline-room-invite",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 253,
+              "endLine": 261,
+              "note": "DeclineRoomInvite method"
+            }
+          ]
+        },
+        {
+          "code": "ME-15",
+          "name": "ListPublicRooms",
+          "slug": "list-public-rooms",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 263,
+              "endLine": 288,
+              "note": "ListPublicRooms method"
+            }
+          ]
+        },
+        {
+          "code": "ME-16",
+          "name": "SwitchContext",
+          "slug": "switch-context",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 301,
+              "endLine": 367,
+              "note": "SwitchContext method"
+            }
+          ]
+        },
+        {
+          "code": "ME-17",
+          "name": "SendContextMessage",
+          "slug": "send-context-message",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 369,
+              "endLine": 401,
+              "note": "SendContextMessage method"
+            }
+          ]
+        },
+        {
+          "code": "ME-18",
+          "name": "requestFriendFilePort",
+          "slug": "request-friend-file-port",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 403,
+              "endLine": 441,
+              "note": "requestFriendFilePort method"
+            }
+          ]
+        },
+        {
+          "code": "ME-19",
+          "name": "handleFilePortListening",
+          "slug": "handle-file-port-listening",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 443,
+              "endLine": 468,
+              "note": "handleFilePortListening method"
+            }
+          ]
+        },
+        {
+          "code": "ME-20",
+          "name": "dispatchPendingFileRequests",
+          "slug": "dispatch-pending-file-requests",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 470,
+              "endLine": 501,
+              "note": "dispatchPendingFileRequests method"
+            }
+          ]
+        },
+        {
+          "code": "ME-21",
+          "name": "sendFilePortToSender",
+          "slug": "send-file-port-to-sender",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 503,
+              "endLine": 511,
+              "note": "sendFilePortToSender method"
+            }
+          ]
+        },
+        {
+          "code": "ME-22",
+          "name": "SendRoomMessage",
+          "slug": "send-room-message",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 513,
+              "endLine": 543,
+              "note": "SendRoomMessage method"
+            }
+          ]
+        },
+        {
+          "code": "ME-23",
+          "name": "ListMyRooms",
+          "slug": "list-my-rooms",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 545,
+              "endLine": 558,
+              "note": "ListMyRooms method"
+            }
+          ]
+        },
+        {
+          "code": "ME-24",
+          "name": "ListMyRoomInvites",
+          "slug": "list-my-room-invites",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 560,
+              "endLine": 574,
+              "note": "ListMyRoomInvites method"
+            }
+          ]
+        },
+        {
+          "code": "ME-25",
+          "name": "SendFriendRequest",
+          "slug": "send-friend-request",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 576,
+              "endLine": 583,
+              "note": "SendFriendRequest method"
+            }
+          ]
+        },
+        {
+          "code": "ME-26",
+          "name": "AcceptFriendRequest",
+          "slug": "accept-friend-request",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 585,
+              "endLine": 592,
+              "note": "AcceptFriendRequest method"
+            }
+          ]
+        },
+        {
+          "code": "ME-27",
+          "name": "RejectFriendRequest",
+          "slug": "reject-friend-request",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 594,
+              "endLine": 601,
+              "note": "RejectFriendRequest method"
+            }
+          ]
+        },
+        {
+          "code": "ME-28",
+          "name": "CancelFriendRequest",
+          "slug": "cancel-friend-request",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 603,
+              "endLine": 610,
+              "note": "CancelFriendRequest method"
+            }
+          ]
+        },
+        {
+          "code": "ME-29",
+          "name": "SeePendingFriendRequests",
+          "slug": "see-pending-friend-requests",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 612,
+              "endLine": 617,
+              "note": "SeePendingFriendRequests method"
+            }
+          ]
+        },
+        {
+          "code": "ME-30",
+          "name": "SeeSentFriendRequests",
+          "slug": "see-sent-friend-requests",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 619,
+              "endLine": 624,
+              "note": "SeeSentFriendRequests method"
+            }
+          ]
+        },
+        {
+          "code": "ME-31",
+          "name": "GetFriends",
+          "slug": "get-friends",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 626,
+              "endLine": 631,
+              "note": "GetFriends method"
+            }
+          ]
+        },
+        {
+          "code": "ME-32",
+          "name": "DeleteFriend",
+          "slug": "delete-friend",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 633,
+              "endLine": 640,
+              "note": "DeleteFriend method"
+            }
+          ]
+        },
+        {
+          "code": "ME-33",
+          "name": "MessageFriend",
+          "slug": "message-friend",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 642,
+              "endLine": 649,
+              "note": "MessageFriend method"
+            }
+          ]
+        },
+        {
+          "code": "ME-34",
+          "name": "BlockUser",
+          "slug": "block-user",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 651,
+              "endLine": 658,
+              "note": "BlockUser method"
+            }
+          ]
+        },
+        {
+          "code": "ME-35",
+          "name": "UnblockUser",
+          "slug": "unblock-user",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 660,
+              "endLine": 667,
+              "note": "UnblockUser method"
+            }
+          ]
+        },
+        {
+          "code": "ME-36",
+          "name": "GetUserStatus",
+          "slug": "get-user-status",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 669,
+              "endLine": 676,
+              "note": "GetUserStatus method"
+            }
+          ]
+        },
+        {
+          "code": "ME-37",
+          "name": "LogUserOut",
+          "slug": "log-user-out",
+          "sourceReferences": [
+            {
+              "path": "server/server.go",
+              "startLine": 678,
+              "endLine": 693,
+              "note": "LogUserOut method"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SV-02",
+      "name": "Client",
+      "slug": "client",
+      "sourceReferences": [
+        {
+          "path": "client/client.go",
+          "startLine": 11,
+          "endLine": 41,
+          "note": "Client connection and session handling"
+        }
+      ],
+      "methods": [
+        {
+          "code": "ME-05",
+          "name": "Connect",
+          "slug": "connect",
+          "sourceReferences": [
+            {
+              "path": "client/client.go",
+              "startLine": 11,
+              "endLine": 41,
+              "note": "Connects to server and starts session"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial services/methods discovery for Server and Client services."
+    },
+    {
+      "at": "2026-06-01T15:45:00.000Z",
+      "summary": "Full service/method audit: Expanded server methods mapping.",
+      "stableWriteDiff": {
+        "addedCodes": [],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": [
+          "methods: added=ME-06,ME-07,ME-08,ME-09,ME-10,ME-11,ME-12,ME-13,ME-14,ME-15,ME-16,ME-17,ME-18,ME-19,ME-20,ME-21,ME-22,ME-23,ME-24,ME-25,ME-26,ME-27,ME-28,ME-29,ME-30,ME-31,ME-32,ME-33,ME-34,ME-35,ME-36,ME-37; corrected=—; kept=ME-01,ME-02,ME-03,ME-04",
+          "methods: added=—; corrected=—; kept=ME-05"
+        ]
+      }
+    },
+    {
+      "at": "2026-06-01T16:02:58.804Z",
+      "summary": "SRS-30 zero-reference remediation: enrich_existing for server/types.go (service)"
+    }
+  ]
+}

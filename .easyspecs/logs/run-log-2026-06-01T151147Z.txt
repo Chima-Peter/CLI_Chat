@@ -1,0 +1,34 @@
+# easyspecs-cli run log
+# version: 0.3.29
+# startedAt: 2026-06-01T15:11:47.086Z
+# repoRoot: C:\Users\pc\Documents\dev\Github\CLI_Chat
+# command: analysis
+# argv: C:\nvm4w\nodejs\node.exe C:\nvm4w\nodejs\node_modules\@gluecharm-lab\easyspecs-cli\dist\main.cjs analysis
+# logFile: C:\Users\pc\Documents\dev\Github\CLI_Chat\.easyspecs\logs\run-log-2026-06-01T151147Z.txt
+2026-06-01T15:11:47.095Z [log] run log: C:\Users\pc\Documents\dev\Github\CLI_Chat\.easyspecs\logs\run-log-2026-06-01T151147Z.txt
+2026-06-01T15:11:47.187Z [factory] Resume eligible: phase=synthesis, iteration=0, runId=mpvci7a0-szg6cabd
+2026-06-01T15:11:47.189Z --- Resumed from phase: synthesis (iteration 0) ---
+2026-06-01T15:11:47.923Z [factory] resume synthesis — 0 complete, 107 missing row(s)
+
+2026-06-01T15:11:47.949Z [pipeline:remediation] parallel remediation pool — 107 missing row(s), 107 ready in initial fifo
+
+2026-06-01T15:11:48.455Z [pool] start remediation:DM-01_FD-04-is-private.md (active 45/45)
+
+2026-06-01T15:11:48.461Z [workstation:md:DM-01_FD-04-is-private.md] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-010\.opencode\_run\markdownDetail-agent-md-field-detail-DM-01_FD-04-is-private.md-a0-1780326708458.prompt.txt (1397 bytes)
+2026-06-01T15:11:48.463Z [workstation:md:DM-01_FD-04-is-private.md] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-010' --format json --title 'mpvcjzl5-av7mkq9x|remediation:DM-01_FD-04-is-private.md|markdownDetail·Field det' --agent agent-md-field-detail 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-010\.opencode\_run\markdownDetail-agent-md-field-detail-DM-01_FD-04-is-private.md-a0-1780326708458.prompt.txt'
+2026-06-01T15:11:48.464Z [workstation:md:DM-01_FD-04-is-private.md] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-010"
+2026-06-01T15:11:48.465Z [workstation:md:DM-01_FD-04-is-private.md] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-010","--format","json","--title","mpvcjzl5-av7mkq9x|remediation:DM-01_FD-04-is-private.md|markdownDetail·Field det","--agent","agent-md-field-detail","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-010\\.opencode\\_run\\markdownDetail-agent-md-field-detail-DM-01_FD-04-is-private.md-a0-1780326708458.prompt.txt"]
+2026-06-01T15:11:48.477Z [workstation:md:DM-01_FD-04-is-private.md] scope=host childPid=46100 hostRamTotalB=33706872832 hostRamFreeB=17080451072 hostRamUsedB=16626421760 load1=0 cpusLogical=8 load1PerCpu=0
+
+2026-06-01T15:11:48.479Z [pool] start remediation:DM-01_FD-06-password.md (active 45/45)
+
+2026-06-01T15:11:48.482Z [workstation:md:DM-01_FD-06-password.md] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-010\.opencode\_run\markdownDetail-agent-md-field-detail-DM-01_FD-06-password.md-a0-1780326708480.prompt.txt (1391 bytes)
+2026-06-01T15:11:48.482Z [workstation:md:DM-01_FD-06-password.md] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-010' --format json --title 'mpvcjzl5-av7mkq9x|remediation:DM-01_FD-06-password.md|markdownDetail·Field detai' --agent agent-md-field-detail 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-010\.opencode\_run\markdownDetail-agent-md-field-detail-DM-01_FD-06-password.md-a0-1780326708480.prompt.txt'
+2026-06-01T15:11:48.483Z [workstation:md:DM-01_FD-06-password.md] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-010"
+2026-06-01T15:11:48.484Z [workstation:md:DM-01_FD-06-password.md] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-010","--format","json","--title","mpvcjzl5-av7mkq9x|remediation:DM-01_FD-06-password.md|markdownDetail·Field detai","--agent","agent-md-field-detail","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-010\\.opencode\\_run\\markdownDetail-agent-md-field-detail-DM-01_FD-06-password.md-a0-1780326708480.prompt.txt"]
+2026-06-01T15:11:48.494Z [workstation:md:DM-01_FD-06-password.md] scope=host childPid=17908 hostRamTotalB=33706872832 hostRamFreeB=17078321152 hostRamUsedB=16628551680 load1=0 cpusLogical=8 load1PerCpu=0
+
+2026-06-01T15:11:48.496Z [pool] start remediation:DM-01_FD-07-members.md (active 45/45)
+
+2026-06-01T15:11:48.499Z [workstation:md:DM-01_FD-07-members.md] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-010\.opencode\_run\markdownDetail-agent-md-field-detail-DM-01_FD-07-members.md-a0-1780326708497.prompt.txt (1388 bytes)
+2026-06-01T15:11:48.500Z [workstation:md:DM-01_FD-07-members.md] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-010' --format json --title 'mpvcjzl5-av7mkq9x|remediation:DM-01_FD-07-members.md|markdownDetail·Field detail' --agent agent-md-field-detail 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-010\.opencode\_run\markdownDetail-agent-md-field-detail-DM-01_FD-07-members.md-a0-1780326708497.prompt.txt'

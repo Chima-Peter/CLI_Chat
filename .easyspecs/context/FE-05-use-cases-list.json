@@ -1,0 +1,80 @@
+{
+  "featureCode": "FE-05",
+  "useCases": [
+    {
+      "code": "UC-01",
+      "name": "Block a user",
+      "description": "Block another user by name to prevent interactions.",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 323,
+          "endLine": 343,
+          "note": "BlockUser method"
+        },
+        {
+          "path": "client/message.go",
+          "startLine": 397,
+          "endLine": 405,
+          "note": "Command routing for block"
+        }
+      ]
+    },
+    {
+      "code": "UC-02",
+      "name": "Unblock a user",
+      "description": "Unblock a previously blocked user.",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 344,
+          "endLine": 358,
+          "note": "UnblockUser method"
+        },
+        {
+          "path": "client/message.go",
+          "startLine": 406,
+          "endLine": 414,
+          "note": "Command routing for unblock"
+        }
+      ]
+    },
+    {
+      "code": "UC-03",
+      "name": "Check block status",
+      "description": "Check if a user is currently blocked.",
+      "order": 3,
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 367,
+          "endLine": 391,
+          "note": "Check block status logic"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial use-case list for User management (FE-05), covering blocking, unblocking, and status checking."
+    },
+    {
+      "at": "2026-06-01T14:55:45.454Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "UC-01",
+          "UC-02",
+          "UC-03"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1",
+  "coverageReferenceGeneratedAt": "2026-06-01T16:01:53.175Z",
+  "records": {
+    "README.md": {
+      "filePath": "README.md",
+      "fileKind": "documentation",
+      "projectRelationSummary": "README.md provides a comprehensive overview of the CLI Chat application, detailing its architecture, features, installation, usage, and command structure.",
+      "routing": "project",
+      "generatedAt": "2026-06-01T16:02:09.890Z",
+      "classifierAgentStem": "agent-classify-unreferenced-file"
+    },
+    "opencode.json": {
+      "filePath": "opencode.json",
+      "fileKind": "config",
+      "projectRelationSummary": "Configuration file for OpenCode agent and tooling infrastructure.",
+      "routing": "no_action",
+      "rationale": "This is an OpenCode configuration file, which is tooling infrastructure and not part of the product's application code.",
+      "generatedAt": "2026-06-01T16:02:12.017Z",
+      "classifierAgentStem": "agent-classify-unreferenced-file"
+    },
+    "server/types.go": {
+      "filePath": "server/types.go",
+      "fileKind": "source",
+      "projectRelationSummary": "Defines core message types and action constants for the server, re-exported from the protocol package to define the API protocol.",
+      "routing": "services",
+      "generatedAt": "2026-06-01T16:02:12.438Z",
+      "classifierAgentStem": "agent-classify-unreferenced-file"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "featureCode": "FE-02",
+  "useCaseCode": "UC-02",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "Join private room successfully with correct password",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 118,
+          "endLine": 155,
+          "note": "JoinRoomWithPassword implementation"
+        }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "Fail to join private room with incorrect password",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 136,
+          "endLine": 139,
+          "note": "Incorrect password check"
+        }
+      ]
+    },
+    {
+      "code": "SC-03",
+      "name": "Join private room without password fails",
+      "order": 3,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 99,
+          "endLine": 105,
+          "note": "Private room password requirement check"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial scenario list for UC-02 Join private room."
+    },
+    {
+      "at": "2026-06-01T15:20:36.124Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "SC-01",
+          "SC-02",
+          "SC-03"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    }
+  ]
+}

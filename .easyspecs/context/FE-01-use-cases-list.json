@@ -1,0 +1,77 @@
+{
+  "featureCode": "FE-01",
+  "useCases": [
+    {
+      "code": "UC-01",
+      "name": "Log in with a valid nickname",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 164,
+          "endLine": 192,
+          "note": "Successful login logic"
+        }
+      ]
+    },
+    {
+      "code": "UC-02",
+      "name": "Attempt to log in with an invalid or taken nickname",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 164,
+          "endLine": 181,
+          "note": "Login validation and uniqueness check"
+        },
+        {
+          "path": "server/utils.go",
+          "startLine": 116,
+          "endLine": 126,
+          "note": "Uniqueness enforcement logic"
+        }
+      ]
+    },
+    {
+      "code": "UC-03",
+      "name": "Log out",
+      "order": 3,
+      "sourceReferences": [
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 65,
+          "endLine": 66,
+          "note": "Logout handling in dispatchMessage"
+        },
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 78,
+          "endLine": 80,
+          "note": "Logout handling in dispatchMessage for authenticated users"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial use-case list for User Authentication."
+    },
+    {
+      "at": "2026-06-01T14:55:35.145Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "UC-01",
+          "UC-02",
+          "UC-03"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    }
+  ]
+}

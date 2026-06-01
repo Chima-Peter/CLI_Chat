@@ -1,0 +1,124 @@
+{
+  "kind": "easyspecs.qa-test-cases-list",
+  "version": 1,
+  "qaCode": "QA-03",
+  "testCases": [
+    {
+      "code": "TC-01",
+      "name": "Send friend request",
+      "slug": "send-friend-request",
+      "order": 1,
+      "coversCodes": [
+        "FE-03"
+      ],
+      "kind": "happy_path",
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 576,
+          "endLine": 583,
+          "note": "SendFriendRequest implementation"
+        }
+      ]
+    },
+    {
+      "code": "TC-02",
+      "name": "Accept friend request",
+      "slug": "accept-friend-request",
+      "order": 2,
+      "coversCodes": [
+        "FE-03"
+      ],
+      "kind": "happy_path",
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 585,
+          "endLine": 592,
+          "note": "AcceptFriendRequest implementation"
+        }
+      ]
+    },
+    {
+      "code": "TC-03",
+      "name": "Reject friend request",
+      "slug": "reject-friend-request",
+      "order": 3,
+      "coversCodes": [
+        "FE-03"
+      ],
+      "kind": "happy_path",
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 594,
+          "endLine": 601,
+          "note": "RejectFriendRequest implementation"
+        }
+      ]
+    },
+    {
+      "code": "TC-04",
+      "name": "List friends",
+      "slug": "list-friends",
+      "order": 4,
+      "coversCodes": [
+        "FE-03"
+      ],
+      "kind": "happy_path",
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 626,
+          "endLine": 631,
+          "note": "GetFriends implementation"
+        }
+      ]
+    },
+    {
+      "code": "TC-05",
+      "name": "Delete friend",
+      "slug": "delete-friend",
+      "order": 5,
+      "coversCodes": [
+        "FE-03"
+      ],
+      "kind": "happy_path",
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 633,
+          "endLine": 640,
+          "note": "DeleteFriend implementation"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial test cases list for Friend management verification."
+    },
+    {
+      "at": "2026-06-01T15:38:23.958Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "TC-01",
+          "TC-02",
+          "TC-03",
+          "TC-04",
+          "TC-05"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "at": "2026-06-01T16:00:00.000Z",
+      "summary": "Normalized test cases: added 'kind' attribute."
+    }
+  ]
+}

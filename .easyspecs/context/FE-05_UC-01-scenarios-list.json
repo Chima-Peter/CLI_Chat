@@ -1,0 +1,122 @@
+{
+  "featureCode": "FE-05",
+  "useCaseCode": "UC-01",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "Successfully block another user",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 323,
+          "endLine": 342,
+          "note": "BlockUser method implementation"
+        }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "Attempt to block an already blocked user",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 329,
+          "endLine": 335,
+          "note": "Check if user is already blocked"
+        }
+      ]
+    },
+    {
+      "code": "SC-03",
+      "name": "Attempt to block self",
+      "order": 3,
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 324,
+          "endLine": 327,
+          "note": "Check if user is blocking themselves"
+        }
+      ]
+    },
+    {
+      "code": "SC-04",
+      "name": "Attempt to block with invalid nickname format",
+      "order": 4,
+      "sourceReferences": [
+        {
+          "path": "client/message.go",
+          "startLine": 106,
+          "endLine": 114,
+          "note": "Client-side validation of nickname format"
+        }
+      ]
+    },
+    {
+      "code": "SC-05",
+      "name": "Attempt to block a non-existent user",
+      "order": 5,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 652,
+          "endLine": 656,
+          "note": "Server-side resolution check for user existence"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial scenario list for Block a user (UC-01) in User management (FE-05)."
+    },
+    {
+      "at": "2026-06-01T15:34:51.112Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "SC-01",
+          "SC-02",
+          "SC-03"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "at": "2026-06-01T16:45:00.000Z",
+      "summary": "Semantic review: added scenarios for invalid nickname format and non-existent user.",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "SC-04",
+          "SC-05"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "at": "2026-06-01T15:43:09.533Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "SC-04",
+          "SC-05"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    }
+  ]
+}

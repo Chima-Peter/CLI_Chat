@@ -1,0 +1,32 @@
+{
+  "infrastructureCode": "IN-03",
+  "components": [
+    {
+      "code": "IC-01",
+      "name": "Generate TLS dev private key",
+      "order": 1,
+      "sourceReferences": [
+        { "path": "tls_config/config.go", "startLine": 17, "endLine": 20, "note": "Generating RSA key for dev TLS" }
+      ]
+    },
+    {
+      "code": "IC-02",
+      "name": "Create TLS dev certificate",
+      "order": 2,
+      "sourceReferences": [
+        { "path": "tls_config/config.go", "startLine": 22, "endLine": 39, "note": "Creating and encoding dev certificate" }
+      ]
+    },
+    {
+      "code": "IC-03",
+      "name": "Construct TLS configuration",
+      "order": 3,
+      "sourceReferences": [
+        { "path": "tls_config/config.go", "startLine": 41, "endLine": 46, "note": "Creating TLS config object from key pair" }
+      ]
+    }
+  ],
+  "revisionLog": [
+    { "summary": "Initial infrastructure components list for IN-03." }
+  ]
+}

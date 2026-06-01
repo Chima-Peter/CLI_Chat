@@ -1,0 +1,80 @@
+{
+  "featureCode": "FE-03",
+  "useCaseCode": "UC-04",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "Successfully cancel sent friend request",
+      "description": "User cancels an existing outgoing friend request, removing it from both sender's sent list and receiver's pending list.",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 603,
+          "endLine": 610,
+          "note": "CancelFriendRequest entry point"
+        },
+        {
+          "path": "server/client.go",
+          "startLine": 138,
+          "endLine": 164,
+          "note": "Implementation of DeleteFriendRequest"
+        }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "Fails when friend request does not exist",
+      "description": "Attempting to cancel a non-existent friend request results in an error message to the user.",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 142,
+          "endLine": 145,
+          "note": "Validation: check if sent request exists"
+        }
+      ]
+    },
+    {
+      "code": "SC-03",
+      "name": "Fails when request exists but target not in pending",
+      "description": "Attempting to cancel a request that is in the sender's sent list but not in the receiver's pending list results in an error.",
+      "order": 3,
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 150,
+          "endLine": 153,
+          "note": "Validation: check if pending request exists in target"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial scenario list for use case: Cancel sent friend request, defining happy path and failure edge cases."
+    },
+    {
+      "at": "2026-06-01T15:35:41.410Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "SC-01",
+          "SC-02",
+          "SC-03"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "at": "2026-06-01T15:39:00.000Z",
+      "summary": "Semantic review: Verified scenarios against server.go and client.go implementation. Scenarios are correct and complete.",
+      "droppedCodes": []
+    }
+  ]
+}

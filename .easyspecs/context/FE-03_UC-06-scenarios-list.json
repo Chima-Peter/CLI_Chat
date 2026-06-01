@@ -1,0 +1,55 @@
+{
+  "featureCode": "FE-03",
+  "useCaseCode": "UC-06",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "List sent friend requests when requests exist",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 619,
+          "endLine": 624,
+          "note": "SeeSentFriendRequests implementation"
+        }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "List sent friend requests when no requests exist",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 619,
+          "endLine": 624,
+          "note": "SeeSentFriendRequests implementation - empty case"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial scenario list for use case UC-06."
+    },
+    {
+      "at": "2026-06-01T15:35:18.408Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "SC-01",
+          "SC-02"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "summary": "Semantic review performed. Scenarios confirmed for success and empty cases."
+    }
+  ]
+}

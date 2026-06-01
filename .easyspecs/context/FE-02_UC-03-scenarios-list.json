@@ -1,0 +1,81 @@
+{
+  "featureCode": "FE-02",
+  "useCaseCode": "UC-03",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "Successfully update room settings",
+      "description": "Room owner successfully updates room name and/or max size.",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 157,
+          "endLine": 202,
+          "note": "Happy path for EditRoom"
+        }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "Deny update if not owner",
+      "description": "Non-owner attempts to edit room settings.",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 158,
+          "endLine": 161,
+          "note": "Permission check"
+        }
+      ]
+    },
+    {
+      "code": "SC-03",
+      "name": "Deny update if maxSize is negative",
+      "description": "Owner attempts to set a negative max size.",
+      "order": 3,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 166,
+          "endLine": 171,
+          "note": "Negative maxSize check"
+        }
+      ]
+    },
+    {
+      "code": "SC-04",
+      "name": "Deny update if maxSize is less than current members",
+      "description": "Owner attempts to set a max size smaller than the current member count.",
+      "order": 4,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 172,
+          "endLine": 176,
+          "note": "Max size vs member count check"
+        }
+      ]
+    },
+    {
+      "code": "SC-05",
+      "name": "Deny update if room name is taken",
+      "description": "Owner attempts to set a name that is already in use by another room.",
+      "order": 5,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 183,
+          "endLine": 186,
+          "note": "Room name uniqueness check"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial scenario list for use case UC-03 (Edit room)."
+    }
+  ]
+}

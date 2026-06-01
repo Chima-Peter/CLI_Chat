@@ -1,0 +1,278 @@
+{
+  "entityCode": "DM-02",
+  "fields": [
+    {
+      "code": "FD-01",
+      "name": "id",
+      "slug": "id",
+      "description": "Unique identifier for the client",
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 18,
+          "endLine": 18,
+          "note": "Client ID field"
+        }
+      ]
+    },
+    {
+      "code": "FD-02",
+      "name": "conn",
+      "slug": "conn",
+      "description": "Network connection for the client",
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 19,
+          "endLine": 19,
+          "note": "Client connection field"
+        }
+      ]
+    },
+    {
+      "code": "FD-03",
+      "name": "nick",
+      "slug": "nick",
+      "description": "Nickname of the client",
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 20,
+          "endLine": 20,
+          "note": "Client nickname field"
+        }
+      ]
+    },
+    {
+      "code": "FD-04",
+      "name": "authenticated",
+      "slug": "authenticated",
+      "description": "Authentication status of the client",
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 21,
+          "endLine": 21,
+          "note": "Client authentication status field"
+        }
+      ]
+    },
+    {
+      "code": "FD-05",
+      "name": "room",
+      "slug": "room",
+      "description": "Room the client is currently in",
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 22,
+          "endLine": 22,
+          "note": "Client room field"
+        }
+      ]
+    },
+    {
+      "code": "FD-06",
+      "name": "current_context",
+      "slug": "current-context",
+      "description": "Current interaction context of the client",
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 23,
+          "endLine": 23,
+          "note": "Client current context field"
+        }
+      ]
+    },
+    {
+      "code": "FD-07",
+      "name": "current_friend",
+      "slug": "current-friend",
+      "description": "Currently active friend context",
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 24,
+          "endLine": 24,
+          "note": "Client current friend field"
+        }
+      ]
+    },
+    {
+      "code": "FD-08",
+      "name": "my_rooms",
+      "slug": "my-rooms",
+      "description": "Map of rooms the client belongs to",
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 25,
+          "endLine": 25,
+          "note": "Client rooms field"
+        }
+      ]
+    },
+    {
+      "code": "FD-09",
+      "name": "friends",
+      "slug": "friends",
+      "description": "Map of friends",
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 26,
+          "endLine": 26,
+          "note": "Client friends field"
+        }
+      ]
+    },
+    {
+      "code": "FD-10",
+      "name": "pending_friend_requests",
+      "slug": "pending-friend-requests",
+      "description": "Map of pending friend requests received",
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 27,
+          "endLine": 27,
+          "note": "Client pending friend requests field"
+        }
+      ]
+    },
+    {
+      "code": "FD-11",
+      "name": "sent_friend_request",
+      "slug": "sent-friend-request",
+      "description": "Map of sent friend requests",
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 28,
+          "endLine": 28,
+          "note": "Client sent friend requests field"
+        }
+      ]
+    },
+    {
+      "code": "FD-12",
+      "name": "blocked_users",
+      "slug": "blocked-users",
+      "description": "Map of blocked users",
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 29,
+          "endLine": 29,
+          "note": "Client blocked users field"
+        }
+      ]
+    },
+    {
+      "code": "FD-13",
+      "name": "room_invites",
+      "slug": "room-invites",
+      "description": "Map of room invites",
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 30,
+          "endLine": 30,
+          "note": "Client room invites field"
+        }
+      ]
+    },
+    {
+      "code": "FD-14",
+      "name": "online",
+      "slug": "online",
+      "description": "Online status of the client",
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 31,
+          "endLine": 31,
+          "note": "Client online status field"
+        }
+      ]
+    },
+    {
+      "code": "FD-15",
+      "name": "fileListenHost",
+      "slug": "file-listen-host",
+      "description": "Host for file listening",
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 32,
+          "endLine": 32,
+          "note": "Client file listen host field"
+        }
+      ]
+    },
+    {
+      "code": "FD-16",
+      "name": "fileListenPort",
+      "slug": "file-listen-port",
+      "description": "Port for file listening",
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 33,
+          "endLine": 33,
+          "note": "Client file listen port field"
+        }
+      ]
+    },
+    {
+      "code": "FD-17",
+      "name": "mu",
+      "slug": "mu",
+      "description": "Mutex for synchronization",
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 34,
+          "endLine": 34,
+          "note": "Client mutex field"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial field list for Client entity (DM-02)."
+    },
+    {
+      "at": "2026-06-01T14:51:53.987Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "FD-01",
+          "FD-02",
+          "FD-03",
+          "FD-04",
+          "FD-05",
+          "FD-06",
+          "FD-07",
+          "FD-08",
+          "FD-09",
+          "FD-10",
+          "FD-11",
+          "FD-12",
+          "FD-13",
+          "FD-14",
+          "FD-15",
+          "FD-16",
+          "FD-17"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    }
+  ]
+}

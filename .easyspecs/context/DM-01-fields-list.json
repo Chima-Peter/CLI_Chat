@@ -1,0 +1,143 @@
+{
+  "entityCode": "DM-01",
+  "fields": [
+    {
+      "code": "FD-01",
+      "name": "id",
+      "slug": "id",
+      "description": "Unique identifier for the room",
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 11,
+          "endLine": 11,
+          "note": "Room id field"
+        }
+      ]
+    },
+    {
+      "code": "FD-02",
+      "name": "name",
+      "slug": "name",
+      "description": "Name of the room",
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 12,
+          "endLine": 12,
+          "note": "Room name field"
+        }
+      ]
+    },
+    {
+      "code": "FD-03",
+      "name": "max_size",
+      "slug": "max-size",
+      "description": "Maximum number of members allowed in the room",
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 13,
+          "endLine": 13,
+          "note": "Room max_size field"
+        }
+      ]
+    },
+    {
+      "code": "FD-04",
+      "name": "is_private",
+      "slug": "is-private",
+      "description": "Indicates if the room requires a password",
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 14,
+          "endLine": 14,
+          "note": "Room is_private field"
+        }
+      ]
+    },
+    {
+      "code": "FD-05",
+      "name": "owner",
+      "slug": "owner",
+      "description": "The client who owns the room",
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 15,
+          "endLine": 15,
+          "note": "Room owner field"
+        }
+      ]
+    },
+    {
+      "code": "FD-06",
+      "name": "password",
+      "slug": "password",
+      "description": "Password for a private room",
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 16,
+          "endLine": 16,
+          "note": "Room password field"
+        }
+      ]
+    },
+    {
+      "code": "FD-07",
+      "name": "members",
+      "slug": "members",
+      "description": "Map of members in the room",
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 17,
+          "endLine": 17,
+          "note": "Room members field"
+        }
+      ]
+    },
+    {
+      "code": "FD-08",
+      "name": "invites",
+      "slug": "invites",
+      "description": "Map of pending invites for the room",
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 18,
+          "endLine": 18,
+          "note": "Room invites field"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial field list for entity DM-01 (Room)."
+    },
+    {
+      "at": "2026-06-01T14:53:38.611Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "FD-01",
+          "FD-02",
+          "FD-03",
+          "FD-04",
+          "FD-05",
+          "FD-06",
+          "FD-07",
+          "FD-08"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    }
+  ]
+}

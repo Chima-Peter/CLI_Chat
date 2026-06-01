@@ -1,0 +1,60 @@
+{
+  "featureCode": "FE-03",
+  "useCaseCode": "UC-08",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "Successfully remove an existing friend",
+      "description": "User removes a friend from their friend list, and the friend is updated accordingly.",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 238,
+          "endLine": 263,
+          "note": "DeleteFriend method logic"
+        },
+        {
+          "path": "server/server.go",
+          "startLine": 633,
+          "endLine": 640,
+          "note": "DeleteFriend server method"
+        }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "Fail to remove a user who is not a friend",
+      "description": "User attempts to remove a user they are not currently friends with, resulting in an error.",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 239,
+          "endLine": 245,
+          "note": "DeleteFriend check for existence"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial scenario list for UC-08 (Remove friend), covering happy path and error case."
+    },
+    {
+      "at": "2026-06-01T15:33:09.807Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "SC-01",
+          "SC-02"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    }
+  ]
+}

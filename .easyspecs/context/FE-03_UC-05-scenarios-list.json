@@ -1,0 +1,58 @@
+{
+  "featureCode": "FE-03",
+  "useCaseCode": "UC-05",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "No pending friend requests",
+      "description": "User has no pending incoming friend requests.",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 612,
+          "endLine": 617,
+          "note": "SeePendingFriendRequests implementation"
+        }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "List existing pending friend requests",
+      "description": "User has one or more incoming friend requests to be displayed.",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 612,
+          "endLine": 617,
+          "note": "SeePendingFriendRequests implementation"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial scenario list for use case UC-05: List pending friend requests."
+    },
+    {
+      "at": "2026-06-01T15:32:33.047Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "SC-01",
+          "SC-02"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "at": "2026-06-01T16:40:00.000Z",
+      "summary": "Semantic review: confirmed existing scenarios for UC-05, no changes needed."
+    }
+  ]
+}

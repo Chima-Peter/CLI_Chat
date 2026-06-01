@@ -1,0 +1,81 @@
+{
+  "featureCode": "FE-02",
+  "useCaseCode": "UC-01",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "Join public room successfully",
+      "description": "User successfully joins a public room that is not full.",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 107,
+          "endLine": 116,
+          "note": "Successful join logic"
+        }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "Try to join a full room",
+      "description": "User tries to join a room that is already full, receiving an error.",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 94,
+          "endLine": 97,
+          "note": "Room full check"
+        }
+      ]
+    },
+    {
+      "code": "SC-03",
+      "name": "Try to join the room already joined",
+      "description": "User tries to join the room they are already in, receiving an error.",
+      "order": 3,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 82,
+          "endLine": 86,
+          "note": "Already in this room check"
+        }
+      ]
+    },
+    {
+      "code": "SC-04",
+      "name": "Try to join another room while already a member",
+      "description": "User attempts to join a different room while already a member of one, handled gracefully.",
+      "order": 4,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 88,
+          "endLine": 91,
+          "note": "Already member of another room check"
+        }
+      ]
+    },
+    {
+      "code": "SC-05",
+      "name": "Try to join a private room",
+      "description": "User attempts to join a private room, triggering a password prompt.",
+      "order": 5,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 99,
+          "endLine": 105,
+          "note": "Private room password prompt"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial scenario list for UC-01 Join room."
+    }
+  ]
+}

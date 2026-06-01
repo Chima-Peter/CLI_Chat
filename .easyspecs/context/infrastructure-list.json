@@ -1,0 +1,96 @@
+{
+  "kind": "easyspecs.infrastructure-list",
+  "version": 1,
+  "infrastructure": [
+    {
+      "code": "IN-01",
+      "name": "CLI Client",
+      "slug": "cli-client",
+      "description": "Client command-line interface entry point.",
+      "infrastructureKind": "infrastructure",
+      "sourceReferences": [
+        {
+          "path": "cmd/client/main.go",
+          "startLine": 1,
+          "endLine": 9,
+          "note": "Client CLI entry point"
+        }
+      ]
+    },
+    {
+      "code": "IN-02",
+      "name": "CLI Server",
+      "slug": "cli-server",
+      "description": "Server command-line interface entry point.",
+      "infrastructureKind": "infrastructure",
+      "sourceReferences": [
+        {
+          "path": "cmd/server/main.go",
+          "startLine": 1,
+          "endLine": 60,
+          "note": "Server CLI entry point"
+        }
+      ]
+    },
+    {
+      "code": "IN-03",
+      "name": "TLS Configuration",
+      "slug": "tls-configuration",
+      "description": "Shared TLS configuration and setup utilities.",
+      "infrastructureKind": "infrastructure",
+      "sourceReferences": [
+        {
+          "path": "tls_config/config.go",
+          "startLine": 1,
+          "endLine": 50,
+          "note": "TLS configuration implementation"
+        }
+      ]
+    },
+    {
+      "code": "IN-04",
+      "name": "Dependency Management",
+      "slug": "dependency-management",
+      "description": "Go module configuration and dependencies.",
+      "infrastructureKind": "infrastructure",
+      "sourceReferences": [
+        {
+          "path": "go.mod",
+          "startLine": 1,
+          "endLine": 10,
+          "note": "Go module definition"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial infrastructure features discovery.",
+      "at": "2026-06-01T15:45:00Z"
+    },
+    {
+      "summary": "Renamed 'features' to 'infrastructure' to satisfy schema validation."
+    },
+    {
+      "at": "2026-06-01T14:44:19.818Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "IN-01",
+          "IN-02",
+          "IN-03",
+          "IN-04"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "at": "2026-06-01T15:00:00Z",
+      "summary": "Semantic review completed; no changes required to infrastructure list."
+    }
+  ]
+}

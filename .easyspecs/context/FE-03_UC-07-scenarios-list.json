@@ -1,0 +1,83 @@
+{
+  "kind": "easyspecs.scenarios-list",
+  "version": 1,
+  "featureCode": "FE-03",
+  "useCaseCode": "UC-07",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "Get list of friends",
+      "description": "User has friends and receives the populated list of friends.",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 626,
+          "endLine": 631,
+          "note": "server implementation"
+        },
+        {
+          "path": "server/client.go",
+          "startLine": 224,
+          "endLine": 236,
+          "note": "client implementation"
+        }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "Get empty list of friends",
+      "description": "User has no friends and receives an empty list notification.",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 626,
+          "endLine": 631,
+          "note": "server implementation"
+        },
+        {
+          "path": "server/client.go",
+          "startLine": 224,
+          "endLine": 228,
+          "note": "client implementation"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial scenario list for use case UC-07 (List friends)."
+    },
+    {
+      "at": "2026-06-01T15:36:51.652Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "SC-01",
+          "SC-02"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "at": "2026-06-01T10:00:00Z",
+      "summary": "Semantic review completed: verified scenarios SC-01 and SC-02 as comprehensive for UC-07.",
+      "stableWriteDiff": {
+        "addedCodes": [],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [
+          "SC-01",
+          "SC-02"
+        ],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    }
+  ]
+}
