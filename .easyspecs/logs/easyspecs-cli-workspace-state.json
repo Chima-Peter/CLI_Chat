@@ -1,11 +1,4 @@
 {
-  "easyspecs.analysis.workspaceState.v1": {
-    "adHocWorktreePath": "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-010",
-    "adHocRepositoryRoot": "C:\\Users\\pc\\Documents\\dev\\Github\\CLI_Chat",
-    "adHocCreatedAtIso": "2026-06-01T14:42:19.600Z",
-    "adHocSourceBranchAtCreation": "feat/resume-analysis",
-    "headCommitAtCreation": "0efc40f0c1bf7a587de254c1d53f4164869f2942"
-  },
   "easyspecs.pipelineRun.v2": {
     "runId": "mpve8thg-3oxtp14r",
     "repositoryRoot": "C:\\Users\\pc\\Documents\\dev\\Github\\CLI_Chat",

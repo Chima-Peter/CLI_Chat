@@ -1,0 +1,11 @@
+# easyspecs-cli run log
+# version: 0.3.29
+# startedAt: 2026-06-01T16:11:57.819Z
+# repoRoot: C:\Users\pc\Documents\dev\Github\CLI_Chat
+# command: worktree remove
+# argv: C:\nvm4w\nodejs\node.exe C:\nvm4w\nodejs\node_modules\@gluecharm-lab\easyspecs-cli\dist\main.cjs worktree remove
+# logFile: C:\Users\pc\Documents\dev\Github\CLI_Chat\.easyspecs\logs\run-log-2026-06-01T161157Z.txt
+2026-06-01T16:11:57.824Z [log] run log: C:\Users\pc\Documents\dev\Github\CLI_Chat\.easyspecs\logs\run-log-2026-06-01T161157Z.txt
+# finishedAt: 2026-06-01T16:11:58.752Z
+# exitCode: 0
+# durationMs: 933
