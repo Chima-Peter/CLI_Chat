@@ -1,0 +1,33 @@
+{
+  "featureCode": "FE-02",
+  "useCaseCode": "UC-05",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "Owner successfully deletes the room",
+      "order": 1,
+      "sourceReferences": [
+        { "path": "server/rooms.go", "startLine": 216, "endLine": 250, "note": "Happy path for deleting a room" }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "Member fails to delete room because not admin",
+      "order": 2,
+      "sourceReferences": [
+        { "path": "server/rooms.go", "startLine": 222, "endLine": 224, "note": "Validation for admin check" }
+      ]
+    },
+    {
+      "code": "SC-03",
+      "name": "User fails to delete room because not a member",
+      "order": 3,
+      "sourceReferences": [
+        { "path": "server/rooms.go", "startLine": 217, "endLine": 220, "note": "Validation for membership check" }
+      ]
+    }
+  ],
+  "revisionLog": [
+    { "summary": "Initial scenario list for deleting a room." }
+  ]
+}

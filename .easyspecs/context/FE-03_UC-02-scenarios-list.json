@@ -1,0 +1,74 @@
+{
+  "featureCode": "FE-03",
+  "useCaseCode": "UC-02",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "Successfully accept friend request",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 585,
+          "endLine": 592,
+          "note": "AcceptFriendRequest server method"
+        },
+        {
+          "path": "server/client.go",
+          "startLine": 115,
+          "endLine": 125,
+          "note": "AcceptFriendRequest client method happy path"
+        }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "Fail: user not found",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 586,
+          "endLine": 590,
+          "note": "resolveUser failure"
+        }
+      ]
+    },
+    {
+      "code": "SC-03",
+      "name": "Fail: no pending request from user",
+      "order": 3,
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 119,
+          "endLine": 122,
+          "note": "Check existence of pending request"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial scenario list for use case UC-02."
+    },
+    {
+      "at": "2026-06-01T15:37:10.423Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "SC-03"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "at": "2026-06-01T15:38:00.000Z",
+      "summary": "Semantic review completed: no changes required."
+    }
+  ]
+}

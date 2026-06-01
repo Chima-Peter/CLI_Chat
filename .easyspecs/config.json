@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 2,
+  "easyspecs": {
+    "deploymentEnvironment": "production",
+    "apiBaseUrl": "https://api.easyspecs.ai",
+    "easyspecsProjectId": "",
+    "defaultGitRemoteUrl": "git@github.com:Chima-Peter/CLI_Chat.git",
+    "cliSessionPath": "",
+    "agentHarness": {
+      "kind": "opencode",
+      "executable": "opencode",
+      "skipCredentialsCheck": true
+    },
+    "workstations": {
+      "maxConcurrentAi": 45,
+      "enableAdaptivePoolPressure": true,
+      "slowWorkstationThresholdMs": 420000,
+      "recoveryQuietAfterStepDownMs": 900000,
+      "adaptivePoolPressureRecoveryTickMs": 30000
+    },
+    "analysis": {
+      "promoteContextToWorkspace": true,
+      "cloudContextAnalyzed": false,
+      "cloudContextAnalyzedAt": null
+    },
+    "orchestration": {},
+    "openCodeRuntime": {
+      "executable": "opencode",
+      "skipCredentialsCheck": true,
+      "credentialsPath": ".opencode/auth.json",
+      "providers": {},
+      "run": {
+        "argvTemplate": [
+          "run",
+          "--agent",
+          "{agentId}",
+          "Execute the task described in the attached EasySpecs prompt file.",
+          "-f",
+          "{promptFile}"
+        ],
+        "timeoutMs": 600000
+      },
+      "coordinationRepairs": {
+        "listJsonSchemaRepairAttempts": 1,
+        "markdownEvidenceRepairAttempts": 2,
+        "markdownOpenQuestionIterations": 5
+      },
+      "pool": {},
+      "projectConfigOverlay": {}
+    },
+    "diagnose": {
+      "zeroReference": {
+        "maxPercentNonReferenced": null
+      },
+      "coordinationDuplicates": {
+        "strict": true
+      }
+    },
+    "upload": {
+      "contextDirectory": "",
+      "fetchContextAnalyzedInCloud": true
+    },
+    "macro": {
+      "debug": false
+    },
+    "cli": {
+      "bundledResourcesRoot": ""
+    },
+    "auth": {
+      "ciLogin": {}
+    },
+    "remoteHarness": {
+      "useRemoteOpenCodeExecution": false,
+      "baseUrl": "https://api.easyspecs.ai",
+      "requesterId": "",
+      "completionLedgerDir": ".easyspecs/harness-remote-run",
+      "submitTimeoutMs": 30000,
+      "completionPollIntervalMs": 2000,
+      "completionLedgerLogIntervalMs": 30000,
+      "maxConsecutiveSubmitFailures": 3
+    }
+  }
+}

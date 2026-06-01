@@ -1,0 +1,243 @@
+{
+  "qaCode": "QA-02",
+  "testCases": [
+    {
+      "code": "TC-01",
+      "name": "Join room",
+      "slug": "join-room",
+      "order": 1,
+      "coversCodes": [
+        "FE-02_UC-01"
+      ],
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 76,
+          "endLine": 116,
+          "note": "JoinRoom logic"
+        }
+      ]
+    },
+    {
+      "code": "TC-02",
+      "name": "Join private room",
+      "slug": "join-private-room",
+      "order": 2,
+      "coversCodes": [
+        "FE-02_UC-02"
+      ],
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 118,
+          "endLine": 155,
+          "note": "JoinRoomWithPassword logic"
+        }
+      ]
+    },
+    {
+      "code": "TC-03",
+      "name": "Edit room",
+      "slug": "edit-room",
+      "order": 3,
+      "coversCodes": [
+        "FE-02_UC-03"
+      ],
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 157,
+          "endLine": 202,
+          "note": "EditRoom logic"
+        }
+      ]
+    },
+    {
+      "code": "TC-04",
+      "name": "Leave room",
+      "slug": "leave-room",
+      "order": 4,
+      "coversCodes": [
+        "FE-02_UC-04"
+      ],
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 204,
+          "endLine": 214,
+          "note": "LeaveRoom logic"
+        }
+      ]
+    },
+    {
+      "code": "TC-05",
+      "name": "Delete room",
+      "slug": "delete-room",
+      "order": 5,
+      "coversCodes": [
+        "FE-02_UC-05"
+      ],
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 216,
+          "endLine": 248,
+          "note": "DeleteRoom logic"
+        }
+      ]
+    },
+    {
+      "code": "TC-06",
+      "name": "Invite user to room",
+      "slug": "invite-user-to-room",
+      "order": 6,
+      "coversCodes": [
+        "FE-02_UC-06"
+      ],
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 279,
+          "endLine": 289,
+          "note": "SendRoomInvite logic"
+        }
+      ]
+    },
+    {
+      "code": "TC-07",
+      "name": "View pending room invites",
+      "slug": "view-pending-room-invites",
+      "order": 7,
+      "coversCodes": [
+        "FE-02_UC-07"
+      ],
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 291,
+          "endLine": 300,
+          "note": "SeePendingRoomInvites logic"
+        }
+      ]
+    },
+    {
+      "code": "TC-08",
+      "name": "Accept room invite",
+      "slug": "accept-room-invite",
+      "order": 8,
+      "coversCodes": [
+        "FE-02_UC-08"
+      ],
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 302,
+          "endLine": 336,
+          "note": "AcceptRoomInvite logic"
+        }
+      ]
+    },
+    {
+      "code": "TC-09",
+      "name": "Decline room invite",
+      "slug": "decline-room-invite",
+      "order": 9,
+      "coversCodes": [
+        "FE-02_UC-09"
+      ],
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 338,
+          "endLine": 363,
+          "note": "DeclineRoomInvite logic"
+        }
+      ]
+    },
+    {
+      "code": "TC-10",
+      "name": "Set room password",
+      "slug": "set-room-password",
+      "order": 10,
+      "coversCodes": [
+        "FE-02"
+      ],
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 62,
+          "endLine": 74,
+          "note": "SetRoomPassword logic"
+        }
+      ]
+    },
+    {
+      "code": "TC-11",
+      "name": "Fetch room members",
+      "slug": "fetch-room-members",
+      "order": 11,
+      "coversCodes": [
+        "FE-02"
+      ],
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 263,
+          "endLine": 277,
+          "note": "FetchRoomMembers logic"
+        }
+      ]
+    },
+    {
+      "code": "TC-12",
+      "name": "Broadcast message",
+      "slug": "broadcast-message",
+      "order": 12,
+      "coversCodes": [
+        "FE-02"
+      ],
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 28,
+          "endLine": 60,
+          "note": "Broadcast logic"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial test cases list for feature QA-02 (Room management verification) based on FE-02 use cases."
+    },
+    {
+      "summary": "Added missing coversCodes to all test cases to satisfy schema validation."
+    },
+    {
+      "summary": "Added slugs to all test cases and added test cases TC-10, TC-11, TC-12 for SetRoomPassword, FetchRoomMembers, and Broadcast respectively."
+    },
+    {
+      "summary": "Corrected coversCodes to use valid FE-02 feature code for schema compliance."
+    },
+    {
+      "at": "2026-06-01T15:40:26.101Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "TC-10",
+          "TC-11",
+          "TC-12"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "at": "2026-06-01T16:50:00.000Z",
+      "summary": "Refined coversCodes to reference specific FE-02 use case codes where applicable."
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "featureCode": "FE-04",
+  "useCaseCode": "UC-03",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "Send message to room context",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 383,
+          "endLine": 389,
+          "note": "Room context message broadcasting"
+        }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "Send message to friend context",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 391,
+          "endLine": 396,
+          "note": "Friend context message sending"
+        }
+      ]
+    },
+    {
+      "code": "SC-03",
+      "name": "Error on empty message",
+      "order": 3,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 370,
+          "endLine": 373,
+          "note": "Empty message validation"
+        }
+      ]
+    },
+    {
+      "code": "SC-04",
+      "name": "Error when no context set",
+      "order": 4,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 398,
+          "endLine": 400,
+          "note": "No context error"
+        }
+      ]
+    },
+    {
+      "code": "SC-05",
+      "name": "Error when room context is null",
+      "order": 5,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 384,
+          "endLine": 387,
+          "note": "Null room error"
+        }
+      ]
+    },
+    {
+      "code": "SC-06",
+      "name": "Error when friend context is null",
+      "order": 6,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 392,
+          "endLine": 395,
+          "note": "Null friend error"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial scenario list for use case UC-03: Send message to current context."
+    },
+    {
+      "at": "2026-06-01T15:35:38.596Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "SC-01",
+          "SC-02",
+          "SC-03",
+          "SC-04",
+          "SC-05",
+          "SC-06"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "at": "2026-06-01T16:50:00Z",
+      "summary": "Semantic review: Scenarios validated against server/server.go SendContextMessage function. All scenarios correctly represent the logic flow.",
+      "stableWriteDiff": {
+        "addedCodes": [],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [
+          "SC-01",
+          "SC-02",
+          "SC-03",
+          "SC-04",
+          "SC-05",
+          "SC-06"
+        ],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "features": [
+    {
+      "code": "FE-02",
+      "name": "Room management",
+      "slug": "room-management",
+      "description": "Operations for creating, joining, leaving, editing, and managing rooms and room memberships.",
+      "featureKind": "product",
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 1,
+          "endLine": 200,
+          "note": "Room membership and management logic"
+        }
+      ]
+    },
+    {
+      "code": "FE-03",
+      "name": "Friend management",
+      "slug": "friend-management",
+      "description": "Operations for adding, accepting, listing, and removing friends.",
+      "featureKind": "product",
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 101,
+          "endLine": 200,
+          "note": "Friend handler logic"
+        }
+      ]
+    },
+    {
+      "code": "FE-04",
+      "name": "Chat and context management",
+      "slug": "chat-and-context-management",
+      "description": "Context switching for targeted messages, sending room messages, and direct messages.",
+      "featureKind": "product",
+      "sourceReferences": [
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 1,
+          "endLine": 100,
+          "note": "Message dispatching logic"
+        }
+      ]
+    },
+    {
+      "code": "FE-05",
+      "name": "User management",
+      "slug": "user-management",
+      "description": "Operations for blocking, unblocking, and checking user status.",
+      "featureKind": "product",
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 201,
+          "endLine": 300,
+          "note": "User management handler logic"
+        }
+      ]
+    },
+    {
+      "code": "FE-01",
+      "name": "User authentication",
+      "slug": "user-authentication",
+      "description": "Handles client connection, nickname prompt, uniqueness enforcement, and initial authentication state.",
+      "featureKind": "product",
+      "sourceReferences": [
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 60,
+          "endLine": 71,
+          "note": "Authentication dispatch logic"
+        },
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 164,
+          "endLine": 192,
+          "note": "Login handler logic"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial features discovery: Authentication and Room Management."
+    },
+    {
+      "summary": "Added Friend management, Chat & Context management, User management, and Server & protocol infrastructure."
+    },
+    {
+      "summary": "Fixed validation error: removed invalid 'featureKind' from FE-06."
+    },
+    {
+      "at": "2026-06-01T14:44:19.130Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "FE-01",
+          "FE-02",
+          "FE-03",
+          "FE-04",
+          "FE-05",
+          "FE-06"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "at": "2026-06-01T15:00:00.000Z",
+      "summary": "Normalized features list: dropped FE-06 (infrastructure) and corrected FE-01 sourceReferences.",
+      "droppedCodes": [
+        "FE-06"
+      ]
+    },
+    {
+      "at": "2026-06-01T14:46:01.596Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "FE-01"
+        ],
+        "droppedCodes": [
+          "FE-01",
+          "FE-06"
+        ],
+        "reorderedCodesCorrected": [
+          "FE-01"
+        ],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "featureCode": "FE-03",
+  "useCases": [
+    {
+      "code": "UC-01",
+      "name": "Send friend request",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 576,
+          "endLine": 583,
+          "note": "SendFriendRequest method"
+        }
+      ]
+    },
+    {
+      "code": "UC-02",
+      "name": "Accept friend request",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 585,
+          "endLine": 592,
+          "note": "AcceptFriendRequest method"
+        }
+      ]
+    },
+    {
+      "code": "UC-03",
+      "name": "Reject friend request",
+      "order": 3,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 594,
+          "endLine": 601,
+          "note": "RejectFriendRequest method"
+        }
+      ]
+    },
+    {
+      "code": "UC-04",
+      "name": "Cancel sent friend request",
+      "order": 4,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 603,
+          "endLine": 610,
+          "note": "CancelFriendRequest method"
+        }
+      ]
+    },
+    {
+      "code": "UC-05",
+      "name": "List pending friend requests",
+      "order": 5,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 612,
+          "endLine": 617,
+          "note": "SeePendingFriendRequests method"
+        }
+      ]
+    },
+    {
+      "code": "UC-06",
+      "name": "List sent friend requests",
+      "order": 6,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 619,
+          "endLine": 624,
+          "note": "SeeSentFriendRequests method"
+        }
+      ]
+    },
+    {
+      "code": "UC-07",
+      "name": "List friends",
+      "order": 7,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 626,
+          "endLine": 631,
+          "note": "GetFriends method"
+        }
+      ]
+    },
+    {
+      "code": "UC-08",
+      "name": "Remove friend",
+      "order": 8,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 633,
+          "endLine": 640,
+          "note": "DeleteFriend method"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial use-case list for feature FE-03: Friend management, covering friend request operations and friend list management."
+    },
+    {
+      "at": "2026-06-01T14:53:51.669Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "UC-01",
+          "UC-02",
+          "UC-03",
+          "UC-04",
+          "UC-05",
+          "UC-06",
+          "UC-07",
+          "UC-08"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    }
+  ]
+}

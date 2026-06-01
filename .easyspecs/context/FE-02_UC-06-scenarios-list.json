@@ -1,0 +1,55 @@
+{
+  "featureCode": "FE-02",
+  "useCaseCode": "UC-06",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "Successful room invitation",
+      "description": "Room owner successfully invites an existing user who is not already in the room.",
+      "order": 1,
+      "sourceReferences": [
+        { "path": "server/server.go", "startLine": 201, "endLine": 226, "note": "Validation and call to room.SendRoomInvite" },
+        { "path": "server/rooms.go", "startLine": 279, "endLine": 289, "note": "Implementation of SendRoomInvite" }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "Invitation fails if room not found",
+      "description": "Owner attempts to invite a user to a room that does not exist.",
+      "order": 2,
+      "sourceReferences": [
+        { "path": "server/server.go", "startLine": 202, "endLine": 206, "note": "Room resolution validation" }
+      ]
+    },
+    {
+      "code": "SC-03",
+      "name": "Invitation fails if user is not room owner",
+      "description": "User attempts to invite someone to a room they do not own.",
+      "order": 3,
+      "sourceReferences": [
+        { "path": "server/server.go", "startLine": 208, "endLine": 211, "note": "Ownership validation" }
+      ]
+    },
+    {
+      "code": "SC-04",
+      "name": "Invitation fails if invitee not found",
+      "description": "Owner attempts to invite a user who does not exist.",
+      "order": 4,
+      "sourceReferences": [
+        { "path": "server/server.go", "startLine": 213, "endLine": 217, "note": "User resolution validation" }
+      ]
+    },
+    {
+      "code": "SC-05",
+      "name": "Invitation fails if user is already a member",
+      "description": "Owner attempts to invite a user who is already a member of the room.",
+      "order": 5,
+      "sourceReferences": [
+        { "path": "server/server.go", "startLine": 219, "endLine": 223, "note": "Membership validation" }
+      ]
+    }
+  ],
+  "revisionLog": [
+    { "summary": "Initial scenario list for use case UC-06, covering happy path and validation errors." }
+  ]
+}

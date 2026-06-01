@@ -1,0 +1,123 @@
+{
+  "infrastructureCode": "IN-01",
+  "components": [
+    {
+      "code": "IC-01",
+      "name": "CLI client main entry",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "cmd/client/main.go",
+          "startLine": 1,
+          "endLine": 7
+        },
+        {
+          "path": "client/client.go",
+          "startLine": 1,
+          "endLine": 32
+        },
+        {
+          "path": "client/help.go",
+          "startLine": 1,
+          "endLine": 83
+        }
+      ]
+    },
+    {
+      "code": "IC-02",
+      "name": "Client session management",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "client/session.go",
+          "startLine": 1,
+          "endLine": 271
+        }
+      ]
+    },
+    {
+      "code": "IC-03",
+      "name": "Client message and command handling",
+      "order": 3,
+      "sourceReferences": [
+        {
+          "path": "client/message.go",
+          "startLine": 1,
+          "endLine": 410
+        }
+      ]
+    },
+    {
+      "code": "IC-04",
+      "name": "Client file transfer",
+      "order": 4,
+      "sourceReferences": [
+        {
+          "path": "client/file-client.go",
+          "startLine": 1,
+          "endLine": 78
+        },
+        {
+          "path": "client/file-parsing.go",
+          "startLine": 1,
+          "endLine": 157
+        },
+        {
+          "path": "client/file-server.go",
+          "startLine": 1,
+          "endLine": 183
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "at": "2026-06-01T17:00:00.000Z",
+      "summary": "Initial infrastructure components list for IN-01 (CLI client)."
+    },
+    {
+      "at": "2026-06-01T15:38:37.078Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "IC-01",
+          "IC-02",
+          "IC-03"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "at": "2026-06-01T17:15:00.000Z",
+      "summary": "Normalized components list: Added IC-04 (File transfer) and included help.go in IC-01.",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "IC-04"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "at": "2026-06-01T15:45:48.950Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "IC-04"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    }
+  ]
+}

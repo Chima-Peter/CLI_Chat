@@ -1,0 +1,81 @@
+{
+  "qaCode": "QA-04",
+  "testCases": [
+    {
+      "code": "TC-01",
+      "name": "Switch context successfully",
+      "coversCodes": [
+        "FE-04"
+      ],
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 116,
+          "endLine": 124,
+          "note": "SWITCH_CONTEXT handler"
+        }
+      ]
+    },
+    {
+      "code": "TC-02",
+      "name": "Send message to room successfully",
+      "coversCodes": [
+        "FE-04"
+      ],
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 126,
+          "endLine": 127,
+          "note": "MESSAGE_ROOM handler"
+        }
+      ]
+    },
+    {
+      "code": "TC-03",
+      "name": "Send message to current context successfully",
+      "coversCodes": [
+        "FE-04"
+      ],
+      "order": 3,
+      "sourceReferences": [
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 128,
+          "endLine": 129,
+          "note": "SEND_MSG handler"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial test cases list for feature QA-04 (Chat and context management)."
+    },
+    {
+      "summary": "Added missing coversCodes to all test cases to satisfy validation."
+    },
+    {
+      "at": "2026-06-01T15:40:12.789Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "TC-01",
+          "TC-02",
+          "TC-03"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "at": "2026-06-01T00:00:00Z",
+      "summary": "Semantic review of test cases; evidence verified."
+    }
+  ]
+}

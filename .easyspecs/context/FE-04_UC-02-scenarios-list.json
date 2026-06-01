@@ -1,0 +1,84 @@
+{
+  "featureCode": "FE-04",
+  "useCaseCode": "UC-02",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "Send valid message to room",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 513,
+          "endLine": 543,
+          "note": "Happy path for sending message to room"
+        }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "Fail when message is empty",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 514,
+          "endLine": 518,
+          "note": "Message empty validation"
+        }
+      ]
+    },
+    {
+      "code": "SC-03",
+      "name": "Fail when room name is empty",
+      "order": 3,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 519,
+          "endLine": 522,
+          "note": "Room name required validation"
+        }
+      ]
+    },
+    {
+      "code": "SC-04",
+      "name": "Fail when user not in room",
+      "order": 4,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 524,
+          "endLine": 538,
+          "note": "Room membership check"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial scenario list for Send message to room (UC-02)"
+    },
+    {
+      "at": "2026-06-01T15:36:10.011Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "SC-01",
+          "SC-02",
+          "SC-03",
+          "SC-04"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "at": "2026-06-01T15:45:00.000Z",
+      "summary": "Completed semantic review of scenarios list for FE-04/UC-02. No changes needed."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "kind": "easyspecs.repo-surface-scan",
+  "version": 1,
+  "hasUi": false,
+  "hasBackend": true,
+  "uiAbsenceReason": "The repository is a CLI-based application without a graphical user interface (web, mobile, or desktop).",
+  "backendSourceReferences": [
+    {
+      "path": "server/server.go",
+      "startLine": 19,
+      "endLine": 32,
+      "note": "Server struct definition and initialization logic."
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial assessment: CLI application with backend logic."
+    }
+  ]
+}

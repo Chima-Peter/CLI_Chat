@@ -1,0 +1,54 @@
+{
+  "featureCode": "FE-01",
+  "useCaseCode": "UC-03",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "Log out while unauthenticated",
+      "description": "User requests logout while still at the login prompt, causing connection to close.",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 65,
+          "endLine": 66,
+          "note": "Logout handling when not authenticated"
+        }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "Log out while authenticated",
+      "description": "Authenticated user requests logout, receives confirmation, and connection closes.",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 78,
+          "endLine": 80,
+          "note": "Logout handling when authenticated"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial scenario list for Log out use case."
+    },
+    {
+      "at": "2026-06-01T15:01:50.301Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "SC-01",
+          "SC-02"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    }
+  ]
+}

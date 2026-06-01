@@ -1,0 +1,65 @@
+{
+  "featureCode": "FE-04",
+  "useCases": [
+    {
+      "code": "UC-01",
+      "name": "Switch context",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 116,
+          "endLine": 124,
+          "note": "SWITCH_CONTEXT handler"
+        }
+      ]
+    },
+    {
+      "code": "UC-02",
+      "name": "Send message to room",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 126,
+          "endLine": 127,
+          "note": "MESSAGE_ROOM handler"
+        }
+      ]
+    },
+    {
+      "code": "UC-03",
+      "name": "Send message to current context",
+      "order": 3,
+      "sourceReferences": [
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 128,
+          "endLine": 129,
+          "note": "SEND_MSG handler"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial use-case list for feature FE-04: Chat and context management."
+    },
+    {
+      "at": "2026-06-01T14:53:53.757Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "UC-01",
+          "UC-02",
+          "UC-03"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    }
+  ]
+}

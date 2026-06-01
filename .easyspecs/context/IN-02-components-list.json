@@ -1,0 +1,57 @@
+{
+  "kind": "easyspecs.infrastructure-components-list",
+  "version": 1,
+  "infrastructureCode": "IN-02",
+  "components": [
+    {
+      "code": "IC-01",
+      "name": "CLI Server Main Entry",
+      "slug": "cli-server-main-entry",
+      "description": "CLI Server entry point, initialization of TLS, and connection listener.",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "cmd/server/main.go",
+          "startLine": 1,
+          "endLine": 64,
+          "note": "Main entry point for the CLI server"
+        }
+      ]
+    },
+    {
+      "code": "IC-02",
+      "name": "Server State Initialization",
+      "slug": "server-state-initialization",
+      "description": "Server initialization logic, managing server state and resources.",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 26,
+          "endLine": 32,
+          "note": "Server state initialization"
+        }
+      ]
+    },
+    {
+      "code": "IC-03",
+      "name": "Connection Handling",
+      "slug": "connection-handling",
+      "description": "Logic for handling incoming connections and message dispatching.",
+      "order": 3,
+      "sourceReferences": [
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 1,
+          "endLine": 100,
+          "note": "Connection handling and dispatching logic"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial infrastructure components list for IN-02."
+    }
+  ]
+}

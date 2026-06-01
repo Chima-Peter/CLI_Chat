@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1",
+  "records": {
+    "server/types.go": {
+      "filePath": "server/types.go",
+      "coordinationScope": "service",
+      "decision": "enrich_existing",
+      "targetItemRef": "SV-01",
+      "evidenceNotes": [
+        "Enriched Server service (SV-01) with API protocol definitions from server/types.go (lines 1-53): Core message types and action constants."
+      ],
+      "generatedAt": "2026-06-01T16:02:58.798Z",
+      "triageAgentStem": "agent-triage-unreferenced-coordination"
+    }
+  }
+}

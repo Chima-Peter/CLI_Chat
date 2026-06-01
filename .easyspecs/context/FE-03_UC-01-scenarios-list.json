@@ -1,0 +1,57 @@
+{
+  "kind": "easyspecs.scenarios-list",
+  "version": 1,
+  "featureCode": "FE-03",
+  "useCaseCode": "UC-01",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "Successfully send a friend request",
+      "description": "User A sends a request to User B. The request is recorded, and both receive a confirmation message.",
+      "order": 1,
+      "sourceReferences": [
+        { "path": "server/client.go", "startLine": 69, "endLine": 113, "note": "Business logic for sending friend request" },
+        { "path": "server/server.go", "startLine": 576, "endLine": 583, "note": "Entry point for sending friend request" }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "Fail when target user does not exist",
+      "description": "The friend request fails if the target user ID or nickname cannot be resolved.",
+      "order": 2,
+      "sourceReferences": [
+        { "path": "server/server.go", "startLine": 577, "endLine": 581, "note": "Resolution failure check" }
+      ]
+    },
+    {
+      "code": "SC-03",
+      "name": "Fail when already friends",
+      "description": "User cannot send a friend request to someone they are already friends with.",
+      "order": 3,
+      "sourceReferences": [
+        { "path": "server/client.go", "startLine": 83, "endLine": 87, "note": "Check if already friends" }
+      ]
+    },
+    {
+      "code": "SC-04",
+      "name": "Fail when request already pending",
+      "description": "User cannot send a friend request if one has already been sent to that user.",
+      "order": 4,
+      "sourceReferences": [
+        { "path": "server/client.go", "startLine": 88, "endLine": 92, "note": "Check if already pending" }
+      ]
+    },
+    {
+      "code": "SC-05",
+      "name": "Fail when target user is blocked",
+      "description": "User cannot send a friend request if the target is blocked or the user is blocked by the target.",
+      "order": 5,
+      "sourceReferences": [
+        { "path": "server/client.go", "startLine": 74, "endLine": 81, "note": "Check if user is blocked" }
+      ]
+    }
+  ],
+  "revisionLog": [
+    { "summary": "Initial scenario list for Send Friend Request (FE-03_UC-01)." }
+  ]
+}

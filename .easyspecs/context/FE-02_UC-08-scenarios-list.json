@@ -1,0 +1,45 @@
+{
+  "featureCode": "FE-02",
+  "useCaseCode": "UC-08",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "Accept valid room invite",
+      "description": "User successfully accepts an invitation to a room.",
+      "order": 1,
+      "sourceReferences": [
+        { "path": "server/rooms.go", "startLine": 302, "endLine": 336, "note": "Happy path for accepting invite" }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "Fail to accept - no invite found",
+      "description": "User tries to accept an invitation that does not exist.",
+      "order": 2,
+      "sourceReferences": [
+        { "path": "server/rooms.go", "startLine": 303, "endLine": 306, "note": "Validation: no invite exists" }
+      ]
+    },
+    {
+      "code": "SC-03",
+      "name": "Fail to accept - already a member",
+      "description": "User tries to accept an invitation to a room they are already part of.",
+      "order": 3,
+      "sourceReferences": [
+        { "path": "server/rooms.go", "startLine": 309, "endLine": 317, "note": "Validation: user already in room" }
+      ]
+    },
+    {
+      "code": "SC-04",
+      "name": "Fail to accept - room full",
+      "description": "User tries to accept an invitation to a room that is full.",
+      "order": 4,
+      "sourceReferences": [
+        { "path": "server/rooms.go", "startLine": 319, "endLine": 322, "note": "Validation: room is full" }
+      ]
+    }
+  ],
+  "revisionLog": [
+    { "summary": "Initial scenario list for Accept room invite (UC-08)." }
+  ]
+}

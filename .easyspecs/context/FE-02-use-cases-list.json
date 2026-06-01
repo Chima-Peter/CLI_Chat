@@ -1,0 +1,158 @@
+{
+  "featureCode": "FE-02",
+  "useCases": [
+    {
+      "code": "UC-01",
+      "name": "Join room",
+      "description": "User joins a public room.",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 76,
+          "endLine": 116,
+          "note": "JoinRoom logic"
+        }
+      ]
+    },
+    {
+      "code": "UC-02",
+      "name": "Join private room",
+      "description": "User joins a private room by providing the correct password.",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 118,
+          "endLine": 155,
+          "note": "JoinRoomWithPassword logic"
+        }
+      ]
+    },
+    {
+      "code": "UC-03",
+      "name": "Edit room",
+      "description": "Room owner edits room settings (name, max size).",
+      "order": 3,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 157,
+          "endLine": 202,
+          "note": "EditRoom logic"
+        }
+      ]
+    },
+    {
+      "code": "UC-04",
+      "name": "Leave room",
+      "description": "User leaves a room.",
+      "order": 4,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 204,
+          "endLine": 214,
+          "note": "LeaveRoom logic"
+        }
+      ]
+    },
+    {
+      "code": "UC-05",
+      "name": "Delete room",
+      "description": "Room owner deletes the room.",
+      "order": 5,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 216,
+          "endLine": 248,
+          "note": "DeleteRoom logic"
+        }
+      ]
+    },
+    {
+      "code": "UC-06",
+      "name": "Invite user to room",
+      "description": "Room owner invites a user to the room.",
+      "order": 6,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 279,
+          "endLine": 289,
+          "note": "SendRoomInvite logic"
+        }
+      ]
+    },
+    {
+      "code": "UC-07",
+      "name": "View pending room invites",
+      "description": "Room owner views pending invitations to the room.",
+      "order": 7,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 291,
+          "endLine": 300,
+          "note": "SeePendingRoomInvites logic"
+        }
+      ]
+    },
+    {
+      "code": "UC-08",
+      "name": "Accept room invite",
+      "description": "User accepts a room invitation.",
+      "order": 8,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 302,
+          "endLine": 336,
+          "note": "AcceptRoomInvite logic"
+        }
+      ]
+    },
+    {
+      "code": "UC-09",
+      "name": "Decline room invite",
+      "description": "User declines a room invitation.",
+      "order": 9,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 338,
+          "endLine": 363,
+          "note": "DeclineRoomInvite logic"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial use-case list for feature FE-02 Room management."
+    },
+    {
+      "at": "2026-06-01T14:52:26.991Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "UC-01",
+          "UC-02",
+          "UC-03",
+          "UC-04",
+          "UC-05",
+          "UC-06",
+          "UC-07",
+          "UC-08",
+          "UC-09"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    }
+  ]
+}

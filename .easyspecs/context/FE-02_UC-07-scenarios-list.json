@@ -1,0 +1,39 @@
+{
+  "featureCode": "FE-02",
+  "useCaseCode": "UC-07",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "View pending room invites with invited users",
+      "description": "Room owner views the list of users currently invited to the room when there are active invitations.",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 291,
+          "endLine": 300,
+          "note": "Implementation of SeePendingRoomInvites"
+        }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "View pending room invites with no invited users",
+      "description": "Room owner views the list of users currently invited to the room when there are no active invitations.",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 291,
+          "endLine": 300,
+          "note": "Implementation of SeePendingRoomInvites"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial scenario list for UC-07: View pending room invites."
+    }
+  ]
+}

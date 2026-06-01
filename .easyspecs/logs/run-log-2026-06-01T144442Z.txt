@@ -1,0 +1,14 @@
+# easyspecs-cli run log
+# version: 0.3.29
+# startedAt: 2026-06-01T14:44:42.428Z
+# repoRoot: C:\Users\pc\Documents\dev\Github\CLI_Chat
+# command: analysis
+# argv: C:\nvm4w\nodejs\node.exe C:\nvm4w\nodejs\node_modules\@gluecharm-lab\easyspecs-cli\dist\main.cjs analysis
+# logFile: C:\Users\pc\Documents\dev\Github\CLI_Chat\.easyspecs\logs\run-log-2026-06-01T144442Z.txt
+2026-06-01T14:44:42.457Z [log] run log: C:\Users\pc\Documents\dev\Github\CLI_Chat\.easyspecs\logs\run-log-2026-06-01T144442Z.txt
+2026-06-01T14:44:42.705Z [factory] Resume rejected: concurrent run detected (PID 32788, runId mpvbi2g8-k5q83j2t) (C5)
+2026-06-01T14:44:42.708Z [factory] Concurrent run detected: PID 32788, runId mpvbi2g8-k5q83j2t, started 2026-06-01T14:42:19.600Z
+2026-06-01T14:44:42.710Z Exit 88 — Concurrent analysis run detected. Another `easyspecs-cli analysis` is running on the same repository. Wait for it to complete or terminate the other process.
+# finishedAt: 2026-06-01T14:44:42.711Z
+# exitCode: 88
+# durationMs: 283

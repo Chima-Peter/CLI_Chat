@@ -1,0 +1,135 @@
+{
+  "featureCode": "FE-04",
+  "useCaseCode": "UC-01",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "Switch to existing room context",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 310,
+          "endLine": 336,
+          "note": "Switch context to room success path"
+        }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "Switch to existing friend context",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 338,
+          "endLine": 365,
+          "note": "Switch context to friend success path"
+        }
+      ]
+    },
+    {
+      "code": "SC-03",
+      "name": "Attempt switch to non-existent or inaccessible room",
+      "order": 3,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 313,
+          "endLine": 323,
+          "note": "Switch context to room failure path"
+        }
+      ]
+    },
+    {
+      "code": "SC-04",
+      "name": "Attempt switch to user who is not a friend",
+      "order": 4,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 348,
+          "endLine": 350,
+          "note": "Switch context to friend failure path"
+        }
+      ]
+    },
+    {
+      "code": "SC-05",
+      "name": "Attempt switch with missing context name",
+      "order": 5,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 304,
+          "endLine": 306,
+          "note": "Switch context missing name validation"
+        }
+      ]
+    },
+    {
+      "code": "SC-06",
+      "name": "Attempt switch with invalid context type",
+      "order": 6,
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 364,
+          "endLine": 366,
+          "note": "Switch context invalid context type validation"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial scenario list for use case UC-01 Switch Context."
+    },
+    {
+      "at": "2026-06-01T15:35:33.471Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "SC-01",
+          "SC-02",
+          "SC-03",
+          "SC-04",
+          "SC-05"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "at": "2026-06-01T15:40:00.000Z",
+      "summary": "Added SC-06 for invalid context type validation.",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "SC-06"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "at": "2026-06-01T15:41:40.633Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "SC-06"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    }
+  ]
+}

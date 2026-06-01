@@ -1,0 +1,91 @@
+{
+  "kind": "easyspecs.qa-list",
+  "version": 1,
+  "qa": [
+    {
+      "code": "QA-01",
+      "name": "User authentication verification",
+      "slug": "user-authentication-verification",
+      "description": "Manual verification of client connection, nickname prompt, uniqueness enforcement, and login flow.",
+      "kind": "manual",
+      "coversCodes": ["FE-01"],
+      "sourceReferences": [
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 164,
+          "endLine": 192,
+          "note": "Login handler logic"
+        }
+      ]
+    },
+    {
+      "code": "QA-02",
+      "name": "Room management verification",
+      "slug": "room-management-verification",
+      "description": "Manual verification of room creation, joining, listing, and membership operations.",
+      "kind": "manual",
+      "coversCodes": ["FE-02"],
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 1,
+          "endLine": 200,
+          "note": "Room membership and management logic"
+        }
+      ]
+    },
+    {
+      "code": "QA-03",
+      "name": "Friend management verification",
+      "slug": "friend-management-verification",
+      "description": "Manual verification of adding, listing, and removing friends.",
+      "kind": "manual",
+      "coversCodes": ["FE-03"],
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 101,
+          "endLine": 200,
+          "note": "Friend handler logic"
+        }
+      ]
+    },
+    {
+      "code": "QA-04",
+      "name": "Chat and context management verification",
+      "slug": "chat-and-context-management-verification",
+      "description": "Manual verification of context switching and message delivery (room/DM).",
+      "kind": "manual",
+      "coversCodes": ["FE-04"],
+      "sourceReferences": [
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 1,
+          "endLine": 100,
+          "note": "Message dispatching logic"
+        }
+      ]
+    },
+    {
+      "code": "QA-05",
+      "name": "User management verification",
+      "slug": "user-management-verification",
+      "description": "Manual verification of blocking, unblocking, and status checking.",
+      "kind": "manual",
+      "coversCodes": ["FE-05"],
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 201,
+          "endLine": 300,
+          "note": "User management handler logic"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Fixed schema validation issues: renamed 'features' to 'qa', added 'kind' and 'coversCodes'."
+    }
+  ]
+}

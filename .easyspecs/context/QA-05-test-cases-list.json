@@ -1,0 +1,98 @@
+{
+  "qaCode": "QA-05",
+  "testCases": [
+    {
+      "code": "TC-01",
+      "name": "Block user",
+      "order": 1,
+      "coversCodes": [
+        "FE-05_UC-01"
+      ],
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 651,
+          "endLine": 658,
+          "note": "Block user handler"
+        },
+        {
+          "path": "server/client.go",
+          "startLine": 323,
+          "endLine": 342,
+          "note": "Block user logic"
+        }
+      ]
+    },
+    {
+      "code": "TC-02",
+      "name": "Unblock user",
+      "order": 2,
+      "coversCodes": [
+        "FE-05_UC-02"
+      ],
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 660,
+          "endLine": 667,
+          "note": "Unblock user handler"
+        },
+        {
+          "path": "server/client.go",
+          "startLine": 344,
+          "endLine": 358,
+          "note": "Unblock user logic"
+        }
+      ]
+    },
+    {
+      "code": "TC-03",
+      "name": "Get user status",
+      "order": 3,
+      "coversCodes": [
+        "FE-05_UC-03"
+      ],
+      "sourceReferences": [
+        {
+          "path": "server/server.go",
+          "startLine": 669,
+          "endLine": 676,
+          "note": "Get user status handler"
+        },
+        {
+          "path": "server/client.go",
+          "startLine": 366,
+          "endLine": 394,
+          "note": "Get user status logic"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial test cases list for user management (QA-05)."
+    },
+    {
+      "summary": "Added coversCodes anchor references for TC-01, TC-02, TC-03."
+    },
+    {
+      "at": "2026-06-01T15:43:41.834Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "TC-01",
+          "TC-02",
+          "TC-03"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "summary": "Review completed: existing test cases verified and normalized."
+    }
+  ]
+}

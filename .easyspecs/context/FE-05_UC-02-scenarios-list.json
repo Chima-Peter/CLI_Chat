@@ -1,0 +1,108 @@
+{
+  "featureCode": "FE-05",
+  "useCaseCode": "UC-02",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "Successfully unblock a blocked user",
+      "description": "User unblocks a previously blocked user. The operation succeeds if the user was in the block list.",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 344,
+          "endLine": 358,
+          "note": "UnblockUser backend logic"
+        },
+        {
+          "path": "client/message.go",
+          "startLine": 406,
+          "endLine": 414,
+          "note": "UnblockUser command routing"
+        }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "Attempt to unblock a user not currently blocked",
+      "description": "User attempts to unblock a user who is not in their block list. The operation fails with an error message.",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/client.go",
+          "startLine": 344,
+          "endLine": 358,
+          "note": "UnblockUser error handling"
+        },
+        {
+          "path": "client/message.go",
+          "startLine": 406,
+          "endLine": 414,
+          "note": "UnblockUser command routing"
+        }
+      ]
+    },
+    {
+      "code": "SC-03",
+      "name": "Attempt to unblock without providing a nickname",
+      "description": "User attempts to unblock without providing a target user's nickname. The operation fails with an error message indicating missing argument.",
+      "order": 3,
+      "sourceReferences": [
+        {
+          "path": "client/message.go",
+          "startLine": 406,
+          "endLine": 409,
+          "note": "UnblockUser argument validation"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial scenario list for Unblock a user (UC-02)."
+    },
+    {
+      "at": "2026-06-01T15:35:46.278Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "SC-01",
+          "SC-02"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "at": "2026-06-01T15:40:00.000Z",
+      "summary": "Added SC-03 for missing nickname handling.",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "SC-03"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    },
+    {
+      "at": "2026-06-01T15:42:30.094Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "SC-03"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    }
+  ]
+}

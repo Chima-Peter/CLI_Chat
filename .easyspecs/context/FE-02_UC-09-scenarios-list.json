@@ -1,0 +1,53 @@
+{
+  "featureCode": "FE-02",
+  "useCaseCode": "UC-09",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "Decline room invite successfully",
+      "description": "User successfully declines a valid room invite.",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 355,
+          "endLine": 363,
+          "note": "Successful decline logic"
+        }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "Decline non-existent room invite",
+      "description": "User attempts to decline an invite they have not received.",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 339,
+          "endLine": 343,
+          "note": "Check invite existence"
+        }
+      ]
+    },
+    {
+      "code": "SC-03",
+      "name": "Decline invite when already in room",
+      "description": "User attempts to decline an invite for a room they are already part of.",
+      "order": 3,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 345,
+          "endLine": 353,
+          "note": "Already in room check"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial scenario list for decline room invite."
+    }
+  ]
+}

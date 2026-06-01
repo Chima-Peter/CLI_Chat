@@ -1,0 +1,54 @@
+{
+  "featureCode": "FE-02",
+  "useCaseCode": "UC-04",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "User leaves room successfully",
+      "description": "A user who is a member of the room successfully leaves it.",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 204,
+          "endLine": 214,
+          "note": "LeaveRoom implementation"
+        }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "User fails to leave a room not joined",
+      "description": "A user attempts to leave a room that they are not currently a member of, resulting in an error message.",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/rooms.go",
+          "startLine": 204,
+          "endLine": 214,
+          "note": "LeaveRoom implementation - error case"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "summary": "Initial scenario list for Leave room use case."
+    },
+    {
+      "at": "2026-06-01T15:01:23.061Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "SC-01",
+          "SC-02"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "featureCode": "FE-01",
+  "useCaseCode": "UC-02",
+  "scenarios": [
+    {
+      "code": "SC-01",
+      "name": "Login with an empty nickname",
+      "description": "Attempt to log in with an empty or whitespace-only nickname, which should trigger a re-prompt.",
+      "order": 1,
+      "sourceReferences": [
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 170,
+          "endLine": 173,
+          "note": "Empty nickname validation"
+        }
+      ]
+    },
+    {
+      "code": "SC-02",
+      "name": "Login with 'anonymous' nickname",
+      "description": "Attempt to log in with the restricted nickname 'anonymous', which should trigger a re-prompt.",
+      "order": 2,
+      "sourceReferences": [
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 174,
+          "endLine": 177,
+          "note": "Anonymous nickname restriction"
+        }
+      ]
+    },
+    {
+      "code": "SC-03",
+      "name": "Login with a taken nickname",
+      "description": "Attempt to log in with a nickname already in use by another client, which should trigger a re-prompt.",
+      "order": 3,
+      "sourceReferences": [
+        {
+          "path": "server/handle_conn.go",
+          "startLine": 178,
+          "endLine": 181,
+          "note": "Taken nickname validation"
+        },
+        {
+          "path": "server/utils.go",
+          "startLine": 116,
+          "endLine": 126,
+          "note": "Uniqueness check logic"
+        }
+      ]
+    }
+  ],
+  "revisionLog": [
+    {
+      "at": "2026-06-01T15:00:00Z",
+      "summary": "Initial scenario list for UC-02."
+    },
+    {
+      "at": "2026-06-01T15:19:29.370Z",
+      "summary": "SRS-50 stable write: merge-by-code ordering applied (see stableWriteDiff).",
+      "stableWriteDiff": {
+        "addedCodes": [
+          "SC-01",
+          "SC-02",
+          "SC-03"
+        ],
+        "droppedCodes": [],
+        "reorderedCodesCorrected": [],
+        "keptDespiteOmission": [],
+        "duplicateCodesDropped": [],
+        "nestedSummaries": []
+      }
+    }
+  ]
+}
