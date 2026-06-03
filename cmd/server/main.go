@@ -4,11 +4,22 @@ import (
 	"crypto/tls"
 	"fmt"
 	"log"
+	"net"
 	"os"
 
 	"github.com/chima/CLI_Chat/server"
 	"github.com/chima/CLI_Chat/tls_config"
 )
+
+// isPortAvailable checks if a TCP port is free to use.
+func isPortAvailable(port string) bool {
+	listener, err := net.Listen("tcp", ":"+port)
+	if err != nil {
+		return false
+	}
+	listener.Close()
+	return true
+}
 
 func printBootstrap() {
 	fmt.Println("\n╔════════════════════════════════════════╗")
@@ -40,6 +51,10 @@ func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
+	}
+
+	if !isPortAvailable(port) {
+		log.Fatalf("Port %s is already in use", port)
 	}
 
 	listener, err := tls.Listen("tcp", ":"+port, tlsConfig)
