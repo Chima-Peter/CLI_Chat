@@ -1,0 +1,277 @@
+# easyspecs-cli run log
+# version: 0.3.29
+# startedAt: 2026-06-02T09:37:51.685Z
+# repoRoot: C:\Users\pc\Documents\dev\Github\CLI_Chat
+# command: analysis set-harness opencode --local
+# argv: C:\nvm4w\nodejs\node.exe C:\nvm4w\nodejs\node_modules\@gluecharm-lab\easyspecs-cli\dist\main.cjs analysis set-harness opencode --local
+# logFile: C:\Users\pc\Documents\dev\Github\CLI_Chat\.easyspecs\logs\run-log-2026-06-02T093751Z.txt
+2026-06-02T09:37:51.697Z [log] run log: C:\Users\pc\Documents\dev\Github\CLI_Chat\.easyspecs\logs\run-log-2026-06-02T093751Z.txt
+2026-06-02T09:37:51.740Z Updated C:\Users\pc\Documents\dev\Github\CLI_Chat\.easyspecs\config.json — agentHarness.kind=opencode, executable=opencode — execution=local
+2026-06-02T09:37:51.864Z [factory] Resume eligible: phase=synthesis, iteration=0, runId=mpwfphkg-rzrb1lxy
+2026-06-02T09:37:51.870Z --- Resumed from phase: synthesis (iteration 0) ---
+2026-06-02T09:37:53.371Z [factory] resume synthesis — 3 missing row(s)
+
+2026-06-02T09:37:53.411Z [pipeline:remediation] parallel remediation pool — 3 missing row(s), 3 ready in initial fifo
+
+2026-06-02T09:37:53.509Z [pool] start remediation:DM-01_FD-09-mu.md (active 3/45)
+
+2026-06-02T09:37:53.523Z [workstation:md:DM-01_FD-09-mu.md] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-field-detail-DM-01_FD-09-mu.md-a0-1780393073515.prompt.txt (1373 bytes)
+2026-06-02T09:37:53.527Z [workstation:md:DM-01_FD-09-mu.md] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwg2fi9-y08fwcwp|remediation:DM-01_FD-09-mu.md|markdownDetail·Field detail·DM-0' --agent agent-md-field-detail 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-field-detail-DM-01_FD-09-mu.md-a0-1780393073515.prompt.txt'
+2026-06-02T09:37:53.528Z [workstation:md:DM-01_FD-09-mu.md] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:37:53.529Z [workstation:md:DM-01_FD-09-mu.md] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwg2fi9-y08fwcwp|remediation:DM-01_FD-09-mu.md|markdownDetail·Field detail·DM-0","--agent","agent-md-field-detail","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\markdownDetail-agent-md-field-detail-DM-01_FD-09-mu.md-a0-1780393073515.prompt.txt"]
+2026-06-02T09:37:53.566Z [workstation:md:DM-01_FD-09-mu.md] scope=host childPid=44092 hostRamTotalB=33706872832 hostRamFreeB=16927297536 hostRamUsedB=16779575296 load1=0 cpusLogical=8 load1PerCpu=0
+
+2026-06-02T09:37:53.573Z [pool] start remediation:FE-01-authentication.md (active 3/45)
+
+2026-06-02T09:37:53.580Z [workstation:md:FE-01-authentication.md] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-feature-detail-FE-01-authentication.md-a0-1780393073576.prompt.txt (1553 bytes)
+2026-06-02T09:37:53.581Z [workstation:md:FE-01-authentication.md] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwg2fi9-y08fwcwp|remediation:FE-01-authentication.md|markdownDetail·Feature det' --agent agent-md-feature-detail 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-feature-detail-FE-01-authentication.md-a0-1780393073576.prompt.txt'
+2026-06-02T09:37:53.583Z [workstation:md:FE-01-authentication.md] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:37:53.585Z [workstation:md:FE-01-authentication.md] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwg2fi9-y08fwcwp|remediation:FE-01-authentication.md|markdownDetail·Feature det","--agent","agent-md-feature-detail","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\markdownDetail-agent-md-feature-detail-FE-01-authentication.md-a0-1780393073576.prompt.txt"]
+2026-06-02T09:37:53.623Z [workstation:md:FE-01-authentication.md] scope=host childPid=38732 hostRamTotalB=33706872832 hostRamFreeB=16925802496 hostRamUsedB=16781070336 load1=0 cpusLogical=8 load1PerCpu=0
+
+2026-06-02T09:37:53.627Z [pool] start remediation:FE-04-messaging-and-context.md (active 3/45)
+
+2026-06-02T09:37:53.636Z [workstation:md:FE-04-messaging-and-context.md] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-feature-detail-FE-04-messaging-and-context.md-a0-1780393073629.prompt.txt (1581 bytes)
+2026-06-02T09:37:53.638Z [workstation:md:FE-04-messaging-and-context.md] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwg2fi9-y08fwcwp|remediation:FE-04-messaging-and-context.md|markdownDetail·Feat' --agent agent-md-feature-detail 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-feature-detail-FE-04-messaging-and-context.md-a0-1780393073629.prompt.txt'
+2026-06-02T09:37:53.639Z [workstation:md:FE-04-messaging-and-context.md] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:37:53.641Z [workstation:md:FE-04-messaging-and-context.md] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwg2fi9-y08fwcwp|remediation:FE-04-messaging-and-context.md|markdownDetail·Feat","--agent","agent-md-feature-detail","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\markdownDetail-agent-md-feature-detail-FE-04-messaging-and-context.md-a0-1780393073629.prompt.txt"]
+2026-06-02T09:37:53.660Z [workstation:md:FE-04-messaging-and-context.md] scope=host childPid=41376 hostRamTotalB=33706872832 hostRamFreeB=16911929344 hostRamUsedB=16794943488 load1=0 cpusLogical=8 load1PerCpu=0
+2026-06-02T09:38:27.608Z [workstation:md:FE-01-authentication.md] scope=child childPid=38732 childCpuMs=0 childRssBytes=unknown rssErr=platform
+2026-06-02T09:38:27.613Z [workstation:md:FE-01-authentication.md] close exitCode=0 stderrBytes=0 stderrOmitted=0 stdoutBytes=0 in 33s
+2026-06-02T09:38:27.615Z [workstation:opencode-session] primary complete workItem="remediation:FE-01-authentication.md" runId="mpwg2fi9-y08fwcwp" title="mpwg2fi9-y08fwcwp|remediation:FE-01-authentication.md|markdownDetail·Fe…" session=ses_1784…7wDC
+2026-06-02T09:38:27.618Z [workstation:md:FE-01-authentication.md] expected output in worktree: FOUND — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\FE-01-authentication.md (2556 bytes) in 34s
+2026-06-02T09:38:27.619Z [workstation:md:FE-01-authentication.md] markdown Evidence index validation passed — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\FE-01-authentication.md in 34s
+
+2026-06-02T09:38:27.623Z [pool] complete remediation:FE-01-authentication.md in 34s
+2026-06-02T09:38:27.646Z [pool] start coord:uc:FE-01 (active 3/45)
+
+2026-06-02T09:38:27.652Z [workstation:listUseCases] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\listUseCases-FE-01-a0-1780393107650.prompt.txt (1896 bytes)
+2026-06-02T09:38:27.654Z [workstation:listUseCases] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwg2fi9-y08fwcwp|coord:uc:FE-01|listUseCases·FE-01' --agent agent-list-use-cases 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\listUseCases-FE-01-a0-1780393107650.prompt.txt'
+2026-06-02T09:38:27.658Z [workstation:listUseCases] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:38:27.660Z [workstation:listUseCases] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwg2fi9-y08fwcwp|coord:uc:FE-01|listUseCases·FE-01","--agent","agent-list-use-cases","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\listUseCases-FE-01-a0-1780393107650.prompt.txt"]
+2026-06-02T09:38:27.675Z [workstation:listUseCases] scope=host childPid=39256 hostRamTotalB=33706872832 hostRamFreeB=16122986496 hostRamUsedB=17583886336 load1=0 cpusLogical=8 load1PerCpu=0
+2026-06-02T09:38:30.476Z [workstation:md:FE-04-messaging-and-context.md] scope=child childPid=41376 childCpuMs=0 childRssBytes=unknown rssErr=platform
+2026-06-02T09:38:30.477Z [workstation:md:FE-04-messaging-and-context.md] close exitCode=0 stderrBytes=0 stderrOmitted=0 stdoutBytes=0 in 36s
+2026-06-02T09:38:30.479Z [workstation:opencode-session] primary complete workItem="remediation:FE-04-messaging-and-context.md" runId="mpwg2fi9-y08fwcwp" title="mpwg2fi9-y08fwcwp|remediation:FE-04-messaging-and-context.md|markdownDe…" session=ses_1784…LPT0
+2026-06-02T09:38:30.481Z [workstation:md:FE-04-messaging-and-context.md] expected output in worktree: FOUND — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\FE-04-messaging-and-context.md (2450 bytes) in 36s
+2026-06-02T09:38:30.482Z [workstation:md:FE-04-messaging-and-context.md] markdown Evidence index validation passed — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\FE-04-messaging-and-context.md in 36s
+
+2026-06-02T09:38:30.485Z [pool] complete remediation:FE-04-messaging-and-context.md in 36s
+2026-06-02T09:38:30.510Z [pool] start coord:uc:FE-04 (active 3/45)
+
+2026-06-02T09:38:30.516Z [workstation:listUseCases] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\listUseCases-FE-04-a0-1780393110513.prompt.txt (1896 bytes)
+2026-06-02T09:38:30.520Z [workstation:listUseCases] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwg2fi9-y08fwcwp|coord:uc:FE-04|listUseCases·FE-04' --agent agent-list-use-cases 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\listUseCases-FE-04-a0-1780393110513.prompt.txt'
+2026-06-02T09:38:30.522Z [workstation:listUseCases] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:38:30.524Z [workstation:listUseCases] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwg2fi9-y08fwcwp|coord:uc:FE-04|listUseCases·FE-04","--agent","agent-list-use-cases","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\listUseCases-FE-04-a0-1780393110513.prompt.txt"]
+2026-06-02T09:38:30.544Z [workstation:listUseCases] scope=host childPid=41152 hostRamTotalB=33706872832 hostRamFreeB=16208183296 hostRamUsedB=17498689536 load1=0 cpusLogical=8 load1PerCpu=0
+2026-06-02T09:38:36.550Z [workstation:md:DM-01_FD-09-mu.md] scope=child childPid=44092 childCpuMs=0 childRssBytes=unknown rssErr=platform
+2026-06-02T09:38:36.555Z [workstation:md:DM-01_FD-09-mu.md] close exitCode=0 stderrBytes=0 stderrOmitted=0 stdoutBytes=0 in 42s
+2026-06-02T09:38:36.557Z [workstation:opencode-session] primary complete workItem="remediation:DM-01_FD-09-mu.md" runId="mpwg2fi9-y08fwcwp" title="mpwg2fi9-y08fwcwp|remediation:DM-01_FD-09-mu.md|markdownDetail·Field de…" session=ses_1784…gbEf
+2026-06-02T09:38:36.560Z [workstation:md:DM-01_FD-09-mu.md] expected output in worktree: FOUND — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\DM-01_FD-09-mu.md (1276 bytes) in 43s
+2026-06-02T09:38:36.561Z [workstation:md:DM-01_FD-09-mu.md] markdown Evidence index validation passed — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\DM-01_FD-09-mu.md in 43s
+
+2026-06-02T09:38:36.565Z [pool] complete remediation:DM-01_FD-09-mu.md in 43s
+2026-06-02T09:38:38.444Z [host-pool] activeWorkstations=2 staticMaxConcurrentAi=45 adaptiveMaxConcurrentAi=45 hostRamTotalB=33706872832 hostRamFreeB=16084963328 hostRamUsedB=17621909504 cpusLogical=8 load1=0 load1PerCpu=0 hintScheduler=OK hintMemory=OK hintLimits=UNK hintIo=UNK
+2026-06-02T09:38:38.450Z [host-pool-rec] kind=none
+
+2026-06-02T09:38:58.346Z [workstation:listUseCases] scope=child childPid=39256 childCpuMs=0 childRssBytes=unknown rssErr=platform
+2026-06-02T09:38:58.347Z [workstation:listUseCases] close exitCode=0 stderrBytes=0 stderrOmitted=0 stdoutBytes=0 in 30s
+2026-06-02T09:38:58.349Z [workstation:opencode-session] primary complete workItem="coord:uc:FE-01" runId="mpwg2fi9-y08fwcwp" title="mpwg2fi9-y08fwcwp|coord:uc:FE-01|listUseCases·FE-01" session=ses_1784…dRF5
+2026-06-02T09:38:58.351Z [workstation:listUseCases] expected output in worktree: FOUND — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\FE-01-use-cases-list.json (2025 bytes) in 30s
+2026-06-02T09:38:58.459Z [coord-lock] acquired FE-01-use-cases-list.json.easyspecs.lock
+2026-06-02T09:38:58.470Z [coord-lock] released FE-01-use-cases-list.json.easyspecs.lock
+2026-06-02T09:38:58.471Z [workstation:listUseCases] list JSON passed schema validation — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\FE-01-use-cases-list.json in 30s
+
+2026-06-02T09:38:58.473Z [pool] complete coord:uc:FE-01 in 30s
+2026-06-02T09:38:58.514Z [pool] start coord:reviewUc:FE-01 (active 2/45)
+
+2026-06-02T09:38:58.521Z [workstation:reviewUseCasesList] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\reviewUseCasesList-FE-01-a0-1780393138518.prompt.txt (2112 bytes)
+2026-06-02T09:38:58.523Z [workstation:reviewUseCasesList] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwg2fi9-y08fwcwp|coord:reviewUc:FE-01|reviewUseCasesList·FE-01' --agent agent-review-use-cases-list 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\reviewUseCasesList-FE-01-a0-1780393138518.prompt.txt'
+2026-06-02T09:38:58.525Z [workstation:reviewUseCasesList] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:38:58.527Z [workstation:reviewUseCasesList] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwg2fi9-y08fwcwp|coord:reviewUc:FE-01|reviewUseCasesList·FE-01","--agent","agent-review-use-cases-list","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\reviewUseCasesList-FE-01-a0-1780393138518.prompt.txt"]
+2026-06-02T09:38:58.555Z [workstation:reviewUseCasesList] scope=host childPid=39740 hostRamTotalB=33706872832 hostRamFreeB=16321736704 hostRamUsedB=17385136128 load1=0 cpusLogical=8 load1PerCpu=0
+2026-06-02T09:39:20.228Z [workstation:listUseCases] scope=child childPid=41152 childCpuMs=0 childRssBytes=unknown rssErr=platform
+2026-06-02T09:39:20.233Z [workstation:listUseCases] close exitCode=0 stderrBytes=0 stderrOmitted=0 stdoutBytes=0 in 49s
+2026-06-02T09:39:20.234Z [workstation:opencode-session] primary complete workItem="coord:uc:FE-04" runId="mpwg2fi9-y08fwcwp" title="mpwg2fi9-y08fwcwp|coord:uc:FE-04|listUseCases·FE-04" session=ses_1784…kkSg
+2026-06-02T09:39:20.235Z [workstation:listUseCases] expected output in worktree: FOUND — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\FE-04-use-cases-list.json (1302 bytes) in 49s
+2026-06-02T09:39:20.281Z [coord-lock] acquired FE-04-use-cases-list.json.easyspecs.lock
+2026-06-02T09:39:20.283Z [coord-lock] released FE-04-use-cases-list.json.easyspecs.lock
+2026-06-02T09:39:20.284Z [workstation:listUseCases] list JSON passed schema validation — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\FE-04-use-cases-list.json in 49s
+
+2026-06-02T09:39:20.287Z [pool] complete coord:uc:FE-04 in 49s
+2026-06-02T09:39:20.309Z [pool] start coord:reviewUc:FE-04 (active 2/45)
+
+2026-06-02T09:39:20.315Z [workstation:reviewUseCasesList] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\reviewUseCasesList-FE-04-a0-1780393160312.prompt.txt (2112 bytes)
+2026-06-02T09:39:20.323Z [workstation:reviewUseCasesList] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwg2fi9-y08fwcwp|coord:reviewUc:FE-04|reviewUseCasesList·FE-04' --agent agent-review-use-cases-list 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\reviewUseCasesList-FE-04-a0-1780393160312.prompt.txt'
+2026-06-02T09:39:20.324Z [workstation:reviewUseCasesList] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:39:20.325Z [workstation:reviewUseCasesList] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwg2fi9-y08fwcwp|coord:reviewUc:FE-04|reviewUseCasesList·FE-04","--agent","agent-review-use-cases-list","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\reviewUseCasesList-FE-04-a0-1780393160312.prompt.txt"]
+2026-06-02T09:39:20.344Z [workstation:reviewUseCasesList] scope=host childPid=39956 hostRamTotalB=33706872832 hostRamFreeB=16475275264 hostRamUsedB=17231597568 load1=0 cpusLogical=8 load1PerCpu=0
+
+2026-06-02T09:39:23.464Z [host-pool] activeWorkstations=2 staticMaxConcurrentAi=45 adaptiveMaxConcurrentAi=45 hostRamTotalB=33706872832 hostRamFreeB=16220450816 hostRamUsedB=17486422016 cpusLogical=8 load1=0 load1PerCpu=0 hintScheduler=OK hintMemory=OK hintLimits=UNK hintIo=UNK
+2026-06-02T09:39:23.465Z [host-pool-rec] kind=none
+
+2026-06-02T09:39:34.153Z [workstation:reviewUseCasesList] scope=child childPid=39740 childCpuMs=0 childRssBytes=unknown rssErr=platform
+2026-06-02T09:39:34.154Z [workstation:reviewUseCasesList] close exitCode=0 stderrBytes=0 stderrOmitted=0 stdoutBytes=0 in 35s
+2026-06-02T09:39:34.155Z [workstation:opencode-session] primary complete workItem="coord:reviewUc:FE-01" runId="mpwg2fi9-y08fwcwp" title="mpwg2fi9-y08fwcwp|coord:reviewUc:FE-01|reviewUseCasesList·FE-01" session=ses_1784…H2xE
+2026-06-02T09:39:34.157Z [workstation:reviewUseCasesList] expected output in worktree: FOUND — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\FE-01-use-cases-list.json (2152 bytes) in 35s
+2026-06-02T09:39:34.202Z [coord-lock] acquired FE-01-use-cases-list.json.easyspecs.lock
+2026-06-02T09:39:34.244Z [coord-lock] released FE-01-use-cases-list.json.easyspecs.lock
+2026-06-02T09:39:34.285Z [workstation:reviewUseCasesList] list JSON passed schema validation — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\FE-01-use-cases-list.json in 35s
+
+2026-06-02T09:39:34.366Z [pool] complete coord:reviewUc:FE-01 in 35s
+2026-06-02T09:39:34.590Z [pool] start md:FE-01_UC-01.md (active 7/45)
+
+2026-06-02T09:39:34.595Z [workstation:md:FE-01_UC-01.md] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-use-case-detail-FE-01_UC-01.md-a0-1780393174592.prompt.txt (1970 bytes)
+2026-06-02T09:39:34.597Z [workstation:md:FE-01_UC-01.md] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwg2fi9-y08fwcwp|md:FE-01_UC-01.md|markdownDetail·Use case detail·FE-01_UC-01.m' --agent agent-md-use-case-detail 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-use-case-detail-FE-01_UC-01.md-a0-1780393174592.prompt.txt'
+2026-06-02T09:39:34.598Z [workstation:md:FE-01_UC-01.md] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:39:34.599Z [workstation:md:FE-01_UC-01.md] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwg2fi9-y08fwcwp|md:FE-01_UC-01.md|markdownDetail·Use case detail·FE-01_UC-01.m","--agent","agent-md-use-case-detail","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\markdownDetail-agent-md-use-case-detail-FE-01_UC-01.md-a0-1780393174592.prompt.txt"]
+2026-06-02T09:39:34.619Z [workstation:md:FE-01_UC-01.md] scope=host childPid=5756 hostRamTotalB=33706872832 hostRamFreeB=16491782144 hostRamUsedB=17215090688 load1=0 cpusLogical=8 load1PerCpu=0
+
+2026-06-02T09:39:34.623Z [pool] start coord:sc:FE-01_UC-01 (active 7/45)
+
+2026-06-02T09:39:34.630Z [workstation:listScenarios] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\listScenarios-FE-01_UC-01-a0-1780393174625.prompt.txt (1837 bytes)
+2026-06-02T09:39:34.632Z [workstation:listScenarios] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwg2fi9-y08fwcwp|coord:sc:FE-01_UC-01|listScenarios·FE-01·UC-01' --agent agent-list-scenarios 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\listScenarios-FE-01_UC-01-a0-1780393174625.prompt.txt'
+2026-06-02T09:39:34.635Z [workstation:listScenarios] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:39:34.640Z [workstation:listScenarios] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwg2fi9-y08fwcwp|coord:sc:FE-01_UC-01|listScenarios·FE-01·UC-01","--agent","agent-list-scenarios","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\listScenarios-FE-01_UC-01-a0-1780393174625.prompt.txt"]
+2026-06-02T09:39:34.658Z [workstation:listScenarios] scope=host childPid=3416 hostRamTotalB=33706872832 hostRamFreeB=16487059456 hostRamUsedB=17219813376 load1=0 cpusLogical=8 load1PerCpu=0
+
+2026-06-02T09:39:34.661Z [pool] start md:FE-01_UC-02.md (active 7/45)
+
+2026-06-02T09:39:34.667Z [workstation:md:FE-01_UC-02.md] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-use-case-detail-FE-01_UC-02.md-a0-1780393174663.prompt.txt (1993 bytes)
+2026-06-02T09:39:34.668Z [workstation:md:FE-01_UC-02.md] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwg2fi9-y08fwcwp|md:FE-01_UC-02.md|markdownDetail·Use case detail·FE-01_UC-02.m' --agent agent-md-use-case-detail 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-use-case-detail-FE-01_UC-02.md-a0-1780393174663.prompt.txt'
+2026-06-02T09:39:34.669Z [workstation:md:FE-01_UC-02.md] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:39:34.670Z [workstation:md:FE-01_UC-02.md] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwg2fi9-y08fwcwp|md:FE-01_UC-02.md|markdownDetail·Use case detail·FE-01_UC-02.m","--agent","agent-md-use-case-detail","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\markdownDetail-agent-md-use-case-detail-FE-01_UC-02.md-a0-1780393174663.prompt.txt"]
+2026-06-02T09:39:34.698Z [workstation:md:FE-01_UC-02.md] scope=host childPid=26732 hostRamTotalB=33706872832 hostRamFreeB=16477868032 hostRamUsedB=17229004800 load1=0 cpusLogical=8 load1PerCpu=0
+
+2026-06-02T09:39:34.700Z [pool] start coord:sc:FE-01_UC-02 (active 7/45)
+
+2026-06-02T09:39:34.706Z [workstation:listScenarios] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\listScenarios-FE-01_UC-02-a0-1780393174702.prompt.txt (1837 bytes)
+2026-06-02T09:39:34.709Z [workstation:listScenarios] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwg2fi9-y08fwcwp|coord:sc:FE-01_UC-02|listScenarios·FE-01·UC-02' --agent agent-list-scenarios 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\listScenarios-FE-01_UC-02-a0-1780393174702.prompt.txt'
+2026-06-02T09:39:34.710Z [workstation:listScenarios] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:39:34.711Z [workstation:listScenarios] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwg2fi9-y08fwcwp|coord:sc:FE-01_UC-02|listScenarios·FE-01·UC-02","--agent","agent-list-scenarios","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\listScenarios-FE-01_UC-02-a0-1780393174702.prompt.txt"]
+2026-06-02T09:39:34.732Z [workstation:listScenarios] scope=host childPid=33976 hostRamTotalB=33706872832 hostRamFreeB=16465203200 hostRamUsedB=17241669632 load1=0 cpusLogical=8 load1PerCpu=0
+
+2026-06-02T09:39:34.734Z [pool] start md:FE-01_UC-03.md (active 7/45)
+
+2026-06-02T09:39:34.743Z [workstation:md:FE-01_UC-03.md] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-use-case-detail-FE-01_UC-03.md-a0-1780393174736.prompt.txt (1949 bytes)
+2026-06-02T09:39:34.744Z [workstation:md:FE-01_UC-03.md] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwg2fi9-y08fwcwp|md:FE-01_UC-03.md|markdownDetail·Use case detail·FE-01_UC-03.m' --agent agent-md-use-case-detail 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-use-case-detail-FE-01_UC-03.md-a0-1780393174736.prompt.txt'
+2026-06-02T09:39:34.745Z [workstation:md:FE-01_UC-03.md] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:39:34.747Z [workstation:md:FE-01_UC-03.md] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwg2fi9-y08fwcwp|md:FE-01_UC-03.md|markdownDetail·Use case detail·FE-01_UC-03.m","--agent","agent-md-use-case-detail","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\markdownDetail-agent-md-use-case-detail-FE-01_UC-03.md-a0-1780393174736.prompt.txt"]
+2026-06-02T09:39:34.771Z [workstation:md:FE-01_UC-03.md] scope=host childPid=47168 hostRamTotalB=33706872832 hostRamFreeB=16439140352 hostRamUsedB=17267732480 load1=0 cpusLogical=8 load1PerCpu=0
+
+2026-06-02T09:39:34.775Z [pool] start coord:sc:FE-01_UC-03 (active 7/45)
+
+2026-06-02T09:39:34.782Z [workstation:listScenarios] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\listScenarios-FE-01_UC-03-a0-1780393174778.prompt.txt (1837 bytes)
+2026-06-02T09:39:34.784Z [workstation:listScenarios] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwg2fi9-y08fwcwp|coord:sc:FE-01_UC-03|listScenarios·FE-01·UC-03' --agent agent-list-scenarios 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\listScenarios-FE-01_UC-03-a0-1780393174778.prompt.txt'
+2026-06-02T09:39:34.784Z [workstation:listScenarios] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:39:34.785Z [workstation:listScenarios] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwg2fi9-y08fwcwp|coord:sc:FE-01_UC-03|listScenarios·FE-01·UC-03","--agent","agent-list-scenarios","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\listScenarios-FE-01_UC-03-a0-1780393174778.prompt.txt"]
+2026-06-02T09:39:34.807Z [workstation:listScenarios] scope=host childPid=10764 hostRamTotalB=33706872832 hostRamFreeB=16414756864 hostRamUsedB=17292115968 load1=0 cpusLogical=8 load1PerCpu=0
+
+2026-06-02T09:40:08.486Z [host-pool] activeWorkstations=7 staticMaxConcurrentAi=45 adaptiveMaxConcurrentAi=45 hostRamTotalB=33706872832 hostRamFreeB=14390910976 hostRamUsedB=19315961856 cpusLogical=8 load1=0 load1PerCpu=0 hintScheduler=OK hintMemory=OK hintLimits=UNK hintIo=UNK
+2026-06-02T09:40:08.490Z [host-pool-rec] kind=none
+
+2026-06-02T09:40:17.128Z [workstation:listScenarios] scope=child childPid=33976 childCpuMs=0 childRssBytes=unknown rssErr=platform
+2026-06-02T09:40:17.132Z [workstation:listScenarios] close exitCode=0 stderrBytes=0 stderrOmitted=0 stdoutBytes=0 in 42s
+2026-06-02T09:40:17.137Z [workstation:opencode-session] primary complete workItem="coord:sc:FE-01_UC-02" runId="mpwg2fi9-y08fwcwp" title="mpwg2fi9-y08fwcwp|coord:sc:FE-01_UC-02|listScenarios·FE-01·UC-02" session=ses_1784…Ptpq
+2026-06-02T09:40:17.142Z [workstation:listScenarios] expected output in worktree: FOUND — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\FE-01_UC-02-scenarios-list.json (1589 bytes) in 42s
+2026-06-02T09:40:17.198Z [coord-lock] acquired FE-01_UC-02-scenarios-list.json.easyspecs.lock
+2026-06-02T09:40:17.201Z [coord-lock] released FE-01_UC-02-scenarios-list.json.easyspecs.lock
+2026-06-02T09:40:17.203Z [workstation:listScenarios] list JSON passed schema validation — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\FE-01_UC-02-scenarios-list.json in 42s
+
+2026-06-02T09:40:17.206Z [pool] complete coord:sc:FE-01_UC-02 in 42s
+2026-06-02T09:40:17.237Z [pool] start coord:reviewSc:FE-01_UC-02 (active 7/45)
+
+2026-06-02T09:40:17.244Z [workstation:reviewScenariosList] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\reviewScenariosList-FE-01_UC-02-a0-1780393217242.prompt.txt (2108 bytes)
+2026-06-02T09:40:17.246Z [workstation:reviewScenariosList] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwg2fi9-y08fwcwp|coord:reviewSc:FE-01_UC-02|reviewScenariosList·FE-01·UC-02' --agent agent-review-scenarios-list 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\reviewScenariosList-FE-01_UC-02-a0-1780393217242.prompt.txt'
+2026-06-02T09:40:17.248Z [workstation:reviewScenariosList] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:40:17.250Z [workstation:reviewScenariosList] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwg2fi9-y08fwcwp|coord:reviewSc:FE-01_UC-02|reviewScenariosList·FE-01·UC-02","--agent","agent-review-scenarios-list","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\reviewScenariosList-FE-01_UC-02-a0-1780393217242.prompt.txt"]
+2026-06-02T09:40:17.285Z [workstation:reviewScenariosList] scope=host childPid=22840 hostRamTotalB=33706872832 hostRamFreeB=14884380672 hostRamUsedB=18822492160 load1=0 cpusLogical=8 load1PerCpu=0
+2026-06-02T09:40:17.318Z [workstation:md:FE-01_UC-02.md] scope=child childPid=26732 childCpuMs=0 childRssBytes=unknown rssErr=platform
+2026-06-02T09:40:17.320Z [workstation:md:FE-01_UC-02.md] close exitCode=0 stderrBytes=0 stderrOmitted=0 stdoutBytes=0 in 42s
+2026-06-02T09:40:17.321Z [workstation:opencode-session] primary complete workItem="md:FE-01_UC-02.md" runId="mpwg2fi9-y08fwcwp" title="mpwg2fi9-y08fwcwp|md:FE-01_UC-02.md|markdownDetail·Use case detail·FE-0…" session=ses_1784…igql
+2026-06-02T09:40:17.324Z [workstation:md:FE-01_UC-02.md] expected output in worktree: FOUND — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\FE-01_UC-02.md (3783 bytes) in 42s
+2026-06-02T09:40:17.325Z [workstation:md:FE-01_UC-02.md] markdown Evidence index validation passed — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\FE-01_UC-02.md in 42s
+
+2026-06-02T09:40:17.329Z [pool] complete md:FE-01_UC-02.md in 42s
+
+2026-06-02T09:40:19.329Z [workstation:listScenarios] scope=child childPid=10764 childCpuMs=0 childRssBytes=unknown rssErr=platform
+2026-06-02T09:40:19.334Z [workstation:listScenarios] close exitCode=0 stderrBytes=0 stderrOmitted=0 stdoutBytes=0 in 44s
+2026-06-02T09:40:19.339Z [workstation:opencode-session] primary complete workItem="coord:sc:FE-01_UC-03" runId="mpwg2fi9-y08fwcwp" title="mpwg2fi9-y08fwcwp|coord:sc:FE-01_UC-03|listScenarios·FE-01·UC-03" session=ses_1784…fXkK
+2026-06-02T09:40:19.341Z [workstation:listScenarios] expected output in worktree: FOUND — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\FE-01_UC-03-scenarios-list.json (1093 bytes) in 44s
+2026-06-02T09:40:19.393Z [coord-lock] acquired FE-01_UC-03-scenarios-list.json.easyspecs.lock
+2026-06-02T09:40:19.400Z [coord-lock] released FE-01_UC-03-scenarios-list.json.easyspecs.lock
+2026-06-02T09:40:19.402Z [workstation:listScenarios] list JSON passed schema validation — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\FE-01_UC-03-scenarios-list.json in 44s
+
+2026-06-02T09:40:19.412Z [pool] complete coord:sc:FE-01_UC-03 in 44s
+2026-06-02T09:40:19.459Z [pool] start coord:reviewSc:FE-01_UC-03 (active 6/45)
+
+2026-06-02T09:40:19.478Z [workstation:reviewScenariosList] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\reviewScenariosList-FE-01_UC-03-a0-1780393219464.prompt.txt (2108 bytes)
+2026-06-02T09:40:19.483Z [workstation:reviewScenariosList] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwg2fi9-y08fwcwp|coord:reviewSc:FE-01_UC-03|reviewScenariosList·FE-01·UC-03' --agent agent-review-scenarios-list 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\reviewScenariosList-FE-01_UC-03-a0-1780393219464.prompt.txt'
+2026-06-02T09:40:19.484Z [workstation:reviewScenariosList] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:40:19.491Z [workstation:reviewScenariosList] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwg2fi9-y08fwcwp|coord:reviewSc:FE-01_UC-03|reviewScenariosList·FE-01·UC-03","--agent","agent-review-scenarios-list","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\reviewScenariosList-FE-01_UC-03-a0-1780393219464.prompt.txt"]
+2026-06-02T09:40:19.527Z [workstation:reviewScenariosList] scope=host childPid=21356 hostRamTotalB=33706872832 hostRamFreeB=15046807552 hostRamUsedB=18660065280 load1=0 cpusLogical=8 load1PerCpu=0
+2026-06-02T09:40:21.417Z [workstation:reviewUseCasesList] scope=child childPid=39956 childCpuMs=0 childRssBytes=unknown rssErr=platform
+2026-06-02T09:40:21.421Z [workstation:reviewUseCasesList] close exitCode=0 stderrBytes=0 stderrOmitted=0 stdoutBytes=0 in 1m 01s
+2026-06-02T09:40:21.425Z [workstation:opencode-session] primary complete workItem="coord:reviewUc:FE-04" runId="mpwg2fi9-y08fwcwp" title="mpwg2fi9-y08fwcwp|coord:reviewUc:FE-04|reviewUseCasesList·FE-04" session=ses_1784…Flki
+2026-06-02T09:40:21.426Z [workstation:reviewUseCasesList] expected output in worktree: FOUND — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\FE-04-use-cases-list.json (1379 bytes) in 1m 01s
+2026-06-02T09:40:21.477Z [coord-lock] acquired FE-04-use-cases-list.json.easyspecs.lock
+2026-06-02T09:40:21.487Z [coord-lock] released FE-04-use-cases-list.json.easyspecs.lock
+2026-06-02T09:40:21.492Z [workstation:reviewUseCasesList] list JSON passed schema validation — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\FE-04-use-cases-list.json in 1m 01s
+
+2026-06-02T09:40:21.504Z [pool] complete coord:reviewUc:FE-04 in 1m 01s
+2026-06-02T09:40:21.724Z [pool] start md:FE-04_UC-01.md (active 11/45)
+
+2026-06-02T09:40:21.734Z [workstation:md:FE-04_UC-01.md] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-use-case-detail-FE-04_UC-01.md-a0-1780393221731.prompt.txt (1956 bytes)
+2026-06-02T09:40:21.742Z [workstation:md:FE-04_UC-01.md] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwg2fi9-y08fwcwp|md:FE-04_UC-01.md|markdownDetail·Use case detail·FE-04_UC-01.m' --agent agent-md-use-case-detail 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-use-case-detail-FE-04_UC-01.md-a0-1780393221731.prompt.txt'
+2026-06-02T09:40:21.749Z [workstation:md:FE-04_UC-01.md] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:40:21.755Z [workstation:md:FE-04_UC-01.md] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwg2fi9-y08fwcwp|md:FE-04_UC-01.md|markdownDetail·Use case detail·FE-04_UC-01.m","--agent","agent-md-use-case-detail","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\markdownDetail-agent-md-use-case-detail-FE-04_UC-01.md-a0-1780393221731.prompt.txt"]
+2026-06-02T09:40:21.785Z [workstation:md:FE-04_UC-01.md] scope=host childPid=13920 hostRamTotalB=33706872832 hostRamFreeB=15154200576 hostRamUsedB=18552672256 load1=0 cpusLogical=8 load1PerCpu=0
+
+2026-06-02T09:40:21.788Z [pool] start coord:sc:FE-04_UC-01 (active 11/45)
+
+2026-06-02T09:40:21.793Z [workstation:listScenarios] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\listScenarios-FE-04_UC-01-a0-1780393221791.prompt.txt (1837 bytes)
+2026-06-02T09:40:21.794Z [workstation:listScenarios] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwg2fi9-y08fwcwp|coord:sc:FE-04_UC-01|listScenarios·FE-04·UC-01' --agent agent-list-scenarios 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\listScenarios-FE-04_UC-01-a0-1780393221791.prompt.txt'
+2026-06-02T09:40:21.799Z [workstation:listScenarios] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:40:21.801Z [workstation:listScenarios] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwg2fi9-y08fwcwp|coord:sc:FE-04_UC-01|listScenarios·FE-04·UC-01","--agent","agent-list-scenarios","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\listScenarios-FE-04_UC-01-a0-1780393221791.prompt.txt"]
+2026-06-02T09:40:21.831Z [workstation:listScenarios] scope=host childPid=22524 hostRamTotalB=33706872832 hostRamFreeB=15149850624 hostRamUsedB=18557022208 load1=0 cpusLogical=8 load1PerCpu=0
+
+2026-06-02T09:40:21.853Z [pool] start md:FE-04_UC-02.md (active 11/45)
+
+2026-06-02T09:40:21.857Z [workstation:md:FE-04_UC-02.md] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-use-case-detail-FE-04_UC-02.md-a0-1780393221855.prompt.txt (1962 bytes)
+2026-06-02T09:40:21.858Z [workstation:md:FE-04_UC-02.md] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwg2fi9-y08fwcwp|md:FE-04_UC-02.md|markdownDetail·Use case detail·FE-04_UC-02.m' --agent agent-md-use-case-detail 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-use-case-detail-FE-04_UC-02.md-a0-1780393221855.prompt.txt'
+2026-06-02T09:40:21.859Z [workstation:md:FE-04_UC-02.md] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:40:21.860Z [workstation:md:FE-04_UC-02.md] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwg2fi9-y08fwcwp|md:FE-04_UC-02.md|markdownDetail·Use case detail·FE-04_UC-02.m","--agent","agent-md-use-case-detail","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\markdownDetail-agent-md-use-case-detail-FE-04_UC-02.md-a0-1780393221855.prompt.txt"]
+2026-06-02T09:40:21.893Z [workstation:md:FE-04_UC-02.md] scope=host childPid=9468 hostRamTotalB=33706872832 hostRamFreeB=15144292352 hostRamUsedB=18562580480 load1=0 cpusLogical=8 load1PerCpu=0
+
+2026-06-02T09:40:21.901Z [pool] start coord:sc:FE-04_UC-02 (active 11/45)
+
+2026-06-02T09:40:21.906Z [workstation:listScenarios] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\listScenarios-FE-04_UC-02-a0-1780393221903.prompt.txt (1837 bytes)
+2026-06-02T09:40:21.907Z [workstation:listScenarios] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwg2fi9-y08fwcwp|coord:sc:FE-04_UC-02|listScenarios·FE-04·UC-02' --agent agent-list-scenarios 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\listScenarios-FE-04_UC-02-a0-1780393221903.prompt.txt'
+2026-06-02T09:40:21.908Z [workstation:listScenarios] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:40:21.909Z [workstation:listScenarios] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwg2fi9-y08fwcwp|coord:sc:FE-04_UC-02|listScenarios·FE-04·UC-02","--agent","agent-list-scenarios","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\listScenarios-FE-04_UC-02-a0-1780393221903.prompt.txt"]
+2026-06-02T09:40:21.944Z [workstation:listScenarios] scope=host childPid=40976 hostRamTotalB=33706872832 hostRamFreeB=15135748096 hostRamUsedB=18571124736 load1=0 cpusLogical=8 load1PerCpu=0
+
+2026-06-02T09:40:21.958Z [pool] start md:FE-04_UC-03.md (active 11/45)
+
+2026-06-02T09:40:21.965Z [workstation:md:FE-04_UC-03.md] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-use-case-detail-FE-04_UC-03.md-a0-1780393221960.prompt.txt (1973 bytes)
+2026-06-02T09:40:21.967Z [workstation:md:FE-04_UC-03.md] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwg2fi9-y08fwcwp|md:FE-04_UC-03.md|markdownDetail·Use case detail·FE-04_UC-03.m' --agent agent-md-use-case-detail 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-use-case-detail-FE-04_UC-03.md-a0-1780393221960.prompt.txt'
+2026-06-02T09:40:21.968Z [workstation:md:FE-04_UC-03.md] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:40:21.970Z [workstation:md:FE-04_UC-03.md] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwg2fi9-y08fwcwp|md:FE-04_UC-03.md|markdownDetail·Use case detail·FE-04_UC-03.m","--agent","agent-md-use-case-detail","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\markdownDetail-agent-md-use-case-detail-FE-04_UC-03.md-a0-1780393221960.prompt.txt"]
+2026-06-02T09:40:21.998Z [workstation:md:FE-04_UC-03.md] scope=host childPid=47940 hostRamTotalB=33706872832 hostRamFreeB=15128612864 hostRamUsedB=18578259968 load1=0 cpusLogical=8 load1PerCpu=0
+
+2026-06-02T09:40:22.005Z [pool] start coord:sc:FE-04_UC-03 (active 11/45)
+
+2026-06-02T09:40:22.011Z [workstation:listScenarios] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\listScenarios-FE-04_UC-03-a0-1780393222008.prompt.txt (1837 bytes)
+2026-06-02T09:40:22.013Z [workstation:listScenarios] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwg2fi9-y08fwcwp|coord:sc:FE-04_UC-03|listScenarios·FE-04·UC-03' --agent agent-list-scenarios 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\listScenarios-FE-04_UC-03-a0-1780393222008.prompt.txt'
+2026-06-02T09:40:22.014Z [workstation:listScenarios] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:40:22.015Z [workstation:listScenarios] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwg2fi9-y08fwcwp|coord:sc:FE-04_UC-03|listScenarios·FE-04·UC-03","--agent","agent-list-scenarios","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\listScenarios-FE-04_UC-03-a0-1780393222008.prompt.txt"]
+2026-06-02T09:40:22.040Z [workstation:listScenarios] scope=host childPid=38164 hostRamTotalB=33706872832 hostRamFreeB=15118258176 hostRamUsedB=18588614656 load1=0 cpusLogical=8 load1PerCpu=0
+2026-06-02T09:40:30.639Z [workstation:md:FE-01_UC-01.md] scope=child childPid=5756 childCpuMs=0 childRssBytes=unknown rssErr=platform
+2026-06-02T09:40:30.651Z [workstation:md:FE-01_UC-01.md] close exitCode=0 stderrBytes=0 stderrOmitted=0 stdoutBytes=0 in 56s
+2026-06-02T09:40:30.660Z [workstation:opencode-session] primary complete workItem="md:FE-01_UC-01.md" runId="mpwg2fi9-y08fwcwp" title="mpwg2fi9-y08fwcwp|md:FE-01_UC-01.md|markdownDetail·Use case detail·FE-0…" session=ses_1784…OWXy
+2026-06-02T09:40:30.670Z [workstation:md:FE-01_UC-01.md] expected output in worktree: FOUND — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\FE-01_UC-01.md (4705 bytes) in 56s
+2026-06-02T09:40:30.674Z [workstation:md:FE-01_UC-01.md] markdown Evidence index validation passed — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\FE-01_UC-01.md in 56s
+
+2026-06-02T09:40:30.699Z [pool] complete md:FE-01_UC-01.md in 56s
+
+2026-06-02T09:40:35.406Z [factory] Received SIGINT, releasing lock...

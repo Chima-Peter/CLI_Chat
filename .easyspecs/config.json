@@ -78,6 +78,12 @@
       "completionPollIntervalMs": 2000,
       "completionLedgerLogIntervalMs": 30000,
       "maxConsecutiveSubmitFailures": 3
+    },
+    "factory": {
+      "updateContext": {
+        "lastRunAt": "2026-06-03T12:59:39.662Z"
+      },
+      "backoff": {}
     }
   }
 }

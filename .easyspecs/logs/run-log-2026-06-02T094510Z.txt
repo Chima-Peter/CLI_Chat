@@ -1,0 +1,44 @@
+# easyspecs-cli run log
+# version: 0.3.30
+# startedAt: 2026-06-02T09:45:10.127Z
+# repoRoot: C:\Users\pc\Documents\dev\Github\CLI_Chat
+# command: analysis set-harness opencode --local
+# argv: C:\nvm4w\nodejs\node.exe C:\nvm4w\nodejs\node_modules\@gluecharm-lab\easyspecs-cli\dist\main.cjs analysis set-harness opencode --local
+# logFile: C:\Users\pc\Documents\dev\Github\CLI_Chat\.easyspecs\logs\run-log-2026-06-02T094510Z.txt
+2026-06-02T09:45:10.140Z [log] run log: C:\Users\pc\Documents\dev\Github\CLI_Chat\.easyspecs\logs\run-log-2026-06-02T094510Z.txt
+2026-06-02T09:45:10.194Z Updated C:\Users\pc\Documents\dev\Github\CLI_Chat\.easyspecs\config.json — agentHarness.kind=opencode, executable=opencode — execution=local
+2026-06-02T09:45:10.306Z [factory] Resume eligible: phase=synthesis, iteration=0, runId=mpwg2fi9-y08fwcwp
+2026-06-02T09:45:10.312Z --- Resumed from phase: synthesis (iteration 0) ---
+2026-06-02T09:45:12.129Z [factory] resume synthesis — all artifacts already complete
+2026-06-02T09:45:12.164Z [factory] Phase transition: remediation (iteration 0)
+2026-06-02T09:45:12.168Z [factory] reference coverage (worktree) — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009
+
+2026-06-02T09:45:12.522Z [pipeline:remediation] classifier prompt: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\zero-ref-classify-a0-1780393512515.prompt.txt
+
+2026-06-02T09:45:12.527Z [workstation:zero-ref:classifier] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --agent agent-classify-unreferenced-file 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\zero-ref-classify-a0-1780393512515.prompt.txt'
+2026-06-02T09:45:12.529Z [workstation:zero-ref:classifier] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:45:12.530Z [workstation:zero-ref:classifier] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--agent","agent-classify-unreferenced-file","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\zero-ref-classify-a0-1780393512515.prompt.txt"]
+2026-06-02T09:45:12.562Z [workstation:zero-ref:classifier] scope=host childPid=35384 hostRamTotalB=33706872832 hostRamFreeB=16495734784 hostRamUsedB=17211138048 load1=0 cpusLogical=8 load1PerCpu=0
+2026-06-02T09:45:32.311Z [workstation:zero-ref:classifier] scope=child childPid=35384 childCpuMs=0 childRssBytes=unknown rssErr=platform
+2026-06-02T09:45:32.318Z [workstation:zero-ref:classifier] close exitCode=0 stderrBytes=234 stderrOmitted=0 stdoutBytes=473 in 19s
+
+2026-06-02T09:45:32.337Z [factory] Phase transition: remediation (iteration 0)
+
+2026-06-02T09:45:33.362Z [pipeline:link-mapping] Updated markdown navigation under C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context
+
+2026-06-02T09:45:33.365Z [factory] reference coverage (worktree) — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009
+2026-06-02T09:45:33.673Z [factory] Phase transition: post_remediation (iteration 0)
+2026-06-02T09:45:33.680Z [factory] reference coverage execution report — 2026-06-02T09:45:33.679Z
+
+2026-06-02T09:45:33.691Z [pipeline:coverage] wrote reference coverage execution report — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\reference-coverage-execution-report.md
+2026-06-02T09:45:34.804Z [pipeline:link-mapping] Updated markdown navigation under C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context
+
+2026-06-02T09:45:35.142Z [factory] index written — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context
+2026-06-02T09:45:35.143Z [factory] Generate Context factory ended (succeeded) — 24812ms — Analysis complete.
+2026-06-02T09:45:35.148Z [factory] Released lock for runId mpwg2fi9-y08fwcwp
+
+2026-06-02T09:45:35.551Z [pipeline:analysis] promoted 308 file(s) → C:\Users\pc\Documents\dev\Github\CLI_Chat
+2026-06-02T09:45:35.556Z [pipeline:analysis] easyspecs-cli analysis finished (ok) — 2026-06-02T09:45:35.555Z
+# finishedAt: 2026-06-02T09:45:35.557Z
+# exitCode: 0
+# durationMs: 25430

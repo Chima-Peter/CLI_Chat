@@ -1,0 +1,148 @@
+# easyspecs-cli run log
+# version: 0.3.30
+# startedAt: 2026-06-02T09:58:50.050Z
+# repoRoot: C:\Users\pc\Documents\dev\Github\CLI_Chat
+# command: analysis set-harness opencode --local
+# argv: C:\nvm4w\nodejs\node.exe C:\nvm4w\nodejs\node_modules\@gluecharm-lab\easyspecs-cli\dist\main.cjs analysis set-harness opencode --local
+# logFile: C:\Users\pc\Documents\dev\Github\CLI_Chat\.easyspecs\logs\run-log-2026-06-02T095850Z.txt
+2026-06-02T09:58:50.243Z [log] run log: C:\Users\pc\Documents\dev\Github\CLI_Chat\.easyspecs\logs\run-log-2026-06-02T095850Z.txt
+2026-06-02T09:58:50.639Z Updated C:\Users\pc\Documents\dev\Github\CLI_Chat\.easyspecs\config.json — agentHarness.kind=opencode, executable=opencode — execution=local
+2026-06-02T09:58:51.964Z [factory] Resume eligible: phase=synthesis, iteration=0, runId=mpwggeit-r0gpee2o
+2026-06-02T09:58:52.026Z --- Resumed from phase: synthesis (iteration 0) ---
+2026-06-02T09:59:00.217Z [factory] resume synthesis — 3 outstanding workstation(s) from snapshot
+
+2026-06-02T09:59:00.405Z [pipeline:remediation] parallel remediation pool — 3 missing row(s), 4 ready in initial fifo
+
+2026-06-02T09:59:00.694Z [pool] start md:SV-01_ME-31-unblock-user.md (active 4/45)
+
+2026-06-02T09:59:00.855Z [workstation:md:SV-01_ME-31-unblock-user.md] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-method-detail-SV-01_ME-31-unblock-user.md-a0-1780394340726.prompt.txt (1355 bytes)
+2026-06-02T09:59:00.930Z [workstation:md:SV-01_ME-31-unblock-user.md] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwggeit-r0gpee2o|md:SV-01_ME-31-unblock-user.md|markdownDetail·Method detail·SV' --agent agent-md-method-detail 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-method-detail-SV-01_ME-31-unblock-user.md-a0-1780394340726.prompt.txt'
+2026-06-02T09:59:01.026Z [workstation:md:SV-01_ME-31-unblock-user.md] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:59:01.107Z [workstation:md:SV-01_ME-31-unblock-user.md] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwggeit-r0gpee2o|md:SV-01_ME-31-unblock-user.md|markdownDetail·Method detail·SV","--agent","agent-md-method-detail","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\markdownDetail-agent-md-method-detail-SV-01_ME-31-unblock-user.md-a0-1780394340726.prompt.txt"]
+2026-06-02T09:59:01.217Z [workstation:md:SV-01_ME-31-unblock-user.md] scope=host childPid=23460 hostRamTotalB=33706872832 hostRamFreeB=7883501568 hostRamUsedB=25823371264 load1=0 cpusLogical=8 load1PerCpu=0
+
+2026-06-02T09:59:01.438Z [pool] start remediation:SV-01_ME-13-decline-room-invite.md (active 4/45)
+
+2026-06-02T09:59:01.680Z [workstation:md:SV-01_ME-13-decline-room-invite.md] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-method-detail-SV-01_ME-13-decline-room-invite.md-a0-1780394341470.prompt.txt (1375 bytes)
+2026-06-02T09:59:01.797Z [workstation:md:SV-01_ME-13-decline-room-invite.md] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwggeit-r0gpee2o|remediation:SV-01_ME-13-decline-room-invite.md|markdownDetail·' --agent agent-md-method-detail 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-method-detail-SV-01_ME-13-decline-room-invite.md-a0-1780394341470.prompt.txt'
+2026-06-02T09:59:01.827Z [workstation:md:SV-01_ME-13-decline-room-invite.md] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:59:01.906Z [workstation:md:SV-01_ME-13-decline-room-invite.md] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwggeit-r0gpee2o|remediation:SV-01_ME-13-decline-room-invite.md|markdownDetail·","--agent","agent-md-method-detail","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\markdownDetail-agent-md-method-detail-SV-01_ME-13-decline-room-invite.md-a0-1780394341470.prompt.txt"]
+2026-06-02T09:59:01.999Z [workstation:md:SV-01_ME-13-decline-room-invite.md] scope=host childPid=18324 hostRamTotalB=33706872832 hostRamFreeB=7906025472 hostRamUsedB=25800847360 load1=0 cpusLogical=8 load1PerCpu=0
+
+2026-06-02T09:59:02.227Z [pool] start remediation:SV-01_ME-22-accept-friend-request.md (active 4/45)
+
+2026-06-02T09:59:02.475Z [workstation:md:SV-01_ME-22-accept-friend-request.md] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-method-detail-SV-01_ME-22-accept-friend-request.md-a0-1780394342270.prompt.txt (1381 bytes)
+2026-06-02T09:59:02.516Z [workstation:md:SV-01_ME-22-accept-friend-request.md] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwggeit-r0gpee2o|remediation:SV-01_ME-22-accept-friend-request.md|markdownDetai' --agent agent-md-method-detail 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-method-detail-SV-01_ME-22-accept-friend-request.md-a0-1780394342270.prompt.txt'
+2026-06-02T09:59:02.609Z [workstation:md:SV-01_ME-22-accept-friend-request.md] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:59:02.780Z [workstation:md:SV-01_ME-22-accept-friend-request.md] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwggeit-r0gpee2o|remediation:SV-01_ME-22-accept-friend-request.md|markdownDetai","--agent","agent-md-method-detail","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\markdownDetail-agent-md-method-detail-SV-01_ME-22-accept-friend-request.md-a0-1780394342270.prompt.txt"]
+2026-06-02T09:59:03.080Z [workstation:md:SV-01_ME-22-accept-friend-request.md] scope=host childPid=30704 hostRamTotalB=33706872832 hostRamFreeB=8327479296 hostRamUsedB=25379393536 load1=0 cpusLogical=8 load1PerCpu=0
+
+2026-06-02T09:59:03.481Z [pool] start remediation:SV-01_ME-31-unblock-user.md (active 4/45)
+
+2026-06-02T09:59:03.713Z [workstation:md:SV-01_ME-31-unblock-user.md] prompt file: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-method-detail-SV-01_ME-31-unblock-user.md-a0-1780394343543.prompt.txt (1355 bytes)
+2026-06-02T09:59:03.789Z [workstation:md:SV-01_ME-31-unblock-user.md] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --format json --title 'mpwggeit-r0gpee2o|remediation:SV-01_ME-31-unblock-user.md|markdownDetail·Method ' --agent agent-md-method-detail 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\markdownDetail-agent-md-method-detail-SV-01_ME-31-unblock-user.md-a0-1780394343543.prompt.txt'
+2026-06-02T09:59:03.849Z [workstation:md:SV-01_ME-31-unblock-user.md] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T09:59:03.932Z [workstation:md:SV-01_ME-31-unblock-user.md] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--format","json","--title","mpwggeit-r0gpee2o|remediation:SV-01_ME-31-unblock-user.md|markdownDetail·Method ","--agent","agent-md-method-detail","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\markdownDetail-agent-md-method-detail-SV-01_ME-31-unblock-user.md-a0-1780394343543.prompt.txt"]
+2026-06-02T09:59:04.030Z [workstation:md:SV-01_ME-31-unblock-user.md] scope=host childPid=1788 hostRamTotalB=33706872832 hostRamFreeB=8332431360 hostRamUsedB=25374441472 load1=0 cpusLogical=8 load1PerCpu=0
+
+2026-06-02T09:59:45.512Z [host-pool] activeWorkstations=4 staticMaxConcurrentAi=45 adaptiveMaxConcurrentAi=45 hostRamTotalB=33706872832 hostRamFreeB=9220603904 hostRamUsedB=24486268928 cpusLogical=8 load1=0 load1PerCpu=0 hintScheduler=OK hintMemory=OK hintLimits=UNK hintIo=UNK
+2026-06-02T09:59:45.566Z [host-pool-rec] kind=none
+2026-06-02T10:00:30.453Z [host-pool] activeWorkstations=4 staticMaxConcurrentAi=45 adaptiveMaxConcurrentAi=45 hostRamTotalB=33706872832 hostRamFreeB=14296821760 hostRamUsedB=19410051072 cpusLogical=8 load1=0 load1PerCpu=0 hintScheduler=OK hintMemory=OK hintLimits=UNK hintIo=UNK
+2026-06-02T10:00:30.460Z [host-pool-rec] kind=none
+2026-06-02T10:01:15.466Z [host-pool] activeWorkstations=4 staticMaxConcurrentAi=45 adaptiveMaxConcurrentAi=45 hostRamTotalB=33706872832 hostRamFreeB=13547540480 hostRamUsedB=20159332352 cpusLogical=8 load1=0 load1PerCpu=0 hintScheduler=OK hintMemory=OK hintLimits=UNK hintIo=UNK
+2026-06-02T10:01:15.471Z [host-pool-rec] kind=none
+
+2026-06-02T10:01:38.506Z [workstation:md:SV-01_ME-31-unblock-user.md] scope=child childPid=23460 childCpuMs=0 childRssBytes=unknown rssErr=platform
+2026-06-02T10:01:38.512Z [workstation:md:SV-01_ME-31-unblock-user.md] close exitCode=0 stderrBytes=0 stderrOmitted=0 stdoutBytes=0 in 2m 37s
+2026-06-02T10:01:38.516Z [workstation:opencode-session] primary complete workItem="md:SV-01_ME-31-unblock-user.md" runId="mpwggeit-r0gpee2o" title="mpwggeit-r0gpee2o|md:SV-01_ME-31-unblock-user.md|markdownDetail·Method …" session=ses_1783…lgFe
+2026-06-02T10:01:38.519Z [workstation:md:SV-01_ME-31-unblock-user.md] expected output in worktree: FOUND — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\SV-01_ME-31-unblock-user.md (1949 bytes) in 2m 37s
+2026-06-02T10:01:38.525Z [workstation:md:SV-01_ME-31-unblock-user.md] markdown Evidence index validation passed — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\SV-01_ME-31-unblock-user.md in 2m 37s
+
+2026-06-02T10:01:38.537Z [pool] complete md:SV-01_ME-31-unblock-user.md in 2m 37s
+
+2026-06-02T10:01:56.878Z [workstation:md:SV-01_ME-13-decline-room-invite.md] scope=child childPid=18324 childCpuMs=0 childRssBytes=unknown rssErr=platform
+2026-06-02T10:01:56.881Z [workstation:md:SV-01_ME-13-decline-room-invite.md] close exitCode=0 stderrBytes=0 stderrOmitted=0 stdoutBytes=0 in 2m 54s
+2026-06-02T10:01:56.885Z [workstation:opencode-session] primary complete workItem="remediation:SV-01_ME-13-decline-room-invite.md" runId="mpwggeit-r0gpee2o" title="mpwggeit-r0gpee2o|remediation:SV-01_ME-13-decline-room-invite.md|markdo…" session=ses_1783…fF6N
+2026-06-02T10:01:56.888Z [workstation:md:SV-01_ME-13-decline-room-invite.md] expected output in worktree: FOUND — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\SV-01_ME-13-decline-room-invite.md (2092 bytes) in 2m 55s
+2026-06-02T10:01:56.892Z [workstation:md:SV-01_ME-13-decline-room-invite.md] markdown Evidence index validation passed — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\SV-01_ME-13-decline-room-invite.md in 2m 55s
+
+2026-06-02T10:01:56.902Z [pool] complete remediation:SV-01_ME-13-decline-room-invite.md in 2m 55s
+2026-06-02T10:02:00.485Z [host-pool] activeWorkstations=2 staticMaxConcurrentAi=45 adaptiveMaxConcurrentAi=45 hostRamTotalB=33706872832 hostRamFreeB=15394074624 hostRamUsedB=18312798208 cpusLogical=8 load1=0 load1PerCpu=0 hintScheduler=OK hintMemory=OK hintLimits=UNK hintIo=UNK
+2026-06-02T10:02:00.489Z [host-pool-rec] kind=none
+2026-06-02T10:02:45.507Z [host-pool] activeWorkstations=2 staticMaxConcurrentAi=45 adaptiveMaxConcurrentAi=45 hostRamTotalB=33706872832 hostRamFreeB=12028305408 hostRamUsedB=21678567424 cpusLogical=8 load1=0 load1PerCpu=0 hintScheduler=OK hintMemory=OK hintLimits=UNK hintIo=UNK
+2026-06-02T10:02:45.530Z [host-pool-rec] kind=none
+2026-06-02T10:03:30.564Z [host-pool] activeWorkstations=2 staticMaxConcurrentAi=45 adaptiveMaxConcurrentAi=45 hostRamTotalB=33706872832 hostRamFreeB=11165687808 hostRamUsedB=22541185024 cpusLogical=8 load1=0 load1PerCpu=0 hintScheduler=OK hintMemory=OK hintLimits=UNK hintIo=UNK
+2026-06-02T10:03:30.670Z [host-pool-rec] kind=none
+2026-06-02T10:04:15.540Z [host-pool] activeWorkstations=2 staticMaxConcurrentAi=45 adaptiveMaxConcurrentAi=45 hostRamTotalB=33706872832 hostRamFreeB=10758561792 hostRamUsedB=22948311040 cpusLogical=8 load1=0 load1PerCpu=0 hintScheduler=OK hintMemory=OK hintLimits=UNK hintIo=UNK
+2026-06-02T10:04:15.606Z [host-pool-rec] kind=none
+2026-06-02T10:05:00.522Z [host-pool] activeWorkstations=2 staticMaxConcurrentAi=45 adaptiveMaxConcurrentAi=45 hostRamTotalB=33706872832 hostRamFreeB=12917555200 hostRamUsedB=20789317632 cpusLogical=8 load1=0 load1PerCpu=0 hintScheduler=OK hintMemory=OK hintLimits=UNK hintIo=UNK
+2026-06-02T10:05:00.543Z [host-pool-rec] kind=none
+
+2026-06-02T10:05:08.409Z [workstation:md:SV-01_ME-22-accept-friend-request.md] scope=child childPid=30704 childCpuMs=0 childRssBytes=unknown rssErr=platform
+2026-06-02T10:05:08.420Z [workstation:md:SV-01_ME-22-accept-friend-request.md] close exitCode=0 stderrBytes=0 stderrOmitted=0 stdoutBytes=0 in 6m 05s
+2026-06-02T10:05:08.429Z [workstation:opencode-session] primary complete workItem="remediation:SV-01_ME-22-accept-friend-request.md" runId="mpwggeit-r0gpee2o" title="mpwggeit-r0gpee2o|remediation:SV-01_ME-22-accept-friend-request.md|mark…" session=ses_1783…d6EJ
+2026-06-02T10:05:08.446Z [workstation:md:SV-01_ME-22-accept-friend-request.md] expected output in worktree: FOUND — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\SV-01_ME-22-accept-friend-request.md (2034 bytes) in 6m 06s
+2026-06-02T10:05:08.454Z [workstation:md:SV-01_ME-22-accept-friend-request.md] markdown Evidence index validation passed — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\SV-01_ME-22-accept-friend-request.md in 6m 06s
+
+2026-06-02T10:05:08.471Z [pool] complete remediation:SV-01_ME-22-accept-friend-request.md in 6m 06s
+
+2026-06-02T10:05:10.957Z [workstation:md:SV-01_ME-31-unblock-user.md] scope=child childPid=1788 childCpuMs=0 childRssBytes=unknown rssErr=platform
+2026-06-02T10:05:10.962Z [workstation:md:SV-01_ME-31-unblock-user.md] close exitCode=0 stderrBytes=0 stderrOmitted=0 stdoutBytes=0 in 6m 06s
+2026-06-02T10:05:10.967Z [workstation:opencode-session] primary complete workItem="remediation:SV-01_ME-31-unblock-user.md" runId="mpwggeit-r0gpee2o" title="mpwggeit-r0gpee2o|remediation:SV-01_ME-31-unblock-user.md|markdownDetai…" session=ses_1783…YrXI
+2026-06-02T10:05:10.972Z [workstation:md:SV-01_ME-31-unblock-user.md] expected output in worktree: FOUND — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\SV-01_ME-31-unblock-user.md (1671 bytes) in 6m 07s
+2026-06-02T10:05:10.978Z [workstation:md:SV-01_ME-31-unblock-user.md] markdown Evidence index validation passed — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context\SV-01_ME-31-unblock-user.md in 6m 07s
+
+2026-06-02T10:05:10.989Z [pool] complete remediation:SV-01_ME-31-unblock-user.md in 6m 07s
+
+2026-06-02T10:05:11.648Z [pipeline:link-mapping] Updated markdown navigation under C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context
+2026-06-02T10:05:12.426Z [pipeline:synthesis] After parallel remediation: index-application-context.json written under C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.easyspecs\context
+
+2026-06-02T10:05:12.534Z [factory] Phase transition: remediation (iteration 0)
+2026-06-02T10:05:12.548Z [factory] reference coverage (worktree) — C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009
+
+2026-06-02T10:05:13.397Z [pipeline:remediation] classifier prompt: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\zero-ref-classify-a0-1780394713367.prompt.txt
+
+2026-06-02T10:05:13.436Z [workstation:zero-ref:classifier] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --agent agent-classify-unreferenced-file 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\zero-ref-classify-a0-1780394713367.prompt.txt'
+2026-06-02T10:05:13.448Z [workstation:zero-ref:classifier] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T10:05:13.456Z [workstation:zero-ref:classifier] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--agent","agent-classify-unreferenced-file","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\zero-ref-classify-a0-1780394713367.prompt.txt"]
+2026-06-02T10:05:13.496Z [workstation:zero-ref:classifier] scope=host childPid=50544 hostRamTotalB=33706872832 hostRamFreeB=14812676096 hostRamUsedB=18894196736 load1=0 cpusLogical=8 load1PerCpu=0
+
+2026-06-02T10:05:13.520Z [pipeline:remediation] classifier prompt: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\zero-ref-classify-a0-1780394713498.prompt.txt
+
+2026-06-02T10:05:13.545Z [workstation:zero-ref:classifier] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --agent agent-classify-unreferenced-file 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\zero-ref-classify-a0-1780394713498.prompt.txt'
+2026-06-02T10:05:13.561Z [workstation:zero-ref:classifier] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T10:05:13.577Z [workstation:zero-ref:classifier] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--agent","agent-classify-unreferenced-file","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\zero-ref-classify-a0-1780394713498.prompt.txt"]
+2026-06-02T10:05:13.669Z [workstation:zero-ref:classifier] scope=host childPid=38540 hostRamTotalB=33706872832 hostRamFreeB=14796627968 hostRamUsedB=18910244864 load1=0 cpusLogical=8 load1PerCpu=0
+
+2026-06-02T10:05:13.696Z [pipeline:remediation] classifier prompt: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\zero-ref-classify-a0-1780394713671.prompt.txt
+
+2026-06-02T10:05:13.701Z [workstation:zero-ref:classifier] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --agent agent-classify-unreferenced-file 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\zero-ref-classify-a0-1780394713671.prompt.txt'
+2026-06-02T10:05:13.702Z [workstation:zero-ref:classifier] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T10:05:13.703Z [workstation:zero-ref:classifier] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--agent","agent-classify-unreferenced-file","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\zero-ref-classify-a0-1780394713671.prompt.txt"]
+2026-06-02T10:05:13.737Z [workstation:zero-ref:classifier] scope=host childPid=36032 hostRamTotalB=33706872832 hostRamFreeB=15042129920 hostRamUsedB=18664742912 load1=0 cpusLogical=8 load1PerCpu=0
+2026-06-02T10:05:54.453Z [workstation:zero-ref:classifier] scope=child childPid=36032 childCpuMs=0 childRssBytes=unknown rssErr=platform
+2026-06-02T10:05:54.462Z [workstation:zero-ref:classifier] close exitCode=0 stderrBytes=236 stderrOmitted=0 stdoutBytes=396 in 40s
+
+2026-06-02T10:05:54.486Z [pipeline:remediation] triage prompt: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\zero-ref-triage-a0-1780394754470.prompt.txt
+
+2026-06-02T10:05:54.511Z [workstation:zero-ref:triage] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --agent agent-triage-unreferenced-coordination 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\zero-ref-triage-a0-1780394754470.prompt.txt'
+2026-06-02T10:05:54.522Z [workstation:zero-ref:triage] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T10:05:54.533Z [workstation:zero-ref:triage] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--agent","agent-triage-unreferenced-coordination","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\zero-ref-triage-a0-1780394754470.prompt.txt"]
+2026-06-02T10:05:54.607Z [workstation:zero-ref:triage] scope=host childPid=12208 hostRamTotalB=33706872832 hostRamFreeB=14541901824 hostRamUsedB=19164971008 load1=0 cpusLogical=8 load1PerCpu=0
+2026-06-02T10:05:55.433Z [workstation:zero-ref:classifier] scope=child childPid=38540 childCpuMs=0 childRssBytes=unknown rssErr=platform
+2026-06-02T10:05:55.439Z [workstation:zero-ref:classifier] close exitCode=0 stderrBytes=230 stderrOmitted=0 stdoutBytes=511 in 41s
+
+2026-06-02T10:05:55.468Z [pipeline:remediation] project markdown prompt: C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\zero-ref-md-project-1780394755445.prompt.txt
+
+2026-06-02T10:05:55.499Z [workstation:zero-ref:md-project] command: opencode run --dir 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009' --agent agent-add-reference-project-md 'Execute the task described in the attached EasySpecs prompt file.' -f 'C:\Users\pc\AppData\Local\Temp\easyspecs-analysis\easyspecs-009\.opencode\_run\zero-ref-md-project-1780394755445.prompt.txt'
+2026-06-02T10:05:55.505Z [workstation:zero-ref:md-project] cwd: "C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009"
+2026-06-02T10:05:55.514Z [workstation:zero-ref:md-project] argv: ["run","--dir","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009","--agent","agent-add-reference-project-md","Execute the task described in the attached EasySpecs prompt file.","-f","C:\\Users\\pc\\AppData\\Local\\Temp\\easyspecs-analysis\\easyspecs-009\\.opencode\\_run\\zero-ref-md-project-1780394755445.prompt.txt"]
+2026-06-02T10:05:55.542Z [workstation:zero-ref:md-project] scope=host childPid=13544 hostRamTotalB=33706872832 hostRamFreeB=14997450752 hostRamUsedB=18709422080 load1=0 cpusLogical=8 load1PerCpu=0
+
+2026-06-02T10:05:58.670Z [host-pool] activeWorkstations=3 staticMaxConcurrentAi=45 adaptiveMaxConcurrentAi=45 hostRamTotalB=33706872832 hostRamFreeB=14275022848 hostRamUsedB=19431849984 cpusLogical=8 load1=0 load1PerCpu=0 hintScheduler=OK hintMemory=OK hintLimits=UNK hintIo=UNK
+2026-06-02T10:05:58.774Z [host-pool-rec] kind=none
+
+2026-06-02T10:06:04.818Z [workstation:zero-ref:classifier] scope=child childPid=50544 childCpuMs=0 childRssBytes=unknown rssErr=platform
+2026-06-02T10:06:04.834Z [workstation:zero-ref:classifier] close exitCode=0 stderrBytes=260 stderrOmitted=0 stdoutBytes=315 in 51s
+
+2026-06-02T10:06:25.243Z [factory] Received SIGINT, releasing lock...

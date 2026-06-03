@@ -1,0 +1,12 @@
+# easyspecs-cli run log
+# version: 0.3.30
+# startedAt: 2026-06-03T12:59:25.669Z
+# repoRoot: C:\Users\pc\Documents\dev\Github\CLI_Chat
+# command: update context
+# argv: C:\nvm4w\nodejs\node.exe C:\nvm4w\nodejs\node_modules\@gluecharm-lab\easyspecs-cli\dist\main.cjs update context
+# logFile: C:\Users\pc\Documents\dev\Github\CLI_Chat\.easyspecs\logs\run-log-2026-06-03T125925Z.txt
+2026-06-03T12:59:25.682Z [log] run log: C:\Users\pc\Documents\dev\Github\CLI_Chat\.easyspecs\logs\run-log-2026-06-03T125925Z.txt
+2026-06-03T12:59:39.660Z [update-context] promoted 306 file(s) → C:\Users\pc\Documents\dev\Github\CLI_Chat
+# finishedAt: 2026-06-03T12:59:39.669Z
+# exitCode: 0
+# durationMs: 14000
